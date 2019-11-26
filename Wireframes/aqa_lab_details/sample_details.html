@@ -371,6 +371,10 @@ body {
     margin-right: 1%;
     margin-top: 1px;
 }
+label {
+  text-align: right;
+    padding-right: 1px;
+}
 	</style>
   </head>
   <body>
@@ -568,11 +572,130 @@ body {
                 </div>
                 <div class="col-md-4">
                   <div class="row">
+                      <div class="form-group required row" id="ext_farm_reg_nos"> 
+                          <label class="control-label col-md-4  requiredField">Type of Test`</label>
+                          <div class="controls col-md-8">
+                            <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
+                              <option value="">Water Analysis</option>
+                              <option value="">Seed Analysis</option>
+                              <option value="">Soil Analysis</option>
+                             </select>
+                          </div>
+                      </div>
                   </div>
                 </div>
                
                 </div>
-                    
+                <!-- Second Row  -->
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row" id="ext_farm_reg_nos"> 
+                                <label class="control-label col-md-4  requiredField">Parameters </label>
+                                <div class="controls col-md-8">
+                                  <select class="form-control input-md" multiple id="tst_parm_typ" style="margin-bottom:2%">
+                                    <option value="">Param1</option>
+                                    <option value="">Param1</option>
+                                    <option value="">Param1</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row" id="ext_farm_reg_nos"> 
+                                <label class="control-label col-md-4  requiredField">Pond Number`</label>
+                                <div class="controls col-md-8">
+                                  <select class="form-control input-md" id="tst_pond_typ" style="margin-bottom:2%">
+                                    <option value="">Pond 1</option>
+                                    <option value="">Pond 2</option>
+                                    <option value="">Pond 3</option>
+                                   </select>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row"> 
+                                <label class="control-label col-md-4  requiredField"> Sample ID <span class="asteriskField">*</span></label>
+                                <div class="controls col-md-5">
+                                        <input class="input-md textinput textInput form-control"
+                                        value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
+                                </div>
+                                <div class="controls col-md-3">
+                                  <input type="button" value="print" class="btn btn-primary btn btn-info"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+               
+                 
+                  </div>
+
+
+                <!-- End Second Row-->
+
+                    <!-- Second Row  -->
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row" id="ext_farm_reg_nos"> 
+                                <label class="control-label col-md-4  requiredField">District </label>
+                                <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="Srikakulam" id="tst_dst" type="text" readonly disaled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row" id="ext_farm_reg_nos"> 
+                                <label class="control-label col-md-4  requiredField">Mandal`</label>
+                                <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="Mandasa" id="tst_mndl" type="text" readonly disaled>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    <!-- <div class="col-md-3">
+                        <div class="row">
+                            <div class="form-group required row"> 
+                                <label class="control-label col-md-4  requiredField"> Panchayat <span class="asteriskField">*</span></label>
+                                <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="Tada" id="tst_pnchy" type="text" readonly disaled></div>
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row" id="ext_farm_reg_nos"> 
+                                <label class="control-label col-md-4  requiredField">Village </label>
+                                <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="Surya Lanka" id="tst_vlg" type="text" readonly disaled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group required row" id="ext_farm_reg_nos"> 
+                            <label class="control-label col-md-4  requiredField"> </label>
+                            <div class="controls col-md-8">
+                                <input class="btn btn-primary btn btn-info"
+                                value="Add Test" id="tst_add" type="button" style="float: left;margin-left: 84%;margin-top: 6%;" >
+                            </div>
+                        </div>
+                    </div>
               </form>
             </div>
           </div>
