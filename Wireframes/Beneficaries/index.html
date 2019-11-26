@@ -1,0 +1,1461 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+  color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style>
+      
+<style type="text/css">
+  .nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+  width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+    input,select {
+        margin-bottom: 10px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header"> <a href="farmer_registration.html" class="logo"> <img
+
+          src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home">My Profile</a>
+        <a href="#contact">My Services</a> <a href="#about">Admin User</a> </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              Registrations &amp; Licences <span class="arrow"></span></a> </li>
+          <ul class="sub-menu collapse" id="regstrs">
+            <li> <a href="farmer_registration.html"> User Registration </a> </li>
+            <li><a href="fresh_water_to_be_Modal_Window.html">Fresh Water</a></li>
+            <li><a href="backrish_water_to_be_Modal_Window.html">Backrish Water</a></li>
+            <li><a href="aqua_registration_to_be.html">Aqua Lab</a></li>
+            <li><a href="farm_enrolment.html">Farm Enrolment</a></li>
+            <li><a href="professional_certificate.html">Certificates</a></li>
+             <li><a href="../table/aqua_zonation.html">Aquazonation
+</a></li>
+           <!--  <li data-toggle="collapse" data-target="#frm_zontion" class="collapsed"><a
+
+                href="#">Aquaculture Zonation</a></li> -->
+          </ul>
+          <!-- <ul class="sub-menu collapse" id="frm_zontion">
+            <li><a href="existing_farm_zonation.html"> Existing Aquaculture </a></li>
+            <li><a href="potential_farm_zonation.html">Potential Aquaculture</a></li>
+          </ul> -->
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Inspections <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="inspections">
+            <li><a href="#"> Shrimp Hatcheries </a></li>
+            <li><a href="#">Aquaculture Farms</a></li>
+            <li><a href="#">Aqua Shops</a></li>
+            <li><a href="#">Processing Houses</a></li>
+            <li><a href="#">Quality Checks for formalin </a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#advis_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Advisory Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="advis_servcs">
+            <li><a href="#"> Disease surveillance </a></li>
+            <li><a href="#">Training and Extension</a></li>
+            <li data-toggle="collapse" data-target="#wrk_shps" class="collapsed"><a
+
+                href="#">Trainings</a></li>
+            <ul class="sub-menu collapse" id="wrk_shps">
+              <li><a href="#"> Works shops </a></li>
+              <li><a href="#">Exhibitions</a></li>
+              <li><a href="#">Seminars</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#othr_trngs" class="collapsed"><a
+
+                href="#">Other Trainings</a></li>
+            <ul class="sub-menu collapse" id="othr_trngs">
+              <li><a href="#"> SIFT </a></li>
+              <li><a href="#">IFTC</a></li>
+              <li><a href="#">FTC Calender for public</a></li>
+            </ul>
+            <li><a href="#">Toll Free Services</a></li>
+            <li><a href="#">Marketing Prices</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#rsr_mapng" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Resource Mapping <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="rsr_mapng">
+            <li> <a href="#"> Aquaculture Farms </a> </li>
+            <li data-toggle="collapse" data-target="#aqua_shrmp_fsh" class="collapsed"><a
+
+                href="#">Farms</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqua_shrmp_fsh">
+              <li><a href="#"> Shrimp hatcheries </a></li>
+              <li><a href="#">Fish seed Farms</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#cld_chn_fclts" class="collapsed"><a
+
+                href="#">Cold Chain Facilities</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="cld_chn_fclts">
+              <li><a href="#"> Processing Plants</a></li>
+              <li><a href="#">Cold Storages</a></li>
+              <li><a href="#">Ice Plants</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#aqa_inp_shps" class="collapsed"><a
+
+                href="#">Aqua Input Shops</a></li>
+            <ul class="sub-menu collapse" id="aqa_inp_shps">
+              <li><a href="#"> Feed mills</a></li>
+              <li><a href="#">Feed Supplementary shops</a></li>
+              <li><a href="#">Drugs/Chemicals</a></li>
+            </ul>
+            <li> <a href="#"> Aqua Labs </a> </li>
+            <li data-toggle="collapse" data-target="#aqa_shds" class="collapsed"><a
+
+                href="#">Aqua Sheds</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqa_shds">
+              <li><a href="#"> Fish Packing</a></li>
+              <li><a href="#">Shrimp Processing</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#aqa_lab_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Lab Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="aqa_lab_servcs">
+            <li data-toggle="collapse" data-target="#govt_lab_servcs" class="collapsed"><a
+
+                href="#"> Government Labs</a></li>
+            <ul class="sub-menu collapse" id="govt_lab_servcs">
+              <li><a href="#"> MPEDA</a></li>
+              <li><a href="#">EIA</a></li>
+              <li><a href="#">DCA</a></li>
+              <li><a href="#">Water and Soil Analysis</a></li>
+              <li><a href="#">Microbiology</a></li>
+              <li><a href="#">Feed Analysis</a></li>
+              <li><a href="#">AMR</a></li>
+              <li><a href="#">ELISA</a></li>
+              <li><a href="#">LCMSMS</a></li>
+              <li><a href="#">AAS</a></li>
+            </ul>
+            <li><a href="#">Private Labs</a></li>
+            <li data-toggle="collapse" data-target="#aqa_labs_servc" class="collapsed"><a
+
+                href="#">Aqua Labs </a></li>
+            <ul class="sub-menu collapse" id="aqa_labs_servc">
+              <li><a href="aqua_lab_details.html"> Lab Details</a></li>
+              <li><a href="aqa_dshbrd.html">My Dashboard</a></li>
+              <li><a href="aqa_my_services.html">My Services</a></li>
+              <li><a href="aqa_dept_dsh.html">Department Dashboard</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#rprts" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> Reports</a> </li>
+          <li data-toggle="collapse" data-target="#kpis" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> KPIs <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="kpis">
+            <li><a href="#"> Freshwater Aquaculture</a></li>
+            <li><a href="#">Backrish Water Aquaculture</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#bnfcry_mgmt" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Beneficiary Schemes <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="bnfcry_mgmt">
+            <li><a href="#"> State Govt. funded schemes</a></li>
+            <li><a href="#">FIDF/NFDA(Govt. of India)</a></li>
+            <li><a href="#">External Aided Projects</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#iot_bsd_srvcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> IoT based services</a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Beneficary Schemes Planning</div>
+      <div class="panel-body">
+       
+        <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-body">
+                
+               <div class="form-group required">
+                <label for="id_password2" class="control-label col-md-4  requiredField">Nature of the Scheme <span class="asteriskField">*</span></label>
+              <div class="controls col-md-8 ">
+                <select class="form-control input-md" id="shm_ntr">
+                  <option value="">Select</option>
+                  <option value="st_dvp">State Development Schemes</option>
+                  <option value="rurl_infr">Rural Infrastructure Development Fund (RIDF)</option>
+                  <option value="ble_rvlt">CSS- Blue Revolution</option>
+                  <option value="rkvy">RKVY</option>
+                  <option value="nfdb">NFDB</option>
+                  <option value="wrld_bnk_proj">World Bank Aided Projects</option>
+                  <option value="extr_aid_proj">Extranally Aided Projects </option>
+                </select>
+              </div>
+            </div>
+                
+            <div class="form-group required">
+                <label for="id_password2" class="control-label col-md-4  requiredField">Scheme-HoA <span class="asteriskField">*</span></label>
+                <div class="controls col-md-8 ">
+                <select class="form-control input-md" id="shm_hoa">
+                  
+                </select>
+              </div>
+            </div>
+            
+             <div class="form-group required"> 
+                <label for="id_company" class="control-label col-md-4  requiredField">Scheme Fund <span class="asteriskField">*</span></label>
+                <div class="controls col-md-8 "> 
+                      <input class="input-md textinput textInput form-control" type="text" id="shm_fnd">
+                 </div>
+            </div>
+                
+       <div class="panel panel-primary" style="width:100%;">
+        <div class="panel-heading">Schemes Component Management</div>
+            <div class="panel-body">  
+              <div class="form-group required">
+                <label for="id_password2" class="control-label col-md-4  requiredField">Type of component <span class="asteriskField">*</span></label>
+                <div class="controls col-md-8 ">
+                    <select class="form-control input-md" id="shm_typ">
+                        <option value="">Select</option>
+                      <option value="fsh_inpts_othr_cmps">Fishing inputs / Other components</option>
+                      <option value="funds">Fund</option>
+                      <option value="infra">Infrastructure</option>
+                      <option value="stking_of_sed">Stocking of seed</option>
+                      <option value="trang_devlp1">Training and Skill Development</option>
+
+                    </select>
+              </div>
+            </div>
+            <div class="form-group required">
+                <label for="id_password2" class="control-label col-md-4  requiredField">Scheme Component <span class="asteriskField">*</span></label>
+                <div class="controls col-md-8 ">
+                <select class="form-control input-md" id="shm_comp">
+                  
+                </select>
+              </div>
+            </div>
+            <div class="form-group required" id="enter-scheme-component" style="display: none;">
+                <label for="id_password2" class="control-label col-md-4  requiredField">Enter Scheme Component <span class="asteriskField">*</span></label>
+                <div class="controls col-md-8 ">
+                <input type="text" class="form-control" name="scheme" value="" id="enter-scheme" placeholder="Enetr scheme component">
+              </div>
+            </div>
+           <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Applicable Sector <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 ">
+            <select class="form-control input-md" id="appl_sctr">
+            <option value="rkvy">General</option>
+              <option value="st_dvp">Marine</option>
+              <option value="rurl_infr">Aqua Culture</option>
+              <option value="ble_rvlt">Inland</option>
+            </select>
+          </div>
+        </div>
+                
+         <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Public Disclosure<span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 ">
+            <select class="form-control input-md" id="shm_catgry">
+              <option value="st_dvp">Yes</option>
+              <option value="rurl_infr">No</option>
+            </select>
+          </div>
+        </div>
+         <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Reservations <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 ">
+            <select class="form-control input-md" id="shm_rsrv">
+              <option value="st_dvp">General</option>
+              <option value="rurl_infr">SC</option>
+              <option value="rurl_infr">ST</option>
+              <option value="rurl_infr">Others</option>
+            </select>
+          </div>
+        </div>
+                
+        <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Gender <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 ">
+            <select class="form-control input-md" id="shm_gndr">
+              <option value="st_dvp">Male</option>
+              <option value="rurl_infr">Female</option>
+              <option value="rurl_infr">General</option>
+            </select>
+          </div>
+        </div>
+         <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Dcuments Required </label>
+            <div class="controls col-md-8 ">
+            <div class="checkbox col-md-3" style="margin-top: 0px;">
+            <label><input type="checkbox" class="checkbox1" value="Ration card">Ration card</label>
+            </div>
+            <div class="checkbox col-md-3">
+            <label><input type="checkbox" class="checkbox1" value="Cast certificate">Cast certificate</label>
+            </div>
+            <div class="checkbox  col-md-3">
+            <label><input type="checkbox" class="checkbox1" value="Employment certificate" >Employment certificate</label>
+            </div>
+             <div class="checkbox  col-md-3">
+            <label><input type="checkbox"  class="checkbox1" value="Others" >Others</label>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+                
+         <div class="form-group required">
+            <label for="id_password2" class="control-label col-md-4  requiredField">Fixed Unit Price <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 ">
+            <select class="form-control input-md" id="shm_prc_ty">
+              <option value="pb_ys">Yes</option>
+              <option value="pb_no">No</option>
+            </select>
+          </div>
+        </div>
+                  <div class="form-group required" id="min_max" style="display:none"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Min <span class="asteriskField">*</span></label>
+            <div class="controls col-md-2 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_min">
+             </div> 
+                      <label for="id_company" class="control-label col-md-4  requiredField" style="width:4%;">Max <span class="asteriskField">*</span></label>
+            <div class="controls col-md-2 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_max">
+             </div>
+        </div>
+        <div class="clearfix"></div>
+         <div class="form-group required" id="fxd_unt_prc"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Unit Price <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_unt_prc">
+             </div>
+        </div>
+        <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">% of subsidy <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_prct_subdy">
+             </div>
+        </div>
+        
+        <div class="form-group required" id="subsidy-unitprice"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Subsidy - unit price <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_subdy_unt_prc">
+             </div>
+        </div>
+                
+         <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Units allocated <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_unts_allo">
+             </div>
+        </div>
+        
+
+         <div class="form-group required" id="comp-allocated-budy"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Comp - Allocated Budget <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_cmp_allo_bgdt">
+             </div>
+        </div>
+        <div class="form-group required" id="comp-allocated-budn" style="display: none;"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Comp - Allocated Budget <span class="asteriskField">*</span></label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="shm_cmp_allo_bgdt1">
+             </div>
+        </div>
+                
+              <div class="form-group">
+                  <div class="aab controls col-md-4 "></div>
+                  <div class="controls col-md-4 " style="float:right;width:20%;">
+                    <input name="add" value="Add" class="btn btn-primary btn btn-info"
+
+                      id="add_schme" type="button"> </div>
+                </div>    
+        </div>
+    </div>
+                
+                
+                
+    <div class="panel panel-primary" style="width:100%;">
+      <div class="panel-heading"> Schemes List</div>
+    <div class="panel-body">
+      <div class="panel panel-info" style="border-color:none">
+       
+        <div class="table-responsive" style="margin-top : 2%;">
+          <table class="table" style="font-size:10px;" id="schm_list">
+          <tr>
+            <th>
+              Si No
+            </th>
+            <th>
+              Nature of Scheme
+            </th>
+            <th>
+              Scheme HoA
+            </th>
+            <th>
+              Scheme Fund
+            </th>
+            <th>
+              Type of Component
+            </th>
+            <th>
+              Scheme Component
+            </th>
+            <th>
+              Dcuments Required
+            </th>
+            <th>Applicable Sector</th>
+            
+            <th>Public</th>
+            <th>Reservations</th>
+                        <th>Gender</th>
+                        <th>Fixed Unit Price</th>
+                        <th>Unit Price</th>
+                        <th>
+                            % of Subsidy
+                        </th>
+                        <th>Subsidy - Unit Price</th>
+                        <th>Unit Allocated</th>
+                        <th>Comp - Allocated Budget</th>
+                        <th>Actions</th>
+          </tr>
+                      
+        </table>
+      </div>
+      
+    </div>
+        
+      <div class="form-group">
+<!--                  <div class="aab controls col-md-4 "></div>-->
+                  <div  style="margin-left: 700px; width:20%;">
+                    <input name="add" value="Review Scheme and Budget" class="btn btn-primary btn btn-info"
+
+                      id="gnt_rprt" type="button"> </div>
+                </div> 
+  </div> 
+  </div>
+  
+                
+                
+                
+                
+</div>
+</div>
+</div>
+</div>
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Scheme Allocation : District Level</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="height:400px;overflow-y:auto;">
+              
+                <!-- <div id="div_id_email" class="form-group required"> <label for="id_email"
+
+                      class="control-label col-md-4  requiredField"> District <span
+
+                        class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 ">
+                      <select class="form-control input-md"   id="aqua_vlg_name1"
+
+                        style="margin-bottom:2%">
+                       <option value="">--Select--</option>
+                        <option value="fresh_water"> SRIKAKULAM</option>
+                        <option value="vizianagaram">VIZIANAGARAM</option>
+                        <option value="east-godavari">EAST GODAVARI </option>
+                        <option value="west-godavari">WEST GODAVARI</option>
+                        <option value="backrish_water">KRISHNA</option>
+                        <option value="backrish_water">GUNTUR </option>
+                        <option value="backrish_water">PRAKASAM</option>
+                        <option value="backrish_water">SPSR NELLORE</option>
+                        <option value="visakhapatanam">VISAKHAPATNAM</option>
+                      </select>
+                    </div>
+                  </div> 
+         -->
+         <div class="row">
+         <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Remaining Number of Units</label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" readonly="" type="text" id="total-units">
+             </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Remaining Amount</label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" readonly="" type="text" id="total-amount">
+             </div>
+        </div>
+      </div>
+          
+            
+                <div>
+          <table class="table" style="font-size:10px;" id="dist_lvl_schms">
+          <tr>
+            <th>
+              District
+            </th>
+            <th>
+              Number of Units
+            </th>
+                        <th>Total Cost</th>
+            
+          </tr>
+                      <tr>
+                        <td>SRIKAKULAM</td><td><input type="text" class="dist_unt_cnt" id="dist1"></td>
+                        <td><input type="text" class="dist_tot_cst" id="totalcost1"></td>
+                      </tr>
+                      <tr>
+                        <td>VIZIANAGARAM</td><td><input type="text" class="dist_unt_cnt" id="dist2"></td>
+                        <td><input type="text" class="dist_tot_cst"  id="totalcost2" /></td>
+                      </tr>
+                      <tr>
+                        <td>EAST GODAVARI</td><td><input type="text" class="dist_unt_cnt" id="dist3"></td>
+                        <td><input type="text" class="dist_tot_cst"  id="totalcost3" /></td>
+                      </tr>
+                      <tr>
+                        <td>WEST GODAVARI</td><td><input type="text" class="dist_unt_cnt" id="dist4"></td>
+                        <td><input type="text" class="dist_tot_cst"  id="totalcost4" /></td>
+                      </tr>
+                      <tr><td>KRISHANA</td><td><input type="text" class="dist_unt_cnt" id="dist4">
+                      </td>
+                        <td><input type="text" class="dist_tot_cst" /  id="totalcost5"></td>
+                      </tr>
+                      <tr><td>GUNTUR</td><td><input type="text" class="dist_unt_cnt" id="dist5"></td>
+                        <td><input type="text" class="dist_tot_cst" /></td>
+                      </tr>
+                      <tr><td>PRAKASAM</td><td><input type="text" class="dist_unt_cnt" id="dist6"></td>
+                        <td><input type="text" class="dist_tot_cst" /  id="totalcost6"></td></tr>
+                      
+                      <tr><td>VISAKHAPATNAM</td><td><input type="text" class="dist_unt_cnt" id="dist7" />
+                      </td><td><input type="text" class="dist_tot_cst" / id="totalcost7"></td>
+                    </tr>
+                       <tr>
+                        <td>SIFT</td><td><input type="text" class="dist_unt_cnt" id="dist8" />
+                       </td>
+                       <td><input type="text" class="dist_tot_cst" / id="totalcost8"></td>
+                     </tr>
+                        <tr><td style="text-transform: uppercase;">Ananthapuram</td>
+                          <td><input type="text" class="dist_unt_cnt" / id="dist9"></td>
+                          <td><input type="text" class="dist_tot_cst" / id="totalcost9"></td>
+                        </tr>
+                        <tr><td style="text-transform: uppercase;">Chittoor</td>
+                          <td><input type="text" class="dist_unt_cnt" / id="dist10"></td>
+                          <td><input type="text" class="dist_tot_cst" / id="totalcost10"></td>
+                        </tr>
+                        <tr><td style="text-transform: uppercase;">Kadapa  </td>
+                          <td><input type="text" class="dist_unt_cnt" / id="dist11"></td>
+                          <td><input type="text" class="dist_tot_cst" / id="totalcost11"></td>
+                        </tr>
+                        <tr><td style="text-transform: uppercase;">Kurnool    </td>
+                          <td><input type="text" class="dist_unt_cnt" / id="dist12"></td>
+                          <td><input type="text" class="dist_tot_cst" / id="totalcost12"></td>
+                        </tr>
+                          <tr><td style="text-transform: uppercase;">Nellore      
+                           </td><td><input type="text" class="dist_unt_cnt" / id="dist13"></td>
+                           <td><input type="text" class="dist_tot_cst" / id="totalcost13"></td>
+                         </tr>
+                         <tr><td style="text-transform: uppercase;">Head Office   </td>
+                        <td><input type="text" class="dist_unt_cnt" / id="dist14"></td>
+                        <td><input type="text" class="dist_tot_cst" id="totalcost14"/></td>
+                      </tr>
+                      
+                      
+        </table>
+                        <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Total Number of Units</label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="tot_unts">
+             </div>
+        </div>
+          <div class="clearfix"></div>
+        <div class="form-group required"> 
+            <label for="id_company" class="control-label col-md-4  requiredField">Total Cost</label>
+            <div class="controls col-md-8 "> 
+                  <input class="input-md textinput textInput form-control" type="text" id="tot_cst">
+             </div>
+        </div>
+            <div class="form-group">
+                  <div class="aab controls col-md-4 "></div>
+                  <div class="controls col-md-4 " style="float:right;width:20%;">
+                    <input name="add" value="Allocate" class="close btn btn-primary btn btn-info"
+
+                      id="alloca" type="button"> </div>
+                </div>  
+            </div>
+       
+      </div>
+        
+       
+      <!-- <div class="modal-footer">
+        <input type="button" value="Close" class="close btn btn-primary btn btn-info" data-dismiss="modal" aria-label="Close"/>
+      </div> -->
+    </div>
+  </div>
+</div>
+  </body>
+    
+    <script type="text/javascript">
+      //localStorage.clear();
+      var list_of_schemes = [];
+      var unt_all = 0;
+       var unt_prc = 0;
+    $(document).ready(function(){
+      
+        $("#shm_ntr").change();
+        $("#shm_ntr").change(function(){
+            if($(this).val() == "st_dvp"){
+                res = '<option value="asst_lvl_enh">Assistance for livilihood enhancement of Fishermen(HoA -2405-00-103-11-08-310-312 )</option>'+
+                  '<option value="rlf_ban_prd">Relief during Ban period(HoA - 2405-00-103-11-14-310-312 )</option>'+
+                  '<option value="scc_cst_comp">Scheduled Caste Component (SCC)(HoA - 2405-00-789-11-06-310-312)</option>'+
+                  '<option value="fshry_dvlp_shm">Scheduled Tribe Component (STC)(HoA - 2405-00-796-11-06-310-312)</option>'+
+                  '<option value="inc_fshry_plcy">Scheduled Caste Component (SCC) (HoA - 2405-00-789-11-06-310-312)</option>'+
+                  '<option value="fshry_plcy_othr_grnts">Fisheries Development Scheme(HoA - 2405-00-800-11-25-310-312)</option>'+
+                  '<option value="mtch_stat_cntr_stat">Incentives and subsidies under  Fisheries Policy HoA - 2405-00-105-11-07-330-000)</option>'+
+                  '<option value="cntr_asst_stat_dvlp_shm">Fisheries Policy - Towards Other Grants-in-aid ( HoA - 2405-00-105-11-07-310-312)</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">MATCHING STATE SHARE OF CENTRALLY ASSISTED STATE DEVELOPMENT SCHEMES</option>'+
+                '<option value="cntr_asst_stat_dvlp_shm">CENTRAL ASSISTANCE TO STATE DEVELOPMENT SCHEMES</option>'
+                
+                
+                $("#shm_hoa").html(res)
+            }
+            else if($(this).val() == "rurl_infr"){
+                res = '<option value="1">Landing and Berthing facilities - Machineries &Equipment-Purchases 4405-00-104-07-04-520-521</option>'+
+                  '<option value="2">Landing and Berthing facilities -Major works-other expenditure 4405-00-104-07-04-530-531</option>'+
+                  '<option value="3"> Upgradation & Strengthening of Fish Seed Farms-Machineries & Equipment-Purchases 4405-00-104-07-05-520-521</option>'+
+                  '<option value="4"> Upgradation & Strengthening of Fish Seed Farms-Major works-other expenditure    4405-00-104-0XXXXXXXX</option>'
+                $("#shm_hoa").html(res)
+            }
+            else if($(this).val() == "ble_rvlt"){
+               res = '<option value="asst_lvl_enh"> CSS- Blue Revolution</option>'
+                $("#shm_hoa").html(res)
+            }
+            else if($(this).val() == "rkvy"){
+                
+                res = '<option value="asst_lvl_enh"> RKVY</option>'
+                $("#shm_hoa").html(res)
+            }
+            else if($(this).val() == "nfdb"){
+                   res = '<option value="asst_lvl_enh">  NFDB</option>'
+                $("#shm_hoa").html(res)
+
+            }
+            else if($(this).val() == "wrld_bnk_proj"){
+                  res = '<option value="asst_lvl_enh">  World Bank Aided Projects</option>'
+                $("#shm_hoa").html(res)
+
+                
+            }
+              else if($(this).val() == "extr_aid_proj"){
+                      res = '<option value="asst_lvl_enh">Extranally Aided Projects</option>'
+                $("#shm_hoa").html(res)
+            }
+             else if($(this).val() == ""){
+                 $("#shm_hoa").html("")
+            }
+        })
+        $("#shm_typ").change(function(){
+            if($(this).val() == "fsh_inpts_othr_cmps"){
+               res = '<option value="asst_lvl_enh">Fishing ban relief to Marine fishermen </option>'+
+                      '<option value="rlf_ban_prd">Supply of Deep Sea Fishing Implements</option>'+
+                      '<option value="scc_cst_comp">Supply of Fibre Boats with Ice box etc.</option>'+
+                      '<option value="fshry_dvlp_shm">Supply of Nets and Ice boxes</option>'+
+                      '<option value="inc_fshry_plcy">Supply of IBMs / OBMs under Motorisation of traditional crafts</option>'+
+                      '<option value="fshry_plcy_othr_grnts">Supply of Deep Sea Fishing Vessels</option>'+
+                      '<option value="mtch_stat_cntr_stat">Supply of two wheelers with ice box/ Freezer mounted Mopeds</option>'+
+                      '<option value="cntr_asst_stat_dvlp_shm">Supply of 3wheelers with Ice Boxes etc.</option>'+
+                        '<option value="cntr_asst_stat_dvlp_shm">Supply of 4 wheelers with Ice Boxes etc.</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Supply of Other Inputs</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Supply of mobile  vehicles for fish vending / seed transport/ fish transport</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Supply of Refrigerated Truck/Container </option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Supply of Insulated Truck</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Supply of Auto-rickshaw with Ice Box</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Supply of Solar lantrens to marine boats</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Conversion of Trawlers into Resource specific Deep Sea Fishing Vessels</option>'+
+                   '<option value="others">Others</option>' 
+                $("#shm_comp").html(res)
+            }
+            else if($(this).val() == "funds"){
+
+                res = '<option value="asst_tax_oil"> Exemption of Sales Tax on HSD Oil </option>'+
+                '<option value="asst_relief_enh"> Fishing ban relief to Marine fishermen </option>'+
+                '<option value="asst_lvl_enh"> Payment of ex-gratia and GAIS premium </option>'+
+                      '<option value="rlf_ban_prd">Revolving fund for MMGs</option>'+
+                      '<option value="scc_cst_comp">Consultancy , Honorarium to MPFEAs,ICT, Branding , Publicity etc.</option>'+
+                      '<option value="fshry_dvlp_shm">Fishery Policy  - Grants-in-aid</option>'+
+                    '<option value="inc_fshry_plcy">AP Centre for Aquaculture-operaationsl expedniture</option>'+
+                     '<option value="others">Others</option>' 
+                      
+                $("#shm_comp").html(res)
+            }
+             else if($(this).val() == "infra"){
+                 res = '<option value="asst_lvl_enh">Assistance for Establishment of Mobile / Stationary Fish retail out lets</option>'+
+                      '<option value="rlf_ban_prd">Integrated Development of Model SC Fishermen Co-operative  Societies</option>'+
+                      '<option value="scc_cst_comp">Establishment and maintanance of Aqua labs.</option>'+
+                      '<option value="fshry_dvlp_shm">Maintanance of Shore stations</option>'+
+                      '<option value="inc_fshry_plcy">Purchase and maintanance of Relief Boats</option>'+
+                      '<option value="fshry_plcy_othr_grnts">Fishery Policy - incentives & subsidies</option>'+
+                      '<option value="mtch_stat_cntr_stat">Assistance for Fishermen Housing </option>'+
+                      '<option value="cntr_asst_stat_dvlp_shm">Construction of Fish Landing Centre</option>'+
+                        '<option value="cntr_asst_stat_dvlp_shm">Construction of Fishing Harbour</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Construction of shore based facilities</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Strengthening of Govt. Fish Seed Farms</option>'+
+                    '<option value="cntr_asst_stat_dvlp_shm">Modernisation of  Whole Sale Fish Market </option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Installation of Solar Street lights in FLCs</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Construction of Hatchery</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Construction & Development of Brood Bank Centres</option>'+
+                   '<option value="cntr_asst_stat_dvlp_shm">Establishment of AQF & BMC</option>'+
+                    '<option value="others">Others</option>' 
+                $("#shm_comp").html(res)
+            }
+             else if($(this).val() == "stking_of_sed"){
+                res =  '<option value="asst_lvl_enh">Assistance for enhancement of production & productivity of in water bodies</option>'+
+                      '<option value="rlf_ban_prd">Supply of fish seed</option>'+
+                      '<option value="others">Others</option>'
+                 $("#shm_comp").html(res)
+
+            }
+              else if($(this).val() == "trang_devlp1"){
+
+                   res =  '<option value="asst_lvl_enh">Capacity buidling & Skill Development Training </option>'+
+                   '<option value="others">Others</option>'
+                    $("#shm_comp").html(res);
+            }
+
+
+              else if($(this).val() == ""){
+                 $("#shm_comp").html("")
+            }
+        })
+        
+        $("#shm_comp").change(function(){
+            if($(this).val() == "others"){
+                 $("#enter-scheme-component").show();
+            }
+            else
+            {
+             $("#enter-scheme-component").hide();   
+            }
+        });
+        $("#shm_prct_subdy").change(function(){
+            $("#shm_subdy_unt_prc").val(($(this).val() * $("#shm_unt_prc").val())/100)
+            
+        })
+        $("#shm_unts_allo").change(function(){
+            $("#shm_cmp_allo_bgdt").val($(this).val() * $("#shm_subdy_unt_prc").val())
+            
+        })
+         var sl_no = 1
+        $("#alloca").click(function(){
+           
+            //alert(res);
+            var new_scheme = {"shm_ntr" : get_selected_value("shm_ntr"),
+                            "shm_hoa" : get_selected_value("shm_hoa"),
+                            "shm_fnd" : $("#shm_fnd").val(),
+                             "shm_doc" : $(".checkbox1").val(),
+
+                            "shm_typ" : get_selected_value("shm_typ"),
+                            "shm_comp" : get_selected_value("shm_comp"),
+                            "enter_shm_comp" : $("#enter-scheme").val(),
+                            "appl_sctr" :  get_selected_value("appl_sctr"),
+                            "shm_catgry" : get_selected_value("shm_rsrv"),
+                            "shm_rsrv" : get_selected_value("shm_rsrv"),
+                            "shm_gndr" :  get_selected_value("shm_gndr"),
+                            "shm_prc_ty" : get_selected_value("shm_prc_ty"),
+                            "shm_unt_prc" : $("#shm_unt_prc").val(),
+                            "shm_subdy_unt_prc" : $("#shm_subdy_unt_prc").val(),
+                            "shm_unts_allo"  : $("#shm_unts_allo").val(),
+                            "shm_cmp_allo_bgdt" : $("#shm_cmp_allo_bgdt").val(),
+                            "dist1" :  $("#dist1").val(),
+                            "totalcost1":$("#totalcost1").val(),
+                            "dist2" :  $("#dist2").val(),
+                            "totalcost2":$("#totalcost2").val(),
+                            "dist3" :  $("#dist3").val(),
+                            "totalcost3":$("#totalcost3").val(),
+                            "dist4" :  $("#dist4").val(),
+                            "totalcost4":$("#totalcost4").val(),
+                            "dist5" :  $("#dist5").val(),
+                            "totalcost5":$("#totalcost5").val(),
+                            "dist6" :  $("#dist6").val(),
+                            "totalcost6":$("#totalcost6").val(),
+                            "dist7" :  $("#dist7").val(),
+                            "totalcost7":$("#totalcost7").val(),
+                            "dist8" :  $("#dist8").val(),
+                            "totalcost8":$("#totalcost8").val(),
+                            "dist9" :  $("#dist9").val(),
+                            "totalcost9":$("#totalcost9").val(),
+                            "dist10" :  $("#dist10").val(),
+                            "totalcost10":$("#totalcost10").val(),
+                            "dist11" :  $("#dist11").val(),
+                            "totalcost11":$("#totalcost11").val(),
+                            "dist12" :  $("#dist12").val(),
+                            "totalcost12":$("#totalcost12").val(),
+                            "dist13" :  $("#dist13").val(),
+                            "totalcost13":$("#totalcost13").val(),
+                            "dist14" :  $("#dist14").val(),
+                            "totalcost14":$("#totalcost14").val(),
+                            "tot_unts": $("#tot_unts").val(),
+                           "tot_cst" :  $("#tot_cst").val(),
+                            };
+                            list_of_schemes.push(new_scheme)
+
+                            $(".close").click();
+
+                          });
+       var sl_no = 1
+       //var docs;
+        $("#add_schme").click(function(){
+            
+   
+          //new_scheme.id = sl_no
+        
+             // if($("#shm_prc_ty").val() == "pb_ys" ){
+             //                    new_scheme.shm_unt_prc = $("#shm_unt_prc").val()
+             //                }
+             //                else if($("#shm_prc_ty").val() == "pb_no"){
+             //                    new_scheme.shm_unt_prc = $("#shm_min").val() + " to " +$("#shm_max").val()
+             //                }
+        var res =  '<tr>'+
+                          '<td>'+sl_no+'</td>'+    
+                          '<td>'+get_selected_value("shm_ntr")+'</td>'+
+                          '<td>'+get_selected_value("shm_hoa")+'</td>'+
+                          '<td>'+$("#shm_fnd").val()+'</td>'+
+                          '<td>'+get_selected_value("shm_typ")+'</td>'+
+                          '<td>'+get_selected_value("shm_comp")+'</td><td>'
+                                $(".checkbox1").each(function(){
+                                 if($(this).prop("checked") == true){
+                                      res += $(this).val() +"<br/>"
+                                    }
+                                })
+                            res += '</td>'+
+                          '<td>'+get_selected_value("appl_sctr")+'</td>'+
+                          '<td>'+get_selected_value("shm_catgry")+'</td>'+
+                          '<td>'+get_selected_value("shm_rsrv")+'</td>'+
+                           '<td>'+get_selected_value("shm_gndr")+'</td>'+
+                          '<td>'+get_selected_value("shm_prc_ty")+'</td>'
+                            if($("#shm_prc_ty").val() == "pb_ys" ){
+                                res += '<td>'+$("#shm_unt_prc").val()+'</td>'
+                            }
+                            else if($("#shm_prc_ty").val() == "pb_no"){
+                                res += '<td>'+$("#shm_min").val() + " to " +$("#shm_max").val()+'</td>'
+                            }
+                          res += '<td>'+$("#shm_prct_subdy").val()+'</td>'+
+                          '<td>'+$("#shm_subdy_unt_prc").val()+'</td>'+
+                          '<td>'+$("#shm_unts_allo").val()+'</td>'
+                          // '<td>'+$("#shm_cmp_allo_bgdt").val()+'</td>'+
+
+                           if($("#shm_prc_ty").val() == "pb_ys" ){
+                                res +=  '<td>'+$("#shm_cmp_allo_bgdt").val()+'</td>'
+                            }
+                            else if($("#shm_prc_ty").val() == "pb_no"){
+                                res +=  '<td>'+$("#shm_cmp_allo_bgdt1").val()+'</td>'
+                            }
+                              //unt_all = $("#shm_unts_allo").val()
+                          res += '<td><input type="button" id="allocate"  class="btn btn-primary btn btn-info allocate_cls" value="Allocate" unt_prc="'+$("#shm_cmp_allo_bgdt").val()+'" unit_alloc= "'+$("#shm_unts_allo").val()+'" data-toggle="modal" data-target="#exampleModal3" /></td>'+
+                    '</tr>'
+
+        $("#schm_list").append(res);
+
+
+        //list_of_schemes.push(new_scheme)
+        console.log(list_of_schemes)
+       var i;
+for (i = 0; i < list_of_schemes.length; ++i) {
+    $.each(list_of_schemes[i], function(propName, propVal) {
+  console.log(propVal);
+});
+}
+      sl_no += 1    
+        })
+        $(document).on("click",".allocate_cls",function(){
+         // alert($(this).attr("unit_alloc"));
+         // alert($(this).attr("unt-prc"));
+          unt_all = $(this).attr("unit_alloc");
+        unt_prc = $(this).attr("unt_prc")
+
+          $(".dist_unt_cnt").val('');
+          $(".dist_tot_cst").val('');
+        })
+         $("#add_dist").click(function(){
+             var dst_nm = get_selected_value("aqua_vlg_name1")
+             var res = '<tr><td>'+dst_nm+'</td><td>'+$("#no_of_units").val()+'</td></tr>'
+             $("#dist_lvl_schms").append(res)
+             
+         })
+        
+        $(".dist_unt_cnt").change(function(){
+             $(this).parents("tr:first").children().find(".dist_tot_cst").val($(this).val() * $("#shm_subdy_unt_prc").val())
+            var tot_unts = 0
+            $(".dist_unt_cnt").each(function(){
+                tot_unts += $(this).val()*1
+            })
+            var tot_cst = 0
+            $(".dist_tot_cst").each(function(){
+                tot_cst += $(this).val()*1
+            })
+            $("#tot_unts").val(tot_unts)
+            $("#tot_cst").val(tot_cst)
+})
+        $("#shm_prc_ty").change(function(){
+            if($(this).val() == "pb_ys"){
+                $("#min_max").hide();
+                $("#fxd_unt_prc").show();
+                $('#subsidy-unitprice').show();
+                 $('#comp-allocated-budy').show();
+                $('#comp-allocated-budn').hide();
+
+            }
+            else if($(this).val() == "pb_no"){
+                $("#min_max").show();
+                $("#fxd_unt_prc").hide();
+                $('#subsidy-unitprice').hide();
+                $('#comp-allocated-budy').hide();
+                $('#comp-allocated-budn').show();
+                
+            }
+        })
+    })
+        function get_selected_value(select_box_id){
+            var sel = document.getElementById(select_box_id);
+            return sel.options[sel.selectedIndex].text;
+        }
+
+$( document ).ready(function() {
+  $('#add_schme').click(function(){
+    var a = $("#shm_unts_allo").val();
+    var e = $("#shm_cmp_allo_bgdt").val();
+    // $('#total-units').val(a);
+    // $('#total-amount').val(e);
+});
+  $('.dist_unt_cnt').change(function(){
+    var f = $("#total-amount").val();
+    var g = $(this).parents("tr:first").children().find(".dist_tot_cst").val();
+     var h = f-g;
+     if(h < 0 )
+    {
+      alert('please enter valid amount');
+      return false;
+      $(this).preventDefault();
+    }
+    else
+    {
+         $('#total-amount').val(h);
+
+    }
+    var b = $(this).val();
+    var c =$("#total-units").val(); 
+   
+    var d = c-b;
+    if(d < 0 )
+    {
+      alert('please enter valid Units');
+    }else
+    {
+          $('#total-units').val(d);
+
+    }
+     
+
+    
+
+  })
+   $("#gnt_rprt").click(function(){
+    localStorage.setItem("list_of_schemes", JSON.stringify(list_of_schemes));
+    //localStorage.setItem("list_of_schemes", JSON.stringify((list_of_schemes));
+    window.location.href = "report-be.html"
+  })
+   $('#exampleModal3').on('shown.bs.modal', function (e) {
+      // alert(unt_all);
+      // alert(unt_prc);
+      $("#total-units").val(unt_all);
+      $("#total-amount").val(unt_prc);
+  })
+});
+
+    </script>
+    <!-- <script type="text/javascript">
+      localStorage.clear();
+
+      $("#add_schme").click(function(){
+
+      var component1 = get_selected_value("shm_ntr");
+      var component2 = get_selected_value("shm_hoa");
+      var component3 = $("#shm_fnd").val()
+      var component4 = $("#shm_prc_ty").val()
+      var component5 = get_selected_value("shm_typ");
+      var component6 = get_selected_value("shm_comp");
+      var component7 = get_selected_value("appl_sctr");
+      var component8 = get_selected_value("shm_catgry");
+      var component9 = get_selected_value("shm_rsrv");
+      var component10 = get_selected_value("shm_gndr");
+      var component11 = get_selected_value("shm_prc_ty");
+      var component12 =  $("#shm_unt_prc").val();
+      var component13 = $("#shm_prct_subdy").val();
+      var component14 = $("#shm_subdy_unt_prc").val();
+      var component15 = $("#shm_unts_allo").val();
+      var component16 = $("#shm_cmp_allo_bgdt").val();
+   
+
+
+
+
+      localStorage.setItem("Gcomponent1", component1);
+      localStorage.setItem("Gcomponent2", component2); 
+      localStorage.setItem("Gcomponent3", component3);
+      localStorage.setItem("Gcomponent4", component4);
+      localStorage.setItem("Gcomponent5", component5);
+      localStorage.setItem("Gcomponent6", component6);
+       localStorage.setItem("Gcomponent7", component7);
+      localStorage.setItem("Gcomponent8", component8); 
+      localStorage.setItem("Gcomponent9", component9);
+      localStorage.setItem("Gcomponent10", component10);
+      localStorage.setItem("Gcomponent11", component11);
+      localStorage.setItem("Gcomponent12", component12);
+       localStorage.setItem("Gcomponent13", component13);
+      localStorage.setItem("Gcomponent14", component14);
+      localStorage.setItem("Gcomponent15", component15);
+      localStorage.setItem("Gcomponent16", component16);
+    });
+      $("#alloca").click(function(){
+        var component17 = $("#dist1").val();
+      var component18 = $("#dist2").val();
+      var component19 = $("#dist3").val();
+      var component20 = $("#dist4").val();
+      var component21 = $("#dist5").val();
+      var component22 = $("#dist6").val();
+      var component23 = $("#dist7").val();
+      var component24 = $("#dist8").val();
+      var component25 = $("#dist9").val();
+      var component26 = $("#dist10").val();
+      var component27 = $("#dist11").val();
+      var component28 =  $("#dist12").val();
+      var component29 = $("#dist13").val();
+      var component30 = $("#dist14").val();
+      var component31 = $("#totalcost1").val();
+      var component32 = $("#totalcost2").val();
+      var component33 = $("#totalcost3").val();
+      var component34 = $("#totalcost4").val();
+      var component35 = $("#totalcost5").val();
+      var component36 = $("#totalcost6").val();
+      var component37 = $("#totalcost7").val();
+      var component38 = $("#totalcost8").val();
+      var component39 = $("#totalcost9").val();
+      var component40 = $("#totalcost10").val();
+      var component41 =  $("#totalcost11").val();
+      var component42 = $("#totalcost12").val();
+      var component43 = $("#totalcost13").val();
+      var component44 = $("#totalcost14").val();
+      var component45 = $("#tot_unts").val();
+      var component46 = $("#tot_cst").val();
+
+      
+       localStorage.setItem("Gcomponent17", component17);
+      localStorage.setItem("Gcomponent18", component18);
+      localStorage.setItem("Gcomponent19", component19);
+       localStorage.setItem("Gcomponent20", component20);
+      localStorage.setItem("Gcomponent21", component21);
+      localStorage.setItem("Gcomponent22", component22);
+      localStorage.setItem("Gcomponent23", component23);
+       localStorage.setItem("Gcomponent24", component24);
+      localStorage.setItem("Gcomponent25", component25);
+      localStorage.setItem("Gcomponent26", component26);
+       localStorage.setItem("Gcomponent27", component27);
+      localStorage.setItem("Gcomponent28", component28);
+      localStorage.setItem("Gcomponent29", component29);
+      localStorage.setItem("Gcomponent30", component30);
+       localStorage.setItem("Gcomponent31", component31);
+      localStorage.setItem("Gcomponent32", component32);
+      localStorage.setItem("Gcomponent33", component33);
+       localStorage.setItem("Gcomponent34", component34);
+      localStorage.setItem("Gcomponent35", component35);
+      localStorage.setItem("Gcomponent36", component36);
+      localStorage.setItem("Gcomponent37", component37);
+       localStorage.setItem("Gcomponent38", component38);
+      localStorage.setItem("Gcomponent39", component39);
+      localStorage.setItem("Gcomponent40", component40);
+       localStorage.setItem("Gcomponent41", component41);
+      localStorage.setItem("Gcomponent42", component42);
+      localStorage.setItem("Gcomponent43", component43);
+      localStorage.setItem("Gcomponent44", component44);
+      localStorage.setItem("Gcomponent45", component45);
+       localStorage.setItem("Gcomponent46", component46);
+       
+            });
+    </script> -->
+</html>

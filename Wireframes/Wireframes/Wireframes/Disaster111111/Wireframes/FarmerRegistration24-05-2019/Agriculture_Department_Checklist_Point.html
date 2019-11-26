@@ -1,0 +1,1124 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style>
+    <script type="text/javascript">
+	$(document).ready(function(){
+	localStorage.removeItem("existing_user");
+	$("#reg_no_div").hide();
+        $("#signupbox1").hide();
+	$("#ext_usr_nw_srvc").click(function(){
+		if($(this).prop("checked")){
+			localStorage.setItem("existing_user", "ext_usr_nw_srvc");
+			
+            $("#reg_no_div").hide();
+            $("#signupbox1").show();
+             $("#farm_type_div").hide();
+            
+		}
+		else{
+			localStorage.removeItem("existing_user");
+			
+            $("#signupbox1").hide();
+		}
+	})
+        
+        
+        
+        
+        
+        
+		$("#ext_usr_no_nw_srvc").click(function(){
+		if($(this).prop("checked")){
+			localStorage.setItem("existing_user", "ext_usr_no_nw_srvc");
+			$("#reg_no_div").show();
+            $("#signupbox1").hide();
+            $("#farm_type_div").show();
+            
+            
+		}
+		else{
+			localStorage.removeItem("existing_user");
+			$("#reg_no_div").hide();
+		}
+	})
+	
+	$("#existing_div").hide();
+	$("#reg_in_serp").hide()
+	$("#otp_for_reg").hide()
+	$("#ls_frm_tim").hide();
+	$("#ls_to_tim").hide();
+	//$("#farm_type_div").hide()
+        
+        
+       
+        
+        
+        
+        
+        
+	$("#new_yes").click(function(){
+		localStorage.removeItem("existing_user");
+		$("#reg_no_div").hide();
+        $("#signupbox1").hide();
+         $("#farm_type_div").show();
+        
+		
+	})
+        
+        
+      
+      
+        
+      $("#new_yes").click(function(){
+          
+          if(($("#farm_type1").val() == "aqua_lab_owner")){
+			$("#farm_type_div").hide();
+              $("#existing_div").hide();
+              
+              localStorage.removeItem("existing_user");
+		$("#reg_no_div").hide();
+        $("#signupbox1").hide();
+         
+		}
+          
+         else{
+			localStorage.removeItem("existing_user");
+			$("#reg_no_div").hide();
+             $("#existing_div").hide();
+		} 
+          
+          
+		
+	})
+         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+	$("#new_no").click(function(){
+	
+		if($(this).prop("checked")){
+		
+			$("#existing_div").show();
+		}
+		else{
+			$("#existing_div").hide();
+		}
+	})
+		$("#survey_no").change(function(){
+			$("#rvn_vllg").val("Test Village")
+			$("#mandl").val("Test Mandal")
+			$("#ttl_frm_ara").val("10 Hectars")
+			$("#wtr_sprd_area").val("8 Hectars")
+			$("#dist").val("Test District ")
+			})
+		$("#bckrish_wtr_detls").click(function(){
+			window.location.href = "backrish_boundaries.html"
+		});
+		
+		$("#lease_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").show();
+				$("#ls_to_tim").show();
+			}
+			
+		})
+		$("#free_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").hide();
+				$("#ls_to_tim").hide();
+			}
+			
+		})
+		
+	$("#add_techinican").on("click",function(){
+		var si_no = 2;
+		
+		var res = '<tr>'+
+				'<td>'+si_no+'</td>'+
+				'<td>    <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;" name="company" />  </td>'+
+				'<td> <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;width: 40%;float: left;margin-right: 6%;" name="company" /> '+
+				'<input class="input-md textinput textInput form-control readonly tech_name" id="" name="company" style="margin-bottom: 10px;float: left;width: 50%;" type="text"  /></td>'+
+				'<td>  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Masters Degree</option>'+
+									'<option value="backrish_water">Degree</option>'+
+									'<option value="aqua_labs">Diploma</option>'+
+								'</select></td>'+
+				'<td> <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Water Analysis</option>'+
+									'<option value="backrish_water">Micro Biology</option>'+
+									'<option value="aqua_labs">Feed Analysis</option>'+
+									'<option value="aqua_labs">PCR</option>'+
+									'<option value="aqua_labs">Antibiotic Residues</option>'+
+									'<option value="aqua_labs">Disease Diagnosis</option>'+
+									'<option value="aqua_labs">Seed Quality</option>'+
+								'</select> </td>'+
+	'</tr>'
+	
+	$("#tech_tabl").append(res);
+	si_no += 1;
+	})
+	
+	$("#lab_ownr_adhar_no").change(function(){
+		$("#lab_ownr_name").val("Test User1").prop("readonly",true);
+		$(this).val("XXXXXXXX9898");
+		$("#lab_ownr_address").val("Dno : 31,Sai baba road,Pedakakani Village,Guntur Dist,A.P").prop("readonly",true);
+	})
+	$("#lab_inchrg_no").change(function(){
+		$("#lab_inchrg_no").val("XXXXXXXX8786");
+		$("#lab_inchrg_name").val("Test User2").prop("readonly",true);
+	})
+	$(".tech_adhar_no").change(function(){
+		$(".tech_name").val("Test User3").prop("readonly",true);
+		$(this).val("XXXXXXXX5643");
+	})
+	$(".lab_tech_type").change(function(){
+		if($(this).val() == "lab_tech"){
+		$(this).css("float","left").css("width","40%")
+		var res = '<input class="input-md textinput textInput form-control" placeholder="Licence No" value="" id="" name="name" style="float:left;width:50%;margin-left:2%;" type="datetime" data-provide="datepicker"/>'
+		$(this).parents("td").append(res)
+		}
+		else{
+		$(this).parents("td").children()[1].remove()
+		}
+	})
+	
+	$("#dist_aqua").change(function(){
+		$("#lab_ownr_adhar_no").val("Test User1");
+		$("#lab_ownr_address").val("D:no 31,Sai baba road,Pedakakani Mandal,Guntur Dist,AP")
+	})
+	
+	$("#aqua_pin_code").change(function(){
+		$("#aqua_dst_name").val("Guntur");
+		$("#aqua_mndl_name").val("Tadikonda");
+		$("#aqua_vlg_name").val("Pedakakani");
+	})
+	
+	$("#farm_type").change(function(){
+		if($(this).val() == "aqua_farmer"){
+			$("#reg_in_serp").hide()
+		}
+		else{
+		$("#reg_in_serp").show()
+		}
+	})
+	$("#send_otp_btn").click(function(){
+		$("#otp_for_reg").show();
+	})
+	
+	$("#farm_registration").click(function(){
+		if($("#farm_type").val() == "aqua_farmer"){
+			window.location.href = "aqua_registration_to_be.html"
+		}
+		if($("#farm_type").val() == "marine_fshr"){
+			window.location.href = "fresh_water_to_be_Modal_Window.html"
+		}
+		if($("#farm_type").val() == "inland_fshr"){
+			window.location.href = "backrish_water_to_be_Modal_Window.html"
+		}
+	if($("#farm_type1").val() == "aqua_lab_owner" ){
+		window.location.href = "aqua_registration_to_be.html"
+	}
+		
+	})
+	$("#farm_type1").change(function(){
+		if(($(this).val() == "aqua_lab_owner") || ($(this).val() == "hatchery_owner") || ($(this).val() == "aqua_shp_ownr") || ($(this).val() == "feed_manf_unt") || ($(this).val() == "food_pross_unt")){
+			$("#farm_type_div").hide()
+		}
+        
+        else if(($(this).val() == "aqua_farmer")){
+			$("#new_reg").hide()
+              
+           
+              
+		}
+        
+        
+        
+		else{
+			$("#farm_type_div").show()
+		}
+	})
+	})
+    
+    
+   
+    
+//     $("#farm_type1").change(function(){
+//		if(($(this).val() == "aqua_farmer") ){
+//			$("#div_id_password2").hide()
+//		}
+//		else{
+//			$("#div_id_password2").show()
+//		}
+//	})
+//	})
+	
+    
+    
+    
+    
+    
+    
+//    $("#farm_type1").change(function(){
+//		if(($(this).val() == "aqua_lab_owner") && ($("new_yes").click {
+//			$("#farm_type_div").hide()
+//		}
+//		else{
+//			$("#farm_type_div").show()
+//		}
+//	})
+//	})
+    
+    
+    
+    
+    
+    
+</script> <style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+
+	</style>
+  </head>
+  <body>
+    <div class="header"> <a href="farmer_registration.html" class="logo">
+        <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home">My Profile</a>
+        <a href="#contact">My Services</a> <a href="#about"> Agriculture (MAO)</a>
+      </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              Registrations &amp; Licences <span class="arrow"></span></a> </li>
+          <ul class="sub-menu collapse" id="regstrs">
+            <li> <a href="farmer_registration.html"> User Registration </a> </li>
+            <li><a href="fresh_water_to_be_Modal_Window.html">Fresh Water</a></li>
+            <li><a href="backrish_water_to_be_Modal_Window.html">Backrish Water</a></li>
+            <li><a href="aqua_registration_to_be.html">Aqua Lab</a></li>
+            <li><a href="farm_enrolment.html">Farm Enrolment</a></li>
+            <li data-toggle="collapse" data-target="#frm_zontion" class="collapsed"><a
+
+                href="#">Aquaculture Zonation</a></li>
+          </ul>
+          <ul class="sub-menu collapse" id="frm_zontion">
+            <li><a href="existing_farm_zonation.html"> Existing Aquaculture </a></li>
+            <li><a href="potential_farm_zonation.html">Potential Aquaculture</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Inspections <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="inspections">
+            <li><a href="#"> Shrimp Hatcheries </a></li>
+            <li><a href="#">Aquaculture Farms</a></li>
+            <li><a href="#">Aqua Shops</a></li>
+            <li><a href="#">Processing Houses</a></li>
+            <li><a href="#">Quality Checks for formalin </a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#advis_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Advisory Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="advis_servcs">
+            <li><a href="#"> Disease surveillance </a></li>
+            <li><a href="#">Training and Extension</a></li>
+            <li data-toggle="collapse" data-target="#wrk_shps" class="collapsed"><a
+
+                href="#">Trainings</a></li>
+            <ul class="sub-menu collapse" id="wrk_shps">
+              <li><a href="#"> Works shops </a></li>
+              <li><a href="#">Exhibitions</a></li>
+              <li><a href="#">Seminars</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#othr_trngs" class="collapsed"><a
+
+                href="#">Other Trainings</a></li>
+            <ul class="sub-menu collapse" id="othr_trngs">
+              <li><a href="#"> SIFT </a></li>
+              <li><a href="#">IFTC</a></li>
+              <li><a href="#">FTC Calender for public</a></li>
+            </ul>
+            <li><a href="#">Toll Free Services</a></li>
+            <li><a href="#">Marketing Prices</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#rsr_mapng" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Resource Mapping <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="rsr_mapng">
+            <li> <a href="#"> Aquaculture Farms </a> </li>
+            <li data-toggle="collapse" data-target="#aqua_shrmp_fsh" class="collapsed"><a
+
+                href="#">Farms</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqua_shrmp_fsh">
+              <li><a href="#"> Shrimp hatcheries </a></li>
+              <li><a href="#">Fish seed Farms</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#cld_chn_fclts" class="collapsed"><a
+
+                href="#">Cold Chain Facilities</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="cld_chn_fclts">
+              <li><a href="#"> Processing Plants</a></li>
+              <li><a href="#">Cold Storages</a></li>
+              <li><a href="#">Ice Plants</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#aqa_inp_shps" class="collapsed"><a
+
+                href="#">Aqua Input Shops</a></li>
+            <ul class="sub-menu collapse" id="aqa_inp_shps">
+              <li><a href="#"> Feed mills</a></li>
+              <li><a href="#">Feed Supplementary shops</a></li>
+              <li><a href="#">Drugs/Chemicals</a></li>
+            </ul>
+            <li> <a href="#"> Aqua Labs </a> </li>
+            <li data-toggle="collapse" data-target="#aqa_shds" class="collapsed"><a
+
+                href="#">Aqua Sheds</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqa_shds">
+              <li><a href="#"> Fish Packing</a></li>
+              <li><a href="#">Shrimp Processing</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#aqa_lab_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Lab Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="aqa_lab_servcs">
+            <li data-toggle="collapse" data-target="#govt_lab_servcs" class="collapsed"><a
+
+                href="#"> Government Labs</a></li>
+            <ul class="sub-menu collapse" id="govt_lab_servcs">
+              <li><a href="#"> MPEDA</a></li>
+              <li><a href="#">EIA</a></li>
+              <li><a href="#">DCA</a></li>
+              <li><a href="#">Water and Soil Analysis</a></li>
+              <li><a href="#">Microbiology</a></li>
+              <li><a href="#">Feed Analysis</a></li>
+              <li><a href="#">AMR</a></li>
+              <li><a href="#">ELISA</a></li>
+              <li><a href="#">LCMSMS</a></li>
+              <li><a href="#">AAS</a></li>
+            </ul>
+            <li><a href="#">Private Labs</a></li>
+            <li data-toggle="collapse" data-target="#aqa_labs_servc" class="collapsed"><a
+
+                href="#">Aqua Labs </a></li>
+            <ul class="sub-menu collapse" id="aqa_labs_servc">
+              <li><a href="aqua_lab_details.html"> Lab Details</a></li>
+              <li><a href="aqa_dshbrd.html">My Dashboard</a></li>
+              <li><a href="aqa_my_services.html">My Services</a></li>
+              <li><a href="aqa_dept_dsh.html">Department Dashboard</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#rprts" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> Reports</a> </li>
+          <li data-toggle="collapse" data-target="#kpis" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> KPIs <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="kpis">
+            <li><a href="#"> Freshwater Aquaculture</a></li>
+            <li><a href="#">Backrish Water Aquaculture</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#bnfcry_mgmt" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Beneficiary Schemes <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="bnfcry_mgmt">
+            <li><a href="#"> State Govt. funded schemes</a></li>
+            <li><a href="#">FIDF/NFDA(Govt. of India)</a></li>
+            <li><a href="#">External Aided Projects</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#iot_bsd_srvcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> IoT based services</a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Mandal Level Agriculture Department Checklist<!-- <b style="margin-left: 600px;">View Checklist</b> --></div>
+      <div class="panel-body">
+        <!-- Farmer Registration -->
+        <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <form method="post" action=".">
+                <div class="row">
+                  <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                    class="control-label col-md-4  requiredField">District<span class="asteriskField">*</span> </label>
+                  <div class="controls col-md-8 ">
+                    <select class="form-control input-md" id="farm_type" style="margin-bottom:2%" disabled>
+                      <option value="aqua_farmer">Anantapur</option>
+                      <option value="marine_fshr">Guntur</option>
+                      <option value="inlad_fshrwomn_indv">Vijayawada</option>
+                      <option value="inlad_fshrmn_socty">West Godavari</option>
+                      <option value="inlad_fshrwomn_socty">Visakapatnam
+                        </option>
+                      <option value="mar_fshrmn_indv">Srikakulam</option>
+                      <option value="mar_fshrwomn_indv">Kakinada</option>
+                     </select>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Mandal</label>
+                    <div class="controls col-md-8 ">  <select class="form-control input-md" id="farm_type" style="margin-bottom:2%" disabled>
+                      <option value="aqua_farmer">Test Mandal1</option>
+                      <option value="marine_fshr">Test Mandal2</option>
+                      <option value="inlad_fshrwomn_indv">Test Mandal3</option>
+                      
+                     </select> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Revenue Village</label>
+                    <div class="controls col-md-8 ">  <select class="form-control input-md" id="farm_type" style="margin-bottom:2%" disabled>
+                      <option value="aqua_farmer">Test Village1</option>
+                      <option value="marine_fshr">Test Village 2</option>
+                     
+                     </select> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Survey Number( List to be Enclosed )<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                        readonly="readonly" value = "17.18/2.19.2" id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Waste land<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                        id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Low productive agricultural land<span class="asteriskField">*</span></label>
+                   <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio1" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio1" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">Prone
+                      to inundation<span class="asteriskField">*</span></label>
+                   <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio15" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio15" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Low lying area<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio14" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio14" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">Water
+                      logged area<span class="asteriskField">*</span></label>
+                  <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio13" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio13" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Fetile Agricultural land<span class="asteriskField">*</span></label>
+                   <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio12" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio12" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Fetile Agricultural land<span class="asteriskField">*</span></label>
+                   <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio11" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio11" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      North<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                         id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">South<span
+
+                        class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                         id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">East<span
+
+                        class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                         id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">West<span
+
+                        class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                         id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">Details
+                      of last 8 crops production<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                         id="lab_ownr_address" name="company"
+
+                        style="margin-bottom: 10px" type="text"> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">Whether
+                      input subsidy is given for past 2 crops<span class="asteriskField">*</span></label>
+                   <div class="controls col-md-8 "> <div class="radio" style="float:left;width:25%;margin-top:0%">
+                        <label><input name="optradio1" id="new_yes" checked="checked"
+
+                            type="radio">Yes</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%;"> <label><input
+
+                            name="optradio1" id="new_no" type="radio">No</label>
+                      </div></div>
+                  </div>
+                </div>
+                                                                <div class="row">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Recommendations<span class="asteriskField">*</span>
+                    </label>
+                    <div class="controls col-md-8 ">
+                      <div class="radio" style="float:left; margin-top:0%">
+                        <label><input name="optradio" id="dlc-approval" 
+
+                            type="radio">Recommended and forwarded to DLC for approval.</label> </div>
+                      <div class="radio" style="float:left;margin-top:0%; "> <label><input
+
+                            name="optradio" id="dlc-rejection" type="radio">Rejected and forwarded to DLC for rejection.</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row" id="reson-rejection">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">Reason for rejection<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                        id="lab_ownr_address" name="company" style="margin-bottom: 10px"
+
+                        type="text"> </div>
+                  </div>
+                </div>
+                   <div class="row" style=" margin-bottom: 20px;">
+                  <div id="div_id_company" class="form-group required"> <label
+
+                      for="id_company" class="control-label col-md-4  requiredField">
+                      Remarks<span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8 "> <textarea class="form-control"></textarea></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="aab controls col-md-4 "></div>
+                  <div class="controls col-md-4 " style="float:right;width:20%;">
+                    <input name="Signup" value="Submit" class="btn btn-primary btn btn-info"
+
+                      id="" onclick="window.location.href='dept_page.html'" type="button"> </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- End Farmer Registration --> </div>
+      </div>
+    </div>
+            <script>
+$(document).ready(function(){
+  $('#reson-rejection').hide();
+    $('#dlc-approval').click(function()
+    {
+      $("#reson-rejection").hide();
+    });
+      $("#dlc-rejection").click(function()
+      {
+      $("#reson-rejection").show();
+    });
+});
+</script>
+  </body>
+</html>

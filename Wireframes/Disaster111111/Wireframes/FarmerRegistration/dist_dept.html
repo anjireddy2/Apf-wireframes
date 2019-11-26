@@ -1,0 +1,312 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <!-- Bootstrap CSS -->
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 62px;
+        left: 0px;
+        width: 225px;
+        /* margin-left: -225px; */
+        border: none; 
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+</style><script type="text/javascript">
+	$(document).ready(function(){
+    localStorage.setItem("dist_auth_person","")
+		$(".jd").click(function(){
+    	localStorage.setItem("dist_auth_person","jd")
+    })
+    $(".col").click(function(){
+    	localStorage.setItem("dist_auth_person","col")
+    })
+    $(".ddg").click(function(){
+    	localStorage.setItem("dist_auth_person","ddg")
+    })
+    $(".dfo").click(function(){
+    	localStorage.setItem("dist_auth_person","dfo")
+    })
+    $(".eagf").click(function(){
+    	localStorage.setItem("dist_auth_person","eagf")
+    })
+    $(".eaqf").click(function(){
+    	localStorage.setItem("dist_auth_person","eaqf")
+    })
+    $(".eei").click(function(){
+    	localStorage.setItem("dist_auth_person","eei")
+    })
+    $(".eenv").click(function(){
+    	localStorage.setItem("dist_auth_person","eenv")
+    })
+    $(".eep").click(function(){
+    	localStorage.setItem("dist_auth_person","eep")
+    })
+    $(".fo").click(function(){
+    	localStorage.setItem("dist_auth_person","fo")
+    })
+	})
+	
+</script></head>
+  <!------ Include the above in your HEAD tag ----------> <body>
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper"> <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
+            data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
+              navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </button> <a class="navbar-brand" href="http://cijulenlinea.ucr.ac.cr/dev-users/">
+            <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+            <img src="../images/ApFisheries.jpg" alt="LOGO" style="float:left;width:43%;height:113%;">
+          </a> </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+          <li class="dropdown1"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin
+              User <b class=""></b></a> </li>
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li> <a href="#" data-toggle="collapse" data-target="#submenu-1"><i
+
+                  class=""></i> My Services </a> </li>
+            <li> <a href="#" data-toggle="collapse" data-target="#submenu-2"><i
+
+                  class=""></i> My Profile </a> </li>
+            <li> <a href="investigaciones/favoritas"><i class=""></i> My
+                Dashboard</a> </li>
+            <li> <a href="sugerencias"><i class=""></i> My Locker</a> </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse --> </nav>
+      <div class="row">
+        <div class="control-label col-md-2"></div>
+        <div class="control-label col-md-8">
+          <div class="panel panel-primary" style="margin-left: 0.5%;margin-right: 0.5%;margin-top: 5.5%">
+            <div class="panel-heading">AP Fisheries - District Level Department</div>
+            <div class="panel-body">
+              <div class="list-group"> <a href="Dist_Agriculture_Department_Checklist_Point.html"
+
+                  class="list-group-item jd">Agriculture (J.D)</a> <a href="Dest_Irrigation_Department_Checklist_Point.html"
+
+                  class="list-group-item col"> District Revenue Officer (DRO) </a> <a href="Dist_GroundWater_Department_Checklist_Point.html"
+
+                  class="list-group-item ddg">Ground Level Water (D.D.G)</a>
+                <!--  <a href="dist_levl_checklist.html"
+                  class="list-group-item dfo">Forest (D.F.O) </a> -->
+                <!-- <a href="dist_levl_checklist.html"
+                  class="list-group-item eagf">Eminent Agriculture Farmer (E.A.G.F)</a>
+                          <a href="dist_levl_checklist.html"
+                  class="list-group-item eaqf">Eminent Agriculture Farmer (E.A.Q.F)</a> -->
+                <a href="Dest_Irrigation_Department_Checklist_Point1.html" class="list-group-item eei">Irrigation
+                  (E.E.I)</a>
+                <!--  <a href="dist_levl_checklist.html"
+                  class="list-group-item eenv">Eminent Environmentalist (E.E.N.V)</a> -->
+                <a href="dist_levl_checklist.html" class="list-group-item eep">Pollution
+                  Control Board (E.E.P)</a> <a href="dist_levl_checklist1.html"
+
+                  class="list-group-item dfo">Fishery (D.F.O) </a>
+                <!--  <a href="dist_levl_checklist1.html"
+                  class="list-group-item fo">Fisheries</a> --> </div>
+              <!-- <a href="#" class="" data-toggle="modal" data-target="#myModal">more</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="control-label col-md-2"></div>
+      </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="background:#EFEFEF"> <button type="button"
+
+              class="close" data-dismiss="modal">�</button>
+            <h4 class="modal-title">Approvals</h4>
+          </div>
+          <div class="modal-body">
+            <p> </p>
+            <div class="list-group"> <a href="dist_levl_checklist.html" class="list-group-item jd">Agriculture
+                (J.D)</a> <a href="Dest_Irrigation_Department_Checklist_Point.html"
+
+                class="list-group-item col">District Collector (COL)</a> <a href="dist_levl_checklist.html"
+
+                class="list-group-item ddg">Ground Level Water (D.D.G)</a> <a href="dist_levl_checklist.html"
+
+                class="list-group-item dfo">Forest (D.F.O) </a>
+              <!-- <a href="dist_levl_checklist.html"
+                  class="list-group-item eagf">Eminent Agriculture Farmer (E.A.G.F)</a>
+                          <a href="dist_levl_checklist.html"
+                  class="list-group-item eaqf">Eminent Agriculture Farmer (E.A.Q.F)</a> -->
+              <a href="dist_levl_checklist.html" class="list-group-item eei">Irrigation
+                (E.E.I)</a>
+              <!--  <a href="dist_levl_checklist.html"
+                  class="list-group-item eenv">Eminent Environmentalist (E.E.N.V)</a> -->
+              <a href="dist_levl_checklist.html" class="list-group-item eep">Pollution
+                Control Board (E.E.P)</a> <a href="dist_levl_checklist.html" class="list-group-item dfo">Forest
+                (D.F.O) </a>
+              <!--  <a href="dist_levl_checklist1.html"
+                  class="list-group-item fo" >Fisheries</a> --> </div>
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <!--  <button type="button" class="btn btn-default">Submit</button> -->
+            <button type="button" class="close_modal btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

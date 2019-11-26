@@ -1,0 +1,783 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+   
+    <title>AP Fisheries</title>
+  </head>
+ 
+
+<style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".datepicke").datepicker( {
+        changeMonth: false,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'MM yy',
+        onClose: function(dateText, inst) { 
+            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date(year, month, 1));
+        }
+    });
+	$("#ls_frm_tim").hide();
+	$("#ls_to_tim").hide();
+		$("#survey_no").change(function(){
+			$("#rvn_vllg").val("Test Village")
+			$("#mandl").val("Test Mandal")
+			$("#ttl_frm_ara").val("10 Hectars")
+			$("#wtr_sprd_area").val("8 Hectars")
+			$("#dist").val("Test District ")
+			})
+		$("#bckrish_wtr_detls").click(function(){
+			window.location.href = "backrish_boundaries.html"
+		});
+		
+		$("#lease_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").show();
+				$("#ls_to_tim").show();
+			}
+			
+		})
+		$("#free_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").hide();
+				$("#ls_to_tim").hide();
+			}
+			
+		})
+		
+	$("#add_techinican").on("click",function(){
+		var si_no = 2;
+		
+		var res = '<tr>'+
+				'<td>'+si_no+'</td>'+
+				'<td>    <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;" name="company" />  </td>'+
+				'<td> <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;width: 40%;float: left;margin-right: 6%;" name="company" /> '+
+				'<input class="input-md textinput textInput form-control readonly tech_name" id="" name="company" style="margin-bottom: 10px;float: left;width: 50%;" type="text"  /></td>'+
+				'<td>  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Masters Degree</option>'+
+									'<option value="backrish_water">Degree</option>'+
+									'<option value="aqua_labs">Diploma</option>'+
+								'</select></td>'+
+				'<td> <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Water Analysis</option>'+
+									'<option value="backrish_water">Micro Biology</option>'+
+									'<option value="aqua_labs">Feed Analysis</option>'+
+									'<option value="aqua_labs">PCR</option>'+
+									'<option value="aqua_labs">Antibiotic Residues</option>'+
+									'<option value="aqua_labs">Disease Diagnosis</option>'+
+									'<option value="aqua_labs">Seed Quality</option>'+
+								'</select> </td>'+
+	'</tr>'
+	
+	$("#tech_tabl").append(res);
+	si_no += 1;
+	})
+	
+	$("#lab_ownr_adhar_no").change(function(){
+		$("#lab_ownr_name").val("Test User1").prop("readonly",true);
+		$(this).val("XXXXXXXX9898");
+		$("#lab_ownr_address").val("Dno : 31,Sai baba road,Pedakakani Village,Guntur Dist,A.P").prop("readonly",true);
+	})
+	$("#lab_inchrg_no").change(function(){
+		$("#lab_inchrg_no").val("XXXXXXXX8786");
+		$("#lab_inchrg_name").val("Test User2").prop("readonly",true);
+	})
+	$(".tech_adhar_no").change(function(){
+		$(".tech_name").val("Test User3").prop("readonly",true);
+		$(this).val("XXXXXXXX5643");
+	})
+	$(".lab_tech_type").change(function(){
+		if($(this).val() == "lab_tech"){
+		$(this).css("float","left").css("width","40%")
+		var res = '<input class="input-md textinput textInput form-control" placeholder="Licence No" value="" id="" name="name" style="float:left;width:50%;margin-left:2%;" type="datetime" data-provide="datepicker"/>'
+		$(this).parents("td").append(res)
+		}
+		else{
+		$(this).parents("td").children()[1].remove()
+		}
+	})
+	
+	$("#dist_aqua").change(function(){
+		$("#lab_ownr_adhar_no").val("Test User1");
+		$("#lab_ownr_address").val("D:no 31,Sai baba road,Pedakakani Mandal,Guntur Dist,AP")
+	})
+	
+	$("#aqua_pin_code").change(function(){
+		$("#aqua_dst_name").val("Guntur");
+		$("#aqua_mndl_name").val("Tadikonda");
+		$("#aqua_vlg_name").val("Pedakakani");
+	})
+	})
+</script>
+
+
+<!------ Include the above in your HEAD tag ---------->
+<body>
+                             
+<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+<div id="wrapper">
+    <!-- Navigation -->
+    <div class="nav-side-menu">
+    <div class="brand">Brand Logo</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="#">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">CSS3 Animation</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Buttons</a></li>
+                    <li><a href="#">Tabs & Accordions</a></li>
+                    <li><a href="#">Typography</a></li>
+                    <li><a href="#">FontAwesome</a></li>
+                    <li><a href="#">Slider</a></li>
+                    <li><a href="#">Panels</a></li>
+                    <li><a href="#">Widgets</a></li>
+                    <li><a href="#">Bootstrap Model</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li>New New 1</li>
+                  <li>New New 2</li>
+                  <li>New New 3</li>
+                </ul>
+
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> Profile
+                  </a>
+                  </li>
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> Users
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row" id="main" >
+			<h4> Application for<b> Registration / Renewal</b> of Registration</h4>
+                <div class="col-sm-12 col-md-12 well" id="content">
+                    <div class="container" id="container_farm">    
+            
+    
+<div id="signupbox" style="margin-left:-4%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Aqua Lab details</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/"></a></div>
+            </div>  
+            <div class="panel-body" >
+                <form method="post" action=".">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                            
+
+                    <form  class="form-horizontal" method="post" >
+                        <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+						
+						
+						
+						 <div id="div_id_password2" class="form-group required">
+                             <label for="id_password2" class="control-label col-md-4  requiredField">Ownership Right<span class="asteriskField">*</span> </label>
+                             <div class="controls col-md-8 " >
+							<select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Individual</option>
+									<option value="backrish_water">Partnership</option>
+									<option value="aqua_labs">Company</option>
+								</select>
+                                <!-- <input class="input-md textinput textInput form-control" id="id_password2" name="password2" style="margin-bottom: 10px" type="text" /> -->
+                            </div>
+                        </div>
+						
+							<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Owner AAdhaar Name<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8"> 
+							<input class="input-md textinput textInput form-control"  readonly id="lab_ownr_adhar_no" name="company" style="margin-bottom: 10px" type="text" />
+                                 <!--  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Owner1</option>
+									<option value="backrish_water">Owner2</option>
+									<option value="aqua_labs">Owner3</option>
+								</select> -->
+                            </div>
+							
+                        </div>
+						
+							<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Address of Owner<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control " readonly id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+						 <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField"> Name of the Aqua Lab<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+							<input class="input-md  textinput textInput form-control" value="" id="dist" maxlength="30" name="username" style="margin-bottom: 10px" type="text" />
+                               <!-- <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="username" placeholder="Choose your username" style="margin-bottom: 10px" type="text" /> -->
+                            </div> 
+                        </div>
+							
+						<div class="form-group required" id=""> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> Pincode<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control"  value="" id="aqua_pin_code" name="name" style="margin-bottom: 10px" type="datetime" data-provide="datepicker"/>
+                            </div>
+                        </div>
+                      <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField"> District<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+							<input class="input-md textinput textInput form-control" readonly value="" id="aqua_dst_name" name="name" style="margin-bottom: 10px" type="text" />
+							  <!-- <select class="form-control input-md" id="aqua_dst_name" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Test District1</option>
+									<option value="backrish_water">Test District2</option>
+									<option value="aqua_labs">Test District3</option>
+								</select> -->
+							</div> 
+                        </div>
+                        <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField readonly"> Mandal<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+							<input class="input-md textinput textInput form-control" readonly value="" id="aqua_mndl_name" name="name" style="margin-bottom: 10px" type="text" />
+								<!-- <select class="form-control input-md" id="aqua_mndl_name" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Test Mandal1</option>
+									<option value="backrish_water">Test Mandal2</option>
+									<option value="aqua_labs">Test Mandal3</option>
+								</select> -->
+                            </div>
+                        </div>
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Village/Town<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+							 <input class="input-md textinput textInput form-control" readonly value="" id="aqua_vlg_name" name="name" style="margin-bottom: 10px" type="text" />
+                              <!--   <select class="form-control input-md" id="aqua_vlg_name" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Test Village1</option>
+									<option value="backrish_water">Test Village2</option>
+									<option value="aqua_labs">Test Village3</option>
+								</select> -->
+                            </div>     
+                        </div>
+                        <div id="div_id_password1" class="form-group required">
+                            <label for="id_password1" class="control-label col-md-4 search-icon  requiredField">State<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<!-- <option value="select">Select</option> -->
+									<option value="fresh_water" selected>Andhra Pradesh</option>
+									<!-- <option value="backrish_water">Test State2</option>
+									<option value="aqua_labs">Test State3</option> -->
+								</select>
+                            </div>
+                        </div>
+                   
+						
+						
+						<!-- show Hide -->
+					
+						
+						<div class="form-group required" id=""> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> Tel no(with std code)<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control"  value="" id="ttl_frm_ara1" name="name" style="margin-bottom: 10px" type="datetime" />
+                            </div>
+                        </div>
+						<!-- show Hide -->
+						
+						
+                        <div id="div_id_name" class="form-group required"> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> Email id<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" value="" id="ttl_frm_ara" name="name" style="margin-bottom: 10px" type="email" required validate />
+                            </div>
+                        </div>
+                        
+                        <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Mobile no<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control " id="wtr_sprd_area" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+						
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Fax<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control " id="wtr_sprd_area" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Year of starting<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " > 
+                                   <!-- <select class="form-control input-md" id="" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">1981</option>
+									<option value="backrish_water">1982</option>
+									<option value="aqua_labs">1983</option>
+								</select> -->
+							<input type="text" class="datepicke input-md textinput textInput form-control" style="margin-bottom:2%;">
+                        </div>						
+                      </div>
+					  <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Location<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 " style="margin-bottom:2%;"> 
+                                <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Panchayat</option>
+									<option value="backrish_water">Muncipality</option>
+									<option value="aqua_labs">Corporation</option>
+								</select>
+                            </div>
+                        </div>
+						
+						
+						
+						<!-- show Hide -->
+						
+						<div class="form-group required" id="ls_frm_tim1" style="display:none;"> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> From<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control"  value="" id="ttl_frm_ara1" name="name" style="margin-bottom: 10px" type="datetime" data-provide="datepicker"/>
+                            </div>
+                        </div>
+						
+						<div class="form-group required" id="ls_to_tim1" style="display:none;"> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> To<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control"  value="" id="ttl_frm_ara1" name="name" style="margin-bottom: 10px" type="datetime" />
+                            </div>
+                        </div>
+						<!-- show Hide -->
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Lab incharger Adhar No<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-4 "> 
+							<input class="input-md textinput textInput form-control "  id="lab_inchrg_no" name="company" style="margin-bottom: 10px" type="text" />
+                                 <!-- <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Incharge 1</option>
+									<option value="backrish_water">Incharge 2</option>
+									<option value="aqua_labs">Inchanrge 3</option>
+								</select> -->
+                            </div>
+							<div class="controls col-md-4 "> 
+							<input class="input-md textinput textInput form-control "  id="lab_inchrg_name" name="company" style="margin-bottom: 10px" type="text" />
+                                 <!-- <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Incharge 1</option>
+									<option value="backrish_water">Incharge 2</option>
+									<option value="aqua_labs">Inchanrge 3</option>
+								</select> -->
+								</div>
+                            </div>
+                        </div>
+						
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Designation<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Senior Technician</option>
+									<option value="backrish_water">Jr Techinican</option>
+									<option value="aqua_labs">Attender</option>
+								</select>
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Qualification<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Masters Degree</option>
+									<option value="backrish_water">Degree</option>
+									<option value="aqua_labs">Diploma</option>
+								</select>
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Phone no and Email<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-4 "> 
+                                 <input class="input-md textinput textInput form-control " id="wtr_sprd_area" name="company" style="margin-bottom: 10px" type="text" />
+								 
+                            </div>
+							 <div class="controls col-md-4 "> 
+                                 <input class="input-md textinput textInput form-control " id="wtr_sprd_area" name="company" style="margin-bottom: 10px" type="text" />
+								 
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Types of Testing and Diagnosis<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+							<div class="controls col-md-2 ">
+								<input type="checkbox" class="form-control">Water Analysis
+							</div>
+							<div class="controls col-md-2 ">
+								<input type="checkbox" class="form-control">Micro Biology
+							</div>
+							<div class="controls col-md-2 ">
+								<input type="checkbox" class="form-control">Feed Analysis
+							</div>
+							<div class="controls col-md-1 ">
+								<input type="checkbox" class="form-control">PCR
+							</div>
+							<div class="controls col-md-3 ">
+								<input type="checkbox" class="form-control">Antibiotic Residues
+							</div>
+							<div class="controls col-md-2 ">
+								<input type="checkbox" class="form-control">Seed Quality
+							</div>
+                                   <!--<select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Type1</option>
+									<option value="backrish_water">Type2</option>
+									<option value="aqua_labs">Type3</option>
+								</select> -->
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Details of equipment<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                   <!-- <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Master equipment</option>
+									<option value="backrish_water">Client Equipment</option>
+									<option value="aqua_labs">Embedded Equipment</option>
+								</select> -->
+							 <textarea class="input-md textinput textInput form-control " id="wtr_sprd_area" name="company" style="margin-bottom: 10px" type="textarea" rows="3" cols="3"></textarea>
+								 
+                            </div>
+                        </div>
+						
+						<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Human Resource<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                   <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">1</option>
+									<option value="backrish_water">2</option>
+									<option value="aqua_labs">3</option>
+								</select>
+                            </div>
+                        </div>
+					  
+					  
+					  
+					  
+<div id="signupbox" style="margin-left:-4%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" style="border-color:none">
+            <div class="panel-heading">
+                <div class="panel-title">Required Details</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/"></a></div>
+            </div>  
+            <div class="table-responsive" style="margin-top : 2%;">
+			  <table class="table" id="tech_tabl">
+			  <tr>
+			  <th style="text-align:center;">
+			  SI&nbsp;no
+			  </th>
+			  <th style="text-align:center;">
+			  Licence
+			  </th >
+			  <th style="text-align:center;">
+			  Adhar No / Name
+			  </th>
+			  <th style="text-align:center;">
+			  Qualification
+			  </th>
+			 <th style="text-align:center;">
+			 Nature of service
+			 </th>
+			  </tr>
+				<tr>
+				<td>1</td>
+				<td>    <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;" name="company" />  </td>
+				<td> <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;width: 40%;float: left;margin-right: 6%;" id="" name="company" type="text"  /> 
+				<input class="input-md textinput textInput form-control readonly tech_name" id="" name="company" style="margin-bottom: 10px;float: left;width: 50%;" type="text"  /> 
+				</td>
+				<td>  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Masters Degree</option>
+									<option value="backrish_water">Degree</option>
+									<option value="aqua_labs">Diploma</option>
+								</select></td>
+				<td> <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">
+									<option value="select">Select</option>
+									<option value="fresh_water">Water Analysis</option>
+									<option value="backrish_water">Micro Biology</option>
+									<option value="aqua_labs">Feed Analysis</option>
+									<option value="aqua_labs">PCR</option>
+									<option value="aqua_labs">Antibiotic Residues</option>
+									<option value="aqua_labs">Disease Diagnosis</option>
+									<option value="aqua_labs">Seed Quality</option>
+								</select> </td>
+	</tr>
+  </table>
+</div>
+</div>
+		
+		
+		
+    </div> 
+	
+	
+
+                        <div class="form-group"> 
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-4 " style="float:right;width:20%;">
+						        <input type="button"  name="Signup" value="Add" class="btn btn-primary btn btn-info" id="add_techinican" />
+                                
+                            </div>
+                        </div> 
+</div>
+    
+
+
+
+
+
+</div>    
+
+                </div>
+					  
+					  
+                        <div class="form-group"> 
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-4 " style="float:right;width:20%;">
+							<!-- <input type="button"  name="Signup" value="Back" onclick="window.history.back()" class="btn btn-primary btn btn-info" /> -->
+                                <input type="button"  name="Signup" value="Submit" class="btn btn-primary btn btn-info" id="bckrish_wtr_detls" />
+                                
+                            </div>
+                        </div> 
+                            
+                    </form>
+
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+    
+
+
+
+
+
+</div>    
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+</div><!-- /#wrapper -->
+</body>
+
+
+

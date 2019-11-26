@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 10px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+    
+    
+    
+<script type="text/javascript">
+	$(document).ready(function(){
+        
+        
+        $("#a3a").hide();
+        $("#a3b").hide();
+         $("#ex").hide();
+     
+   
+       
+        
+        $("#rr").click(function(){
+        if($("#farm_type1").val() == "3a"){
+            
+            $("#a3b").hide();
+            $("#a3a").show();
+            $("#ex").show();
+        }
+            
+            
+            else if($("#farm_type1").val() == "3b"){
+            
+            $("#a3a").hide();
+            $("#a3b").show();
+                 $("#ex").show();
+        }
+            
+            
+            
+            
+                else{
+                    $("#a3a").hide();
+            $("#a3b").hide();
+                     $("#ex").hide();
+                }
+    })
+            
+        
+})
+         
+  
+</script>      
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</head>
+<body>
+ 
+<div class="container">
+  <div class="row">
+  <div class="panel panel-default">
+      <div class="panel-heading"><p>User Profile</p>
+      
+      <div class="form-group">
+          
+          <div  class="row">
+          
+          <div class="col-md-12 ">
+  <label for="usr">Employee Name:</label>
+  <input type="text" class="form-control" id="usr"   value="Test"  disabled >
+</div>
+        
+              
+<!--
+            <div class="col-md-4 ">
+  <label for="usr">Role:</label>
+  <input type="text" class="form-control" id="usr"   value="FDO"  disabled >
+</div>   
+-->
+              
+              
+              
+              
+              
+<!--
+        <div class="col-md-4 ">
+  <label for="usr">District:</label>
+  <input type="text" class="form-control" id="usr"   value="Guntur"  disabled >
+</div>      
+-->
+              
+              
+              
+             
+              
+              
+              
+              
+              
+              
+              
+              
+              
+     </div> 
+          </div>
+        
+        
+<!--
+         <div class="form-group">
+          
+  <label for="usr"></label>
+  <input type="text" class="form-control" id="usr" value="FDO"   disabled  >
+</div>
+-->
+      
+      
+      
+      
+      </div>
+    <div class="panel-body">
+      
+        
+        
+        
+        
+        <div class="row">
+                  <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                    class="control-label col-md-12  requiredField">Data Type<span class="asteriskField">*</span> </label>
+                  <div class="controls col-md-12 ">
+                    <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%" >
+                      <option value="3a"  >Anexture 3A</option>
+                      <option value="3b">Anexture 3B</option>
+                        
+                      
+                     </select>
+                    </div>
+                </div>
+                </div>
+        
+        
+        
+        
+   
+            <div class="col-md-6 ">
+  <label for="usr">Role:</label>
+  <input type="text" class="form-control" id="usr"   value="FDO"  disabled >
+</div>   
+
+              
+              
+              
+              
+              
+        <div class="col-md-6 ">
+  <label for="usr">District:</label>
+  <input type="text" class="form-control" id="usr"   value="Guntur"  disabled >
+</div>      
+        
+        
+        
+        
+        
+<!--
+      <div class="form-group">
+          
+  <label for="usr">License Period:</label>
+</div>    
+-->
+        
+        
+        
+      
+        
+        
+        
+        
+        
+<!--
+    <div class="form-group">
+        
+        
+        <div    class="row">
+        
+        <div    class="col-md-6"            >
+        
+        <label for="usr">From Date:</label>
+  <input type="date"  id="usr"  >
+        </div>
+        
+        <div    class="col-md-6"     >
+        
+        <label for="usr">To Date:</label>
+  <input type="date"  id="usr"  >
+        </div>
+        
+        </div>
+          
+  
+</div> 
+-->
+        
+        
+        
+        
+        
+<!--
+        <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                    class="control-label col-md-12  requiredField">Status<span class="asteriskField">*</span> </label>
+                  <div class="controls col-md-12 ">
+                    <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%" >
+                        <option value="all">All</option>
+                      <option value="approved">Approved</option>
+                      <option value="rejected">Rejected</option>
+                      
+                     </select>
+                    </div>
+                </div>
+-->
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="row"  style="margin-bottom: 20px;"  >
+            
+            
+            <div class="col-md-9">
+        
+       
+        
+        </div>
+            
+            
+            
+            
+            
+            
+            <div class="col-md-3"  >
+        
+        <button type="button" class="btn btn-info" style="align-content: center;margin-left: 150px;margin-top: 20px;"  id="rr">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+        
+        </div></div>
+        
+        
+        
+        
+        
+        
+        <div class="row"  style="margin-bottom: 20px;"  >
+            
+            
+            
+            <div     id="ex">
+            
+            
+            
+            <div class="col-md-8">
+        
+       
+        
+        </div>
+            
+            
+            
+            
+            
+            
+            <div class="col-md-4"   id="e" >
+                
+        
+        <img src="excel.jpg"    style="width:30px;margin-left: 60px;"><label style="margin-right: 30px;"> Export to Excel</label><img src="pdf.png"     style="width:30px"   ><label> Export to pdf</label>
+        
+        </div></div>
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<!--       <div  class="row"   id="rrr">  </div> -->
+        
+<!--        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for District..." title="Type in a name">-->
+        
+        
+  <div   id="a3a">
+    
+    
+    
+  <table class="table table-bordered"    id="t1" width="20%">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Mandal</th>
+        <th>GP Name</th>
+          <th>Village</th>
+        <th>Farmer Name</th>
+          <th>Extent (in Ha)</th>
+        <th>Survey No.</th>
+          <th>Reg. No</th>
+        <th>Date of Registration</th>
+          <th>Reg. Authority(DoF/ CAA)</th>
+        <th>Date of Validity</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th >Water Source/sDrain/ Creeks/ Canals/ etc)
+          
+              <table style="font-size:18px;" style="text-align:center;">
+								<th style="border:1px solid;margin: 20px;">Inlet</th>
+								<th style="border:1px solid;margin: 20px;"> Outlet</th>
+								
+							</table>
+          
+          </th>
+          <th>Category (HS/ BW/ VLS/ FW)</th>
+          <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+           <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+           <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+           <td>john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    
+    
+    
+    
+    
+    
+    <div   id="a3b">
+    
+    
+    
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Mandal</th>
+        <th>GP Name</th>
+          <th>Village</th>
+        <th>Name of the land/farm holder</th>
+          <th>Categorisation of land  (Non-agricultue, alkaline, higly saline, low -lying/ unundated/ low productive/water logged</th>
+        <th>Extent (in Ha)</th>
+          <th>R.S. No.</th>
+          
+           <th >Water Source/sDrain/ Creeks/ Canals/ etc)
+          
+              <table style="font-size:18px;" style="text-align:center;">
+								<th style="border:1px solid;margin: 20px;">Inlet</th>
+								<th style="border:1px solid;margin: 20px;"> Outlet</th>
+								
+							</table>
+          
+          </th>
+          
+          
+          
+        
+          <th>Category (HS/ BW/ VLS/ FW)</th>
+         
+         
+          <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+       
+      </tr>
+      <tr>
+       <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+       
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+          <td>John</td>
+        <td>Doe</td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+           
+           
+        
+        
+        
+        
+           
+           
+           
+           
+
+     
+      
+      </div>
+  </div>
+</div>
+    </div>
+ 
+    
+  
+    
+    
+    
+    
+    
+    <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</body>
+</html>

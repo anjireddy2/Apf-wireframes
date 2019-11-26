@@ -1,0 +1,3217 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }
+      .row {
+      	margin-bottom: 2%; 
+      }
+      .form-group{
+      	margin-bottom: 0%;
+      }
+</style> <script type="text/javascript">
+function prakasam_details() {
+  $("#ContentPlaceHolder1_GridView1").hide()
+    $("#ContentPlaceHolder1_GridView1_krishna").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam1").show()
+    $("#chartContainer").hide();
+    $("#chartContainer1").hide();
+    $("#chartContainer2").hide();
+    $("#chartContainer3").hide();
+    $("#chartContainer4").hide();
+    if($("#chartContainer5"). is(":visible")){
+      $("#chartContainer5").show();
+      $("#chartContainer6").show();
+      $("#chartContainer7").show();
+      $("#chartContainer8").show();
+      $("#chartContainer9").show();
+    } else if($("#chartContainer10"). is(":visible")){
+      $("#chartContainer10").show();
+      $("#chartContainer11").show();
+      $("#chartContainer12").show();
+      $("#chartContainer13").show();
+      $("#chartContainer14").show();
+    }
+}
+	$(document).ready(function(){
+    $("#ContentPlaceHolder1_GridView1_Prakasam").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam1").hide()
+    $("#ContentPlaceHolder1_GridView1_krishna").hide()
+    $("#water_body_type").hide();
+    $("#water_body_target").hide();
+    $("#flc_area").hide();
+    $("#flc_area1").hide();
+    $("#chartContainer5").hide();
+    $("#chartContainer6").hide();
+    $("#chartContainer7").hide();
+    $("#chartContainer8").hide();
+    $("#chartContainer9").hide();
+    $("#chartContainer10").hide();
+    $("#chartContainer11").hide();
+    $("#chartContainer12").hide();
+    $("#chartContainer13").hide();
+    $("#chartContainer14").hide();
+    
+	localStorage.removeItem("existing_user");
+	$("#reg_no_div").hide();
+    $("#signupbox1").hide();
+    $("#dob1").hide();
+
+
+
+
+
+	$("#ext_usr_nw_srvc").click(function(){
+		if($(this).prop("checked")){
+			localStorage.setItem("existing_user", "ext_usr_nw_srvc");
+			
+            $("#reg_no_div").hide();
+            $("#signupbox1").show();
+             $("#farm_type_div").hide();
+            
+		}
+		else{
+			localStorage.removeItem("existing_user");
+			
+            $("#signupbox1").hide();
+		}
+	})
+      
+		$("#ext_usr_no_nw_srvc").click(function(){
+		if($(this).prop("checked")){
+			localStorage.setItem("existing_user", "ext_usr_no_nw_srvc");
+			$("#reg_no_div").show();
+            $("#signupbox1").hide();
+            $("#farm_type_div").show();
+            
+            
+		}
+		else{
+			localStorage.removeItem("existing_user");
+			$("#reg_no_div").hide();
+		}
+	})
+	
+	$("#existing_div").hide();
+	$("#reg_in_serp").hide()
+	$("#otp_for_reg").hide()
+	$("#ls_frm_tim").hide();
+	$("#ls_to_tim").hide();
+	//$("#farm_type_div").hide()
+  
+	$("#new_yes").click(function(){
+		localStorage.removeItem("existing_user");
+		$("#reg_no_div").hide();
+        $("#signupbox1").hide();
+         $("#farm_type_div").show();
+        
+		
+	})
+    
+      $("#new_yes").click(function(){
+          
+          if(($("#farm_type1").val() == "aqua_lab_owner")){
+			$("#farm_type_div").hide();
+              $("#existing_div").hide();
+              
+              localStorage.removeItem("existing_user");
+		$("#reg_no_div").hide();
+        $("#signupbox1").hide();
+         
+		}
+          
+         else{
+			localStorage.removeItem("existing_user");
+			$("#reg_no_div").hide();
+             $("#existing_div").hide();
+		} 
+          
+          
+		
+	})
+         
+ 
+        
+	$("#new_no").click(function(){
+	
+		if($(this).prop("checked")){
+		
+			$("#existing_div").show();
+		}
+		else{
+			$("#existing_div").hide();
+		}
+	})
+		$("#survey_no").change(function(){
+			$("#rvn_vllg").val("Test Village")
+			$("#mandl").val("Test Mandal")
+			$("#ttl_frm_ara").val("10 Hectars")
+			$("#wtr_sprd_area").val("8 Hectars")
+			$("#dist").val("Test District ")
+			})
+		$("#bckrish_wtr_detls").click(function(){
+			window.location.href = "backrish_boundaries.html"
+		});
+		
+		$("#lease_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").show();
+				$("#ls_to_tim").show();
+			}
+			
+		})
+		$("#free_hold").click(function(){
+		if($(this).prop("checked")){
+				$("#ls_frm_tim").hide();
+				$("#ls_to_tim").hide();
+			}
+			
+		})
+    
+    
+    
+    
+    $("#next").click(function(){
+		if($("#aqua_vlg_name").val() == "shrimp_hatchery"){
+			window.location.href = "Shrimp.html"
+		}
+		if($("#aqua_vlg_name").val() == "aqua_shop"){
+			window.location.href = "Aquashop.html"
+		}
+      if($("#aqua_vlg_name").val() == "aqua_culture_farm"){
+			window.location.href = "Aquaculture.html"
+		}
+		
+	
+	})
+    
+    
+  $("#kpisearch").click(function(){
+	if($("#select_dist").val() == 'Prakasam' && $("#from_year").val() == "2018_from" && $("#to_year").val() == "2019_to" && $("#select_month").val() == "April") {
+    $("#ContentPlaceHolder1_GridView1").hide()
+    $("#ContentPlaceHolder1_GridView1_krishna").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam1").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam").show()
+    $("#chartContainer5").show();
+    $("#chartContainer6").show();
+    $("#chartContainer7").show();
+    $("#chartContainer8").show();
+    $("#chartContainer9").show();
+    $("#chartContainer10").hide();
+    $("#chartContainer11").hide();
+    $("#chartContainer12").hide();
+    $("#chartContainer13").hide();
+    $("#chartContainer14").hide();
+    $("#chartContainer").hide();
+    $("#chartContainer1").hide();
+    $("#chartContainer2").hide();
+    $("#chartContainer3").hide();
+    $("#chartContainer4").hide();
+  } else if($("#select_dist").val() == 'Prakasam' && $("#from_year").val() == "2018_from" && $("#select_month").val() == "April") {
+    $("#ContentPlaceHolder1_GridView1").hide()
+    $("#ContentPlaceHolder1_GridView1_krishna").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam1").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam").show()
+    $("#chartContainer10").show();
+    $("#chartContainer11").show();
+    $("#chartContainer12").show();
+    $("#chartContainer13").show();
+    $("#chartContainer14").show();
+    $("#chartContainer5").hide();
+    $("#chartContainer6").hide();
+    $("#chartContainer7").hide();
+    $("#chartContainer8").hide();
+    $("#chartContainer9").hide();
+    $("#chartContainer").hide();
+    $("#chartContainer1").hide();
+    $("#chartContainer2").hide();
+    $("#chartContainer3").hide();
+    $("#chartContainer4").hide();
+  
+  }else if($("#select_dist").val() == 'Krishna' && $("#select_year").val() == "2018-19" && $("#select_month").val() == "April") {
+    $("#ContentPlaceHolder1_GridView1").hide()
+    $("#ContentPlaceHolder1_GridView1_krishna").show()
+    $("#ContentPlaceHolder1_GridView1_Prakasam").hide()
+    $("#ContentPlaceHolder1_GridView1_Prakasam1").hide()
+    
+  }
+	});
+  $("#praksam-row").click(function(){
+    prakasam_details();
+  })
+  $("#prakasam-row1").click(function(){
+    prakasam_details();
+  })
+  
+
+  $("#source").change(function(){
+    // var source = $(this).val();
+    // alert(source);
+      $("#water_body_type").hide();
+      $("#water_body_target").hide();
+      $("#achievement").val("");
+      $("#target").val("");
+      $("#flc_area1").hide();
+      $("#flc_area").hide();
+    if($('#source').val() == "Inland Fish") {
+      $("#water_body_type").show();
+    } else if($('#source').val() == "Marine Fish" || $('#source').val() == "Marine Prawn") {
+      $("#flc_area1").show();
+      $("#flc_area").show();
+    }
+  });
+
+  $("#flc_area").change(function() {
+      $("#water_body_target").hide();
+      $("#achievement").val("");
+      $("#target").val("");
+    if($("#flc_area").val() != "Select") {
+      $("#water_body_target").show();
+    }
+  })
+  $("#water_body").change(function(){
+      if($("#water_body").val() == "River" || $("#water_body").val() == "Canal" || $("#water_body").val() == "Tank" ||
+      $("#water_body").val() == "Reservoir") {
+        $("#water_body_target").show();
+      }
+  });
+  $("#kpi-submit").click(function(){
+    var source = $("#source").val();
+      localStorage.setItem("source", source);
+    if($('.select_dist1').val() == "Prakasam" && $('#source').val() == "Inland Fish") {
+      $("#target3").text(parseInt($("#target3").text())+parseInt($("#target").val()))
+      $("#ach3").text(parseInt($("#ach3").text())+parseInt($("#achievement").val()))
+      $("#target6").text(parseInt($("#target6").text())+parseInt($("#target").val()))
+      $("#ach6").text(parseInt($("#ach6").text())+parseInt($("#achievement").val()))
+      $("#target9").text(parseInt($("#target9").text())+parseInt($("#target").val()))
+      $("#ach9").text(parseInt($("#ach9").text())+parseInt($("#achievement").val()))
+    } else if($('.select_dist1').val() == "Prakasam" && $('#source').val() == "Marine Fish") {
+      $("#target1").text(parseInt($("#target1").text())+parseInt($("#target").val()))
+      $("#ach1").text(parseInt($("#ach1").text())+parseInt($("#achievement").val()))
+      $("#target4").text(parseInt($("#target4").text())+parseInt($("#target").val()))
+      $("#ach4").text(parseInt($("#ach4").text())+parseInt($("#achievement").val()))
+      $("#target7").text(parseInt($("#target7").text())+parseInt($("#target").val()))
+      $("#ach7").text(parseInt($("#ach7").text())+parseInt($("#achievement").val()))
+    } else if($('.select_dist1').val() == "Prakasam" && $('#source').val() == "Marine Prawn") {
+      $("#target2").text(parseInt($("#target2").text())+parseInt($("#target").val()))
+      $("#ach2").text(parseInt($("#ach2").text())+parseInt($("#achievement").val()))
+      $("#target5").text(parseInt($("#target5").text())+parseInt($("#target").val()))
+      $("#ach5").text(parseInt($("#ach5").text())+parseInt($("#achievement").val()))
+      $("#target8").text(parseInt($("#target8").text())+parseInt($("#target").val()))
+      $("#ach8").text(parseInt($("#ach8").text())+parseInt($("#achievement").val()))
+    }
+  });
+  $(".select_dist").change(function () {
+        var val = $(this).val();
+        if (val == "Prakasam") {
+          //$("#District_code").value('5555');
+          $('#District_code').val($('#District_code').val() + '517');
+            $(".select_mandal").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "guntur") {
+            $(".select_mandal").html("<option value='test'>select</option><option value='bapatla'>BAPATLA</option>");
+        } 
+      else if (val == "krishana") {
+            $(".select_mandal").html("<option value='test'>select</option><option value='koduru'>KODURU</option><option value='kruthivenu'>KRUTHIVENNU</option>");
+        } 
+    });
+    $(".select_mandal").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          // alert();
+            $(".select_panchayat").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "polavaram") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='test'>BHIRAVAPALEM</option>");
+        } 
+      else if (val == "bapatla") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='ADAVI'>ADAVI</option>");
+        } 
+       else if (val == "koduru") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='test'>HAMSALA DEEVI	</option>");
+        } 
+      else if (val == "kruthivenu") {
+            $(".select_panchayat").html("<option value='test'>CHINAGOLLAPALEM		</option>");
+        } 
+    });
+      
+      
+      $(".select_panchayat").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          // alert();
+            $(".select_panchayat1").html("<option value='test'>select</option><option value='Puttavaripalem'>Puttavaripalem</option><option value='Pathamaguluru'>Pathamaguluru</option>");
+        } else if (val == "polavaram") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='test'>BHIRAVAPALEM</option>");
+        } 
+      else if (val == "bapatla") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='ADAVI'>ADAVI</option>");
+        } 
+       else if (val == "koduru") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='test'>HAMSALA DEEVI	</option>");
+        } 
+      else if (val == "kruthivenu") {
+            $(".select_panchayat").html("<option value='test'>CHINAGOLLAPALEM		</option>");
+        } 
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+		
+	$("#add_techinican").on("click",function(){
+		var si_no = 2;
+		
+		var res = '<tr>'+
+				'<td>'+si_no+'</td>'+
+				'<td>    <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;" name="company" />  </td>'+
+				'<td> <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;width: 40%;float: left;margin-right: 6%;" name="company" /> '+
+				'<input class="input-md textinput textInput form-control readonly tech_name" id="" name="company" style="margin-bottom: 10px;float: left;width: 50%;" type="text"  /></td>'+
+				'<td>  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Masters Degree</option>'+
+									'<option value="backrish_water">Degree</option>'+
+									'<option value="aqua_labs">Diploma</option>'+
+								'</select></td>'+
+				'<td> <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">'+
+									'<option value="select">Select</option>'+
+									'<option value="fresh_water">Water Analysis</option>'+
+									'<option value="backrish_water">Micro Biology</option>'+
+									'<option value="aqua_labs">Feed Analysis</option>'+
+									'<option value="aqua_labs">PCR</option>'+
+									'<option value="aqua_labs">Antibiotic Residues</option>'+
+									'<option value="aqua_labs">Disease Diagnosis</option>'+
+									'<option value="aqua_labs">Seed Quality</option>'+
+								'</select> </td>'+
+	'</tr>'
+	
+	$("#tech_tabl").append(res);
+	si_no += 1;
+	})
+	
+	$("#lab_ownr_adhar_no").change(function(){
+		$("#lab_ownr_name").val("Test User1").prop("readonly",true);
+		$(this).val("XXXXXXXX9898");
+		$("#lab_ownr_address").val("Dno : 31,Sai baba road,Pedakakani Village,Guntur Dist,A.P").prop("readonly",true);
+	})
+	$("#lab_inchrg_no").change(function(){
+		$("#lab_inchrg_no").val("XXXXXXXX8786");
+		$("#lab_inchrg_name").val("Test User2").prop("readonly",true);
+	})
+	$(".tech_adhar_no").change(function(){
+		$(".tech_name").val("Test User3").prop("readonly",true);
+		$(this).val("XXXXXXXX5643");
+	})
+	$(".lab_tech_type").change(function(){
+		if($(this).val() == "lab_tech"){
+		$(this).css("float","left").css("width","40%")
+		var res = '<input class="input-md textinput textInput form-control" placeholder="Licence No" value="" id="" name="name" style="float:left;width:50%;margin-left:2%;" type="datetime" data-provide="datepicker"/>'
+		$(this).parents("td").append(res)
+		}
+		else{
+		$(this).parents("td").children()[1].remove()
+		}
+	})
+	
+	$("#dist_aqua").change(function(){
+		$("#lab_ownr_adhar_no").val("Test User1");
+		$("#lab_ownr_address").val("D:no 31,Sai baba road,Pedakakani Mandal,Guntur Dist,AP")
+	})
+	
+	$("#aqua_pin_code").change(function(){
+		$("#aqua_dst_name").val("Guntur");
+		$("#aqua_mndl_name").val("Tadikonda");
+		$("#aqua_vlg_name").val("Pedakakani");
+	})
+	
+	$("#farm_type").change(function(){
+		if($(this).val() == "aqua_farmer"){
+			$("#reg_in_serp").hide()
+		}
+		else{
+		$("#reg_in_serp").show()
+		}
+	})
+
+
+
+$("#farm_type").change(function(){
+    if($(this).val() == "mar_fshrmn_indv"){
+      $("#dob1").show();
+      $("#age1").hide();
+    }
+    else{
+    $("#age1").show();
+    $("#dob1").hide();
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$("#send_otp_btn").click(function(){
+		$("#otp_for_reg").show();
+	})
+	
+	$("#farm_registration").click(function(){
+		if($("#farm_type").val() == "aqua_farmer"){
+			window.location.href = "aqua_registration_to_be.html"
+		}
+		if($("#farm_type").val() == "marine_fshr"){
+			window.location.href = "fresh_water_to_be_Modal_Window.html"
+		}
+		if($("#farm_type").val() == "inland_fshr"){
+			window.location.href = "backrish_water_to_be_Modal_Window.html"
+		}
+	if($("#farm_type1").val() == "aqua_lab_owner" ){
+		window.location.href = "aqua_registration_to_be.html"
+	}
+    if($("#farm_type").val() == "inlad_fshrmn_indv" )
+    {
+      localStorage.setItem("page_to_nav","inlad_fshrmn_indv")
+      window.location.href = "../InLand/registration.html"
+    }
+		 if($("#farm_type").val() == "inlad_fshrwomn_indv" )
+    {
+      localStorage.setItem("page_to_nav","inlad_fshrwomn_indv")
+    	window.location.href = "../InLand/registration.html"
+    }
+     if($("#farm_type").val() == "inlad_fshrmn_socty" )
+    {
+      localStorage.setItem("page_to_nav","inlad_fshrmn_socty")
+    	window.location.href = "../InLand/registration.html"
+    }
+     if($("#farm_type").val() == "inlad_fshrwomn_socty" )
+    {
+     localStorage.setItem("page_to_nav","inlad_fshrwomn_socty")
+    	window.location.href = "../InLand/registration.html"
+    }
+     if($("#farm_type").val() == "mar_fshrmn_indv" )
+    {
+     localStorage.setItem("page_to_nav","mar_fshrmn_indv")
+    	window.location.href = "../Marine/User_Registration/registration.html"
+    }
+     if($("#farm_type").val() == "mar_fshrwomn_indv" )
+    {
+    	localStorage.setItem("page_to_nav","mar_fshrwomn_indv")
+    	window.location.href = "../Marine/User_Registration/registration.html"
+    }
+      if($("#farm_type").val() == "mar_fshrmn_socty" )
+    {
+    	localStorage.setItem("page_to_nav","mar_fshrmn_socty")
+    	window.location.href = "../Marine/User_Registration/registration.html"
+    }
+      if($("#farm_type").val() == "mar_fshrwomn_socty" )
+    {
+    	localStorage.setItem("page_to_nav","mar_fshrwomn_socty")
+    	window.location.href = "../Marine/User_Registration/registration.html"
+    }
+      if($("#farm_type").val() == "vsl_reg" )
+    {
+    	//localStorage.setItem("page_to_nav","mar_fshrwomn_socty")
+    	window.location.href = "../Marine/marine_registration.html"
+    }
+    
+	})
+	$("#farm_type1").change(function(){
+		if(($(this).val() == "aqua_lab_owner") || ($(this).val() == "hatchery_owner") || ($(this).val() == "aqua_shp_ownr") || ($(this).val() == "feed_manf_unt") || ($(this).val() == "food_pross_unt")){
+			$("#farm_type_div").hide()
+      $("#dob").hide();
+		}
+        
+        else if(($(this).val() == "aqua_farmer")){
+			$("#new_reg").hide();
+      $("#dob").hide();
+
+
+              
+           
+              
+		}
+
+
+    else if(($(this).val() == "aqua_farmer")){
+      $("#new_reg").hide();
+      $("#dob").hide();
+
+
+              
+           
+              
+    }
+        
+        
+        
+		else{
+			$("#farm_type_div").show()
+       $("#dob").show();
+		}
+	})
+	})  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+</script> <style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+  
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+.kpi-description
+  {
+    background: #cc6699;
+    text-align: center;
+    color: #fff;
+    /* padding: 45px; */
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    font-weight: bold;
+   margin-bottom:20px;
+  }
+  a.canvasjs-chart-credit {
+      display: none;
+    }
+    .canvasjs-chart-toolbar button {
+    	display: none;
+    }
+
+
+  </style>
+  <style type="text/css">
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+    @media(min-width:768px) {
+        body {
+            margin-top: 50px;
+        }
+
+        /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+    }
+
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #page-wrapper {
+        width: 100%;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    @media(min-width:768px) {
+        #wrapper {
+            padding-left: 225px;
+        }
+
+        #page-wrapper {
+            padding: 22px 10px;
+        }
+    }
+
+    /* Top Navigation */
+
+    .top-nav {
+        padding: 0 15px;
+    }
+
+    .top-nav>li {
+        display: inline-block;
+        float: left;
+    }
+
+    .top-nav>li>a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        line-height: 20px;
+        color: #fff;
+    }
+
+    .top-nav>li>a:hover,
+    .top-nav>li>a:focus,
+    .top-nav>.open>a,
+    .top-nav>.open>a:hover,
+    .top-nav>.open>a:focus {
+        color: #fff;
+        background-color: #1a242f;
+    }
+
+    .top-nav>.open>.dropdown-menu {
+        float: left;
+        position: absolute;
+        margin-top: 0;
+        /*border: 1px solid rgba(0,0,0,.15);*/
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: #fff;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+
+    .top-nav>.open>.dropdown-menu>li>a {
+        white-space: normal;
+    }
+
+    /* Side Navigation */
+  .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td
+  {
+    font-size:14px;
+  }
+
+    @media(min-width:768px) {
+        .side-nav {
+            position: fixed;
+            top: 60px;
+            left: 225px;
+            width: 225px;
+            margin-left: -225px;
+            border: none;
+            border-radius: 0;
+            border-top: 1px rgba(0, 0, 0, .5) solid;
+            overflow-y: auto;
+            background-color: #222;
+            /*background-color: #5A6B7D;*/
+            bottom: 0;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        .side-nav>li>a {
+            width: 225px;
+            border-bottom: 1px rgba(0, 0, 0, .3) solid;
+        }
+
+        .side-nav li a:hover,
+        .side-nav li a:focus {
+            outline: none;
+            background-color: #1a242f !important;
+        }
+    }
+
+    .side-nav>li>ul {
+        padding: 0;
+        border-bottom: 1px rgba(0, 0, 0, .3) solid;
+    }
+
+    .side-nav>li>ul>li>a {
+        display: block;
+        padding: 10px 15px 10px 38px;
+        text-decoration: none;
+        /*color: #999;*/
+        color: #fff;
+    }
+
+    .side-nav>li>ul>li>a:hover {
+        color: #fff;
+    }
+
+    .navbar .nav>li>a>.label {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: 14px;
+        right: 6px;
+        font-size: 10px;
+        font-weight: normal;
+        min-width: 15px;
+        min-height: 15px;
+        line-height: 1.0em;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .navbar .nav>li>a:hover>.label {
+        top: 10px;
+    }
+
+    .navbar-brand {
+        padding: 5px 15px;
+    }
+
+    .asteriskField {
+        color: red;
+    }
+
+    .ui-datepicker-calendar {
+        display: none;
+    }
+    #ContentPlaceHolder1_GridView1 tr td{
+      padding: 4px !important;
+      word-break: break-all;
+      text-align: right !important;
+    }
+    #ContentPlaceHolder1_GridView1 tr td div a {
+      /* color: black; */
+      white-space: nowrap;
+    }
+    #ContentPlaceHolder1_GridView1 tr th{
+      padding: 4px !important;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam tr td{
+      padding: 4px !important;
+      word-break: break-all;
+      text-align: right !important;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam tr td div a {
+      /* color: black; */
+      white-space: nowrap;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam tr th{
+      padding: 4px !important;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam1 tr td{
+      padding: 4px !important;
+      word-break: break-all;
+      text-align: right !important;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam1 tr td div a {
+      /* color: black; */
+      white-space: nowrap;
+    }
+    #ContentPlaceHolder1_GridView1_Prakasam1 tr th{
+      padding: 4px !important;
+    }
+    #ContentPlaceHolder1_GridView1_krishna tr td{
+      padding: 4px !important;
+      word-break: break-all;
+    }
+    #ContentPlaceHolder1_GridView1_krishna tr th{
+      padding: 4px !important;
+    }
+    #ContentPlaceHolder1_GridView1_krishna tr td div a {
+      /* color: black; */
+      white-space: nowrap;
+    }
+    a.canvasjs-chart-credit {
+      display: none;
+    }
+    .canvasjs-chart-toolbar button {
+    	display: none !important;
+    }
+</style>
+  </head>
+  <body>
+    <div class="header"> <a href="farmer_registration.html" class="logo">
+        <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home">My Profile</a>
+        <a href="#contact">My Services</a> <a href="#about">KPI</a> </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              Registrations &amp; Licences <span class="arrow"></span></a> </li>
+          <ul class="sub-menu collapse" id="regstrs">
+            <li> <a href="farmer_registration.html"> User Registration </a> </li>
+            <li><a href="fresh_water_to_be_Modal_Window.html">Fresh Water</a></li>
+            <li><a href="backrish_water_to_be_Modal_Window.html">Backrish Water</a></li>
+            <li><a href="aqua_registration_to_be.html">Aqua Lab</a></li>
+            <li><a href="farm_enrolment.html">Farm Enrolment</a></li>
+            <li><a href="professional_certificate.html">Certificates</a></li>
+            <li><a href="../table/aqua_zonation.html">Aquazonation </a></li>
+            <!--  <li data-toggle="collapse" data-target="#frm_zontion" class="collapsed"><a
+                href="#">Aquaculture Zonation</a></li> -->
+          </ul>
+          <!-- <ul class="sub-menu collapse" id="frm_zontion">
+            <li><a href="existing_farm_zonation.html"> Existing Aquaculture </a></li>            <li><a href="potential_farm_zonation.html">Potential Aquaculture</a></li>          </ul> -->
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Inspections <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="inspections">
+            <li data-toggle="collapse" data-target="#aqua" class="collapsed"><a
+
+                href="#"> Aua Culture </a></li>
+            <ul class="sub-menu collapse" id="aqua">
+              <li><a href="Shrimp.html"> Hatchery</a></li>
+              <li><a href="Aquashop.html"> Aqua Shop </a></li>
+              <li><a href="Aquaculture.html"> AquaCulture Farm </a></li>
+              <!-- <li><a href="#"> Shrimp Hatcheries </a></li>
+            <li><a href="#">Aquaculture Farms</a></li>            <li><a href="#">Aqua Shops</a></li>            <li><a href="#">Processing Houses</a></li>            <li><a href="#">Quality Checks for formalin </a></li> -->
+            </ul>
+            <li><a href="#"> Marine </a></li>
+            <li><a href="#"> Inland </a></li>
+            <!-- <li><a href="#"> Shrimp Hatcheries </a></li>
+            <li><a href="#">Aquaculture Farms</a></li>            <li><a href="#">Aqua Shops</a></li>            <li><a href="#">Processing Houses</a></li>            <li><a href="#">Quality Checks for formalin </a></li> -->
+          </ul>
+          <li data-toggle="collapse" data-target="#advis_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Advisory Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="advis_servcs">
+            <li><a href="#"> Disease surveillance </a></li>
+            <li><a href="#">Training and Extension</a></li>
+            <li data-toggle="collapse" data-target="#wrk_shps" class="collapsed"><a
+
+                href="#">Trainings</a></li>
+            <ul class="sub-menu collapse" id="wrk_shps">
+              <li><a href="#"> Works shops </a></li>
+              <li><a href="#">Exhibitions</a></li>
+              <li><a href="#">Seminars</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#othr_trngs" class="collapsed"><a
+
+                href="#">Other Trainings</a></li>
+            <ul class="sub-menu collapse" id="othr_trngs">
+              <li><a href="#"> SIFT </a></li>
+              <li><a href="#">IFTC</a></li>
+              <li><a href="#">FTC Calender for public</a></li>
+            </ul>
+            <li><a href="#">Toll Free Services</a></li>
+            <li><a href="#">Marketing Prices</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#rsr_mapng" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Resource Mapping <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="rsr_mapng">
+            <li> <a href="#"> Aquaculture Farms </a> </li>
+            <li data-toggle="collapse" data-target="#aqua_shrmp_fsh" class="collapsed"><a
+
+                href="#">Farms</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqua_shrmp_fsh">
+              <li><a href="#"> Shrimp hatcheries </a></li>
+              <li><a href="#">Fish seed Farms</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#cld_chn_fclts" class="collapsed"><a
+
+                href="#">Cold Chain Facilities</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="cld_chn_fclts">
+              <li><a href="#"> Processing Plants</a></li>
+              <li><a href="#">Cold Storages</a></li>
+              <li><a href="#">Ice Plants</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#aqa_inp_shps" class="collapsed"><a
+
+                href="#">Aqua Input Shops</a></li>
+            <ul class="sub-menu collapse" id="aqa_inp_shps">
+              <li><a href="#"> Feed mills</a></li>
+              <li><a href="#">Feed Supplementary shops</a></li>
+              <li><a href="#">Drugs/Chemicals</a></li>
+            </ul>
+            <li> <a href="#"> Aqua Labs </a> </li>
+            <li data-toggle="collapse" data-target="#aqa_shds" class="collapsed"><a
+
+                href="#">Aqua Sheds</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqa_shds">
+              <li><a href="#"> Fish Packing</a></li>
+              <li><a href="#">Shrimp Processing</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#aqa_lab_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Lab Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="aqa_lab_servcs">
+            <li data-toggle="collapse" data-target="#govt_lab_servcs" class="collapsed"><a
+
+                href="#"> Government Labs</a></li>
+            <ul class="sub-menu collapse" id="govt_lab_servcs">
+              <li><a href="#"> MPEDA</a></li>
+              <li><a href="#">EIA</a></li>
+              <li><a href="#">DCA</a></li>
+              <li><a href="#">Water and Soil Analysis</a></li>
+              <li><a href="#">Microbiology</a></li>
+              <li><a href="#">Feed Analysis</a></li>
+              <li><a href="#">AMR</a></li>
+              <li><a href="#">ELISA</a></li>
+              <li><a href="#">LCMSMS</a></li>
+              <li><a href="#">AAS</a></li>
+            </ul>
+            <li><a href="#">Private Labs</a></li>
+            <li data-toggle="collapse" data-target="#aqa_labs_servc" class="collapsed"><a
+
+                href="#">Aqua Labs </a></li>
+            <ul class="sub-menu collapse" id="aqa_labs_servc">
+              <li><a href="aqua_lab_details.html"> Lab Details</a></li>
+              <li><a href="aqa_dshbrd.html">My Dashboard</a></li>
+              <li><a href="aqa_my_services.html">My Services</a></li>
+              <li><a href="aqa_dept_dsh.html">Department Dashboard</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#rprts" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> Reports</a> </li>
+          <li data-toggle="collapse" data-target="#kpis" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> KPIs <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="kpis">
+            <li><a href="#"> Freshwater Aquaculture</a></li>
+            <li><a href="#">Backrish Water Aquaculture</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#bnfcry_mgmt" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Beneficiary Schemes <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="bnfcry_mgmt">
+            <li><a href="#"> State Govt. funded schemes</a></li>
+            <li><a href="#">FIDF/NFDA(Govt. of India)</a></li>
+            <li><a href="#">External Aided Projects</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#iot_bsd_srvcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> IoT based services</a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">KPI</div>
+      <div class="panel-body">
+        <!-- Farmer Registration -->
+        <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-primary" style="float: left; width: 100%;">
+                    <div class="panel-heading" style="    padding: 20px 15px"> <span>
+                        KPI Details</span> <span style="float:right"> <button
+
+                          class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                          + Add new </button> </span> </div>
+                  </div>
+                </div>
+              </div>
+              <div id="by_data_shown">
+                <div class="row" style="margin-top:20px;">
+                  <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Select district:</label>
+                      <select class="form-control" id="select_dist">
+                        <option value="">Select </option>
+                        <option value="Krishna">Krishna </option>
+                        <option value="Prakasam">Prakasam </option>
+                      </select>
+                    </div>
+                  </div>
+                 
+				  
+                  <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">From Year :</label>
+                      <select class="form-control" id="from_year">
+                        <option value="">Select </option>
+                        <option value="2018_from">2018 </option>
+                        <option value="2019_from">2019 </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">To Year :</label>
+                      <select class="form-control" id="to_year">
+                        <option value="">Select </option>
+                        <option value="2019_to">2019 </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4" style="margin-top: 2%;">
+                    <div class="form-group"> <label for="sel1">Month</label>
+                      <select class="form-control" id="select_month">
+                        <option value="">Select </option>
+                        <option value="April">April </option>
+                        <option value="May">May </option>
+                      </select>
+                    </div>
+                  </div>
+                 
+                </div>
+                <div class="row">
+                  <div class="col-md-12" style="float:right; text-align:right;">
+                    <button class="btn btn-primary" id="kpisearch"> Search </button>
+                  </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                  <div class="rounded_corners" id="dvContents">
+                    <div style="width: 100%;overflow:auto;">
+                  <table cellspacing="2" cellpadding="2" id="ContentPlaceHolder1_GridView1_Prakasam1" class="table-bordered" style="color:Black;background-color:LightGoldenrodYellow;border-color:Tan;border-width:1px;border-style:solid;width:1391px;border-collapse:collapse;">
+                    <tbody><tr style="background-color:Tan;font-weight:bold;">
+                      <td align="center" colspan="3" style="color:White;background-color:#007DC1;"></td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">MARINE FISH</td><td align="left" colspan="2" style="color:White;background-color:#007DC1;">MARINE PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">BRACKISHWATER SHRIMP</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">FRESH WATER PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">INLAND FISH</td><td align="center" colspan="4" style="color:White;background-color:#007DC1;">TOTAL</td>
+                    </tr><tr style="background-color:Tan;font-weight:bold;">
+                      <th scope="col" style="color:White;background-color:#007DC1;">S.No</th><th scope="col" style="color:White;background-color:#007DC1;">District</th><th scope="col" style="color:White;">Mandal</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Percentage(%)</th>
+                    </tr>
+                    <tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_5">1</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')" style="color:black;text-decoration: none">Prakasam</a>
+                            </div></td>
+                          <td>  <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')" style="color:black;text-decoration: none">Basinapallipalem</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td id="target1">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_6" style="display:inline-block;width:60px;" >1020.00</span></div>
+                             </td><td id="ach1">
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_6" style="display:inline-block;width:60px;">1020.00</span></div>
+                             </td><td id="target2">
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_6" style="display:inline-block;width:60px;">315.00</span></div>
+                             </td><td id="ach2">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_6" style="display:inline-block;width:60px;">315.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_6" style="display:inline-block;width:60px;">5315.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_6" style="display:inline-block;width:60px;">5000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_6" style="display:inline-block;width:60px;">8680.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_6" style="display:inline-block;width:60px;">8000.00</span></div>
+                             </td><td id="target3">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_6" style="display:inline-block;width:60px;">10.00</span></div>
+                             </td><td id="ach3">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_6" style="display:inline-block;width:60px;">10.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_6" style="display:inline-block;width:60px;">14420.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_6" style="display:inline-block;width:60px;">13425.00</span></div>
+                             </td><td>
+                                  <div style="text-align:center;">
+                                  <span id="ContentPlaceHolder1_GridView1_lblpercentage_6">93</span></div>
+                                     
+                 
+                                   
+                                 </td>
+                    </tr>
+
+                    <tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_5">2</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')" style="color:black;text-decoration: none">Prakasam</a>
+                            </div></td>
+                          <td>  <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')" style="color:black;text-decoration: none">Devalampallipalem</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_5" style="display:inline-block;width:60px;">0.00</span></div>
+                             </td><td>
+                                  <div style="text-align:center;">
+                                  <span id="ContentPlaceHolder1_GridView1_lblpercentage_5">0</span></div>
+                                     
+                 
+                                   
+                                 </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                  </div>
+                  </div>
+                  </div>
+                <div class="row" style="margin-top:20px;">
+                  <div class="rounded_corners" id="dvContents">
+                    <div style="width: 100%;overflow:auto;">
+                  <table cellspacing="2" cellpadding="2" id="ContentPlaceHolder1_GridView1_krishna" class="table-bordered" style="color:Black;background-color:LightGoldenrodYellow;border-color:Tan;border-width:1px;border-style:solid;width:1391px;border-collapse:collapse;">
+                    <tbody><tr style="background-color:Tan;font-weight:bold;">
+                      <td align="center" colspan="2" style="color:White;background-color:#007DC1;"></td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">MARINE FISH</td><td align="left" colspan="2" style="color:White;background-color:#007DC1;">MARINE PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">BRACKISHWATER SHRIMP</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">FRESH WATER PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">INLAND FISH</td><td align="center" colspan="4" style="color:White;background-color:#007DC1;">TOTAL</td>
+                    </tr><tr style="background-color:Tan;font-weight:bold;">
+                      <th scope="col" style="color:White;background-color:#007DC1;">S.No</th><th scope="col" style="color:White;background-color:#007DC1;">District</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Percentage(%)</th>
+                    </tr>
+                    <tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_5">1</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')">Krishna</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_5" style="display:inline-block;width:60px;">802.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_5" style="display:inline-block;width:60px;">802.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_5" style="display:inline-block;width:60px;">218.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_5" style="display:inline-block;width:60px;">218.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_5" style="display:inline-block;width:60px;">16076.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_5" style="display:inline-block;width:60px;">15000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_5" style="display:inline-block;width:60px;">118861.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_5" style="display:inline-block;width:60px;">100000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_5" style="display:inline-block;width:60px;">11041.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_5" style="display:inline-block;width:60px;">11000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_5" style="display:inline-block;width:60px;">146998.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_5" style="display:inline-block;width:60px;">127020.00</span></div>
+                             </td><td>
+                                  <div style="text-align:center;">
+                                  <span id="ContentPlaceHolder1_GridView1_lblpercentage_5">86.4</span></div>
+                                     
+                 
+                                   
+                                 </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                  </div>
+                  </div>
+                  </div>
+
+                  <div class="row" style="margin-top:20px;">
+                    <div class="rounded_corners" id="dvContents">
+                      <div style="width: 100%;overflow:auto;">
+                    <table cellspacing="2" cellpadding="2" id="ContentPlaceHolder1_GridView1_Prakasam" class="table-bordered" style="color:Black;background-color:LightGoldenrodYellow;border-color:Tan;border-width:1px;border-style:solid;width:1391px;border-collapse:collapse;">
+                      <tbody><tr style="background-color:Tan;font-weight:bold;">
+                        <td align="center" colspan="2" style="color:White;background-color:#007DC1;"></td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">MARINE FISH</td><td align="left" colspan="2" style="color:White;background-color:#007DC1;">MARINE PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">BRACKISHWATER SHRIMP</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">FRESH WATER PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">INLAND FISH</td><td align="center" colspan="4" style="color:White;background-color:#007DC1;">TOTAL</td>
+                      </tr><tr style="background-color:Tan;font-weight:bold;">
+                        <th scope="col" style="color:White;background-color:#007DC1;">S.No</th><th scope="col" style="color:White;background-color:#007DC1;">District</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Percentage(%)</th>
+                      </tr>
+                      <tr style="background-color:PaleGoldenrod;">
+                        <td>
+                                      <span id="ContentPlaceHolder1_GridView1_sno_7">1</span></td><td align="left">
+                              <div style="text-align:left;">
+                                <a id="prakasam-row1" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl10$linktransfer','')">Prakasam</a>
+                              </div>
+                            
+                               
+                                                           
+                              </td><td id="target4">
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_6" style="display:inline-block;width:60px;" >1020.00</span></div>
+                               </td><td id="ach4">
+                                <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_6" style="display:inline-block;width:60px;">1020.00</span></div>
+                               </td><td id="target5">
+                                <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_6" style="display:inline-block;width:60px;">315.00</span></div>
+                               </td><td id="ach5">
+                                <div style="text-align:right;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_6" style="display:inline-block;width:60px;">315.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_6" style="display:inline-block;width:60px;">5315.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_6" style="display:inline-block;width:60px;">5000.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_6" style="display:inline-block;width:60px;">8680.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_6" style="display:inline-block;width:60px;">8000.00</span></div>
+                               </td><td id="target6">
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_6" style="display:inline-block;width:60px;">10.00</span></div>
+                               </td><td id="ach6">
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_6" style="display:inline-block;width:60px;">10.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                                <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_6" style="display:inline-block;width:60px;">14420.00</span></div>
+                               </td><td>
+                                <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_6" style="display:inline-block;width:60px;">13425.00</span></div>
+                               </td><td>
+                                    <div style="text-align:center;">
+                                    <span id="ContentPlaceHolder1_GridView1_lblpercentage_6">93</span></div>
+                                       
+                   
+                                     
+                                   </td>
+                      </tr>
+  
+                      </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+
+                <div class="row" style="margin-top:20px;">
+                  <div class="rounded_corners" id="dvContents">
+                    <div style="width: 100%;overflow:auto;">
+                  <table cellspacing="2" cellpadding="2" id="ContentPlaceHolder1_GridView1" class="table-bordered" style="color:Black;background-color:LightGoldenrodYellow;border-color:Tan;border-width:1px;border-style:solid;width:1391px;border-collapse:collapse;">
+                    <tbody><tr style="background-color:Tan;font-weight:bold;">
+                      <td align="center" colspan="2" style="color:White;background-color:#007DC1;"></td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">MARINE FISH</td><td align="left" colspan="2" style="color:White;background-color:#007DC1;">MARINE PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">BRACKISHWATER SHRIMP</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">FRESH WATER PRAWN</td><td align="center" colspan="2" style="color:White;background-color:#007DC1;">INLAND FISH</td><td align="center" colspan="4" style="color:White;background-color:#007DC1;">TOTAL</td>
+                    </tr><tr style="background-color:Tan;font-weight:bold;">
+                      <th scope="col" style="color:White;background-color:#007DC1;">S.No</th><th scope="col" style="color:White;background-color:#007DC1;">District</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Target</th><th scope="col" style="color:White;background-color:#007DC1;">Achievement</th><th scope="col" style="color:White;background-color:#007DC1;">Percentage(%)</th>
+                    </tr><tr>
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_0">1</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_0" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl03$linktransfer','')">Srikakulam</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_0" style="display:inline-block;width:60px;">1447.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_0" style="display:inline-block;width:60px;">1447.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_0" style="display:inline-block;width:60px;">529.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_0" style="display:inline-block;width:60px;">529.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_0" style="display:inline-block;width:60px;">430.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_0" style="display:inline-block;width:60px;">430.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_0" style="display:inline-block;width:60px;">7797.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_0" style="display:inline-block;width:60px;">7000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_0" style="display:inline-block;width:60px;">77.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_0" style="display:inline-block;width:60px;">70.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_0" style="display:inline-block;width:60px;">10280.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_0" style="display:inline-block;width:60px;">9476.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_0">92</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_1">2</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_1" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl04$linktransfer','')">Vizianagaram</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_1" style="display:inline-block;width:60px;">800.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_1" style="display:inline-block;width:60px;">800.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_1" style="display:inline-block;width:60px;">220.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_1" style="display:inline-block;width:60px;">220.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_1" style="display:inline-block;width:60px;">8.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_1" style="display:inline-block;width:60px;">8.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_1" style="display:inline-block;width:60px;">5101.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_1" style="display:inline-block;width:60px;">5101.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_1" style="display:inline-block;width:60px;">3.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_1" style="display:inline-block;width:60px;">3.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_1" style="display:inline-block;width:60px;">6132.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_1" style="display:inline-block;width:60px;">6132.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_1">100</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr>
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_2">3</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_2" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl05$linktransfer','')">Visakapatnam</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_2" style="display:inline-block;width:60px;">3456.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_2" style="display:inline-block;width:60px;">3456.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_2" style="display:inline-block;width:60px;">1048.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_2" style="display:inline-block;width:60px;">1048.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_2" style="display:inline-block;width:60px;">625.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_2" style="display:inline-block;width:60px;">600.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_2" style="display:inline-block;width:60px;">9015.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_2" style="display:inline-block;width:60px;">9000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_2" style="display:inline-block;width:60px;">6.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_2" style="display:inline-block;width:60px;">6.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_2" style="display:inline-block;width:60px;">14150.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_2" style="display:inline-block;width:60px;">14110.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_2">98</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_3">4</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_3" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl06$linktransfer','')">East Godavari</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_3" style="display:inline-block;width:60px;">3690.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_3" style="display:inline-block;width:60px;">3000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_3" style="display:inline-block;width:60px;">672.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_3" style="display:inline-block;width:60px;">600.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_3" style="display:inline-block;width:60px;">4864.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_3" style="display:inline-block;width:60px;">4000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_3" style="display:inline-block;width:60px;">18250.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_3" style="display:inline-block;width:60px;">18000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_3" style="display:inline-block;width:60px;">2344.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_3" style="display:inline-block;width:60px;">2300.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_3" style="display:inline-block;width:60px;">29820.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_3" style="display:inline-block;width:60px;">27900.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_3">93.5</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr>
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_4">5</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_4" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl07$linktransfer','')">West Godavari</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_4" style="display:inline-block;width:60px;">75.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_4" style="display:inline-block;width:60px;">65.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_4" style="display:inline-block;width:60px;">30.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_4" style="display:inline-block;width:60px;">30.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_4" style="display:inline-block;width:60px;">2265.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_4" style="display:inline-block;width:60px;">2000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_4" style="display:inline-block;width:60px;">110078.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_4" style="display:inline-block;width:60px;">100000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_4" style="display:inline-block;width:60px;">20923.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_4" style="display:inline-block;width:60px;">20000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_4" style="display:inline-block;width:60px;">133371.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_4" style="display:inline-block;width:60px;">122095.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_4">91.5</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_5">6</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_5" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl08$linktransfer','')">Krishna</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_5" style="display:inline-block;width:60px;">802.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_5" style="display:inline-block;width:60px;">802.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_5" style="display:inline-block;width:60px;">218.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_5" style="display:inline-block;width:60px;">218.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_5" style="display:inline-block;width:60px;">16076.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_5" style="display:inline-block;width:60px;">15000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_5" style="display:inline-block;width:60px;">118861.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_5" style="display:inline-block;width:60px;">100000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_5" style="display:inline-block;width:60px;">11041.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_5" style="display:inline-block;width:60px;">11000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_5" style="display:inline-block;width:60px;">146998.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_5" style="display:inline-block;width:60px;">127020.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_5">86.4</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr>
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_6">7</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_6" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl09$linktransfer','')">Guntur</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_8" style="display:inline-block;width:60px;">1819.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_8" style="display:inline-block;width:60px;">1800.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_8" style="display:inline-block;width:60px;">335.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_8" style="display:inline-block;width:60px;">330.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_8" style="display:inline-block;width:60px;">2846.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_8" style="display:inline-block;width:60px;">2800.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_8" style="display:inline-block;width:60px;">10249.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_8" style="display:inline-block;width:60px;">10000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_8" style="display:inline-block;width:60px;">136.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_8" style="display:inline-block;width:60px;">100.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_8" style="display:inline-block;width:60px;">15385.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_8" style="display:inline-block;width:60px;">15030.00</span></div>
+                             </td><td>
+                                  <div style="text-align:center;">
+                                  <span id="ContentPlaceHolder1_GridView1_lblpercentage_8">97.6</span></div>
+                                     
+                 
+                                   
+                                 </td>
+                    </tr><tr style="background-color:PaleGoldenrod;">
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_7">8</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="praksam-row" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl10$linktransfer','')">Prakasam</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td id="target7">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_6" style="display:inline-block;width:60px;">1020.00</span></div>
+                             </td><td id="ach7">
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_6" style="display:inline-block;width:60px;">1020.00</span></div>
+                             </td><td id="target8">
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_6" style="display:inline-block;width:60px;">315.00</span></div>
+                             </td><td id="ach8">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_6" style="display:inline-block;width:60px;">315.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_6" style="display:inline-block;width:60px;">5315.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_6" style="display:inline-block;width:60px;">5000.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_6" style="display:inline-block;width:60px;">8680.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_6" style="display:inline-block;width:60px;">8000.00</span></div>
+                             </td><td id="target9">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_6" style="display:inline-block;width:60px;">10.00</span></div>
+                             </td><td id="ach9">
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_6" style="display:inline-block;width:60px;">10.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_6" style="display:inline-block;width:60px;">14420.00</span></div>
+                             </td><td>
+                              <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_6" style="display:inline-block;width:60px;">13425.00</span></div>
+                             </td><td>
+                                  <div style="text-align:center;">
+                                  <span id="ContentPlaceHolder1_GridView1_lblpercentage_6">93</span></div>
+                                     
+                 
+                                   
+                                 </td>
+                    </tr><tr>
+                      <td>
+                                    <span id="ContentPlaceHolder1_GridView1_sno_8">9</span></td><td align="left">
+                            <div style="text-align:left;">
+                              <a id="ContentPlaceHolder1_GridView1_linktransfer_8" align="left" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl11$linktransfer','')">Nellore</a>
+                            </div>
+                          
+                             
+                                                         
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblmarinefishtarget_8" style="display:inline-block;width:60px;">5520.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievment_8" style="display:inline-block;width:60px;">5000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptarget_8" style="display:inline-block;width:60px;">1203.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                              <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievment_8" style="display:inline-block;width:60px;">100.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertarget_8" style="display:inline-block;width:60px;">4339.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievment_8" style="display:inline-block;width:60px;">4300.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwatertarget_8" style="display:inline-block;width:60px;">15367.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievment_8" style="display:inline-block;width:60px;">15000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandtarget_8" style="display:inline-block;width:60px;">2085.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblinlandAchievment_8" style="display:inline-block;width:60px;">2000.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                             <span id="ContentPlaceHolder1_GridView1_lblrowtottarget_8" style="display:inline-block;width:60px;">28514.00</span></div>
+                            </td><td>
+                             <div style="text-align:right;">
+                            <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievment_8" style="display:inline-block;width:60px;">26400.00</span></div>
+                            </td><td>
+                                 <div style="text-align:center;">
+                                 <span id="ContentPlaceHolder1_GridView1_lblpercentage_8">92.5</span></div>
+                                    
+                
+                                  
+                                </td>
+                    </tr><tr style="background-color:Tan;">
+                      <td style="color:White;background-color:#007DC1;">&nbsp;</td><td style="color:White;background-color:#007DC1;">
+                               <span id="ContentPlaceHolder1_GridView1_lbltotname">Total</span>
+                            </td><td style="color:White;background-color:#007DC1;">
+                             <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarinefishtargetF">18629.00</span></div>
+                
+                            </td><td style="color:White;background-color:#007DC1;">
+                             <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarinefishAchievmentF">17390.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                               <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimptargetF">4570.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblmarineshrimpAchievmentF">3390.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblbrackishwatertargetF">36768.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblbrackishwaterAchievmentF">34138.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblfreshwatertargetF">303398.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                             <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblfreshwaterAchievmentF">272101.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                               <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblinlandtargetF">36625.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblinlandAchievmentF">35489.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblrowtottargetF">399070.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              <div style="text-align:right;">
+                               <span id="ContentPlaceHolder1_GridView1_lblrowtotAchievmentF">336388.00</span></div>
+                            </td><td style="color:White;background-color:#007DC1;">
+                              
+                                
+                                
+                                </td>
+                    </tr>
+                  </tbody></table>
+                </div>
+                </div>
+                </div>
+                <div class="row" id="download">
+                  <div class="col-md-12" style="text-align:right"> <button class="btn btn-primary">
+                      Download </button> </div>
+                </div>
+              </div>
+              <div class="row">
+                <div id="chartContainer" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer1" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row">
+                <div id="chartContainer2" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer3" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row">
+                <div id="chartContainer4" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row">
+                <div id="chartContainer5" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer6" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row" style="margin-top: 2%;">
+                <div id="chartContainer7" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer8" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row" style="margin-top: 2%;">
+                <div id="chartContainer9" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row">
+                <div id="chartContainer10" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer11" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row" style="margin-top: 2%;">
+                <div id="chartContainer12" class="col-md-6" style="height: 300px;"></div>
+                <div id="chartContainer13" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div class="row" style="margin-top: 2%;">
+                <div id="chartContainer14" class="col-md-6" style="height: 300px;"></div>
+              </div>
+              <div id="by_map_shown">
+                <div id="map_canvas" style="height:380px;top:25px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group"> <label for="sel1">District</label>
+                <select class="form-control select_dist1" id="District">
+                  <option value="">Select </option>
+                  <option value="Prakasam">Prakasam </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> mandal</label>
+                  <select class="form-control select_mandal" id="Mandal">
+                  </select>
+                </div>
+              </div>
+           
+           
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat1">
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> village</label>
+                  <select class="form-control  select_panchayat1" id="panchayat">
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group"> <label for="sel1"> Indicator</label>
+                <select class="form-control" id="source">
+                  <option value="select">Select</option>
+                  <option value="Inland-Fish">Inland Fish</option>
+                  <option value="Fresh-Water-Prawn">Fresh Water Prawn</option>
+                  <option value="Marine-Fish">Marine Fish</option>
+                  <option value="Marine-Prawn">Marine Prawn</option>
+                  <option value="Brackish-Water-Prawn">Brackish Water Prawn</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6" id="water_body_type">
+                <div class="form-group"> <label for="sel1"> Source</label>
+                  <select class="form-control" id="water_body">
+                    <option value="select">Select</option>
+                    <option value="River">River</option>
+                    <option value="Canal">Canal</option>
+                    <option value="Tank">Tank</option>
+                    <option value="Reservoir">Reservoir</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6" id="flc_area">
+                <div class="form-group"> <label for="sel1"> FLC</label>
+                  <select class="form-control" id="flc">
+                    <option value="select">Select</option>
+                    <option value="Basinapallipalem">Basinapallipalem</option>
+                    <option value="Devalampallipalem">Devalampallipalem</option>
+                  </select>
+                </div>
+              </div>
+            
+          </div>
+          <div class="row">
+            <div class="col-md-6" id="flc_area1">
+              <div class="form-group"> <label for="sel1"> Area of Operations</label>
+                <select class="form-control" id="area_of_operations">
+                  <option value="select">Select</option>
+                  <option value="Basinapallipalem">Basinapallipalem</option>
+                    <option value="Devalampallipalem">Devalampallipalem</option>
+                </select>
+              </div>
+            </div>
+            <div id="water_body_target">
+              <div class="col-md-6">
+                <label for="target">Target</label>
+                <input type="text" class="form-control" id="target"/>
+              </div>
+              <div class="col-md-6">
+                  <label for="achievement">Achievment</label>
+                  <input type="text" class="form-control" id="achievement"/>
+                </div>
+            </div>
+          </div>
+          <!-- <div class="row" id="water_body_target">
+              <div class="col-md-6">
+                <label for="target">Target</label>
+                <input type="text" class="form-control"/>
+              </div>
+              <div class="col-md-6">
+                  <label for="achievement">Achievment</label>
+                  <input type="text" class="form-control"/>
+                </div>
+            </div> -->
+         
+        </div>
+        <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+
+            id="kpi-submit" data-toggle="modal" data-target="#myModal4" data-dismiss="modal" onclick="window.location.href='kpi-ad.html'">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript">
+    
+    </script>
+    
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+  </body>
+</html>
+<script>
+  
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "MARINE FISH"
+	},
+	axisX: {
+		title: "Districts",
+    labelFontSize: 10,
+    interval: 1
+	},
+	axisY: {
+		title: "Target",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Achievement",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Target",
+		showInLegend: true,      
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: "Srikakulam",  y: 1447.00 },
+			{ label: "Vizianagaram", y: 800 },
+			{ label: "Visakapatnam", y: 3456 },
+			{ label: "East Godavari",  y: 3690 },
+			{ label: "West Godavari",  y: 75 },
+      { label: "Krishna",  y: 802 },
+      { label: "Guntur",  y: 1819 },
+      { label: "Prakasam",  y: 1020 },
+      { label: "Nellore",  y: 5520 }
+		]
+	},
+	{
+		type: "column",
+		name: "Achievement",
+		axisYType: "secondary",
+		showInLegend: true,
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+		{ label: "Srikakulam",  y: 1447.00 },
+			{ label: "Vizianagaram", y: 800 },
+			{ label: "Visakapatnam", y: 3456 },
+			{ label: "East Godavari",  y: 3000 },
+			{ label: "West Godavari",  y: 65 },
+      { label: "Krishna",  y: 802 },
+      { label: "Guntur",  y: 1800 },
+      { label: "Prakasam",  y: 1020 },
+      { label: "Nellore",  y: 5000 }
+		]
+	}]
+});
+chart.render();
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "MARINE PRAWN"
+	},
+	axisX: {
+		title: "Districts",
+    labelFontSize: 10,
+    interval: 1
+	},
+	axisY: {
+		title: "Target",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Achievement",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Target",
+		showInLegend: true,      
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: "Srikakulam",  y: 529.00 },
+			{ label: "Vizianagaram", y: 220 },
+			{ label: "Visakapatnam", y: 1048 },
+			{ label: "East Godavari",  y: 672 },
+			{ label: "West Godavari",  y: 30 },
+      { label: "Krishna",  y: 218 },
+      { label: "Guntur",  y: 335 },
+      { label: "Prakasam",  y: 315 },
+      { label: "Nellore",  y: 1203 }
+		]
+	},
+	{
+		type: "column",
+		name: "Achievement",
+		axisYType: "secondary",
+		showInLegend: true,
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+    { label: "Srikakulam",  y: 529.00 },
+			{ label: "Vizianagaram", y: 220 },
+			{ label: "Visakapatnam", y: 1048 },
+			{ label: "East Godavari",  y: 600 },
+			{ label: "West Godavari",  y: 30 },
+      { label: "Krishna",  y: 218 },
+      { label: "Guntur",  y: 330 },
+      { label: "Prakasam",  y: 315 },
+      { label: "Nellore",  y: 100 }
+		]
+	}]
+});
+chart1.render();
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "BRACKISHWATER SHRIMP"
+	},
+	axisX: {
+		title: "Districts",
+    labelFontSize: 10,
+    interval: 1
+	},
+	axisY: {
+		title: "Target",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Achievement",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Target",
+		showInLegend: true,      
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: "Srikakulam",  y: 430.00 },
+			{ label: "Vizianagaram", y: 8 },
+			{ label: "Visakapatnam", y: 625 },
+			{ label: "East Godavari",  y: 4864 },
+			{ label: "West Godavari",  y: 2265 },
+      { label: "Krishna",  y: 16076 },
+      { label: "Guntur",  y: 2846 },
+      { label: "Prakasam",  y: 5315 },
+      { label: "Nellore",  y: 4339 }
+		]
+	},
+	{
+		type: "column",
+		name: "Achievement",
+		axisYType: "secondary",
+		showInLegend: true,
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+		{ label: "Srikakulam",  y: 430.00 },
+			{ label: "Vizianagaram", y: 8 },
+			{ label: "Visakapatnam", y: 600 },
+			{ label: "East Godavari",  y: 4000 },
+			{ label: "West Godavari",  y: 2000 },
+      { label: "Krishna",  y: 15000 },
+      { label: "Guntur",  y: 2800 },
+      { label: "Prakasam",  y: 5000 },
+      { label: "Nellore",  y: 4300 }
+		]
+	}]
+});
+chart2.render();
+var chart3 = new CanvasJS.Chart("chartContainer3", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "FRESH WATER PRAWN"
+	},
+	axisX: {
+		title: "Districts",
+    labelFontSize: 10,
+    interval: 1
+	},
+	axisY: {
+		title: "Target",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Achievement",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Target",
+		showInLegend: true,      
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: "Srikakulam",  y: 7797.00 },
+			{ label: "Vizianagaram", y: 5101 },
+			{ label: "Visakapatnam", y: 9000 },
+			{ label: "East Godavari",  y: 18250 },
+			{ label: "West Godavari",  y: 100078 },
+      { label: "Krishna",  y: 118861 },
+      { label: "Guntur",  y: 10249 },
+      { label: "Prakasam",  y: 8680 },
+      { label: "Nellore",  y: 15367 }
+		]
+	},
+	{
+		type: "column",
+		name: "Achievement",
+		axisYType: "secondary",
+		showInLegend: true,
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+    { label: "Srikakulam",  y: 7000.00 },
+			{ label: "Vizianagaram", y: 5101 },
+			{ label: "Visakapatnam", y: 9000 },
+			{ label: "East Godavari",  y: 18000 },
+			{ label: "West Godavari",  y: 100000 },
+      { label: "Krishna",  y: 100000 },
+      { label: "Guntur",  y: 10249 },
+      { label: "Prakasam",  y: 8000 },
+      { label: "Nellore",  y: 15000 }
+		]
+	}]
+});
+chart3.render();
+var chart4 = new CanvasJS.Chart("chartContainer4", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "INLAND FISH"
+	},
+	axisX: {
+		title: "Districts",
+    labelFontSize: 10,
+    interval: 1
+	},
+	axisY: {
+		title: "Target",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Achievement",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Target",
+		showInLegend: true,      
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: "Srikakulam",  y: 77.00 },
+			{ label: "Vizianagaram", y: 3 },
+			{ label: "Visakapatnam", y: 6 },
+			{ label: "East Godavari",  y: 2344 },
+			{ label: "West Godavari",  y: 20293 },
+      { label: "Krishna",  y: 11041 },
+      { label: "Guntur",  y: 136 },
+      { label: "Prakasam",  y: 10 },
+      { label: "Nellore",  y: 2085 }
+		]
+	},
+	{
+		type: "column",
+		name: "Achievement",
+		axisYType: "secondary",
+		showInLegend: true,
+		//yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+		{ label: "Srikakulam",  y: 70.00 },
+			{ label: "Vizianagaram", y: 3 },
+			{ label: "Visakapatnam", y: 6 },
+			{ label: "East Godavari",  y: 2300 },
+			{ label: "West Godavari",  y: 20000 },
+      { label: "Krishna",  y: 11000 },
+      { label: "Guntur",  y: 100 },
+      { label: "Prakasam",  y: 10 },
+      { label: "Nellore",  y: 2000 }
+		]
+	}]
+});
+chart4.render();
+
+var chart5 = new CanvasJS.Chart("chartContainer5", {
+	animationEnabled: true,
+	title:{
+		text: "MARINE FISH",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: 'Prakasam',
+    valueFormatString: "YYYY",
+		interval: 1,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 246, x: new Date(2018,0) },
+			{ y: 87, x: new Date(2019,0) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 212, x: new Date(2018,0) },
+				{ y: 102, x: new Date(2019,0) }
+			]
+		}]
+});
+chart5.render();
+var chart6 = new CanvasJS.Chart("chartContainer6", {
+	animationEnabled: true,
+	title:{
+		text: "MARINE PRAWN",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: "Prakasam",
+    // valueFormatString: "MMM-YYYY",
+		interval: 1,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 126, x: new Date(2018,0) },
+			{ y: 87, x: new Date(2019,0) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 282, x: new Date(2018,0) },
+				{ y: 102, x: new Date(2019,0) }
+			]
+		}]
+});
+chart6.render();
+var chart7 = new CanvasJS.Chart("chartContainer7", {
+	animationEnabled: true,
+	title:{
+		text: "BRACKISHWATER SHRIMP",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: "Prakasam",
+    // valueFormatString: "MMM-YYYY",
+		interval: 1,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 436, x: new Date(2018,0) },
+			{ y: 157, x: new Date(2019,0) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 682, x: new Date(2018,0) },
+				{ y: 902, x: new Date(2019,0) }
+			]
+		}]
+});
+chart7.render();
+var chart8 = new CanvasJS.Chart("chartContainer8", {
+	animationEnabled: true,
+	title:{
+		text: "FRESH WATER PRAWN",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: "Prakasam",
+    // valueFormatString: "MMM-YYYY",
+		interval: 1,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 846, x: new Date(2018,0) },
+			{ y: 327, x: new Date(2019,0) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 122, x: new Date(2018,0) },
+				{ y: 92, x: new Date(2019,0) }
+			]
+		}]
+});
+chart8.render();
+var chart9 = new CanvasJS.Chart("chartContainer9", {
+	animationEnabled: true,
+	title:{
+		text: "INLAND FISH",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: "Prakasam",
+    // valueFormatString: "MMM-YYYY",
+		interval: 1,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 221, x: new Date(2018,0) },
+			{ y: 87, x: new Date(2019,0) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 344, x: new Date(2018,0) },
+				{ y: 212, x: new Date(2019,0) }
+			]
+		}]
+});
+chart9.render();
+
+var chart10 = new CanvasJS.Chart("chartContainer10", {
+	animationEnabled: true,
+	title:{
+		text: "MARINE FISH",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    valueFormatString: "MMM-YYYY",
+    title: "Prakasam",
+		interval: 0,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 246, x: new Date(2018,3) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 322, x: new Date(2018,3) }
+			]
+		}]
+});
+chart10.render();
+var chart11 = new CanvasJS.Chart("chartContainer11", {
+	animationEnabled: true,
+	title:{
+		text: "MARINE PRAWN",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    valueFormatString: "MMM-YYYY",
+    title: "Prakasam",
+		interval: 0,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 332, x: new Date(2018,3) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 232, x: new Date(2018,3) }
+			]
+		}]
+});
+chart11.render();
+var chart12 = new CanvasJS.Chart("chartContainer12", {
+	animationEnabled: true,
+	title:{
+		text: "BRACKISHWATER PRAWN",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    valueFormatString: "MMM-YYYY",
+    title: "Prakasam",
+		interval: 0,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 216, x: new Date(2018,3) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 62, x: new Date(2018,3) }
+			]
+		}]
+});
+chart12.render();
+var chart13 = new CanvasJS.Chart("chartContainer13", {
+	animationEnabled: true,
+	title:{
+		text: "FRESH WATER PRAWN",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    valueFormatString: "MMM-YYYY", 
+    title: "Prakasam",
+		interval: 0,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 987, x: new Date(2018,3) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 622, x: new Date(2018,3) }
+			]
+		}]
+});
+chart13.render();
+var chart14 = new CanvasJS.Chart("chartContainer14", {
+	animationEnabled: true,
+	title:{
+		text: "INLAND FISH",
+		fontFamily: "arial black",
+		fontColor: "#695A42"
+	},
+	axisX: {
+    title: "Prakasam",
+    valueFormatString: "MMM-YYYY", 
+		interval: 0,
+		intervalType: "year"
+	},
+	axisY:{
+		//valueFormatString:"$#0bn",
+		gridColor: "#B6B1A8",
+		tickColor: "#B6B1A8"
+	},
+	toolTip: {
+		shared: true,
+		content: toolTipContent
+	},
+	data: [{
+		type: "stackedColumn",
+		showInLegend: true,
+		color: "#C0504E",
+		name: "Achievement",
+		dataPoints: [
+			{ y: 856, x: new Date(2018,3) }
+		]
+		},
+		{        
+			type: "stackedColumn",
+			showInLegend: true,
+			name: "Target",
+			color: "#4F81BC",
+			dataPoints: [
+				{ y: 682, x: new Date(2018,3) }
+			]
+		}]
+});
+chart14.render();
+function toolTipContent(e) {
+	var str = "";
+	var total = 0;
+	var str2, str3;
+	for (var i = 0; i < e.entries.length; i++){
+		var  str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\"> "+e.entries[i].dataSeries.name+"</span>: $<strong>"+e.entries[i].dataPoint.y+"</strong>bn<br/>";
+		total = e.entries[i].dataPoint.y + total;
+		str = str.concat(str1);
+	}
+	str2 = "<span style = \"color:DodgerBlue;\"><strong>"+(e.entries[0].dataPoint.x).getFullYear()+"</strong></span><br/>";
+	total = Math.round(total * 100) / 100;
+	str3 = "<span style = \"color:Tomato\">Total:</span><strong> $"+total+"</strong>bn<br/>";
+	return (str2.concat(str)).concat(str3);
+}
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+}
+
+</script>

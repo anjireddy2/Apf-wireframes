@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Bootstrap Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 10px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style> <script type="text/javascript">
+	$(document).ready(function(){
+     
+    $("#rsearch").hide();
+        $("#r").hide();
+         $("#r1").hide();
+         $("#r2").hide();
+         $("#r3").hide();
+        
+        
+        $("#r4").hide();
+         $("#r5").hide();
+         $("#r6").hide();
+         $("#r7").hide();
+        
+        
+        
+         $("#r8").hide();
+         $("#r9").hide();
+         $("#r10").hide();
+         $("#r11").hide();
+         $("#r12").hide();
+         $("#r13").hide();
+         $("#r14").hide();
+         $("#r15").hide();
+        $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+        $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+        
+        $("#ex").hide();
+        
+        
+        
+        
+         $("#mpeda").hide();
+        
+        
+        
+        
+        
+        
+        
+        $("#rr").click(function(){
+          
+          $("#rsearch").show();
+          
+          
+          
+          if(($("#farm_type").val() == "ifishm") && ($("#farm_type1").val() == "approved")    ){
+			
+              $("#r").show();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+              $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+              $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+              $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+              $("#ex").show();
+              
+              
+              
+         
+		}
+            
+            
+           else if(($("#farm_type").val() == "ifishw")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").show();
+               $("#r2").hide();
+                $("#r3").hide();
+                $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               
+                $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+                $("#ex").show();
+                $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+               $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+               $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		} 
+            
+            
+            else if(($("#farm_type").val() == "ifishms")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").show();
+                $("#r3").hide();
+                $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+                 $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+                 $("#ex").show();
+                 $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		}  
+            
+            
+         else if(($("#farm_type").val() == "ifishws")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").hide();
+                $("#r3").show();
+                $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+              $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+              $("#ex").show();
+              $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+             $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+             $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		}    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "ifishm")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").hide();
+                $("#r3").hide();
+                $("#r4").show();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+                 $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+                 $("#ex").show();
+                 $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		} 
+            
+            
+        else if(($("#farm_type").val() == "ifishw")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").hide();
+                $("#r3").hide();
+            $("#r4").hide();
+              $("#r5").show();
+               $("#r6").hide();
+               $("#r7").hide();
+             $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+             $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+            $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+            $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		}     
+            
+            
+         else if(($("#farm_type").val() == "ifishms")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").hide();
+                $("#r3").hide();
+            $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").show();
+               $("#r7").hide();
+              $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+              $("#ex").show();
+              $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+             $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+             $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		}    
+            
+         
+            
+          else if(($("#farm_type").val() == "ifishws")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+               $("#r2").hide();
+                $("#r3").hide();
+            $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").show();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+               $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+              $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+              $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		}      
+            
+            
+            
+            
+        
+            
+          else if(($("#farm_type").val() == "lab") && ($("#farm_type1").val() == "approved")    ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").show();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+               $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+              $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+              $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+              
+              
+         
+		}
+            
+            
+           else if(($("#farm_type").val() == "form")  && ($("#farm_type1").val() == "approved")     ){
+			
+             $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").show();
+               $("#r10").hide();
+               $("#r11").hide();
+                $("#ex").show();
+                $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+               $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+               $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+               
+              
+         
+		} 
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "lab")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").show();
+               $("#r11").hide();
+                 $("#ex").show();
+                 $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+              
+         
+		} 
+            
+            
+        else if(($("#farm_type").val() == "form")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").show();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+            $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+            $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}     
+              
+            
+           else if(($("#farm_type").val() == "f")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").show();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+               $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+         $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+		}     
+            
+            
+        else if(($("#farm_type").val() == "fs")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").show();
+               $("#r14").hide();
+               $("#r15").hide();
+            $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+            $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}  
+            
+             else if(($("#farm_type").val() == "f")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").show();
+               $("#r15").hide();
+                 $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                 $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}  
+            
+            
+            else if(($("#farm_type").val() == "fs")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").show();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}   
+            
+            
+         else if(($("#farm_type").val() == "ff")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").show();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+             $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}   
+            
+            
+             else if(($("#farm_type").val() == "fws")  && ($("#farm_type1").val() == "approved")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").show();
+        $("#r18").hide();
+        $("#r19").hide();
+                 $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}   
+            
+            
+         else if(($("#farm_type").val() == "ff")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").show();
+        $("#r19").hide();
+             $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}       
+            
+            
+            
+            
+        else if(($("#farm_type").val() == "fws")  && ($("#farm_type1").val() == "rejected")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").show();
+            $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}        
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "ifishm")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").show();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}  
+            
+            
+            else if(($("#farm_type").val() == "ifishw")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").show();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}   
+            
+            
+       else if(($("#farm_type").val() == "ifishms")  && ($("#farm_type1").val() == "all")     ){
+			
+             $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").show();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}    
+            
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "ifishws")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").show();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}    
+            
+            
+            
+            else if(($("#farm_type").val() == "lab")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").show();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}     
+            
+            
+            
+        else if(($("#farm_type").val() == "form")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").show();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		} 
+            
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "f")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").show();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		} 
+            
+            
+            
+            
+            else if(($("#farm_type").val() == "fs")  && ($("#farm_type1").val() == "all")     ){
+			
+               $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").show();
+        $("#r28").hide();
+        $("#r29").hide();
+         
+		}   
+            
+        else if(($("#farm_type").val() == "ff")  && ($("#farm_type1").val() == "all")     ){
+			
+              $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").show();
+        $("#r29").hide();
+         
+		}  
+            
+            
+            
+        else if(($("#farm_type").val() == "fws")  && ($("#farm_type1").val() == "all")     ){
+			
+               $("#r").hide();
+              $("#r1").hide();
+              $("#r2").hide();
+               $("#r3").hide();
+              $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+               $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+             $("#ex").show();
+               $("#r12").hide();
+              $("#r13").hide();
+               $("#r14").hide();
+               $("#r15").hide();
+                $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+                $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").show();
+         
+		}      
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          
+         else{
+			
+			$("#r").hide();
+             $("#r1").hide();
+             $("#r2").hide();
+             $("#r3").hide();
+             $("#mpeda").hide();
+             
+             $("#r4").hide();
+              $("#r5").hide();
+               $("#r6").hide();
+               $("#r7").hide();
+              $("#r8").hide();
+              $("#r9").hide();
+               $("#r10").hide();
+               $("#r11").hide();
+              $("#ex").hide();
+             $("#r16").hide();
+        $("#r17").hide();
+        $("#r18").hide();
+        $("#r19").hide();
+             $("#r20").hide();
+        $("#r21").hide();
+        $("#r22").hide();
+        $("#r23").hide();
+        $("#r24").hide();
+        $("#r25").hide();
+        $("#r26").hide();
+        $("#r27").hide();
+        $("#r28").hide();
+        $("#r29").hide();
+             
+		} 
+          
+          
+		
+	})
+        
+        
+        
+
+        
+        
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         
+         
+})
+         
+  
+</script> </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p>User Profile</p>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4 "> <label for="usr">Employee Name:</label>
+                  <input class="form-control" id="usr" value="Test" disabled="disabled"
+
+                    type="text">
+                </div>
+                <div class="col-md-4 "> <label for="usr">Role:</label> <input
+
+                    class="form-control" id="usr" value="FDO" disabled="disabled"
+
+                    type="text">
+                </div>
+                <div class="col-md-4 "> <label for="usr">District:</label> <input
+
+                    class="form-control" id="usr" value="Guntur" disabled="disabled"
+
+                    type="text">
+                </div>
+              </div>
+            </div>
+            <!--
+         <div class="form-group">          
+  <label for="usr"></label>  <input type="text" class="form-control" id="usr" value="FDO"   disabled  >
+</div>--> </div>
+          <div class="panel-body">
+            <div class="row">
+              <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                  class="control-label col-md-12  requiredField">Registration
+                  Type<span class="asteriskField">*</span> </label>
+                <div class="controls col-md-12 ">
+                  <select class="form-control input-md" id="farm_type" style="margin-bottom:2%">
+                    <option value="ifishm">Inland Fisherman</option>
+                    <option value="ifishw">Inland Fisherwoman</option>
+                    <option value="ifishms">Inland Fisherman Society</option>
+                    <option value="ifishws">Inland Fisherwoman Society</option>
+                    <option value="lab">Aqua Lab</option>
+                    <option value="form">Aqua Farm</option>
+                    <option value="f">Marine Fisherman </option>
+                    <option value="fs">Marine Fisherman Society</option>
+                    <option value="ff">Marine Fisherwoman </option>
+                    <option value="fws">Marine Fisherwoman Society</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!--
+      <div class="form-group">          
+  <label for="usr">License Period:</label></div>    
+--> <div class="form-group"> <label for="usr">From Date:</label> <input class="form-control"
+
+                id="usr" type="date">
+            </div>
+            <div class="form-group"> <label for="usr">To Date:</label> <input
+
+                class="form-control" id="usr" type="date">
+            </div>
+            <!--
+    <div class="form-group">        
+                <div    class="row">
+                <div    class="col-md-6"            >
+                <label for="usr">From Date:</label>
+  <input type="date"  id="usr"  >        </div>
+                <div    class="col-md-6"     >
+                <label for="usr">To Date:</label>
+  <input type="date"  id="usr"  >        </div>
+                </div>
+            
+</div> -->
+            <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                class="control-label col-md-12  requiredField">Status<span class="asteriskField">*</span>
+              </label>
+              <div class="controls col-md-12 ">
+                <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%">
+                  <option value="all">All</option>
+                  <option value="approved">Approved</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+              <div class="col-md-9"> </div>
+              <div class="col-md-3"> <button type="button" class="btn btn-info"
+
+                  style="align-content: center;margin-left: 150px;" id="rr"> <span
+
+                    class="glyphicon glyphicon-search"></span> Search </button>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+              <div id="ex">
+                <div class="col-md-8"> </div>
+                <div class="col-md-4"> <img src="excel.jpg" style="width:30px;margin-left: 60px;"><label
+
+                    style="margin-right: 30px;"> Export to Excel</label><img src="pdf.png"
+
+                    style="width:30px"><label> Export to pdf</label> </div>
+              </div>
+            </div>
+                  <div  class="row"   id="rsearch"> 
+            
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name">
+            
+            
+            </div>
+                
+            
+            
+            
+            <div id="r">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fishermen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Fisherman skils</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r1">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwoman ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r2">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Type of Water Body</th>
+                    <th style="">Name of Water Body</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r3">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count Of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r4">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fishermen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Fisherman skils</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r5">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwoman ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r6">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Type of Water Body</th>
+                    <th style="">Name of Water Body</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r7">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count Of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r8">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Lab</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r9">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Lab</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r10">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Lab</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r11">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Lab</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r12">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherman ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">Vessel Registration</th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r13">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Vessel Registration Number</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r14">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherman ID</th>
+                    <th style="">Socical Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">Vessel Registration </th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r15">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Vessel Registration Number </th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r16">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwomen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r17">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Number of member</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r18">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwomen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r19">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Number of member</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r20">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fishermen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Fisherman skils</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r21">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwoman ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r22">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Type of Water Body</th>
+                    <th style="">Name of Water Body</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Lab Registration</td>
+                    <td>123</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r23">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Count Of Member</th>
+                    <th style="">License Period</th>
+                    <th style="">Village</th>
+                    <th style="">Gram Panchayat</th>
+                    <th style="">Mandal </th>
+                    <th style="">District</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Village1</td>
+                    <td>GramPanchyat1</td>
+                    <td>Mandal1</td>
+                    <td>District1</td>
+                    
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    
+                    <td>Village2</td>
+                    <td>GramPanchyat2</td>
+                    <td>Mandal2</td>
+                    <td>District2</td>
+                    
+                    
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Village3</td>
+                    <td>GramPanchyat3</td>
+                    <td>Mandal3</td>
+                    <td>District3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Village4</td>
+                    <td>GramPanchyat4</td>
+                    <td>Mandal4</td>
+                    <td>District4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Village5</td>
+                    <td>GramPanchyat5</td>
+                    <td>Mandal5</td>
+                    <td>District5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r24">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Lab</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Stationery</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Mobile</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r25">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">S.No.</th>
+                    <th style="">Reg. No.</th>
+                    <th style="">Name</th>
+                    <th style="">Ownership</th>
+                    <th style="">Type of Farm</th>
+                    <th style="">Latitude</th>
+                    <th style="">Longitude</th>
+                    <th style="">Mandal</th>
+                    <th style="">District</th>
+                    <th style="">Village</th>
+                    <th style="">Issue Date</th>
+                    <th style="">Status</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal1</td>
+                    <td>Guntur</td>
+                    <td>Village1</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal2</td>
+                    <td>Anantapur</td>
+                    <td>Village2</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal3</td>
+                    <td>Guntur</td>
+                    <td>Village3</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Shrimp</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Mandal4</td>
+                    <td>Srikakulam</td>
+                    <td>Village4</td>
+                    <td>03-12-1988</td>
+                    <td>Approved</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Fish</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>Ma5dal5</td>
+                    <td> Visakhapatnam</td>
+                    <td>Village5</td>
+                    <td>03-12-1988</td>
+                    <td>Rejected</td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r26">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherman ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">Vessel Registration</th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r27">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Vessel Registration Number</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Aqua Farm Registration</td>
+                    <td>123</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r28">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Fisherwomen ID</th>
+                    <th style="">Social Status</th>
+                    <th style="">Skill</th>
+                    <th style="">License Period</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Approved</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="r29">
+              <table id="myTable">
+                <tbody>
+                  <tr class="header">
+                    <th style="">Society Name</th>
+                    <th style="">Society ID</th>
+                    <th style="">Tackel Permission</th>
+                    <th style="">Number of member</th>
+                    <th style="">Status</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Test1</td>
+                    <td>Owner1</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>234</td>
+                    <td>Test2</td>
+                    <td>Owner2</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>432</td>
+                    <td>Test3</td>
+                    <td>Owner3</td>
+                    <td>Approved</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>324</td>
+                    <td>Test4</td>
+                    <td>Owner4</td>
+                    <td>Rejected</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>435</td>
+                    <td>Test5</td>
+                    <td>Owner5</td>
+                    <td>Rejected</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+  </body>
+</html>

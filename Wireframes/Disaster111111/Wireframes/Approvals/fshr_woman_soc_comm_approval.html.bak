@@ -1,0 +1,1478 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../JavaScript/aqua_js/rejected.js">  </script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style> <style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }?
+
+</style> <style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+#div_id_password2{
+	min-height : 7%;
+}
+      
+   #div_id_password3{
+	min-height : 2%;
+}   
+      
+      .mandatory{
+    margin-top: -2%;
+    margin-bottom: 2%;
+    font-size: 0.8em;
+    }
+    table tr th{
+      font-size:10px;
+    }
+      
+	</style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".inl_adhr_no").find("input").val("2131231")
+        $(".inl_adhr_no").change()
+        
+      	$(".ind_nm").val("Test user");
+     	$(".ind_ag").val("32");
+       // $(".ind_sc").val("SC");
+        $(".ind_rn").val("124354353");
+        $(document).on("click",".remv_row",function(){
+    	$(this).parents("tr")[0].remove()
+      $("#prps_membrs").val($(".inl_adhr_no").length + 1)
+    })
+        
+    $(document).on("change",".inl_adhr_no",function(){
+      alert("sad")
+      var x = $(this).siblings().find("input")
+      x[0].value = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10)
+      x[1].value = Math.floor(Math.random() * 80 + 18)
+     // x[2].value = "SC"
+      x[2].value = Math.floor(Math.random() * 1000000000 + 18)
+      //	$(".ind_nm").val("Test user");
+     //	$(".ind_ag").val("32");
+       // $(".ind_sc").val("SC");
+     //   $(".ind_rn").val("124354353");
+    })
+      })
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $("input").attr("disabled",true)
+    $("textarea:first").val("Test Comment")
+    $("textarea:first").attr("readonly",true)
+   $(".btn-primary").attr("disabled",false)
+    })
+    </script>
+  </head>
+  <!------ Include the above in your HEAD tag ----------> <body style="background:#EFEFEF;">
+    <div class="header" style="background:transparent;"> <a href="farmer_registration.html"
+
+        class="logo"> <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home" style="color:#000;">My
+          Profile</a> <a href="#contact" style="color:#000;"> My Services</a> <a
+
+          href="#about" style="color:#000;">Commissioner</a> </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              My Worklist <span class="arrow"></span></a> </li>
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Dashboard <span class="arrow"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Fisherwoman Society Certification <b>Reg. No
+          =&gt; SOC-CR-454 </b>
+        <div style="float:right;padding-right:10%;"><a href="#" style="color:#FFF;">
+          </a></div>
+      </div>
+      <div class="panel-body">
+        <div id="signupbox" style="margin-left:0%;width:98%;text-align:center;"
+
+          class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-primary" style="width:100%;">
+            <div class="panel-heading" style="text-align:left;"><b>User Details</b></div>
+            <div id="div_id_password2" class="form-group required">
+              <div class="control-label col-md-2"> <b>Username : </b> </div>
+              <div class="controls col-md-2"> Test User </div>
+              <div class="controls col-md-2"> <b>Registration Type</b> </div>
+              <div class="controls col-md-2"> Marnine</div>
+              <div class="col-md-2"> <b>Mobile No : </b> </div>
+              <div class="controls col-md-2"> 9985324862 </div>
+            </div>
+            <div id="div_id_password2" class="form-group required">
+              <div class="control-label col-md-2"> <b>Gender : </b> </div>
+              <div class="controls col-md-2"> Female </div>
+              <div class="controls col-md-2"> <b>Age</b> </div>
+              <div class="controls col-md-2"> 25</div>
+              <div class="col-md-2"> <b>State </b> </div>
+              <div class="controls col-md-2"> A.P </div>
+            </div>
+            <div id="div_id_password2" class="form-group required">
+              <div class="control-label col-md-2"> <b>District : </b> </div>
+              <div class="controls col-md-2"> Guntur </div>
+              <div class="controls col-md-2"> <b>Mandal</b> </div>
+              <div class="controls col-md-2"> Bapatla</div>
+              <div class="col-md-1"> <b>Gram Panchayat </b> </div>
+              <div class="controls col-md-1"> Suryalanka </div>
+              <div class="controls col-md-1"> <b>Village</b> </div>
+              <div class="controls col-md-1"> Suryalanka </div>
+            </div>
+            <div id="div_id_password2" class="form-group required">
+              <div class="control-label col-md-2"> <b>Address : </b> </div>
+              <div class="controls col-md-2"> D:no 31,Sai baba road,Pedakakani
+                Mandal,Guntur Dist,AP </div>
+              <div class="controls col-md-2"> <b>Email</b> </div>
+              <div class="controls col-md-2"> testuser1@apgov.in </div>
+              <div class="col-md-2"> <b>Alertnate Mobile No : </b> </div>
+              <div class="controls col-md-2"> 9985324862 </div>
+            </div>
+          </div>
+          <div class="panel-heading" style="text-align:left;"><b>Checklist</b></div>
+          <div id="socity_details">
+            <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                class="control-label col-md-4  requiredField"> Society Name </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px"> <input
+
+                  class="form-control input-md" value="Test Society" readonly="readonly"
+
+                  type="text"> </div>
+            </div>
+            <!--  <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+                      class="control-label col-md-4  requiredField">Employment                      Status<span class="asteriskField">*</span> </label>                    <div class="controls col-md-8 " style="margin-bottom: 10px">                      <input type="radio" id="emp_sts_emp" name="emp_sts">Employee                      <input type="radio" id="emp_sts_unemp" name="emp_sts">Un Employee                    <select class="form-control input-md" id="emp_sts" style="margin-bottom:2%">                        <option value="">Select</option>                        <option value="emp">Employeed</option>                        <option value="unemp">Un Employeed</option>                      </select>                     </div>                  </div> -->
+            <div id="div_id_email" class="form-group required"> <label for="id_email"
+
+                class="control-label col-md-4  requiredField"> Proposed Members</label>
+              <div class="controls col-md-8 "> <input class="input-md textinput textInput form-control"
+
+                  readonly="readonly" value="10" id="prps_membrs" name="name" style="margin-bottom: 10px"
+
+                  type="datetime"> </div>
+            </div>
+            <div class="table-respossive" style="margin-top : 2%;">
+              <table class="table" id="soc_tab">
+                <thead>
+                  <tr>
+                    <th scope="col">Aadhaar No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Employement Status</th>
+                    <th scope="col">Rationcard</th>
+                    <th scope="col">Social Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        value="121132312" type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        value="Test User" readonly="readonly" type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        readonly="readonly" value="32" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control soc_pres_emp"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" value="5768766" readonly="readonly"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc soc_pres_soc_sts"
+
+                        id="aqua_vlg_name form-control" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="select">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="inl_adhr_no"><input class="input-md textinput textInput form-control"
+
+                        type="text"> </th>
+                    <td><input class="ind_nm input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td><input class="ind_ag input-md textinput textInput form-control"
+
+                        type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc form-control"
+
+                        id="" style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water">Employeed </option>
+                        <option value="backrish_water">Un Employeed</option>
+                      </select>
+                    </td>
+                    <td><input class="ind_rn form-control" type="text"></td>
+                    <td>
+                      <select class="form-control input-md ind_sc" id="aqua_vlg_name form-control"
+
+                        style="margin-bottom:2%">
+                        <option value="">Select</option>
+                        <option value="fresh_water" selected="selected">OC </option>
+                        <option value="backrish_water">SC</option>
+                        <option value="backrish_water">BC</option>
+                        <option value="aqua_labs">ST</option>
+                      </select>
+                    </td>
+                    <td><img src="../Images/close-window.png" style="width:30px;height:30px;"
+
+                        class="remv_row"> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="form-group">
+                <div class="controls col-md-12" style="    width: 100%;margin-left: 85%;margin-bottom: 2%;">
+                  <!-- <input type="button"  name="Signup" value="Back" onclick="window.history.back()" class="btn btn-primary btn btn-info" /> -->
+                  <input name="Add" value="Add" class="btn btn-primary btn btn-info"
+
+                    id="add_sc_per" type="button"> </div>
+              </div>
+              <div id="div_id_gender" class="form-group required" style="margin-bottom: 10px;">
+                <label for="id_gender" class="control-label col-md-4  requiredField">
+                  Tackel permitted to use <span class="asteriskField takl_wm_man">*</span></label>
+                <div class="controls col-md-8 " style="margin-bottom: 20px" id="takl_perm_to_use">
+                  <label class="checkbox-inline"><input value="" class="perm_to_use"
+
+                      checked="checked" type="checkbox">Fish Vendor</label> </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> License Period
+                  &nbsp;(Fasli Year) </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px">
+                  <div>01-07-2019 to 30-06-2020 </div>
+                </div>
+              </div>
+             <!-- <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Type of Water
+                  Body </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px">
+                  <ul>
+                    <li> Reservior </li>
+                    <li> G.P Water Banks </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="wtr_bdy_div" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Name of Water
+                  Body </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px">
+                  <ul>
+                    <li> Test Name 1 </li>
+                    <li> Test Name 2 </li>
+                    <li> Test Name3 </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Total Water
+                  spread area (in Hectrs)</label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"> <input
+
+                    class="input-md textinput textInput form-control" value="10"
+
+                    id="ttl_frm_ara1" name="name" style="margin-bottom: 10px" type="datetime">
+                </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Estimated Water
+                  spread area </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"> <input
+
+                    class="input-md textinput textInput form-control" readonly="readonly"
+
+                    value="8" id="estmtd_frm_ara1" name="name" style="margin-bottom: 10px"
+
+                    type="datetime"> </div>
+              </div> -->
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Lease Amount </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"> <input
+
+                    class="input-md textinput textInput form-control" readonly="readonly"
+
+                    value="1000" id="les_amt" name="name" style="margin-bottom: 10px"
+
+                    type="datetime"> </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> No Objection
+                  Certificate Verified</label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"> <input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox">
+                </div>
+              </div>
+               <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Un Employment Certificate</label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"><input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox">
+                </div>
+              </div>
+               <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Fish Vendor Certificate Verified</label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"><input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox">
+                </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Viability
+                  Certificate verified</label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"><input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox">
+                </div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Tom Tom
+                  Certificate </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"><input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox"></div>
+              </div>
+              <div id="div_id_gender" class="form-group required"> <label for="id_gender"
+
+                  class="control-label col-md-4  requiredField"> Fish Vendor
+                  Certificate </label>
+                <div class="controls col-md-8 " style="margin-bottom: 10px"><input
+
+                    style="margin-right:1%;" checked="checked" type="checkbox"></div>
+              </div>
+            </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-2"> <b>Recommendations<span class="asteriskField">*</span>
+                : </b> </div>
+            <div class="controls col-md-10"> <textarea class="form-control" rows="2"
+
+cols="3"></textarea> </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-2"> <b>Recommendations<span class="asteriskField">*</span>
+                : </b> </div>
+            <div class="controls col-md-10"> <textarea class="form-control" rows="2"
+
+cols="3"></textarea> </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="form-group">
+              <div class="controls col-md-8 " style="float:right;margin-top:2%;">
+                <input name="Signup" value="Approved" class="btn btn-primary btn btn-info"
+
+                  multiple="" onclick="window.location.href='fisherman_dept_list.html'"
+
+                  type="button"> <input name="Signup" value="Rejected" class="btn btn-primary btn btn-info"
+
+                  multiple="" data-toggle="modal" data-target="#myModal" type="button">
+                <input name="Signup" value="Rectification" class="btn btn-primary btn btn-info"
+
+                  id="bckrish_wtr_detls" onclick="window.location.href='fisherman_dept_list.html'"
+
+                  type="button"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header"> <label class="modal-title">Reson for
+              Rejecting</label> <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row"> <label for="id_password2" class="control-label col-md-4  requiredField">Registration
+                Type<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%">
+                  <option value="aqua_farmer">Proposed name is not according to
+                    the activites described in Main Objects</option>
+                  <option value="marine_fshr"> Name is not available artinya in
+                    view of the existence of identical or closely resembling
+                    companies</option>
+                  <option value="inlad_fshrmn_indv">Proposed name is too general
+                    without any distinct word or identity</option>
+                  <option value="inlad_fshrwomn_indv">File the reasons for
+                    change of name </option>
+                  <option value="inlad_fshrmn_socty">File Boards resolution if
+                    applicable</option>
+                  <option value="inlad_fshrwomn_socty">File the present
+                    activites of the Company if applicable</option>
+                  <option value="Others">Others</option>
+                  <!-- <option value="hatchery1_owner">Hatchery </option>
+                      <option value="aqua1_shp_ownr">Aqua Shop </option>                      <option value="feed1_manf_unt">Feed Manufactring Unit</option>                      <option value="food1_pross_unt">Food Processing Unit</option> -->
+                </select>
+                <!-- <input class="input-md textinput textInput form-control" id="id_password2" name="password2" style="margin-bottom: 10px" type="text" /> -->
+              </div>
+            </div>
+            <div class="row" id="others1"> <label for="id_company" class="control-label col-md-4  requiredField">
+                Others</label>
+              <div class="controls col-md-8"> <input class="input-md textinput textInput form-control"
+
+                  id="lab_ownr_adhar_no" name="company" style="margin-bottom: 10px"
+
+                  type="text"> </div>
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer "> <button type="button" class="btn btn-danger"
+
+              data-dismiss="modal" style="background-color: #00a9e0;border-color: #00a9e0;">Submit</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: #00a9e0;border-color: #00a9e0;">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

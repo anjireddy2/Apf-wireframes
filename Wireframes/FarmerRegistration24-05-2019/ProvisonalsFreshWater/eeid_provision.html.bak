@@ -1,0 +1,700 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../../JavaScript/bootstrap.min.js"></script>
+    <script src="../../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../../CSS/font-awesome.min.css" rel="stylesheet">
+    <link href="../../CSS/bootstrap-multiselect.css" rel="stylesheet">
+    <script src="../../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }?
+
+</style> <style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+#div_id_password2{
+	min-height : 2%;
+}
+	</style>
+  </head>
+  <!------ Include the above in your HEAD tag ----------> <body style="background:#EFEFEF;">
+    <div class="header" style="background:transparent;"> <a href="farmer_registration.html"
+
+        class="logo"> <img src="../../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home" style="color:#000;">My
+          Profile</a> <a href="#contact" style="color:#000;"> My Services</a> <a
+
+          href="#about" style="color:#000;">Executive Engineer - Irg. Dept.</a>
+      </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              My Worklist <span class="arrow"></span></a> </li>
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Dashboard <span class="arrow"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <div id="accordian">
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading">PROVISIONAL APPLICATION FOR FRESH WATER
+        AQUACULTURE FARM REGISTRATION
+        <div style="float:right;padding-right:10%;"></div>
+      </div>
+      <div class="panel-body">
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Basic Details</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>User ID : </b> </div>
+            <div class="controls col-md-3"> KRI-AVGD-FDO </div>
+            <div class="controls col-md-3"> <b>User Name:</b> </div>
+            <div class="controls col-md-3"> Test User </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="col-md-3"> <b>Operator Name : </b> </div>
+            <div class="controls col-md-3"> Test Operator </div>
+            <div class="col-md-3"> <b>Mobile No : </b> </div>
+            <div class="controls col-md-3"> XXXXXX8976 </div>
+          </div>
+        </div>
+        <!-- Aqua Lab Details -->
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Applicant
+              Details</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Application No: </b> </div>
+            <div class="controls col-md-3"> PRFO11700028199 </div>
+            <div class="controls col-md-3"> <b>Aadhaar No :</b> </div>
+            <div class="controls col-md-3"> XXXX XXXX XXXX</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Applicant Name : </b> </div>
+            <div class="controls col-md-3"> Test Applicant 1 </div>
+            <div class="controls col-md-3"> <b>Father/Husband Name:</b> </div>
+            <div class="controls col-md-3"> Test Father</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Door No: </b> </div>
+            <div class="controls col-md-3"> 2/13 </div>
+            <div class="controls col-md-3"> <b>Locatlity / Landmark</b> </div>
+            <div class="controls col-md-3"> APFisheries </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="controls col-md-3"> <b>E-mail:</b> </div>
+            <div class="controls col-md-3"> testuser@gmail.com </div>
+            <div class="control-label col-md-3"> <b>State : </b> </div>
+            <div class="controls col-md-3"> A.P </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>District : </b> </div>
+            <div class="controls col-md-3"> Test District</div>
+            <div class="controls col-md-3"> <b>Mandal :</b> </div>
+            <div class="controls col-md-3"> Test Mandal </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Village : </b> </div>
+            <div class="controls col-md-3"> Test Village</div>
+            <div class="controls col-md-3"> <b>Pin Code:</b> </div>
+            <div class="controls col-md-3"> 5666011</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Mobile No:</b> </div>
+            <div class="controls col-md-3"> 9985324862</div>
+            <div class="controls col-md-3"> <b>Phone No :</b> </div>
+            <div class="controls col-md-3"> 040 66567787</div>
+          </div>
+        </div>
+        <!-- End Aqua Lab Details -->
+        <!-- Person In Charge -->
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Land Details</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>District :</b> </div>
+            <div class="controls col-md-3"> Test District</div>
+            <div class="controls col-md-3"> <b>Mandal :</b> </div>
+            <div class="controls col-md-3"> Test Mandal</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Village:</b> </div>
+            <div class="controls col-md-3"> Test Village</div>
+            <div class="controls col-md-3"> <b>Pincode :</b> </div>
+            <div class="controls col-md-3"> 5666501</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Survey No:</b> </div>
+            <div class="controls col-md-3"> PYC67767</div>
+            <div class="controls col-md-3"> <b>Ownership Right :</b> </div>
+            <div class="controls col-md-3"> Free Hold</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Total Farm Area:</b> </div>
+            <div class="controls col-md-3"> 2.09 (In Acres)</div>
+            <div class="controls col-md-3"> <b>Water Spread Area :</b> </div>
+            <div class="controls col-md-3"> 1.67 (In Acres)</div>
+          </div>
+        </div>
+        <!-- End Person Incharge -->
+        <!-- Staff Details -->
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Boundaries Of
+              the Farm</b></div>
+          <div class="table-responsive" style="margin-top : 2%;">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th> <br>
+                  </th>
+                  <th> Survey No </th>
+                  <th> Name of the Land Holder </th>
+                  <th> Address </th>
+                </tr>
+                <tr>
+                  <th> East </th>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="12345678" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Test User1" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Machavaram" type="text"> </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                  <th> West </th>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="12345677" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Test User5" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Machavaram" type="text"> </td>
+                </tr>
+                <tr>
+                  <th> North</th>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="12345658" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Test User6" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Machavaram" type="text"> </td>
+                </tr>
+                <tr>
+                  <th> South</th>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="12375673" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Test User9" type="text"> </td>
+                  <td> <input class="input-md textinput textInput form-control readonly"
+
+                      id="wtr_sprd_area" name="company" style="margin-bottom: 10px"
+
+                      readonly="readonly" value="Machavaram" type="text"> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Category of Land:</b> </div>
+            <div class="controls col-md-3"> Low Productive Agriculture Land</div>
+            <div class="controls col-md-3"> <b>Source of the Aquaculture farm
+                water :</b> </div>
+            <div class="controls col-md-3"> Drain</div>
+          </div>
+        </div>
+        <!-- End of Staff Details -->
+        <!-- Test Equipment Details -->
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Distance from
+              Agriculture Lands</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-2"> <b>East</b> </div>
+            <div class="controls col-md-2"> 10440 in mts</div>
+            <div class="controls col-md-2"> <b>West</b> </div>
+            <div class="controls col-md-2"> 200 in mts</div>
+            <div class="controls col-md-1"> <b>North :</b> </div>
+            <div class="controls col-md-1"> 400 in mts</div>
+            <div class="controls col-md-1"> <b>South :</b> </div>
+            <div class="controls col-md-1"> 800 in mts</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Village / Hamlet:</b> </div>
+            <div class="controls col-md-3"> 5000 in mts.</div>
+            <div class="controls col-md-3"> <b>Drinking Water Source :</b> </div>
+            <div class="controls col-md-3"> 5000 in mts.</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Places of Worship:</b> </div>
+            <div class="controls col-md-3"> 5000 in mts.</div>
+            <div class="controls col-md-3"> <b>Burial Ground :</b> </div>
+            <div class="controls col-md-3"> 5000 in mts.</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Road Margin:</b> </div>
+            <div class="controls col-md-3"> 150</div>
+            <div class="controls col-md-3"> <b>Other details if any:</b> </div>
+            <div class="controls col-md-3"> <textarea rows="3" cols="30"></textarea></div>
+          </div>
+        </div>
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Infarmant
+              Details</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Infarmant Name:</b> </div>
+            <div class="controls col-md-3"> Test Informant </div>
+            <div class="controls col-md-3"> <b>Relation :</b> </div>
+            <div class="controls col-md-3"> Self</div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b>Mobile No :</b> </div>
+            <div class="controls col-md-3"> 99875457665.</div>
+            <div class="controls col-md-3"> <b>Delivery Type :</b> </div>
+            <div class="controls col-md-3"> Manual</div>
+          </div>
+        </div>
+        <div class="panel panel-primary" style="width:100%;">
+          <div class="panel-heading" style="text-align:left;"><b>Documents
+              Attached</b></div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="control-label col-md-3"> <b><a href="#">Fish1.pdf:</a></b>
+            </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="controls col-md-3"> <a href="#">Fish2.pdf</a> </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="controls col-md-3"> <a href="#"><b>Fish3.pdf :</b></a>
+            </div>
+          </div>
+          <div id="div_id_password2" class="form-group required">
+            <div class="controls col-md-3"><a href="#"> Fish4.pdf</a></div>
+          </div>
+        </div>
+        <div id="div_id_password2" class="form-group required">
+          <div class="control-label col-md-12"> <input value="upload Checklist"
+
+              style="margin-bottom:4%;" type="file"> </div>
+        </div>
+        <div id="div_id_password2" class="form-group required">
+          <div class="control-label col-md-3"> Recommendations</div>
+          <div class="control-label col-md-3"> <textarea rows="3" cols="25"></textarea>
+          </div>
+        </div>
+        <div id="div_id_password2" class="form-group required">
+          <div class="form-group">
+            <div class="controls col-md-8 " style="float:right;margin-top:2%;">
+              <input name="Signup" value="Approved" class="btn btn-primary btn btn-info"
+
+                multiple="" type="button"> <input name="Signup" value="Rejected"
+
+                class="btn btn-primary btn btn-info" multiple="" type="button">
+              <input name="Signup" value="Rectification" class="btn btn-primary btn btn-info"
+
+                id="bckrish_wtr_detls" type="button"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+  </body>
+</html>

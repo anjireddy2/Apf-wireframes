@@ -1,0 +1,918 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+  color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style>
+      
+<style type="text/css">
+  .nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+  width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+    input,select {
+        margin-bottom: 10px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header"> <a href="farmer_registration.html" class="logo"> <img
+
+          src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home">My Profile</a>
+        <a href="#contact">My Services</a> <a href="#about">Admin User</a> </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li data-toggle="collapse" data-target="#regstrs" class="collapsed"> <a
+
+              href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i>
+              Registrations &amp; Licences <span class="arrow"></span></a> </li>
+          <ul class="sub-menu collapse" id="regstrs">
+            <li> <a href="farmer_registration.html"> User Registration </a> </li>
+            <li><a href="fresh_water_to_be_Modal_Window.html">Fresh Water</a></li>
+            <li><a href="backrish_water_to_be_Modal_Window.html">Backrish Water</a></li>
+            <li><a href="aqua_registration_to_be.html">Aqua Lab</a></li>
+            <li><a href="farm_enrolment.html">Farm Enrolment</a></li>
+            <li><a href="professional_certificate.html">Certificates</a></li>
+             <li><a href="../table/aqua_zonation.html">Aquazonation
+</a></li>
+           <!--  <li data-toggle="collapse" data-target="#frm_zontion" class="collapsed"><a
+
+                href="#">Aquaculture Zonation</a></li> -->
+          </ul>
+          <!-- <ul class="sub-menu collapse" id="frm_zontion">
+            <li><a href="existing_farm_zonation.html"> Existing Aquaculture </a></li>
+            <li><a href="potential_farm_zonation.html">Potential Aquaculture</a></li>
+          </ul> -->
+          <li data-toggle="collapse" data-target="#inspections" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Inspections <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="inspections">
+            <li><a href="#"> Shrimp Hatcheries </a></li>
+            <li><a href="#">Aquaculture Farms</a></li>
+            <li><a href="#">Aqua Shops</a></li>
+            <li><a href="#">Processing Houses</a></li>
+            <li><a href="#">Quality Checks for formalin </a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#advis_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Advisory Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="advis_servcs">
+            <li><a href="#"> Disease surveillance </a></li>
+            <li><a href="#">Training and Extension</a></li>
+            <li data-toggle="collapse" data-target="#wrk_shps" class="collapsed"><a
+
+                href="#">Trainings</a></li>
+            <ul class="sub-menu collapse" id="wrk_shps">
+              <li><a href="#"> Works shops </a></li>
+              <li><a href="#">Exhibitions</a></li>
+              <li><a href="#">Seminars</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#othr_trngs" class="collapsed"><a
+
+                href="#">Other Trainings</a></li>
+            <ul class="sub-menu collapse" id="othr_trngs">
+              <li><a href="#"> SIFT </a></li>
+              <li><a href="#">IFTC</a></li>
+              <li><a href="#">FTC Calender for public</a></li>
+            </ul>
+            <li><a href="#">Toll Free Services</a></li>
+            <li><a href="#">Marketing Prices</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#rsr_mapng" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Resource Mapping <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="rsr_mapng">
+            <li> <a href="#"> Aquaculture Farms </a> </li>
+            <li data-toggle="collapse" data-target="#aqua_shrmp_fsh" class="collapsed"><a
+
+                href="#">Farms</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqua_shrmp_fsh">
+              <li><a href="#"> Shrimp hatcheries </a></li>
+              <li><a href="#">Fish seed Farms</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#cld_chn_fclts" class="collapsed"><a
+
+                href="#">Cold Chain Facilities</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="cld_chn_fclts">
+              <li><a href="#"> Processing Plants</a></li>
+              <li><a href="#">Cold Storages</a></li>
+              <li><a href="#">Ice Plants</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#aqa_inp_shps" class="collapsed"><a
+
+                href="#">Aqua Input Shops</a></li>
+            <ul class="sub-menu collapse" id="aqa_inp_shps">
+              <li><a href="#"> Feed mills</a></li>
+              <li><a href="#">Feed Supplementary shops</a></li>
+              <li><a href="#">Drugs/Chemicals</a></li>
+            </ul>
+            <li> <a href="#"> Aqua Labs </a> </li>
+            <li data-toggle="collapse" data-target="#aqa_shds" class="collapsed"><a
+
+                href="#">Aqua Sheds</a><span class="arrow"></span></li>
+            <ul class="sub-menu collapse" id="aqa_shds">
+              <li><a href="#"> Fish Packing</a></li>
+              <li><a href="#">Shrimp Processing</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#aqa_lab_servcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Lab Services <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="aqa_lab_servcs">
+            <li data-toggle="collapse" data-target="#govt_lab_servcs" class="collapsed"><a
+
+                href="#"> Government Labs</a></li>
+            <ul class="sub-menu collapse" id="govt_lab_servcs">
+              <li><a href="#"> MPEDA</a></li>
+              <li><a href="#">EIA</a></li>
+              <li><a href="#">DCA</a></li>
+              <li><a href="#">Water and Soil Analysis</a></li>
+              <li><a href="#">Microbiology</a></li>
+              <li><a href="#">Feed Analysis</a></li>
+              <li><a href="#">AMR</a></li>
+              <li><a href="#">ELISA</a></li>
+              <li><a href="#">LCMSMS</a></li>
+              <li><a href="#">AAS</a></li>
+            </ul>
+            <li><a href="#">Private Labs</a></li>
+            <li data-toggle="collapse" data-target="#aqa_labs_servc" class="collapsed"><a
+
+                href="#">Aqua Labs </a></li>
+            <ul class="sub-menu collapse" id="aqa_labs_servc">
+              <li><a href="aqua_lab_details.html"> Lab Details</a></li>
+              <li><a href="aqa_dshbrd.html">My Dashboard</a></li>
+              <li><a href="aqa_my_services.html">My Services</a></li>
+              <li><a href="aqa_dept_dsh.html">Department Dashboard</a></li>
+            </ul>
+          </ul>
+          <li data-toggle="collapse" data-target="#rprts" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> Reports</a> </li>
+          <li data-toggle="collapse" data-target="#kpis" class="collapsed"> <a
+
+              href="#"><i class="fa fa-lg"></i> KPIs <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="kpis">
+            <li><a href="#"> Freshwater Aquaculture</a></li>
+            <li><a href="#">Backrish Water Aquaculture</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#bnfcry_mgmt" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> Beneficiary Schemes <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="bnfcry_mgmt">
+            <li><a href="reports-ddo-main.html"> commissioner  Reports</a></li>
+            <li><a href="#">FIDF/NFDA(Govt. of India)</a></li>
+            <li><a href="#">External Aided Projects</a></li>
+          </ul>
+          <li data-toggle="collapse" data-target="#iot_bsd_srvcs" class="collapsed">
+            <a href="#"><i class="fa fa-lg"></i> IoT based services</a> </li>
+        </ul>
+      </div>
+    </div>
+   <div class="panel panel-primary">
+      <div class="panel-heading"> Beneficary Approval-&gt; Scrutinize Beneficiary</div>
+    <div class="panel-body">
+      <div class="panel panel-info" style="border-color:none">
+     
+       <div class="" style="margin-top: 10px;">
+         <div class="col-md-4">
+           <div class="form-group">
+  <label for="sel1">Filter By D.F.O</label>
+  <select class="form-control" id="sel1">
+    <option>--Select--</option>
+    
+    <option>vizag (Vijaya)</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
+         </div>
+                  
+                  <div class="col-md-4">
+           <div class="form-group">
+  <label for="sel1">Filter By Scheme </label>
+  <select class="form-control" id="sel1">
+    <option>--Select--</option>
+    
+    <option>State Development Schemes</option>
+    <option>Rural Infrastructure Development Fund (RIDF)</option>
+  
+  </select>
+</div>
+         </div>
+         <div class="col-md-4">
+           <div class="form-group">
+  <label for="sel1">Filter By component </label>
+  <select class="form-control" id="sel1">
+    <option>--Select--</option>
+    
+    <option>Fishing inputs / Other components</option>
+    <option>Fund</option>
+   
+  </select>
+</div>
+         </div>
+       </div>
+        <div class="clearfix"></div>
+          <div style="border-bottom: 1px solid #ccc;"></div>
+          <div class="col-md-12">
+          <h4 style="color: green; font-weight: 600;">Beneficiary Component details</h4>
+          </div>
+            <div class="clearfix"></div>
+
+             <div class="table-responsive" style="">
+
+          <table class="table" style="font-size:10px;" id="potn_tabl">
+          <tbody>
+          <tr>
+            <th></th>
+            <th>Application I.D</th>
+            <th>Name</th>
+            <th>Adhar Number </th>
+            <th>Mandal </th>
+            <th>Gram Panchayat  </th>
+            <th>Village</th>
+
+            <th>
+              Scheme Name 
+            </th>
+            <th>
+             Scheme Component 
+            </th>
+
+            <th>
+             Unit Price 
+            </th>
+            <th>
+             % of Subsidy 
+            </th> 
+            <th>
+              Govt. Subsidy 
+            </th> 
+            <th>
+             Beneficiary Contribution 
+            </th>
+              <th>
+             Number of Unit
+            </th>
+              <th style="">
+             Total Budget
+            </th>
+            <th>
+             Fiscal Year
+            </th>
+             <th>
+             View Documents
+            </th>
+          
+          
+           
+
+          </tr>         
+          <tr>
+            <td>
+<input type="checkbox" name="">
+            </td>
+            <td>
+             1
+            </td>
+            <td>Test User </td>
+            <td>xxxxxxxx1234  </td>
+            <td>Bapatla</td>
+            <td>Suryalanka</td>
+            <td>Suryalanka</td>
+             <td>
+              State Development Schemes 
+            </td> 
+            <td>
+              Fishing ban relief to Marine fishermen  
+            </td> 
+            <td>
+              500000
+            </td> 
+            <td>
+             50
+            </td>
+             <td>
+             25000
+            </td>
+            <td>
+              25000
+            </td>
+              <td>
+              150
+              
+              </td>
+              <td>
+              3750000
+              
+              </td>
+            <td>2019 - 2020</td>
+            <td>
+               <div>
+                 <a href="../images/ration.jpg">Ration card</a><br>
+                 <a href="../images/cast.webp">Cast Certificate</a>
+               </div>
+             
+           
+             
+            </td>
+          
+         <!--   <td> 
+              <span>
+              <button class="btn btn-primary apply" style="font-size: 9px;">ACCEPT</button> 
+            </span>
+            <span>
+             <button class="btn btn-primary apply" style="font-size: 9px;" data-toggle="modal" data-target="#reject">REJECT</button>
+            </span>
+
+              </td> -->
+          </tr>
+          <tr>
+            <td>
+<input type="checkbox" name="">
+            </td>
+            <td>
+              2
+            </td>
+             <td>Test User1 </td>
+            <td>xxxxxxxx1234  </td>
+            <td>Bapatla</td>
+            <td>Suryalanka</td>
+            <td>Suryalanka</td>
+             <td>
+             Rural Infrastructure Development Fund (RIDF)
+            </td> 
+            <td>
+              Landing and Berthing facilities - Machineries &Equipment-Purchases 4405-00-104-07-04-520-521  
+            </td> 
+            <td>
+              550000
+            </td> 
+            <td>
+             50
+            </td>
+             <td>
+              75000
+            </td>
+            <td>
+              75000
+            </td>
+              
+              
+              <td>
+              150
+              
+              </td>
+              <td>
+              11250000
+              
+              </td>
+              
+              
+             <td>2019 - 2020</td>
+            <td>
+              <div>
+                 <a href="../images/ration.jpg">Ration card</a><br>
+                 <a href="../images/cast.webp">Cast Certificate</a>
+               </div>
+            </td>
+             <!-- <td> 
+              <span>
+              <button class="btn btn-primary apply" style="font-size: 9px;">ACCEPT</button> 
+            </span>
+            <span>
+               <button class="btn btn-primary apply" style="font-size: 9px;" data-toggle="modal" data-target="#reject">REJECT</button>
+            </span>
+
+              </td> -->
+          </tr>
+          <tr>
+            <td><input type="checkbox" name=""></td>
+            <td>
+                3           
+              </td>
+               <td>Test User2 </td>
+            <td>xxxxxxxx1234  </td>
+            <td>Bapatla</td>
+            <td>Suryalanka</td>
+            <td>Suryalanka</td>
+             <td>
+              CSS- Blue Revolution
+            </td> 
+            <td>
+             CSS- Blue Revolution
+            </td> 
+            <td>
+              150000-600000
+            </td> 
+            <td>
+             50
+            </td>
+             <td>
+                N/A
+            </td>
+            <td>
+              N/A            </td>
+              
+              
+              
+              <td>
+              150
+              
+              </td>
+              <td>
+              11250000 - 45000000
+              
+              </td>
+              
+              
+              
+               <td>2019 - 2020</td>
+            <td >
+             <div>
+                 <a href="../images/ration.jpg">Ration card</a><br>
+                 <a href="../images/cast.webp">Cast Certificate</a>
+               </div>
+
+             
+            </td>
+           
+          </tr>
+
+
+
+
+
+        </tbody>
+      </table>
+      </div>
+
+     
+
+
+    
+    </div>
+     <div class="row">
+        <div class="col-md-12 pull-right" style="float: right; text-align: right;">
+          <span style="margin-right: 20px;"><input onclick="toggle(this);" type="checkbox" name="vehicle1" value="Bike"> Select all</span>
+             <span style="margin-right: 20px;">
+              <button class="btn btn-primary apply" onclick="window.location.href='benefeciary.html'" style="font-size: 9px;">APPROVED</button> 
+            </span>
+            <span>
+             <button class="btn btn-primary apply" style="font-size: 9px;" data-toggle="modal" data-target="#reject">REJECT</button>
+            </span> 
+        </div>
+      </div>
+
+        
+      
+
+        
+                            
+                            
+    </div>
+      
+  </div>
+
+
+
+ <!-- Modal -->
+ <div class="modal" id="reject">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header"> <label class="modal-title">Reason for
+              Rejecting</label> <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row"> <label for="id_password2" class="control-label col-md-4  requiredField">Rejection
+                Type<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%">
+                  <option value="aqua_farmer">Proposed name is not according to
+                    the activites described in Main Objects</option>
+                  <option value="marine_fshr"> Name is not available artinya in
+                    view of the existence of identical or closely resembling
+                    companies</option>
+                  <option value="inlad_fshrmn_indv">Proposed name is too general
+                    without any distinct word or identity</option>
+                  <option value="inlad_fshrwomn_indv">File the reasons for
+                    change of name </option>
+                  <option value="inlad_fshrmn_socty">File Boards resolution if
+                    applicable</option>
+                  <option value="inlad_fshrwomn_socty">File the present
+                    activites of the Company if applicable</option>
+                  <option value="Others">Others</option>
+                  <!-- <option value="hatchery1_owner">Hatchery </option>
+                      <option value="aqua1_shp_ownr">Aqua Shop </option>                      <option value="feed1_manf_unt">Feed Manufactring Unit</option>                      <option value="food1_pross_unt">Food Processing Unit</option> -->
+                </select>
+                <!-- <input class="input-md textinput textInput form-control" id="id_password2" name="password2" style="margin-bottom: 10px" type="text" /> -->
+              </div>
+            </div>
+            <div class="row" id="others1"> <label for="id_company" class="control-label col-md-4  requiredField">
+                Others</label>
+              <div class="controls col-md-8"> <input class="input-md textinput textInput form-control"
+
+                  id="lab_ownr_adhar_no" name="company" style="margin-bottom: 10px"
+
+                  type="text"> </div>
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer "> <button type="button" class="btn btn-danger"
+
+              data-dismiss="modal" style="background-color: #00a9e0;border-color: #00a9e0;">Submit</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: #00a9e0;border-color: #00a9e0;">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <script type="text/javascript">
+    function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
+  </script>
+  
+ </body>     
+</html>

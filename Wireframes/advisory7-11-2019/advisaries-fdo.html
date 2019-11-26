@@ -1,0 +1,3208 @@
+﻿<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.jqueryscript.net/demo/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/css/bootstrap-multiselect.css" type="text/css">
+
+<script src="https://www.jqueryscript.net/demo/jQuery-Multiple-Select-Plugin-For-Bootstrap-Bootstrap-Multiselect/js/bootstrap-multiselect.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="http://trirand.com/blog/jqgrid/themes/ui.jqgrid.css" type="text/css">
+<link rel="stylesheet" href="http://trirand.com/blog/jqgrid/themes/redmond/jquery-ui-custom.css" type="text/css">
+<link rel="stylesheet" href="http://trirand.com/blog/jqgrid/themes/ui.multiselect.css" type="text/css">
+
+<script src="http://trirand.com/blog/jqgrid/js/jquery.jqGrid.js"></script>
+
+<script src="http://trirand.com/blog/jqgrid/js/jquery-ui-custom.min.js"></script>
+<script src="http://trirand.com/blog/jqgrid/js/jquery.layout.js"></script>
+<script src="http://trirand.com/blog/jqgrid/js/i18n/grid.locale-en.js"></script>
+<script src="http://trirand.com/blog/jqgrid/js/ui.multiselect.js"></script>
+<script src="http://trirand.com/blog/jqgrid/js/jquery.tablednd.js"></script>
+<script src="http://trirand.com/blog/jqgrid/js/jquery.contextmenu.js"></script>
+
+
+<title>AP Fisheries</title>
+ 
+
+<style type="text/css">
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+
+#wrapper {
+    padding-left: 0;    
+}
+
+#page-wrapper {
+    width: 100%;        
+    padding: 0;
+    background-color: #fff;
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0,0,0,.5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0,0,0,.3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    /*color: #999;*/
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+.asteriskField{
+	color : red;
+}
+.ui-datepicker-calendar {
+    display: none;
+    }​
+
+</style>
+
+
+	<style type="text/css">
+	.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: relative;
+  top: 1px;
+  width: 20%;
+  height: 100%;
+  color: #e1ffff;
+  float:left;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #2e353d;
+  /*padding: 20px 10px;*/
+  height : 50px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 13px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.panel-primary{
+	width: 78%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+}
+#div_id_password2{
+	min-height : 7%;
+}
+select{ text-transform: uppercase; }
+.project-tab {
+    padding: 10%;
+    margin-top: -8%;
+}
+.project-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.project-tab #tabs h6.section-title{
+    color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #0062cc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.project-tab .nav-link:hover {
+    border: none;
+}
+.project-tab thead{
+    background: #f3f3f3;
+    color: #333;
+}
+.project-tab a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+	</style>
+</head>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+<body style="background:#EFEFEF;">
+         <div class="header"  style="background:transparent;">
+	  <a href="farmer_registration.html" class="logo">
+		  <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+		  <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+	  <div class="header-right">
+		<a class="active" href="#home" style="color:#000;">My Profile</a>
+		<a href="#contact" style="color:#000;">  My Services</a>
+		<a href="#about" style="color:#000;">FDO</a>
+	  </div>
+	</div>
+	 
+	  <div class="nav-side-menu">
+		<div class="brand"></div>
+		<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+	  
+			<div class="menu-list">
+	  
+				<ul id="menu-content" class="menu-content collapse in">
+					
+					
+					<li data-toggle="collapse" data-target="#regstrs" class="collapsed">
+					  <a href="farmer_registration.html" style="font-size:12px;"><i class="fa fa-lg"></i> My Worklist <span class="arrow"></span></a>
+					</li>  
+				
+
+					<li data-toggle="collapse" data-target="#inspections" class="collapsed">
+					  <a href="#"><i class="fa fa-lg"></i> Dashboard <span class="arrow"></span></a>
+					</li>
+				
+							
+				</ul>
+		 </div>
+	</div>
+	<div class="panel panel-primary">
+      <div class="panel-heading"><b>Advisory Screen / ADV - 0011 </b><div style="float:right;padding-right:10%;"></div></div>
+		<div class="panel-body">
+			<div id="signupbox" style="margin-left:0%;width:100%;text-align:center;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="panel panel-primary" style="width:100%;">
+				<div class="panel-heading" style="text-align:left;"><b>Farmer / Fisherman  Details</b></div>
+					<div id="div_id_password2" class="form-group required" >
+								<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Name</label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" value="Test Farmer" readonly id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+					</div>
+                    
+                    
+                    
+                    <div id="div_id_password2" class="form-group required" >
+								<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> User Registration Number</label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" value="0001" readonly id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+					</div>
+                    
+                    
+                    
+                    
+                    
+                    
+						<div id="div_id_password2" class="form-group required" >
+								<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Address</label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" value="D:no 31,Sai baba road,Pedakakani Mandal,Guntur Dist,AP" readonly id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+					</div>
+						 
+						<div id="div_id_password2" class="form-group required" >
+								<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Mobile Number</label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" value="9985324862" readonly id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+					</div>
+				
+					</div>
+				</div>
+            
+            
+            
+            
+            
+            <div id="signupbox" style="margin-left:0%;width:100%;text-align:center;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="panel panel-primary" style="width:100%;">
+				<div class="panel-heading" style="text-align:left;"><b>Farm Details</b></div>
+					
+                    
+                    <div  class="form-group required"      >
+                <div  class="form-group required"   id="reg_aqua1_number"    > 
+                            <label  class="control-label col-md-4  requiredField"> Registration Number of Aqua Farm</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="reg_aqua_number" style="margin-bottom:2%" disabled>
+                    
+
+                  <option value="reg_11001">11001</option>
+                  <option value="reg_11002">11002</option>
+<!--                  <option value="reg_11003">11003</option>-->
+                  <!-- <option value="Training">Training</option> -->
+                  <!-- <option value="inland_fshr">Disease surveillance</option> -->
+<!--
+                  <option value="Marketing_Price">Marketing Price </option>
+                  <option value="toll-free">Toll Free services</option>
+                  
+-->
+                </select>
+                            </div>
+                        </div>
+          </div>  
+                    
+                    
+                    
+                    
+                    
+                    <div  class="form-group required"   style="margin-bottom: 20px;"    >
+                <div  class="form-group required"   id="adress1"     > 
+                            <label  class="control-label col-md-4  requiredField"> Address</label>
+                            <div class="controls col-md-8 "> 
+                                 <textarea class="form-control" rows="3" id="comment"  disabled style="margin-bottom: 10px;">Shri. G. Lakshmi Narasimba Mandauru, Kothapatnam Mandal, Prakasam District, Andhra Pradesh.</textarea>
+                            </div>
+                        </div>
+          </div> 
+                    
+             
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+						
+						 
+						
+				
+					</div>
+				</div>
+				
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+				
+				<!-- Aqua Farm Details -->
+				<div class="col-md-12">
+				<div class="panel panel-primary" style="width:100%;">
+				<div class="panel-heading" style="text-align:left;"><b>Advisory Details</b></div>
+<!-- 							<div id="div_id_password2" class="form-group required" >
+								<div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Category</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="farm_type1" style="margin-bottom:2%">
+									
+								
+									<option value="marine_fshr">Marine Fisherman</option>
+									<option value="inland_fshr">Inland Fisherman</option>
+									<option value="aqua_lab_owner">Aqua Lab </option>
+									<option value="hatchery_owner">Hatchery </option>
+									<option value="aqua_shp_ownr">Aqua Shop </option>
+									<option value="feed_manf_unt">Feed Manufactring Unit</option>
+									<option value="food_pross_unt">Food Processing Unit</option>
+									<option value="cld_strg">Cold Storage</option>
+									<option value="ice_plnt">Ice Plant</option>
+									<option value="fis_trdr">Fish Trader</option>
+									<option value="shrmp_trdr">Shrimp Trader</option>
+								</select>
+                            </div>
+                        </div>
+					</div> -->
+              <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Advisory</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type_advisiory" disabled="" style="margin-bottom:2%">
+                   <!-- <option value="marine_fshr">--Select--</option>   -->
+
+                  <option value="Lab_Services">Aqua culture practices</option>
+                  <option value="inland_services">Inland </option>
+                  <option value="marine_services">Marine </option>
+                  <!-- <option value="Training">Training</option> -->
+                  <!-- <option value="inland_fshr">Disease surveillance</option> -->
+                  <option value="Marketing_Price">Marketing Price </option>
+                  <option value="toll-free">Toll Free services</option>
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+
+            <div id="typeof_services_inland">
+                                      <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" disabled="" id="inland_serveice_type" style="margin-bottom:2%">
+                  <option value="marine_fshr">--Select--</option>  
+                   <!-- <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option>
+                  <option value="soil_management">Soil Management</option> -->
+                  <!-- <option value="disesses_management_inland">Disease Management </option> -->
+                   <option value="pond_management">Pond Management</option>
+                 <!-- <option value="management_practices"> better Management practices </option> -->
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+
+                              <div class="comman-aquaculture" id="pond-preparation-inland" style="display: none;">
+<div class="col-md-12">
+<h4>Pond Preparation:</h4>
+</div>
+<div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Drying
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Tilling
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Liming
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Water
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Menuring
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Seed Stocking
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+
+  <div class="col-md-12">
+<h4>Water Quality Management(weekly):</h4>
+</div>
+ <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">PH</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">DO</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Selinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Aliklinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Harness</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Calcium</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Maginisum</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">BOD</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Ammonia</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Nitride</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">H2s</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+
+
+
+  <div class="col-md-12">
+<h4>Feed Management(Daily):</h4>
+</div>
+ <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Bag feed
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Pallet feed
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+
+  <div class="col-md-12">
+<h4>Helath Management(weekly):</h4>
+</div>
+
+<div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Sanatiser</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type_advisiory" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Lab_Services">Lime </option>
+                  <option value="Training">Potasium permangament(pp)</option>
+                  <option value="inland_fshr">Solt</option>
+                  <option value="Marketing_Price">Water probiotics </option>
+                   <option value="Marketing_Price">feed probiotics </option>
+                    <option value="Marketing_Price">bottom probiotics </option>
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+  </div>   
+  <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Gross examination</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Micorscopic exampination</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Molecular tests</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+
+                     <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" value="10 acres" style="margin-bottom: 10px" type="file">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Problem faced</label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;"></textarea>
+
+                            </div>
+                        </div>
+          </div> 
+        </div>
+
+ <!-- pond managemnet ends -->
+
+            </div>
+
+                <div id="">
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      $('#water').hide();
+       $('#soil').hide();
+       $('#feed').hide();   
+        $('#pond').hide();
+       $('#Disease').hide();
+       $('#better').hide();   
+     var a = localStorage.getItem("servicetype");
+     if(a == 'water_management')
+     {
+      
+       $('#water').show();
+       $('#soil').hide();
+       $('#feed').hide();
+        $('#pond').hide();
+       $('#Disease').hide();
+       $('#better').hide();       
+     }
+     else if(a == 'feed_management')
+     {
+       $('#water').hide();
+       $('#soil').hide();
+       $('#feed').show();   
+        $('#pond').hide();
+       $('#Disease').hide();
+       $('#better').hide(); 
+      }
+       else if(a == 'soil_management')
+     {
+       $('#water').hide();
+       $('#soil').show();
+       $('#feed').hide();
+        $('#pond').hide();
+       $('#Disease').hide();
+       $('#better').hide();    
+      }
+      else if(a == 'disesses_management')
+     {
+       $('#water').hide();
+       $('#soil').hide();
+       $('#feed').hide();
+        $('#pond').hide();
+       $('#Disease').show();
+       $('#better').hide();    
+      }
+      else if(a == 'pond_management')
+     {
+       $('#water').hide();
+       $('#soil').hide();
+       $('#feed').hide();
+        $('#pond').hide();
+       $('#Disease').show();
+       $('#better').hide();    
+      }
+      else if(a == 'management_practices')
+     {
+       $('#water').hide();
+       $('#soil').hide();
+       $('#feed').hide();
+        $('#pond').hide();
+       $('#Disease').hide();
+       $('#better').show();    
+      }
+       });
+   
+   
+</script>
+      
+                        <div id="water" class="form-group required ">
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                  <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option>
+                  <option value="soil_management">Soil Management</option>
+                  <option value="disesses_management">Disease Management </option>
+                  <option value="pond_management">Pond Management</option>
+                  <option value="management_practices"> better Management practices </option>
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+
+  <div id="feed" class="form-group required " >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                  <!-- <option value="water_management">Water Management</option> -->
+                  <option value="feed_management">Feed Management</option>
+                  <option value="soil_management">Soil Management</option>
+                  <option value="disesses_management">Disease Management </option>
+                  <option value="pond_management">Pond Management</option>
+                  <option value="management_practices"> better Management practices </option>
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+            <div id="soil" class="form-group required " >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                <!--   <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option> -->
+                  <option value="soil_management">Soil Management</option>
+                  <option value="disesses_management">Disease Management </option>
+                  <option value="pond_management">Pond Management</option>
+                  <option value="management_practices"> better Management practices </option>
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+           <div id="pond" class="form-group required " >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                <!--   <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option> -->
+                  <!-- <option value="soil_management">Soil Management</option> -->
+                  <!-- <option value="disesses_management">Disease Management </option> -->
+                  <option value="pond_management">Pond Management</option>
+                  <!-- <option value="management_practices"> better Management practices </option> -->
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+           <div id="Disease" class="form-group required " >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                <!--   <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option> -->
+                 <!--  <option value="soil_management">Soil Management</option> -->
+                  <option value="disesses_management">Disease Management </option>
+                  <!-- <option value="pond_management">Pond Management</option> -->
+                  <!-- <option value="management_practices"> better Management practices </option> -->
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+           <div id="better" class="form-group required " >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Type of Services </label>
+                            <div class="controls col-md-8 "> 
+                  <select class="form-control input-md" id="serveice_type" disabled="" style="margin-bottom:2%">
+                <!--   <option value="water_management">Water Management</option>
+                  <option value="feed_management">Feed Management</option> -->
+                  <!-- <option value="soil_management">Soil Management</option> -->
+                  <!-- <option value="disesses_management">Disease Management </option>
+                  <option value="pond_management">Pond Management</option> -->
+                  <option value="management_practices"> better Management practices </option>
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+          <!-- watermanagement -->
+
+          <div class="comman-aquaculture" id="water-management" style="">
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Depth</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value="XXXX" disabled=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Color</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value="XXXX" disabled="" id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Transparency / Turbidity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value="XXXX" disabled=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+          
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Oxygen Levels</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" disabled="" value="XXXXX"  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>       
+            <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">DO</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value="XXXX" disabled=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>       
+
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" disabled="" value="XXXX.pdf" style="margin-bottom: 10px" type="text">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Remarks </label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;" disabled="">XXXXXX</textarea>
+
+                            </div>
+                        </div>
+          </div>
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Feedback <span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;" ></textarea>
+
+                            </div>
+                        </div>
+          </div>
+        </div>
+
+                    <!-- watermanagement ends-->
+
+
+                    <!-- soil managements -->                    
+<div class="comman-aquaculture" id="soil-management" style="display: none;">
+                     <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Organic Carbon (0.5-2%)</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> PH level</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Availabule Nitrogen (mg/100 gms)</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>
+          
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Phosphorus (mg/100 gms)</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+                        <div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Soil Type</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type_advisiory" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Lab_Services">Acid Sulphate</option>
+                  <option value="Training">sandy loam</option>
+                  <option value="inland_fshr">Black cotton</option>
+                  <option value="Marketing_Price">Loamy </option>
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>   
+
+                     <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" value="10 acres" style="margin-bottom: 10px" type="file">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Problem faced</label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;"></textarea>
+
+                            </div>
+                        </div>
+          </div> 
+        </div>
+
+                    <!-- soil managements  ends-->
+
+
+                    <!-- feed management -->
+                    <div class="comman-aquaculture" id="feed-management" style="display: none;">
+                     <div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Type of feeds</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type_advisiory" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Lab_Services">Powder form </option>
+                  <option value="Training">sinking pallet</option>
+                  <option value="inland_fshr">floating pallet</option>
+                  <!-- <option value="Marketing_Price">Loamy </option> -->
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>   
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Feeding schedule</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Feeding ratio (% of feeding)</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">FCR(Quantity of feed utilized for per kg flesh )</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+          <div class="clearfix"></div>
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Feeding ratio (% of feeding)</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" value="10 acres" style="margin-bottom: 10px" type="file">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Problem faced</label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;"></textarea>
+
+                            </div>
+                        </div>
+          </div>
+        </div>
+
+        </div>
+
+                    <!-- feed management ends -->
+
+
+                    <!-- desess management-->
+                    <div class="comman-aquaculture" id="desess-management" style="display: none;">
+                      <div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Types of stress</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type-stress" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Physical_stress">Physical stress </option>
+                  <option value="chemeical_stress">chemeical stress</option>
+                  <option value="biological_stress">biological stress</option>
+                  <!-- <option value="Marketing_Price">Loamy </option> -->
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+
+          </div>   
+
+<!-- physical -->
+<div id="physical" class="type-of-stress" style="display: none;">
+                     <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Temprature</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Selinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">wether</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+</div>
+<!-- chemical -->
+<div style="display: none;" class="type-of-stress" id="chemical">
+  <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">DO</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">PH</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Alklinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">ammoniagas</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+</div>
+          <!-- biological -->
+
+<div style="display: none;" class="type-of-stress" id="biological">
+  <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Blooms</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">high stocking density</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div>  
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">pathogens</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+
+           
+</div>
+<div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" value="10 acres" style="margin-bottom: 10px" type="file">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Problem faced</label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;"></textarea>
+
+                            </div>
+                        </div>
+          </div> 
+</div>
+                    <!-- desess management ends-->
+                    <div class="comman-aquaculture" id="pond-preparation" style="display: none;">
+<div class="col-md-12">
+<h4>Pond Preparation:</h4>
+</div>
+<div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Drying
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Tilling
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Liming
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Water
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Menuring
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Seed Stocking
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+
+  <div class="col-md-12">
+<h4>Water Quality Management(weekly):</h4>
+</div>
+ <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">PH</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">DO</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Selinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Aliklinity</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Harness</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Calcium</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Maginisum</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">BOD</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Ammonia</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Nitride</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+           <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">H2s</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+
+
+
+  <div class="col-md-12">
+<h4>Feed Management(Daily):</h4>
+</div>
+ <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Bag feed
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+  <div id="div_id_password2" class="form-group required"> 
+  <label for="id_password2" class="control-label col-md-4  requiredField">Pallet feed
+   </label>
+  <div class="controls col-md-8 " style="width: 50%;margin-bottom: 2%;margin-left: 3%;">
+    <div class="radio" style="float:left;width:25%;margin-top:0%">
+      <label><input name="optradio" id="free_hold" checked="checked" type="radio">Yes</label> </div>
+    <div class="radio" style="float:left;margin-top:0%;"> <label><input name="optradio" id="lease_hold" type="radio">No</label> </div>
+  </div>
+  </div>
+
+  <div class="col-md-12">
+<h4>Helath Management(weekly):</h4>
+</div>
+
+<div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Sanatiser</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="type_advisiory" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Lab_Services">Lime </option>
+                  <option value="Training">Potasium permangament(pp)</option>
+                  <option value="inland_fshr">Solt</option>
+                  <option value="Marketing_Price">Water probiotics </option>
+                   <option value="Marketing_Price">feed probiotics </option>
+                    <option value="Marketing_Price">bottom probiotics </option>
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+  </div>   
+  <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Gross examination</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Micorscopic exampination</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+          <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Molecular tests</label>
+                            <div class="controls col-md-8 "> 
+                            <input class="input-md textinput textInput form-control" value=""  id="lab_ownr_address" name="company" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+          </div> 
+
+                     <div id="" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Attachments </label>
+                            <div class="controls col-md-8 "> 
+                          <input class="input-md  textinput textInput form-control" value="10 acres" style="margin-bottom: 10px" type="file">
+                            </div>
+                        </div>
+          </div>       
+
+            <div id="div_id_password2" class="form-group required" >
+                <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Problem faced</label>
+                            <div class="controls col-md-8 "> 
+                                <textarea rows="3"  cols="4"  class="input-md textinput textInput form-control"  style="margin-bottom: 20px;"></textarea>
+
+                            </div>
+                        </div>
+          </div> 
+        </div>
+
+ <!-- pond managemnet ends -->
+
+
+ 
+<div class="comman-aquaculture" id="management_practices" style="display: none;">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="" class="form-group required"> 
+      <label for="id_company" class="control-label col-md-4  requiredField"> Type  of better management practices</label>
+            <div class="controls col-md-8 "> 
+             <select class="form-control input-md" id="management-practices" style="margin-bottom:2%">
+            <option value="marine_fshr">--Select--</option>  
+            <option value="Site_selection">   Site selection</option>
+<            <option value="Pond_construction">  Pond construction </option>
+            <option value="Pond_preparation">  Pond preparation</option>
+            <option value="Seed_selection">  Seed selection and stocking</option>
+            <option value="Feeding">  Feeding and feed management</option>
+            <option value="Bottom">  Bottom and water quality management</option>
+            <option value="Health">  Health management</option>
+
+            </select>
+            </div>
+                        
+    </div>
+      </div>
+    </div>
+ <div style="display: none;" class="selection-site" id="site-selection">
+      <div class="row">
+        <div class="col-md-12" style="    font-size: 15.5px;
+    font-weight: 500;">
+     <h3 style="margin-left: 15px;">   Site selection</h3>
+          <ul>
+            <li>Selected site should be in aquaculture zone only.</li>
+             <li>Mangroves, agricultural lands, salt pans, sanctuaries should not select for aquaculture operations.
+             </li>
+              <li>Assessment of quality and quantity of water availability in different seasons</li>
+              <li>  Preferably clayey loam soils, </li>
+              <li>Clear access to site,</li>
+              <li> Availability of electricity,</li>
+              <li> Seed productions hatcheries, ice plants, processing plants are to be in the nearest vicinity of selected site are advisable.</li>
+              <li> Skilled manpower availability.</li>
+              <li> CAA norms should be followed.</li>
+
+          </ul>
+          <h3 style="margin-left: 15px;">Soil quality.</h3>
+          <ul>
+            <li>suitable soils </li>
+            <li>Clayey- loam </li>
+            <li>black cotton </li>
+            <li>Sandy –clay </li>
+          <li>Soil quality parameters </li>
+          <ul>
+            <li>pH 6.0-7.5</li>
+            <li> organic carbon 1.5% - 2.0 in 100gm</li>
+             <li> Available nitrogen 50-75mg/ 100g</li>
+              <li>  Available phosphorus 3-6mg/100g </li>
+               <li> Calcium carbonate  5%</li>
+               <li> Carbon, nitrogen ratio 20:1</li>
+
+          </ul>
+          <br>
+      <li>Soil pH & recommended dose of lime /ha.</li>
+      <br>
+      <table border="1" style="margin-left: 20px;
+    /* padding: 10px; */
+    width: 300px;
+    height: 100px; text-align: center;">
+        <tr>
+          <th>Soil pH</th>
+          <th>Agri.lime</th>
+          <th>Quick lime.</th>
+        </tr>
+        <tr>
+          <td>5.5 – 6.0 </td>
+           <td>3 – 5 tons</td>
+            <td>2 – 4 tons.</td>
+        </tr>
+          <tr>
+          <td>6-6.5 </td>
+           <td>2 – 3 tons</td>
+            <td>1 – 2 tons.</td>
+        </tr>
+      </table>
+      <br>
+      <li> Lime neutralizes the soil acidity and favour to enhance the natural food production in the pond water.</li>
+      <li> Lime will improve the phosphorus availability which is essential for pond productivity.         </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+<!--         <div style="display: none;" class="selection-site" id="Pond-construction">
+      <div class="row">
+        <div class="col-md-12" style="    font-size: 15.5px;
+    font-weight: 500;">
+          <ul>
+            <li>Selected site should be in aquaculture zone only.</li>
+             <li>Mangroves, agricultural lands, salt pans, sanctuaries should not select for aquaculture operations.
+             </li>
+              <li>Assessment of quality and quantity of water availability in different seasons</li>
+              <li>  Preferably clayey loam soils, </li>
+              <li>Clear access to site,</li>
+              <li> Availability of electricity,</li>
+              <li> Seed productions hatcheries, ice plants, processing plants are to be in the nearest vicinity of selected site are advisable.</li>
+              <li> Skilled manpower availability.</li>
+              <li> CAA norms should be followed.</li>
+
+          </ul>
+          <h3 style="margin-left: 15px;">Soil quality.</h3>
+          <ul>
+            <li>suitable soils </li>
+            <li>Clayey- loam </li>
+            <li>black cotton </li>
+            <li>Sandy –clay </li>
+          <li>Soil quality parameters </li>
+          <ul>
+            <li>pH 6.0-7.5</li>
+            <li> organic carbon 1.5% - 2.0 in 100gm</li>
+             <li> Available nitrogen 50-75mg/ 100g</li>
+              <li>  Available phosphorus 3-6mg/100g </li>
+               <li> Calcium carbonate  5%</li>
+               <li> Carbon, nitrogen ratio 20:1</li>
+
+          </ul>
+          <br>
+      <li>Soil pH & recommended dose of lime /ha.</li>
+      <br>
+      <table border="1" style="margin-left: 20px;
+    /* padding: 10px; */
+    width: 300px;
+    height: 100px; text-align: center;">
+        <tr>
+          <th>Soil pH</th>
+          <th>Agri.lime</th>
+          <th>Quick lime.</th>
+        </tr>
+        <tr>
+          <td>5.5 – 6.0 </td>
+           <td>3 – 5 tons</td>
+            <td>2 – 4 tons.</td>
+        </tr>
+          <tr>
+          <td>6-6.5 </td>
+           <td>2 – 3 tons</td>
+            <td>1 – 2 tons.</td>
+        </tr>
+      </table>
+      <br>
+      <li> Lime neutralizes the soil acidity and favour to enhance the natural food production in the pond water.</li>
+      <li> Lime will improve the phosphorus availability which is essential for pond productivity.         </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ -->
+
+    <div style="display: none;" class="selection-site" id="Pond-construction">
+      <div  class="row">
+        <div class="col-md-12" style="font-size: 15.5px;
+    font-weight: 500;">
+          <h3 style="margin-left: 20px;">Pond construction</h3>
+          <ul>
+            <li>
+               Good farm layout reduces construction cost and easy operation.
+            </li>
+            <li>
+               Ponds should be in rectangular or square shape.
+            </li>
+            <li>  Smaller ponds   are ideal for better yields as well as good for easy management. </li>
+            <li> 0.25 – 1.0 acre ponds size is good for management operations & better production.</li>
+            <li> Bunds should be firm with slope ratio of 1:2.</li>
+            <li> Minimum depth 1.5-2.0 meters as per the requirement of species cultured.</li>
+            <li>Inlet and out let are to be arranged in opposite direction.</li>
+            <li> Slope of the pond bottom should be towards outlet.</li>
+            <li> In case of shrimp ponds central drain pit also constructed for periodical removal of sludge.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+ <div style="display: none;" class="selection-site" id="Pond-preparation1">
+      <div class="row">
+        <div class="col-md-12" style="font-size: 15.5px;
+    font-weight: 500;">
+          <h3 style="margin-left: 20px;">Pond preparation</h3>
+          
+          <h3 style="margin-left: 20px;">Drying</h4>
+          <ul>
+            <li>
+               Drying the pond bottom for 3-4 weeks until cracks appeared.
+            </li>
+            <li>
+               Drying enhances the aeration of soil.
+            </li>
+            <li>
+               Plough the bottom soil up to 10-20 cm depth which encourages organic matter decomposition and oxidation process.
+            </li>
+            <li>
+               Ploughing can be carried out for every 3-5 days period gap.
+            </li>
+            <li> For non-drainable ponds remove the surface sludge up to 10 cm depth  and lime application should be done on the bottom and along the inner slope of the bunds.</li>
+            <li>
+               Levelling and compaction of the bottom has to be done. 
+            </li>
+             <h3 style="margin-left: -20px;">Liming</h4>
+             
+                <li>
+                   After ploughing soil pH should be tested.
+                </li>
+                <li>
+                   To neutralize the soil pH lime should be applied on the bottom and on the slope of the bundhs
+                </li>
+                <li>
+                   According to the pH of the soi,l lime doses are determined.
+                </li>
+                <div>
+                  <br>
+                 <table border="1" style="margin-left: 20px;
+    /* padding: 10px; */
+    width: 300px;
+    height: 100px; text-align: center;">
+        <tr>
+          <th>Soil pH</th>
+          <th>lime dose/ha</th>
+        </tr>
+        <tr>
+          <td>6.0 </td>
+           <td>700 –1000 kg</td>
+        </tr>
+          <tr>
+          <td>6.5 </td>
+            <td>200 – 500 kg</td>
+        </tr>
+      </table>
+      </div>
+                </li>
+                <li>
+                   Lime application should be done on wet soil for effective results.
+                </li>
+                <li>
+                   If the soil pH more than 8.0--
+                </li>
+                <li>
+                Apply gypsum  1000kg/ ha  on the wet surface of the soil and wash with water to  reduce pH.  
+
+                </li>
+                 <h3 style="margin-left: -20px;">Watering the pond</h3>
+                  <li>
+                     Water should be filtered through 60, 80,120 no. mesh bags to avoid the entry of other organisms
+                  </li>
+                  <li>
+                     Filter bags should be long enough for effective and quick filtration.
+                  </li>
+                  <li>
+                     Filter bags should be cleaned before use.
+                  </li>
+                  <li>
+                     Filtered water should be stored in the pond for 48-72 hours. 
+                  </li>
+                   <h3 style="margin-left: -20px;">Water culture</h3>
+
+                   <li>
+                       After 72 hours add   water sanitizers like sodium hypochlorite/ bleaching powder @ 1ppm to eradicate any disease causing organisms.
+                   </li>
+                   <li>
+                       While applying sanitizers one should wear gloves and facemasks.
+                   </li>
+                   <li>
+                       After 24 hours of   application of sanitizer aerate the water for about 48-72 hours to get rid of the sanitizer effect.
+                   </li>
+                   <li>  Then test the water pH.</li>
+                   <li>
+                       As per the need apply lime (25-50kg). 
+                   </li>
+                   <li>
+                      After 6 days of liming add fertilizers to the pond water.
+                   </li>
+                   <li>
+                      Fertilizers should mix with water and apply.
+                   </li>
+                   <li>
+                      2nd day of fertilizers application, aerate the water to facilitate uniform distribution of the nutrients.  
+                   </li>
+                   <li>
+                       After 4th or 5th day of fertilizer application plankton will develop in the pond water.
+                   </li>
+                   <div><h3 style="margin-left: -20px;">Water quality check</h3></div>
+                   <ul>
+                   <li>
+                      Water pH,  transparency ,salinity, alkalinity, hardness, ammonia  are key parameters in shrimp farming.
+                   </li>
+                   <li>
+                      If pH should be excess add fermented organic juice to reduce the pH.
+                   </li>
+                   <li>
+                      Fermented organic juice acts as a medium for the growth of useful bacteria as well as improve the carbon nitrogen ratio up to 20:1.
+                   </li>
+                 </ul>
+                  <div>
+                  <h3 style="margin-left: -20px;">Shrimp seed selection</h3>
+                </div>
+                <div>
+                  <h3 style="margin-left: -20px;">
+                    Gross examination
+                  </h3>
+                </div>
+                <li> Seed colour   -      dark brown</li>
+                <li> Activeness   -      swims against water current.</li>
+                <li> Feeding behaviour    -   readily accept and eat feed.</li>
+                <li> Size variation   -   uniform  or <10% variation.</li>
+
+                 <div>
+                  <h3 style="margin-left: -20px;">
+                  Microscopic examination
+                  </h3>
+                </div>
+                <li>
+                   Muscle -   smooth transparent.
+                </li>
+                <li> No. of rostral spines - > 5. </li>
+                <li>
+                   Appendages -   fully formed, intact with setae. 
+                </li>
+                <li>
+                   Gut    -    completely filled with food.  
+                </li>
+                <li>
+                   Muscle gut ratio in 6th abdominal segment--- 4:1.   
+                </li>
+                <li>
+                   Carapace length   --   more than 6th abdominal segment.
+                </li>
+                <li>
+                   Uropod’s   -   expanded completely.
+                </li>
+                <li>
+                   Hepatopatopancreas --    bright yellow colour with oil globules. 
+                </li>
+                <li>
+                  Fouling   ---     no fouling appeared on body& appendages.
+                </li>
+                <li>
+                   Necrosis ---    absent. 
+                </li>
+                 <div>
+                  <h3 style="margin-left: -20px;">
+                  Stress tests 
+                  </h3>
+                </div>
+                <li>
+                  <b>Physical stress test ---</b>Collect nearly 100 PLs from the bottom of the  larval rearing tank and put them in a tub and rotates the water.  If majority of the PL s are concentrated at the centre of the tub, this indicates the seed is not good.
+                </li>
+                <li>
+                  <b>  Salinity test  --- </b>Collect nearly 100 PLs from the bottom of the  larval rearing tank and put them in a tub and rotates the water.  If majority of the PL s are concentrated at the centre of the tub, this indicates the seed is not good.
+                </li>
+                <li>
+                  <b> Formalin test -- </b>Seed exposed to 100ppm formalin solution for 30 – 60 minutes. Observe the activeness of the seed after one hour. If 90% seed  is active select the seed for stocking.
+                </li>
+                <li>
+                  <b>Temperature shock --</b>Temperature of the water   may raise/ lower the  @  50 C for 30 minute and observe the survival. If survival is >80%, select  the seed. 
+                </li>
+
+                <div>
+                  <h3 style="margin-left: -20px;">
+                  Seed stocking
+                  </h3>
+                  <h3 style="margin-left: -20px;">Density--   40 -  60 /m2( depends on pond preparation and other conditions).</h3>
+                </div>
+                <li> Time of stocking   -----   early hours in the morning / evening.</li>
+                <li> Acclimatization   -----   seed bags on the surface of the pond for 1 to 2 hours.</li>
+                <li> Seed survival test - seed stocked in hapa within pond, observe the survival at 24 and 48 hours. 
+                </li>
+                <li>
+                  For low saline water select above PL 12 stages, for high saline waters select above PL 10 stages for better survival.
+                </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<div>
+
+
+    <div style="display: none;" class="selection-site" id="Shrimp-seed-selection">
+      <div class="row">
+        <div class="col-md-12" style="font-size: 15.5px;
+    font-weight: 500;">
+          <h3 style="margin-left: 20px;">Shrimp seed selection.</h3>
+          
+          <h3 style="margin-left: 20px;">Gross examination</h3>
+          <ul>
+      
+              
+                <li> Seed colour   -      dark brown</li>
+                <li> Activeness   -      swims against water current.</li>
+                <li> Feeding behaviour    -   readily accept and eat feed.</li>
+                <li> Size variation   -   uniform  or <10% variation.</li>
+
+                 <div>
+                  <h3 style="margin-left: -20px;">
+                  Microscopic examination
+                  </h3>
+                </div>
+                <li>
+                   Muscle -   smooth transparent.
+                </li>
+                <li> No. of rostral spines - > 5. </li>
+                <li>
+                   Appendages -   fully formed, intact with setae. 
+                </li>
+                <li>
+                   Gut    -    completely filled with food.  
+                </li>
+                <li>
+                   Muscle gut ratio in 6th abdominal segment--- 4:1.   
+                </li>
+                <li>
+                   Carapace length   --   more than 6th abdominal segment.
+                </li>
+                <li>
+                   Uropod’s   -   expanded completely.
+                </li>
+                <li>
+                   Hepatopatopancreas --    bright yellow colour with oil globules. 
+                </li>
+                <li>
+                  Fouling   ---     no fouling appeared on body& appendages.
+                </li>
+                <li>
+                   Necrosis ---    absent. 
+                </li>
+                 <div>
+                  <h3 style="margin-left: -20px;">
+                  Stress tests 
+                  </h3>
+                </div>
+                <li>
+                  <b>Physical stress test ---</b>Collect nearly 100 PLs from the bottom of the  larval rearing tank and put them in a tub and rotates the water.  If majority of the PL s are concentrated at the centre of the tub, this indicates the seed is not good.
+                </li>
+                <li>
+                  <b>  Salinity test  --- </b>Collect nearly 100 PLs from the bottom of the  larval rearing tank and put them in a tub and rotates the water.  If majority of the PL s are concentrated at the centre of the tub, this indicates the seed is not good.
+                </li>
+                <li>
+                  <b> Formalin test -- </b>Seed exposed to 100ppm formalin solution for 30 – 60 minutes. Observe the activeness of the seed after one hour. If 90% seed  is active select the seed for stocking.
+                </li>
+                <li>
+                  <b>Temperature shock --</b>Temperature of the water   may raise/ lower the  @  50 C for 30 minute and observe the survival. If survival is >80%, select  the seed. 
+                </li>
+
+                <div>
+                  <h3 style="margin-left: -20px;">
+                  Seed stocking
+                  </h3>
+                  <h3 style="margin-left: -20px;">Density--   40 -  60 /m2( depends on pond preparation and other conditions).</h3>
+                </div>
+                <li> Time of stocking   -----   early hours in the morning / evening.</li>
+                <li> Acclimatization   -----   seed bags on the surface of the pond for 1 to 2 hours.</li>
+                <li> Seed survival test - seed stocked in hapa within pond, observe the survival at 24 and 48 hours. 
+                </li>
+                <li>
+                  For low saline water select above PL 12 stages, for high saline waters select above PL 10 stages for better survival.
+                </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+</div>
+<div>
+<div style="display: none;" class="selection-site" id="Feed-management">
+<div class="row">
+<div class="col-md-12" style="font-size: 15.5px;
+font-weight: 500;">
+  <h3 style="margin-left: 20px;">Feed management</h3>
+  <ul>
+    <li> Shrimp health and growth depends on feed quality.</li>
+    <li> Freshly feeds should be used. </li>
+    <li>
+       Feed should be having attractive, fishy odour, uniform size, good palatability and water stable for 1-2 hours.
+    </li>
+    <li>
+       Use high protein feed initially to the PL stages up to 30 days.
+    </li>
+    <li>
+       Feed should be broad cast in the pond.
+    </li>
+    <li>
+      Feed   should be given at every 4 hours gap during day time.
+    </li>
+    <li>
+      Initially   1.5 kg feed will be given for 1.0 lakh seed. In course of time follow the feed chart according to the age and body weight.
+    </li>
+    <li>
+       After 20 days of culture, put a check tray for assessing the feed consumption.
+    </li>
+    <li>
+      Arrange 6-8 check trays are arranged in four sides of the pond.
+    </li>
+    <li>
+      Feed in the check tray will consume within two hours for first 50 days.
+    </li>
+    <li> After every application of feed check tray observation is must.</li>
+    <li> If the feed in check tray will consume before two hours of time , feed  quantity  should be increased by 2-5%  or if poor consumption ,decrease the feed quantity by 2-3 %.</li>
+    <li>
+        Basing on the feed consumption in check tray, we can assess the feed quantity requirement.
+    </li>
+    <li>
+       Under feeding leads to size variation also.  
+    </li>
+    <li>
+       Feeds should not change frequently.
+    </li>
+    <li>
+       For every 1 kg of feed consumption 30 g of ammonia will be added to the bottom in the form of excreta.
+    </li>
+    <li>
+      
+      Quality feed resulting in good FCR.
+    </li>
+    <li>
+       Maintain registers for feed consumption and growth.
+    </li>
+
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display: none;" class="selection-site" id="Water-quality">
+<div class="row">
+<div class="col-md-12" style="font-size: 15.5px;
+font-weight: 500;">
+  <h3 style="margin-left: 20px;">Water quality and bottom management</h3>
+<ul>
+  <li>
+     After stocking of seed, pond water quality has to be changed due to the metabolic activities of cultured animal
+  </li>
+  <li>
+     pH flu  ctuations are common due to the interplay of photosynthesis and respiration. This pH fluctuations will stress the animal. To correct the pH fluctuations  liming / water exchange shall be done.
+  </li>
+  <li>
+     Dissolved oxygen is the limiting factor. It will decrease due to over stocking/ excess algal blooms/ heavy rains or exposed to heat waves for longer periods.
+  </li>
+  <li>
+     To maintain  optimum  DO levels  install aerators after 30 days of culture @1 HP per 200- 300 kg of biomass.
+  </li>
+  <li>
+     Long arm and spiral aerators are the best choice
+  </li>
+  <li>
+     Prolonged sunny days affect the metabolism of culture animal. To overcome this problem maintain pond depth and provide aeration. 
+  </li>
+  <li>
+     High temperature and high pH of pond water leads to toxic ammonia gas which causes gill damage. To solve this problem reduce feeding and maintain proper algal bloom in pond water.
+  </li>
+  <li>
+     Minerals  are essential constituents for skeletal structures ,play a key role in the    maintenance of osmotic pressure, vital role in the acid base equilibrium of the body etc., 
+  </li>
+  <li>
+     Mineral concentration should be check for every week.
+  </li>
+  <li>
+     Mineral applications are needed according to the levels of minerals in water. Mineral application is needed for every 10 days in low saline waters(0-5 ppt).
+  </li>
+  <li>
+     Minerals are essential for forming the exoskeleton after moulting.
+  </li>
+  <li>
+     Excess application of minerals spoils the water quality and moulting problems.
+  </li>
+  <li>
+     For shrimp optimum range of calcium, magnesium and potassium are required in the ratio of 1:3:1.
+  </li>
+  <li>
+     Water temperature and pH should always maintain in optimum levels for better growth and survival.
+  </li>
+  <li>
+     Alkalinity is the utmost important water parameter for better animal growth and survival. Alkalinity to resist change in pH of water.
+  </li>
+  <li>
+     Optimum water parameters for shrimp  farming
+  </li>
+  <br>
+  <table border="1" style="margin-left: 20px;
+    /* padding: 10px; */
+    width: 500px;
+    height: 150px; text-align: center;">
+        <tr>
+          <th>Parameter </th>
+          <th>Optimum range.</th>
+        </tr>
+        <tr>
+          <td>DO                                            
+           </td>
+           <td>> 5 ppm</td>
+        </tr>
+          <tr>
+          <td>pH                                              
+          </td>
+          <td>7.5 – 8.5</td>
+        </tr>
+        <tr>
+          <td>Temperature                                            
+           </td>
+           <td> 28- 32oc</td>
+        </tr>
+          <tr>
+          <td>Salinity                                                                                     
+          </td>
+          <td>5-28 ppt</td>
+        </tr>
+        <tr>
+          <td>Total alkalinity                                                                     
+           </td>
+           <td>> 75 – 200 ppm</td>
+        </tr>
+          <tr>
+          <td>Ammonia                                                                                                         
+          </td>
+          <td>750-3000 ppm</td>
+        </tr>
+        <tr>
+          <td>Ammonia                                                                                                                                                   
+          </td>
+          <td><1.0 ppm</td>
+        </tr>
+          <tr>
+          <td>Nitrite                                                                                                                
+          </td>
+          <td><1.0 ppm</td>
+        </tr>
+
+
+      </table>
+      <br>
+      <li> Periodical application of agri lime and dolomite for correcting the alkalinity, hardness and promotion of plankton growth.</li>
+      <li>
+         Bottom soil should be tested for quality of soil and probiotics application to maintain the clean bottom as and when required. 
+      </li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div style="display: none;" class="selection-site" id="Health-management">
+<div class="row">
+<div class="col-md-12" style="font-size: 15.5px;
+font-weight: 500;">
+  <h3 style="margin-left: 20px;">Health management.</h3>
+<ul>
+<li>
+ Observe the water colour, swimming patterns of the shrimp, feed consumption patterns in the check tray etc. in the morning and evening. 
+</li>
+<li>
+   Weekly sampling of culture animal for examination of health condition and growth performance.
+</li>
+<li>
+   Farmers/ farm managers always observe the activeness, colour of the animal, any abnormal signs the body parts , gills, hepatopancreas and status of gut etc.,
+</li>
+<li>
+   After 60- 70 days of culture one should take necessary  steps for maintaining the water quality, feed management to minimize the  stress on culture animal.
+</li>
+<li>
+   Usually mass mortalities happened due to viral diseases.
+</li>
+
+<li>
+   Folded antenna and rostral bent are due to Viral infection ( IHHNV).
+</li>
+<li>
+  Round white spots on carapace indicates WSSV.
+</li>
+<li>
+   Sometimes reddening of the body, antennal cut, black spots appeared on the body indicates bacterial infection due to water quality deterioration or high densities.
+</li>
+<li>
+   Bacterial infections are common in high density culture ponds and also due to feed wastage.
+</li>
+<li>
+   Body cramps/loose shells also observed, may be due to the mineral deficiency or animal exposed to prolonged high water temperatures because of shallow ness of the pond or due to heat waves.
+</li>
+<li>
+   Any size variation is observed, it may be due to under feeding  or  microsporidian parasite infection( EHP).
+</li>
+<li>
+   Deterioration of bottom quality and high concentration of toxic gases in pond water, presence of harmful planktonic forms leads to brown gill and black gill problems.
+</li>
+<li>
+   Harmful planktonic blooms developed in age old ponds   after 50-60 days of culture causes the white gut and white faces problems.
+</li>
+<li> Animals exposed to low dissolved oxygen for prolonged periods leads to moulting problems, white muscle problems. </li>
+<li>
+   No remedy for viral diseases.
+</li>
+<li>
+   To avoid disease incident in culture one should have  knowledge about  reasons for disease incidence, identification of disease and remedial measures. 
+</li>
+<li>
+  Weekly health check-up as well as bacterial load test is must.
+</li>
+<li>
+    Water quality parameters should always maintained in optimum range to avoid disease incidence.   
+</li>
+<li>
+  Strict biosecurity measures to be observed throughout the culture i.e, physical, chemical and biological biosecurity measures for quality and high yields.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+        </div>
+        <div id="community_training">
+                    <div id="" class="form-group required" >
+                <div id="" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField">Level of participants</label>
+                            <div class="controls col-md-8 "> 
+                                 <select class="form-control input-md" id="" style="margin-bottom:2%">
+                   <option value="marine_fshr">--Select--</option>  
+                  <option value="Lab_Services">fisher folk</option>
+                  <option value="Training">aqua farmers </option>
+                  <option value="inland_fshr">mpfeas</option>
+                  <option value="Marketing_Price">fisher women </option>
+                  <option value="toll-free">Departmental officers</option>
+                  <option value="aqua_shp_ownr">fcs members </option>
+                  <option value="toll-free">fishers/farmers</option>
+                  <option value="aqua_shp_ownr">inland fisher folk </option>
+                  <option value="toll-free">ministerial staff</option>
+                  <option value="aqua_shp_ownr">boat operators </option>
+                 
+                  
+                </select>
+                            </div>
+                        </div>
+          </div>
+
+          <div class="col-md-12">
+          <div class="panel panel-primary" style="width:100%; margin-right: 0px;">
+              <div class="panel-heading">Community Training</div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <table class="table table-bordered">
+  <tr>
+    <th>Sl.No.</th>
+    <th >Title of the course</th>
+    <th >From date</th>
+    <th >To date</th>
+     <th >Duration</th>
+    <th >Number</th>
+    <th >Coordi-nator</th>
+    <th >Asst Coordi-nator</th>
+        <th >Action</th>
+
+
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><a href="#" onclick="window.location.href = 'community_training.html' " >Awareness Programme on Ban Period of Marine Fishing</a></td>
+    <td>03-07-2019</td>
+    <td>03-07-2019</td>
+    <td>1 day</td>
+    <td>50</td>
+     <td>ADF1</td>
+      <td>FDO1</td>
+      <td><button class="btn btn-primary button" data-toggle="modal" data-target="#exampleModal3">Register</button></td>
+
+  </tr>
+ <tr>
+    <td>2</td>
+    <td><a href="#">Awareness Programme on Banned Anti-biotics</a></td>
+  <td>03-07-2019</td>
+    <td>03-07-2019</td>
+    <td>1 day</td>
+    <td>50</td>
+     <td>ADF3</td>
+      <td>FDO6</td>
+      <td><button class="btn btn-primary button" data-toggle="modal" data-target="#exampleModal3">Register</button></td>
+</tr>
+
+</table>
+          </div>
+        </div>
+				
+<div id="marketing_training">
+  <div class="">
+                  <div  class="form-group required"> <label for="id_password2" class="control-label col-md-4  requiredField">Species to
+                      be cultured<span class="asteriskField">*</span> </label>
+                    <div class="controls col-md-8 ">
+                      <select class="form-control input-md" id="fsh_farm_type" style="margin-bottom:2%">
+                        <option>--Select--</option>
+                        <option value="fsh">Fish</option>
+                        <option value="prwn_shrmp">Prawn / shirmp</option>
+                        <!-- <option value="othr_spcs">Others</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                                <div class="" id="typ_of_spcs"> 
+
+
+
+                                </div>
+                                <div class="col-md-12" id="xxx">
+                                 
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-home" aria-selected="true" style="    float: left;
+    width: 25%;
+    margin-bottom: 22px;">Domestic</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-profile" aria-selected="false" style="    float: left;
+    width: 25%;
+    margin-bottom: 22px;">International</a>
+                               
+                            </div>
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <div class="tab-pane fade  in active" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab"  style="margin-top: -20%;">
+                                <table class="table table-bordered " style="overflow-x:auto;" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2"><span style="visibility: visible;">SIZE/GRADE</span></th>
+                                             <th rowspan="2">With in state(per kg)</th>
+                                            <th colspan="6" style="text-align: center;">Out side State Price(per kg)</th>
+                                            <th rowspan="2">Exported Price(per kg)</th>
+                                            <th rowspan="2"><span style="">Count per kg</span></th>
+                                            <th rowspan="2" ><span style="visibility: hidden;">Count per kg</span></th>
+
+                                        </tr>
+                                        <tr>
+                                          <th>Kerala</th>
+                                          <th>Orissa</th>
+                                          <th>West bangal</th>
+                                          <th>Bihar</th>
+                                          <th>Assam</th>
+                                           <th>North East</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>15/23</td>
+                                        <td>1200</td>
+                                        <td>1300</td>
+                                         <td>1300</td>
+                                          <td>1300</td>
+                                          <td>1300</td>
+                                          <td>1300</td>
+                                          <td>1300</td>
+                                          <td>1300</td>
+                                          <td>60</td>
+                                          <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+</td>
+
+                                      </tr>
+                                        <tr>
+                                            <td>15/23</td>
+                                            <td>1300</td>
+                                            <td>1400</td>
+                                             <td>200</td>
+                                              <td>200</td>
+                                             <td>1300</td>
+                                              <td>1300</td>
+                                              <td>1300</td>
+                                              <td>1300</td>
+                                              <td>60</td>
+                                              <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+</td>
+
+                                        </tr>
+                                        <tr>
+                                           <td>15/23</td>
+                                            <td>1300</td>
+                                            <td>1400</td>
+                                             <td>200</td>
+                                              <td>200</td>
+                                             <td>1300</td>
+                                              <td>1300</td>
+                                              <td>1300</td>
+                                              <td>1300</td>
+                                              <td>60</td>
+                                              <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <input type="button" name=""  data-toggle="modal" data-target="#myModal" value="Add" class="btn btn-primary  pull-right">
+                                  </div>
+                                </div>
+                            </div>
+
+      <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Domestic Market</h4>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">SIZE/GRADE </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">With in state(per kg) </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary" style="width: 100%;margin-right: 0%;">
+              <div class="panel-heading" style="text-align:left;"><b>Out side State Price(per kg) </b></div>
+            </div>
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Kerala </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email"> Orissa  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email"> West bangal  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Bihar  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+          <div class="clearfix"></div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email"> Assam  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">North East  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+                    <div class="clearfix"></div>
+
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Exported Price(per kg)  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Count per kg  </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">International
+     Market</h4>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">SIZE/GRADE </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Pangasius in USA </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+         
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email">Pangasius in EU </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           <div class="col-md-6">
+          <div class="form-group">
+          <label for="email"> Pangasius  JAPAN </label>
+          <input type="text" class="form-control" id="email" placeholder="" name="email">
+          </div>
+          </div>
+           
+                    <div class="clearfix"></div>
+
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+                                                        <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-profile-tab" style="margin-top: -22%;">
+                                <table class="table table-bordered" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                          <th><span style="visibility: visible;">COUNTRY</span></th>
+                                            <th>JAPAN</th>
+                                            <th>USA</th>
+                                            <th>EU</th>
+                                            <th><span style="visibility: hidden;">EU</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>SIZE/GRADE</td>
+                                            <td>Pangasius</td>
+                                            <td>Pangasius</td>
+                                             <td>Pangasius</td>
+                                             <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></td>
+                                        </tr>
+                                         <tr>
+                                            <td>16/20</td>
+                                            <td>13.24</td>
+                                            <td>13.24</td>
+                                             <td>13.24</td>
+                                             <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>21/25</td>
+                                            <td>10.69</td>
+                                            <td>10.69</td>
+                                             <td>10.69</td>
+                                             <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>26/30</td>
+                                            <td>9.42</td>
+                                            <td>9.42</td>
+                                             <td>9.42</td>
+                                             <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></td>
+                                        </tr>
+                                         <tr>
+                                            <td>31/40</td>
+                                            <td>8.91</td>
+                                            <td>8.91</td>
+                                             <td>8.91</td>
+                                             <td align="center"><i class="fa fa-pencil fa-lg" aria-hidden="true" style="color: #39c4f0;"></i> | <i style="color: #39c4f0;" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                 <div class="row">
+                              <div class="col-md-12">
+                                  <div class="row">
+                                  <div class="col-md-12">
+                                    <input type="button" name=""  data-toggle="modal" data-target="#myModal1" value="Add" class="btn btn-primary  pull-right">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+
+                           
+
+                        </div>
+                    </div>
+
+                   
+              
+        
+
+</div>
+ 
+<div class="col-md-12" id="toll-free">
+              <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Name of the District</th>
+        <th>Toll Free Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anantapur</td>
+        <td>0402323232</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chittoor</td>
+        <td>0402323232</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>East Godavari</td>
+        <td>0402323232</td>
+      </tr>
+    </tbody>
+  </table>      
+</div>
+				</div>
+				
+				</div>
+
+
+			
+			<div id="" class="form-group required ">
+				
+                            	<div class="form-group pull-right"> 
+                         
+                            <div class="controls col-md-12 " id="advisory-submit" style="float:right;margin-top:2%;" >
+							<!-- <input type="button"  name="Signup" value="Upload Image" class="btn btn-primary btn btn-info" multiple />  -->
+                               <input type="button"  name="Signup" id="" value="Submit" class="btn btn-primary btn btn-info" data-toggle="modal" data-target="#fdofeedback"> 
+                                <input type="button" onclick="window.location.href ='../one_portal.html'"  name="Signup" id="" value="Cancel" class="btn btn-primary btn btn-info " multiple  /> 
+                              
+                            </div>
+                             <div class="controls col-md-12 " id="advisory-submit1" style="float:right;margin-top:2%; display: none;" >
+              <!-- <input type="button"  name="Signup" value="Upload Image" class="btn btn-primary btn btn-info" multiple />  -->
+                              <!--  <input type="button"  name="Signup" id="" value="Submit" class="btn btn-primary btn btn-info " multiple  />  -->
+                                <input type="button" onclick="window.location.href ='../one_portal.html'" name="Signup" id="" value="Close" class="btn btn-primary btn btn-info " multiple  /> 
+                              
+                            </div>
+                        </div> 		
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+  $("#typeof_services").hide();
+  $("#typeof_services_inland").hide();
+  $('#community_training').hide();
+  $('#marketing_training').hide();
+  $('#toll-free').hide();
+  $('#type_advisiory').on('change', function() {
+
+  if($(this).val() == "Lab_Services"){
+    $("#typeof_services_inland").hide();
+   $("#typeof_services").show();
+  $('#community_training').hide();
+   $('#marketing_training').hide();
+  $("#advisory-submit").show();
+   $("#advisory-submit1").hide();
+   $('#toll-free').hide();
+  }
+  // else if($(this).val() == "inland_services")
+  // {
+  //   $("#typeof_services_inland").show();
+  // $("#typeof_services").hide();
+  // $('#community_training').hide();
+  //  $('#marketing_training').hide();
+  // $("#advisory-submit").hide();
+  // $("#advisory-submit1").hide();
+  //  $('#toll-free').hide();
+  // }
+  else if($(this).val() == "Training")
+  {
+  $("#typeof_services_inland").hide();
+  $("#typeof_services").hide();
+  $('#community_training').show();
+   $('#marketing_training').hide();
+  $("#advisory-submit").hide();
+  $("#advisory-submit1").show();
+   $('#toll-free').hide();
+
+  }
+  else if($(this).val() == "Marketing_Price")
+  {
+  $("#typeof_services_inland").hide();
+  $("#typeof_services").hide();
+  $('#community_training').hide();
+  $('#marketing_training').show();
+ $('#toll-free').hide();
+  $("#advisory-submit").hide();
+
+  }
+  else if($(this).val() == "toll-free")
+  {
+  $("#typeof_services_inland").hide();
+  $("#typeof_services").hide();
+  $('#community_training').hide();
+    $('#marketing_training').hide();
+ $('#toll-free').show();
+  $("#advisory-submit").hide();
+
+  }
+
+});
+
+$("#xxx").hide();
+    $("#fsh_farm_type").change(function(){
+    $("#typ_of_spcs").html(" ")
+    if($(this).val() == "fsh")
+    {
+      $("#xxx").show();
+     var res =  '<div id="farm_type_div" class="form-group required"> <label for="id_password2"'+
+
+                      'class="control-label col-md-4  requiredField">Type of Species<span class="asteriskField">*</span> </label>'+
+                    '<div class="controls col-md-8 ">'+
+                     ' <select class="form-control input-md" class="spc_typ" style="margin-bottom:2%">'+
+                      '<option value="IMC">IMC</option>'+
+                        '<option value="ee">Pangasius</option>'+
+                        '<option value="othr_spcs">Seabass</option>'+
+                        '<option value="othr_spcs">GIFT Tilapia</option>'+
+                        '<option value="othr_spcs">Seabass</option>'+
+                        '<option value="othr_spcs">Murrel</option>'+
+                        '<option value="othr_spcs">Magur</option>'+
+                        '<option value="othr_spcs">Singhi</option>'+
+                        '<option value="othr_spcs">Silver Carp</option>'+
+                        '<option value="othr_spcs">Grass Carp</option>'+
+                        '<option value="othr_spcs">Common Carp</option>'+
+                        '<option value="othr_spcs">Amul Carp</option>'+
+                        '<option value="pac">Pacu</option>'+
+                         '<option value="othrs">Others </option>'+
+                      '</select>'+
+                    '</div>'+
+                  '</div>'
+              
+      $("#typ_of_spcs").html(res)
+    
+    }
+    if($(this).val() == "prwn_shrmp")
+    {
+            $("#xxx").show();
+
+     var res =  '<div id="farm_type_div" class="form-group required"> <label for="id_password2"'+
+
+                      'class="control-label col-md-4  requiredField">Type of Species<span class="asteriskField">*</span> </label>'+
+                    '<div class="controls col-md-8 ">'+
+                     ' <select class="form-control input-md" class="spc_typ" style="margin-bottom:2%">'+
+                      '<option value="IMC">Scampi</option>'+
+                        '<option value="ee">L-Vannamai</option>'+
+                        '<option value="tgr">Tiger Shrimp </option>'+
+                        '<option value="othrs">Others </option>'+
+                      '</select>'+
+                    '</div>'+
+                  '</div>'
+              
+      $("#typ_of_spcs").html(res)
+     
+    }
+      if($(this).val() == "othr_spcs")
+    {
+     var res =  '<div id="farm_type_div" class="form-group required"> <label for="id_password2"'+
+
+                      'class="control-label col-md-4  requiredField">Type of Species<span class="asteriskField">*</span> </label>'+
+                    '<div class="controls col-md-8 ">'+
+                     '<input class="input-md  textinput textInput form-control"'+
+
+                      'value=""  id="dist" maxlength="30"'+
+
+                      'name="username" style="margin-bottom: 10px" type="text">'+
+                    '</div>'+
+                  '</div>'
+              
+      $("#typ_of_spcs").html(res)
+     
+    }
+  })
+</script>
+
+<script type="text/javascript">
+  $('#serveice_type').change(function(){
+    if($(this).val() == 'water_management')
+    {
+      $('.comman-aquaculture').hide();
+      $('#water-management').show();
+
+    }
+    else if($(this).val() == 'feed_management')
+    {
+      $('.comman-aquaculture').hide();
+      $('#feed-management').show();
+
+    }
+     else if($(this).val() == 'soil_management')
+    {
+      $('.comman-aquaculture').hide();
+      $('#soil-management').show();
+
+    }
+     else if($(this).val() == 'disesses_management')
+    {
+      $('.comman-aquaculture').hide();
+      $('#desess-management').show();
+
+    }
+     else if($(this).val() == 'pond_management')
+    {
+      $('.comman-aquaculture').hide();
+      $('#pond-preparation').show();
+
+    }
+
+     else if($(this).val() == 'management_practices')
+    {
+      $('.comman-aquaculture').hide();
+      $('#management_practices').show();
+
+    }
+
+  });
+</script>
+
+<script type="text/javascript">
+  $('#inland_serveice_type').change(function(){
+
+     if($(this).val() == 'pond_management')
+    {
+      $('#pond-preparation-inland').show();
+    }
+
+  });
+</script>
+
+<script type="text/javascript">
+  $('#management-practices').change(function(){
+    if($(this).val() == 'Pond_construction')
+    {
+      $('.selection-site').hide();
+      $('#Pond-construction').show();
+
+    }
+      else if($(this).val() == 'Site_selection')
+    {
+      $('.selection-site').hide();
+      $('#site-selection').show();
+
+    }
+    else if($(this).val() == 'Pond_preparation')
+    {
+      $('.selection-site').hide();
+      $('#Pond-preparation1').show();
+
+    }
+     else if($(this).val() == 'Seed_selection')
+    {
+      $('.selection-site').hide();
+      $('#Shrimp-seed-selection').show();
+
+    }
+     else if($(this).val() == 'Feeding')
+    {
+      $('.selection-site').hide();
+      $('#Feed-management').show();
+
+    }
+     else if($(this).val() == 'Bottom')
+    {
+      $('.selection-site').hide();
+      $('#Water-quality').show();
+
+    }
+
+     else if($(this).val() == 'Health')
+    {
+      $('.selection-site').hide();
+      $('#Health-management').show();
+
+    }
+
+  });
+</script>
+
+<script type="text/javascript">
+  $('#type-stress').change(function(){
+    if($(this).val() == 'Physical_stress')
+    {
+      $('.type-of-stress').hide();
+      $('#physical').show();
+    }
+    else if($(this).val() == 'chemeical_stress')
+    {
+      $('.type-of-stress').hide();
+      $('#chemical').show();
+    }
+    else if($(this).val() == 'biological_stress')
+    {
+      $('.type-of-stress').hide();
+      $('#biological').show();
+    }
+  });
+</script>
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Succesful</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          
+          <div class="row">
+          
+          <img src="../images/success.png" style="width: 50px;margin-left: 260px;;margin-right: auto;">
+          
+          
+          </div>
+          
+          
+          <div class="row">
+          
+          <label style="margin-left: 90px;margin-top: 10px;">Thank you, you have successfully registered for the training</label>
+          
+          
+          </div>
+          <div class="row" style="margin-left:110px;;
+    margin-top: 22px !important;">
+            <button type="button" class="btn btn-primary pull" data-dismiss="modal" style="margin-left:150px;" onclick="window.location.href = '../one_portal.html'" >OK</button>
+          </div>
+          
+
+          
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+ <div class="modal fade" id="fdofeedback" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Informtion </h4>
+        </div>
+        <div class="modal-body">
+          <p>SMS/Email sent to the user.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+

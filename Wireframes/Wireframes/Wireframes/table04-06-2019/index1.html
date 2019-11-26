@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 10px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+    
+    
+    
+    
+ <script>
+     
+     
+     $(document).ready(function(){
+        $("#rrr").hide(); 
+         
+  $("#rr").click(function(){
+    $("#rrr").show();
+  });
+});
+     
+     
+     
+     
+    
+</script>      
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</head>
+<body>
+ 
+<div class="container">
+  <div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">User Profile</div>
+    <div class="panel-body">
+      
+        
+        <div class="form-group">
+          
+  <label for="usr">User Id:</label>
+  <input type="text" class="form-control" id="usr"  >
+</div>
+        
+        
+        
+         <div class="form-group">
+          
+  <label for="usr">Role:</label>
+  <input type="text" class="form-control" id="usr"  >
+</div>
+        
+    <div class="form-group">
+          
+  <label for="usr">From Date:</label>
+  <input type="date" class="form-control" id="usr"  >
+</div> 
+        
+        
+        <div class="form-group">
+          
+  <label for="usr">To Date:</label>
+  <input type="date" class="form-control" id="usr"  >
+</div> 
+        
+        
+        <div id="farm_type_div" class="form-group required"> <label for="id_password2"
+
+                    class="control-label col-md-12  requiredField">Status<span class="asteriskField">*</span> </label>
+                  <div class="controls col-md-12 ">
+                    <select class="form-control input-md" id="farm_type" style="margin-bottom:2%" >
+                      <option value="aqua_farmer">Approved</option>
+                      <option value="marine_fshr">Rejected</option>
+                      
+                     </select>
+                    </div>
+                </div>
+        
+        
+        <div class="row"  style="margin-bottom: 20px;"  >
+            
+            
+            <div class="col-md-9">
+        
+       
+        
+        </div>
+            
+            
+            
+            
+            
+            
+            <div class="col-md-3"  >
+        
+        <button type="button" class="btn btn-info" style="align-content: center;margin-left: 150px;"  id="rr">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+        
+        </div></div>
+        
+        
+        
+        
+        
+       <div  class="row"   id="rrr"> 
+        
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for District..." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="">S.No.</th>
+    <th style="">Reg. No.</th>
+       <th style="">Name</th>
+       <th style="">Farm Type</th>
+       <th style="">Owner Type</th>
+      <th style="">Survey Number</th>
+       <th style="">Latitude</th>
+       <th style="">Longitude</th>
+      
+      <th style="">District</th>
+      <th style="">Mandal</th>
+      <th style="">Village</th>
+      <th style="">Issue Date</th>
+      <th style="">Status</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>123</td>
+      <td>Test1</td>
+      <td>Lab1</td>
+      <td>Owner1</td>
+      <td>1</td>
+      
+      <td>123</td>
+      <td>123</td>
+      
+      <td>Guntur</td>
+      <td>FDO</td>
+      <td>Village1</td>
+      <td>03-12-1988</td>
+      <td>Approved</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>234</td>
+      <td>Test2</td>
+      <td>Lab2</td>
+      <td>Owner2</td>
+      <td>2</td>
+      <td>123</td>
+      <td>123</td>
+      
+      <td>Anantapur</td>
+      <td>FDO</td>
+      <td>Village2</td>
+      <td>03-12-1988</td>
+      <td>Rejected</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>432</td>
+      <td>Test3</td>
+      <td>Lab3</td>
+      <td>Owner3</td>
+      <td>3</td>
+      <td>123</td>
+      <td>123</td>
+      
+      <td>Guntur</td>
+      <td>FDO</td>
+      <td>Village3</td>
+      <td>03-12-1988</td>
+      <td>Rejected</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>324</td>
+      <td>Test4</td>
+      <td>Lab4</td>
+      <td>Owner4</td>
+      <td>4</td>
+      <td>123</td>
+      <td>123</td>
+      
+      <td>Srikakulam</td>
+      <td>FDO</td>
+      <td>Village4</td>
+      <td>03-12-1988</td>
+      <td>Rejected</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>435</td>
+      <td>Test5</td>
+      <td>Lab5</td>
+      <td>Owner5</td>
+      <td>5</td>
+      <td>123</td>
+      <td>123</td>
+      
+      <td>	Visakhapatnam</td>
+      <td>FDO</td>
+      <td>Village5</td>
+      <td>03-12-1988</td>
+      <td>Approved</td>
+  </tr>
+  
+</table>
+      </div>     
+
+      
+      
+      </div>
+  </div>
+</div>
+    </div>
+ 
+    
+  
+    
+    
+    
+    
+    
+    <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</body>
+</html>
