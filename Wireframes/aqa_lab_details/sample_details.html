@@ -529,27 +529,49 @@ body {
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading"><div>Aqua Lab - Samples Information details</div>
-          <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div>
+      <div class="panel-heading"><div>Aqua Farm : <b>AP-FSH-FRM-1 </b> : Samples Information details</div>
+          <!-- <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div> -->
       </div>
       <div class="panel-body">
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
           <div class="panel panel-info">
             <div class="panel-body">
               <form method="post" action=".">
-                    <div class="form-group required row" id="aqa_frm_lst"> 
-                            <label class="control-label col-md-4  requiredField">List of Aqua Farms<span class="asteriskField">*</span></label>
+                     
+                <div class="row">
+                  <div class="col-md-4">
+                      <div class="row">
+                          <div class="form-group required row"> 
+                              <label class="control-label col-md-4  requiredField"> Date <span class="asteriskField">*</span></label>
+                              <div class="controls col-md-8">
+                                      <input class="input-md textinput textInput form-control"
+                                      value="29-110-2019" id="tst_dt" type="text" readonly disaled>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                        <div class="form-group required row" id="ext_farm_reg_nos"> 
+                            <label class="control-label col-md-4  requiredField">Sample Type</label>
                             <div class="controls col-md-8">
-                                    <select class="form-control input-md" id="lst_of_fmrs">
-                                        <option value="AQA-FSH-VSK-001">AQA-FSH-VSK-001</option>
-                                        <option value="AQA-SHRMP-VSK-001">AQA-SHRMP-VSK-001</option>
-                                        <!-- <option value="inland_fshr">Aquaculture Backrish Farm</option> -->
-                                        <option value="AQA-SHRMP-GNT-201">AQA-SHRMP-GNT-201</option>
-                                        <option value="AQA-FSH-GNT-987">AQA-FSH-GNT-987</option>
-                                    </select>
+                              <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
+                                <option value="">Water Test</option>
+                                <option value="">Seed Test</option>
+                                <option value="">Fish Test</option>
+                                <option value="">Soil Test</option>
+                                <option value="">Shrimp Test</option>
+                              </select>
                             </div>
                         </div>
-              
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                  </div>
+                </div>
+               
+                </div>
                     
               </form>
             </div>

@@ -559,6 +559,16 @@ body {
                                     id="srch_adhr_no" type="button"> 
                             </div>
                         </div>
+                        <div class="form-group required row" id="ext_farm_reg_nos"> 
+                          <label class="control-label col-md-4  requiredField">Aqua Farms</label>
+                          <div class="controls col-md-8">
+                            <select class="form-control input-md" id="list_of_farms" style="margin-bottom:2%">
+                              <option value="">AP-FSH-FRM-1</option>
+                              <option value="">AP-SHRMP-FRM-1</option>
+                              <option value="">AP-FSH-FRM-334</option>
+                            </select>
+                          </div>
+                      </div>
                         <div class="form-group required row"> 
                             <label class="control-label col-md-4  requiredField"> Farmer Name<span class="asteriskField">*</span></label>
                             <div class="controls col-md-8">
@@ -615,6 +625,14 @@ body {
                             
                         </div>
                         <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField">Aqua Farmm Reg.No</label>
+                          <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="" id="ext_frm_reg_no"
+                              name="frm_name" type="text"> 
+                          </div>
+                      </div>
+                        <div class="form-group required row"> 
                             <label class="control-label col-md-4  requiredField"> Farmer Name</label>
                             <div class="controls col-md-8">
                                 <input class="input-md textinput textInput form-control"
@@ -654,14 +672,16 @@ body {
                                 name="frm_name" type="text"> 
                             </div>
                         </div>
+                       
+
                 </div>
                 <div class="form-group" style="float: right;" id="sbt_bts">
                         <div class="aab controls col-md-4 "> <input name="Cancel" value="Cancel" class="btn btn-primary btn btn-info"
       
                             onclick="window.history(-1)" type="button"></div>
                         <div class="controls col-md-4 ">
-                          <input name="ok" value="Submit" class="btn btn-primary btn btn-info"
-                             type="button" id="add_tst_btn" style="margin-left:21%;"> </div>
+                          <input name="ok" value="Next " class="btn btn-primary btn btn-info"
+                             type="button" id="add_tst_btn" style="margin-left:45%;"> </div>
               </form>
             </div>
           </div>
@@ -675,6 +695,7 @@ body {
     $("#non_existing_farm").hide();
     $("#existing_farm").hide();
     $("#aqa_frm_lst").hide();
+    $("#ext_farm_reg_nos").hide();
     $("#sbt_bts").hide();
     localStorage.clear();
     $("#add_tst_btn").click(function(){
@@ -686,6 +707,7 @@ body {
         $("#ext_frm_nm").val("Test Aqus Farmer");
         $("#ext_frm_adrss").val("D.No: 27, Penamaluru, Vijayawada, Krishna Dist.");
         $("#ext_frm_mbl_nmbr").val("9676890687");
+        $("#ext_farm_reg_nos").show();
         $("#sbt_bts").show();
     })
       $(".exist_farm_cls").click(function(){
