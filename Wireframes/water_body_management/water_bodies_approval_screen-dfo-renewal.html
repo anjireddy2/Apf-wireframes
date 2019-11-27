@@ -848,10 +848,16 @@
                 </div>
 				
                 <div class="row">
-                <div class="col-md-12" style="text-align:right"> <button class="btn btn-primary"  data-toggle="modal" data-target="#myModal4">
-                    Approve </button> <button class="btn btn-primary"> Reject
-                  </button> <button class="btn btn-primary"> Download
+                <div class="col-md-12" style="text-align:right"> <button class="btn btn-primary"> Download
                   </button> </div>
+                  <div id="" class="pull-right">
+                        <div  style="text-align:right; margin-top:20px; display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="approve" data-target="#myModal4" >
+                            Approve </button> </div>
+                        <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="reject" data-target="#myModal5" >
+                            Reject </button> </div>
+                        <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="rectification" data-target="#myModal6" >
+                            Rectification </button> </div>
+                        </div>
               </div>
               </div>
               <div id="by_map_shown">
@@ -883,6 +889,53 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="myModal5" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <div>Your Request has been rejected</div>
+                </div>
+                <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+      
+                  data-dismiss="modal" id="reject-ok">Ok</button> 
+                  <!-- <button type="button" class="btn btn-default"
+      
+                    data-dismiss="modal">Close</button>  -->
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="myModal6" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div><span style="color: red">*</span>Reasons for Rectification:</div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Select</option>
+                        <option value="test">Test</option>
+                        <option value="test1">Test1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+        
+                    data-dismiss="modal" id="rectify-ok">Ok</button> 
+                    <button type="button" class="btn btn-default"
+        
+                      data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+              </div>
+            </div>
 	
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -1140,15 +1193,7 @@
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd" disabled>Comments</label>
-                    <textarea rows="4" cols="75" disabled>                     Test
-                   </textarea> </div>
-                </div>
-              </div> 
-            </div>
+            
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
@@ -1167,174 +1212,190 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal-edit" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
-            <h4 class="modal-title">Modal Header</h4>
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group"> <label for="email">Name of water body </label>
+                    <input class="form-control" id="FLC" value="Santhamaguluru tank" type="email" disabled>
+                  </div>
+                  <div class="form-group" style="visibility:hidden;margin-top: -70px;">
+                    <label for="pwd">Latitude</label> <input class="form-control" value="0"
+      
+                      id="sno" type="text"> </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">District</label>
+                        <select class="form-control select_dist" id="District" disabled>
+                          <option value="east_godavari">Prakasam </option>
+                          <option value="guntur">GUNTUR</option>
+                          <option value="krishana">KRISHNA</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group"> <label for="sel1"> mandal</label>
+                          <select class="form-control select_mandal" id="Mandal" disabled>
+                            <option>Santhamaguluru</option>
+                          </select>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1"> panchayat</label>
+                        <select class="form-control  select_panchayat1" id="panchayat" disabled value="Puttavaripalem">
+                          <option>Santhamaguluru</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group"> <label for="sel1"> Village</label>
+                          <select class="form-control  select_panchayat" id="panchayat" disabled>
+                            <option>Santhamaguluru</option>
+                          </select>
+                        </div>
+                      </div>
+                  </div>
+                 
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">Latitude </label> <input
+      
+                          class="form-control" value="7678686" type="text" disabled> </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">Longitude</label> <input
+      
+                          class="form-control" value="876896" type="text" disabled> </div>
+                    </div>
+                  </div>
+        
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="panel panel-primary" style="float: left; width: 100%;">
+                        <div class="panel-heading" style=""> <span> Water body
+                            Details</span> <span style="float:right"> </span> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">Water body type</label>
+                        <select class="form-control" id="" value="MI" disabled>
+                          <option value="">Select </option>
+                          <option value="MI" selected="selected">MI</option>
+                          <option value="">GP</option>
+                          <option value="">Reservoir</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">Seasonality</label>
+                        <select class="form-control" id="" value="Perennial " disabled>
+                          <option value="">Select </option>
+                          <option value="Perennial " selected="selected">Perennial </option>
+                          <option value="">Long Seasonal</option>
+                          <option value="">Short Seasonal</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">TWSA(Total water
+                          spread area)</label> <input class="form-control" value="87897"
+      
+                          type="text" disabled> </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="sel1">EWSA(Estimated water
+                          spread area)</label> <input class="form-control" value="767868769"
+      
+                          type="text" disabled> </div>
+                    </div>
+                  
+                  </div>
+                  
+                      <div class="row" id="">
+                      <div class="col-md-6"  style="margin-bottom:20px;">
+                       <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
+                         <input type="text" class="form-control col-md-8" disabled name="leaseamount" placeholder="lease amount" value="204000" id="" disabled="disabled">                  
+                        </div>
+                      </div>
+                  
+                    </div>
+                     <div class="row" id="">
+                      <div class="col-md-6"  style="margin-bottom:20px;">
+                       <div class="form-group"> <label for="pwd" class="">Lease Amount Proposed by (F.D.O)</label>
+                         <input type="text" class="form-control col-md-8" disabled name="leaseamount" placeholder="lease amount" value="" id="">                  
+                        </div>
+                      </div>
+                  
+                      <div class="col-md-6"  style="margin-bottom:20px;">
+                       <div class="form-group"> <label for="pwd" class="">Lease Amount Proposed by (D.F.O)</label>
+                         <input type="text" class="form-control col-md-8" disabled name="leaseamount" placeholder="lease amount" value="" id="">                  
+                        </div>
+                      </div>
+                  
+                    </div>
+                     
+                    
+                  
+                  <div class="row">
+                    <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
+                    </div>
+                  </div>
+                  <div class="row">
+                          <div class="col-md-12">
+                            <div class="col-md-6">
+                              <div class="form-group"> <label for="pwd">AD Comments</label>
+                                <textarea rows="4" cols="75" disabled="disabled">         Test
+                               </textarea> </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <div class="col-md-6">
+                                  <div class="form-group"> <label for="pwd">DFO Comments</label>
+                                    <textarea rows="4" cols="75">         Test
+                                   </textarea> </div>
+                                </div>
+                              </div> 
+                            </div> 
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class=""> <span>flc.jpg</span> <span style="color:red;"><i
+      
+                              class="fa fa-times" aria-hidden="true"></i> </span> </div>
+                        <div class="form-group"> <label for="pwd">Upload Image</label>
+                          <input value="flc.jpg" type="file"> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+      
+                    id="flc-submit" >Update</button> <button type="button" class="btn btn-default"
+      
+                    data-dismiss="modal">Close</button> </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <div class="form-group"> <label for="email">Name of water body </label>
-              <input class="form-control" id="FLC" value="Santhamaguluru tank" type="email">
-            </div>
-            <div class="form-group" style="visibility:hidden;margin-top: -70px;">
-              <label for="pwd">Latitude</label> <input class="form-control" value="0"
-
-                id="sno" type="text"> </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">District</label>
-                  <select class="form-control select_dist" id="District">
-                    <option value="east_godavari">Prakasam </option>
-                    <option value="guntur">GUNTUR</option>
-                    <option value="krishana">KRISHNA</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="form-group"> <label for="sel1"> mandal</label>
-                    <select class="form-control select_mandal" id="Mandal">
-                      <option>Santhamaguluru</option>
-                    </select>
-                  </div>
-                </div>
-            </div>
-            
-			<div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1"> panchayat</label>
-                  <select class="form-control  select_panchayat1" id="panchayat" value="Puttavaripalem">
-                    <option>Santhamaguluru</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="form-group"> <label for="sel1"> Village</label>
-                    <select class="form-control  select_panchayat" id="panchayat">
-                      <option>Santhamaguluru</option>
-                    </select>
-                  </div>
-                </div>
-            </div>
-           
-			<div class="row">
-			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Latitude </label> <input
-
-                    class="form-control" value="7678686" type="text"> </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Longitude</label> <input
-
-                    class="form-control" value="876896" type="text"> </div>
-              </div>
-			</div>
-  
-            <div class="row">
-              <div class="col-md-12">
-                <div class="panel panel-primary" style="float: left; width: 100%;">
-                  <div class="panel-heading" style=""> <span> Water body
-                      Details</span> <span style="float:right"> </span> </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Water body type</label>
-                  <select class="form-control" id="" value="MI">
-                    <option value="">Select </option>
-                    <option value="MI" selected="selected">MI</option>
-                    <option value="">GP</option>
-                    <option value="">Reservoir</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Seasonality</label>
-                  <select class="form-control" id="" value="Perennial ">
-                    <option value="">Select </option>
-                    <option value="Perennial " selected="selected">Perennial </option>
-                    <option value="">Long Seasonal</option>
-                    <option value="">Short Seasonal</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">TWSA(Total water
-                    spread area)</label> <input class="form-control" value="87897"
-
-                    type="text"> </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">EWSA(Estimated water
-                    spread area)</label> <input class="form-control" value="767868769"
-
-                    type="text"> </div>
-              </div>
-            
-            </div>
-			
-			    <div class="row" id="">
-				<div class="col-md-6"  style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" value="204000" id="" disabled="disabled">                  
-                  </div>
-				</div>
-			
-			  </div>
-			   <div class="row" id="">
-				<div class="col-md-6"  style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount Proposed by (F.D.O)</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" value="" id="">                  
-                  </div>
-				</div>
-			
-				<div class="col-md-6"  style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount Proposed by (D.F.O)</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" value="" id="">                  
-                  </div>
-				</div>
-			
-			  </div>
-			   
-			  
-			
-            <div class="row">
-              <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd">Comments</label>
-                    <textarea rows="4" cols="75">                     Test
-                   </textarea> </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class=""> <span>flc.jpg</span> <span style="color:red;"><i
-
-                        class="fa fa-times" aria-hidden="true"></i> </span> </div>
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input value="flc.jpg" type="file"> </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer"> <button type="submit" class="btn btn-primary"
-
-              id="flc-submit" >Update</button> <button type="button" class="btn btn-default"
-
-              data-dismiss="modal">Close</button> </div>
-        </div>
-      </div>
-    </div>
     <script type="text/javascript">
      $(document).ready(function () {
-       
+        $("#reject").click(function(){
+        $("#reject").addClass("disabled");
+        $("#approve").addClass("disabled");
+        $("#rectification").addClass("disabled");
+       })
+       $("#rectify-ok").click(function(){
+        document.location.href = "water_bodies_approval_screen-ad-renewal.html"
+       })
   $("#flc-submit").click(function(){
     
 
