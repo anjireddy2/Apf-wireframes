@@ -533,11 +533,12 @@ label {
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading"><div>Aqua Farm : <b>AP-FSH-FRM-1 </b> : Samples Information details</div>
+      <div class="panel-heading"><div>Samples Information details</div>
           <!-- <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div> -->
       </div>
       <div class="panel-body">
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div><label>Farmer Information:</label></div>
           <div class="panel panel-info">
             <div class="panel-body">
               <form method="post" action=".">
@@ -549,12 +550,56 @@ label {
                               <label class="control-label col-md-4  requiredField"> Date <span class="asteriskField">*</span></label>
                               <div class="controls col-md-8">
                                       <input class="input-md textinput textInput form-control"
-                                      value="29-110-2019" id="tst_dt" type="text" readonly disaled>
+                                      value="29-11-2019" id="tst_dt" type="text" readonly disaled>
                               </div>
                           </div>
                       </div>
                   </div>
                   <div class="col-md-4">
+                    <div class="row">
+                        <div class="form-group required row" id="ext_farm_reg_nos"> 
+                            <label class="control-label col-md-4  requiredField">District </label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="Srikakulam" id="tst_dst" type="text" readonly disaled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="form-group required row" id="ext_farm_reg_nos"> 
+                          <label class="control-label col-md-4  requiredField">Mandal</label>
+                          <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="Mandasa" id="tst_mndl" type="text" readonly disaled>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField"> Farmer Name <span class="asteriskField">*</span></label>
+                          <div class="controls col-md-8">
+                                  <input class="input-md textinput textInput form-control"
+                                  value="Test" id="tst_dt" type="text" readonly disaled>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                    <div class="form-group required row"> 
+                        <label class="control-label col-md-4  requiredField"> Aqua Farm <span class="asteriskField">*</span></label>
+                        <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="AP-FSH-FRM-1" id="tst_dt" type="text" readonly disaled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  <!-- <div class="col-md-4">
                     <div class="row">
                         <div class="form-group required row" id="ext_farm_reg_nos"> 
                             <label class="control-label col-md-4  requiredField">Sample Type</label>
@@ -569,8 +614,8 @@ label {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+                </div> -->
+                <!-- <div class="col-md-4">
                   <div class="row">
                       <div class="form-group required row" id="ext_farm_reg_nos"> 
                           <label class="control-label col-md-4  requiredField">Type of Test`</label>
@@ -583,13 +628,24 @@ label {
                           </div>
                       </div>
                   </div>
-                </div>
+                </div> -->
                
                 </div>
                 <!-- Second Row  -->
-
-                <div class="row">
-                    <div class="col-md-4">
+</form>
+</div>
+</div>
+<div><label>Sample Information:</label></div>
+<div class="col-md-3">
+  <button class="btn btn-primary" value="Add Pond+">Add Pond +</button>
+</div>
+<div class="panel panel-info">
+  <div class="panel-body">
+    <div class="row">
+      
+    </div>
+                <div class="row" style="margin-top: 2%;">
+                    <!-- <div class="col-md-4">
                         <div class="row">
                             <div class="form-group required row" id="ext_farm_reg_nos"> 
                                 <label class="control-label col-md-4  requiredField">Parameters </label>
@@ -602,8 +658,8 @@ label {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    </div> -->
+                    <!-- <div class="col-md-4">
                         <div class="row">
                             <div class="form-group required row" id="ext_farm_reg_nos"> 
                                 <label class="control-label col-md-4  requiredField">Pond Number`</label>
@@ -616,25 +672,149 @@ label {
                                 </div>
                             </div>
                         </div>
-                      </div>
-                    <div class="col-md-4">
-                        <div class="row">
+                      </div> -->
+                       <div class="col-md-2 form-group ">
+                  
+                        <!-- <div class="form-group required row" id="ext_farm_reg_nos">  -->
+                            <label class="control-label requiredField">Sample Type</label>
+                            <div class="controls">
+                              <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
+                                <option value="">Water Test</option>
+                                <option value="">Seed Test</option>
+                                <option value="">Fish Test</option>
+                                <option value="">Soil Test</option>
+                                <option value="">Shrimp Test</option>
+                              </select>
+                            </div>
+                        <!-- </div> -->
+                  
+                </div>
+                    <div class="col-md-2">
+                        <!-- <div class="row"> -->
                             <div class="form-group required row"> 
-                                <label class="control-label col-md-4  requiredField"> Sample ID <span class="asteriskField">*</span></label>
-                                <div class="controls col-md-5">
+                                <label class="control-label requiredField"> Sample ID <span class="asteriskField">*</span></label>
+                                <div class="controls">
                                         <input class="input-md textinput textInput form-control"
                                         value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
                                 </div>
-                                <div class="controls col-md-3">
+                                <!-- <div class="controls col-md-3">
                                   <input type="button" value="print" class="btn btn-primary btn btn-info"/>
-                                </div>
+                                </div> -->
                             </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="add test">Add Test</label>
+                        <div style="border: 1px solid #cccccc;padding: 2%;">
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Water Analysis</label></span>
+                              <div id="demo" class="collapse">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo1"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Soil Analysis</label></span>
+                              <div id="demo1" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo2"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Simple collapsible</label></span>
+                              <div id="demo2" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo3"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis</label></span>
+                              <div id="demo3" class="collapse">
+                              test
+                              </div>
+                            </div>
+                           
                         </div>
+                      </div>
                     </div>
                    
                
                  
                   </div>
+                  <div class="row" style="margin-top: 2%;" id="extra-block">
+                       <div class="col-md-2 form-group ">
+                  
+                        <!-- <div class="form-group required row" id="ext_farm_reg_nos">  -->
+                            <label class="control-label requiredField">Sample Type</label>
+                            <div class="controls">
+                              <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
+                                <option value="">Water Test</option>
+                                <option value="">Seed Test</option>
+                                <option value="">Fish Test</option>
+                                <option value="">Soil Test</option>
+                                <option value="">Shrimp Test</option>
+                              </select>
+                            </div>
+                        <!-- </div> -->
+                  
+                </div>
+                    <div class="col-md-2">
+                        <!-- <div class="row"> -->
+                            <div class="form-group required row"> 
+                                <label class="control-label requiredField"> Sample ID <span class="asteriskField">*</span></label>
+                                <div class="controls">
+                                        <input class="input-md textinput textInput form-control"
+                                        value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
+                                </div>
+                                <!-- <div class="controls col-md-3">
+                                  <input type="button" value="print" class="btn btn-primary btn btn-info"/>
+                                </div> -->
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="add test">Add Test</label>
+                        <div style="border: 1px solid #cccccc;padding: 2%;">
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo4"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Water Analysis</label></span>
+                              <div id="demo4" class="collapse">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo5"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Soil Analysis</label></span>
+                              <div id="demo5" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo6"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Simple collapsible</label></span>
+                              <div id="demo6" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo7"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis</label></span>
+                              <div id="demo7" class="collapse">
+                              test
+                              </div>
+                            </div>
+                           
+                        </div>
+                      </div>
+                    </div>
+                   
+               
+                 
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                        <button class="btn btn-primary" id="add_sample" value="Add Pond+">Add Sample +</button>
+                      </div>
+                    </div>
 
 
                 <!-- End Second Row-->
@@ -642,28 +822,8 @@ label {
                     <!-- Second Row  -->
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="form-group required row" id="ext_farm_reg_nos"> 
-                                <label class="control-label col-md-4  requiredField">District </label>
-                                <div class="controls col-md-8">
-                                    <input class="input-md textinput textInput form-control"
-                                    value="Srikakulam" id="tst_dst" type="text" readonly disaled>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="form-group required row" id="ext_farm_reg_nos"> 
-                                <label class="control-label col-md-4  requiredField">Mandal`</label>
-                                <div class="controls col-md-8">
-                                    <input class="input-md textinput textInput form-control"
-                                    value="Mandasa" id="tst_mndl" type="text" readonly disaled>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
+                   
+                    
                     <!-- <div class="col-md-3">
                         <div class="row">
                             <div class="form-group required row"> 
@@ -675,7 +835,7 @@ label {
                             </div>
                         </div>
                     </div> -->
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="row">
                             <div class="form-group required row" id="ext_farm_reg_nos"> 
                                 <label class="control-label col-md-4  requiredField">Village </label>
@@ -685,9 +845,9 @@ label {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-group required row" id="ext_farm_reg_nos"> 
                             <label class="control-label col-md-4  requiredField"> </label>
                             <div class="controls col-md-8">
@@ -695,7 +855,7 @@ label {
                                 value="Add Test" id="tst_add" type="button" style="float: left;margin-left: 84%;margin-top: 6%;" >
                             </div>
                         </div>
-                    </div>
+                    </div> -->
               </form>
             </div>
           </div>
@@ -706,6 +866,7 @@ label {
 
   <script type="text/javaScript">
     $(document).ready(function(){
+      $("#extra-block").hide();
         console.log(localStorage.getItem("exts_farm"))
         if(localStorage.getItem("exts_farm") == true){
             $("#add_new_farm").hide();
@@ -715,6 +876,10 @@ label {
             $("#add_new_farm").show();
             $("#aqa_frm_lst").hide();
         }
+
+        $("#add_sample").click(function(){
+          $("#extra-block").show();
+        })
     })
   </script>
 </html>
