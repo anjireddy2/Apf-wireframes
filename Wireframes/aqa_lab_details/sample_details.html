@@ -379,8 +379,8 @@ th,td{
   text-align: center;
 }
 #summary th,td {
-  text-align: left;
-  padding:10px;
+  text-align: left !important;
+  padding:10px !important;
 }
 	</style>
   </head>
@@ -744,7 +744,7 @@ th,td{
                                 <label class="control-label requiredField"> Sample ID <span class="asteriskField">*</span></label>
                                 <div class="controls">
                                         <input class="input-md textinput textInput form-control"
-                                        value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
+                                        value="SMP-WAT-001" id="tst_id" type="text" readonly disaled>
                                 </div>
                                 <!-- <div class="controls col-md-3">
                                   <input type="button" value="print" class="btn btn-primary btn btn-info"/>
@@ -877,59 +877,7 @@ th,td{
                             <div>
                               <span data-toggle="collapse" data-target="#demo1"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Soil Analysis</label></span>
                               <div id="demo1" class="collapse">
-                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
-                                  <tbody>
-                                      <tr>
-                                          <th>Parameter</th>
-                                          <th>Select</th>
-                                          <th>Cost</th>
-                                      </tr>
-                                      <tr>
-                                          <td>PH</td>
-                                          <td><input type="checkbox"/>
-                                          <td>50</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Orgnic Carbon</td>
-                                        <td><input type="checkbox"/>
-                                        <td>50</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Available Nitrogen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>5</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Total Nitrogen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>10</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Phophate- poserous</td>
-                                        <td><input type="checkbox"/>
-                                        <td>70</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Calcium </td>
-                                        <td><input type="checkbox"/>
-                                        <td>8</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Magnesium</td>
-                                        <td><input type="checkbox"/>
-                                        <td>18</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Zinc</td>
-                                        <td><input type="checkbox"/>
-                                        <td>3</td>
-                                      </tr>
-                                      </tbody>
-                                      </table>
+                                
                               </div>
                             </div>
                             <div>
@@ -941,50 +889,7 @@ th,td{
                             <div>
                               <span data-toggle="collapse" data-target="#demo3"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
                               <div id="demo3" class="collapse">
-                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
-                                  <tbody>
-                                      <tr>
-                                          <th>Parameter</th>
-                                          <th>Select</th>
-                                          <th>Cost</th>
-                                      </tr>
-                                      <tr>
-                                          <td>Moisture</td>
-                                          <td><input type="checkbox"/>
-                                          <td>80</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Crude Protein</td>
-                                        <td><input type="checkbox"/>
-                                        <td>80</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Fats/ Lipids</td>
-                                        <td><input type="checkbox"/>
-                                        <td>5</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Fibre</td>
-                                        <td><input type="checkbox"/>
-                                        <td>10</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Ash</td>
-                                        <td><input type="checkbox"/>
-                                        <td>70</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Nitrogen Free Extract </td>
-                                        <td><input type="checkbox"/>
-                                        <td>8</td>
-                                      </tr>
-                                      
-                                      </tbody>
-                                      </table>
+                                
                               </div>
                             </div>
                             <div>
@@ -1043,7 +948,7 @@ th,td{
                             <div class="controls">
                               <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
                                 <option value="">Water</option>
-                                <option value="">Soil</option>
+                                <option value="" selected>Soil</option>
                                 <option value="">Fish</option>
                                 <option value="">Shrimp</option>
                                 <option value="">Feed</option>
@@ -1061,7 +966,7 @@ th,td{
                                 <label class="control-label requiredField"> Sample ID <span class="asteriskField">*</span></label>
                                 <div class="controls">
                                         <input class="input-md textinput textInput form-control"
-                                        value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
+                                        value="SMP-SOL-001" id="tst_id" type="text" readonly disaled>
                                 </div>
                                 <!-- <div class="controls col-md-3">
                                   <input type="button" value="print" class="btn btn-primary btn btn-info"/>
@@ -1084,7 +989,59 @@ th,td{
                             <div>
                               <span data-toggle="collapse" data-target="#demo5"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Soil Analysis</label></span>
                               <div id="demo5" class="collapse">
-                              test
+                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
+                                  <tbody>
+                                      <tr>
+                                          <th>Parameter</th>
+                                          <th>Select</th>
+                                          <th>Cost</th>
+                                      </tr>
+                                      <tr>
+                                          <td>PH</td>
+                                          <td><input type="checkbox"/>
+                                          <td>50</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Orgnic Carbon</td>
+                                        <td><input type="checkbox"/>
+                                        <td>50</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Available Nitrogen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>5</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Total Nitrogen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>10</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Phophate- poserous</td>
+                                        <td><input type="checkbox"/>
+                                        <td>70</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Calcium </td>
+                                        <td><input type="checkbox"/>
+                                        <td>8</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Magnesium</td>
+                                        <td><input type="checkbox"/>
+                                        <td>18</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Zinc</td>
+                                        <td><input type="checkbox"/>
+                                        <td>3</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
                               </div>
                             </div>
                             <div>
@@ -1251,7 +1208,7 @@ th,td{
                                                     <option value="">Soil</option>
                                                     <option value="">Fish</option>
                                                     <option value="">Shrimp</option>
-                                                    <option value="">Feed</option>
+                                                    <option value="" selected>Feed</option>
                                                     <option value="">Shrimp Seed/Prawn Seed</option>
                                                     <option value="">Aqua Products</option>
                                                     <option value="">Crab/Prawn</option>
@@ -1266,7 +1223,7 @@ th,td{
                                                     <label class="control-label requiredField"> Sample ID <span class="asteriskField">*</span></label>
                                                     <div class="controls">
                                                             <input class="input-md textinput textInput form-control"
-                                                            value="AP-FSH-FRM-1-TST-WTR-12" id="tst_id" type="text" readonly disaled>
+                                                            value="SMP-FEED-001" id="tst_id" type="text" readonly disaled>
                                                     </div>
                                                     <!-- <div class="controls col-md-3">
                                                       <input type="button" value="print" class="btn btn-primary btn btn-info"/>
@@ -1299,9 +1256,52 @@ th,td{
                                                   </div>
                                                 </div>
                                                 <div>
-                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
-                                                  <div id="demo11" class="collapse">
-                                                  test
+                                                  <span data-toggle="collapse" data-target="#demo12"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
+                                                  <div id="demo12" class="collapse">
+                                                    <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
+                                                      <tbody>
+                                                          <tr>
+                                                              <th>Parameter</th>
+                                                              <th>Select</th>
+                                                              <th>Cost</th>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>Moisture</td>
+                                                              <td><input type="checkbox"/>
+                                                              <td>80</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Crude Protein</td>
+                                                            <td><input  id="crude" type="checkbox"/>
+                                                            <td>80</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Fats/ Lipids</td>
+                                                            <td><input type="checkbox"/>
+                                                            <td>5</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Fibre</td>
+                                                            <td><input type="checkbox"/>
+                                                            <td>10</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Ash</td>
+                                                            <td><input type="checkbox"/>
+                                                            <td>70</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Nitrogen Free Extract </td>
+                                                            <td><input type="checkbox"/>
+                                                            <td>8</td>
+                                                          </tr>
+                                                          
+                                                          </tbody>
+                                                          </table>
                                                   </div>
                                                 </div>
                                                 <div>
@@ -1398,7 +1398,7 @@ th,td{
                                         </div> -->
                                         </div>
                                       </div>
-                                      <div>
+                                      <div id="summary_sec">
                                         <div>Summary:</div>
                                         <div class="panel panel-info" style="padding: 2%;">
                                           <div>
@@ -1414,11 +1414,11 @@ th,td{
                                                       <td>2</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>Number of Samples Submitted</td>
+                                                    <td>Number of Samples Selected</td>
                                                     <td>3</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>Number of Tests Submitted</td>
+                                                    <td>Number of Tests Selected</td>
                                                     <td>7</td>
                                                   </tr>
                                                   <tr>
@@ -1431,10 +1431,34 @@ th,td{
                                           </div>
                                         </div>
                                       </div>
+                                      <div>
+                                        
+                                        <div><button class="btn btn-primary" onClick="window.location.href='add_test.html'">Back</button><input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#mymodal" value="Next"/></div>
+                                      </div>
                     </div>
               </form>
             </div>
           </div>
+          <div class="modal fade" id="mymodal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <div>TestID TESTID-001 was created successfully.</div>
+          </div>
+          <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+
+            data-dismiss="modal" id="ok" onClick='window.location.href="preview.html"'>Ok</button> 
+            <!-- <button type="button" class="btn btn-default"
+
+              data-dismiss="modal">Close</button>  -->
+            </div>
+        </div>
+      </div>
+    </div>
           <!-- End Farmer Registration --> </div>
       </div>
     </div>
@@ -1444,6 +1468,7 @@ th,td{
     $(document).ready(function(){
       $("#extra-block").hide();
       $("#extra-pond").hide();
+      $("#summary_sec").hide();
         console.log(localStorage.getItem("exts_farm"))
         if(localStorage.getItem("exts_farm") == true){
             $("#add_new_farm").hide();
@@ -1465,6 +1490,9 @@ th,td{
         })
         $("#pond-del").click(function(){
           $("#extra-pond").hide();
+        })
+        $("#crude").click(function(){
+          $("#summary_sec").show()
         })
     })
   </script>
