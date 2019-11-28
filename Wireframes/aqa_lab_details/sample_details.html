@@ -375,6 +375,13 @@ label {
   text-align: right;
     padding-right: 1px;
 }
+th,td{
+  text-align: center;
+}
+#summary th,td {
+  text-align: left;
+  padding:10px;
+}
 	</style>
   </head>
   <body>
@@ -491,7 +498,7 @@ label {
               <li><a href="#">DCA</a></li>
               <li><a href="#">Water and Soil Analysis</a></li>
               <li><a href="#">Microbiology</a></li>
-              <li><a href="#">Feed Analysis</a></li>
+              <li><a href="#">Feed Analysis Lab</a></li>
               <li><a href="#">AMR</a></li>
               <li><a href="#">ELISA</a></li>
               <li><a href="#">LCMSMS</a></li>
@@ -555,7 +562,7 @@ label {
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                     <div class="row">
                         <div class="form-group required row" id="ext_farm_reg_nos"> 
                             <label class="control-label col-md-4  requiredField">District </label>
@@ -565,8 +572,8 @@ label {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+                </div> -->
+                <!-- <div class="col-md-4">
                   <div class="row">
                       <div class="form-group required row" id="ext_farm_reg_nos"> 
                           <label class="control-label col-md-4  requiredField">Mandal</label>
@@ -576,7 +583,7 @@ label {
                           </div>
                       </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-md-4">
                   <div class="row">
                       <div class="form-group required row"> 
@@ -599,6 +606,30 @@ label {
                     </div>
                 </div>
             </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4">
+              <div class="row">
+                  <div class="form-group required row"> 
+                      <label class="control-label col-md-4  requiredField"> Address <span class="asteriskField">*</span></label>
+                      <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="D.No: 27, Penamaluru, Vijayawada, Krishna Dist." id="tst_dt" type="text" readonly disaled>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+                <div class="form-group required row"> 
+                    <label class="control-label col-md-4  requiredField"> Aqua Farm Address <span class="asteriskField">*</span></label>
+                    <div class="controls col-md-8">
+                            <input class="input-md textinput textInput form-control"
+                            value="D.No: 2, Mandasa, Vijayawada, Krishna Dist." id="tst_dt" type="text" readonly disaled>
+                    </div>
+                </div>
+            </div>
+        </div>
                   <!-- <div class="col-md-4">
                     <div class="row">
                         <div class="form-group required row" id="ext_farm_reg_nos"> 
@@ -650,6 +681,12 @@ label {
             <label>Pond No: &nbsp;&nbsp;1</label>
           </div>
         </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <!-- <label>Actions</label> -->
+            <div> <i style="color: #39c4f0;" class="fa fa-trash-o" aria-hidden="true"></i></div>
+          </div>
+        </div>
       </div>
                 <div class="row" style="margin-top: 2%;">
                     <!-- <div class="col-md-4">
@@ -687,11 +724,15 @@ label {
                             <label class="control-label requiredField">Sample Type</label>
                             <div class="controls">
                               <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
-                                <option value="">Water Test</option>
-                                <option value="">Seed Test</option>
-                                <option value="">Fish Test</option>
-                                <option value="">Soil Test</option>
-                                <option value="">Shrimp Test</option>
+                                <option value="">Water</option>
+                                <option value="">Soil</option>
+                                <option value="">Fish</option>
+                                <option value="">Shrimp</option>
+                                <option value="">Feed</option>
+                                <option value="">Shrimp Seed/Prawn Seed</option>
+                                <option value="">Aqua Products</option>
+                                <option value="">Crab/Prawn</option>
+
                               </select>
                             </div>
                         <!-- </div> -->
@@ -718,26 +759,262 @@ label {
                             <div>
                               <span data-toggle="collapse" data-target="#demo"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Water Analysis</label></span>
                               <div id="demo" class="collapse">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
+                                  <tbody>
+                                      <tr>
+                                          <th>Parameter</th>
+                                          <th>Select</th>
+                                          <th>Cost</th>
+                                      </tr>
+                                      <tr>
+                                          <td>Temperature</td>
+                                          <td><input type="checkbox"/>
+                                          <td>100</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Total Dissolved Solids</td>
+                                        <td><input type="checkbox"/>
+                                        <td>120</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>PH</td>
+                                        <td><input type="checkbox"/>
+                                        <td>80</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Redox Potential</td>
+                                        <td><input type="checkbox"/>
+                                        <td>100</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Salinity</td>
+                                        <td><input type="checkbox"/>
+                                        <td>70</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Carbon Dioxide</td>
+                                        <td><input type="checkbox"/>
+                                        <td>8</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Dissolved Oxygen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>18</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Total Alkalinity</td>
+                                        <td><input type="checkbox"/>
+                                        <td>3</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Total Hardness</td>
+                                        <td><input type="checkbox"/>
+                                        <td>38</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Calcium Hardness</td>
+                                        <td><input type="checkbox"/>
+                                        <td>66</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Magnesium Hardness</td>
+                                        <td><input type="checkbox"/>
+                                        <td>66</td>
+                                      </tr>
+                                      <tr>
+                                        <td>BOD</td>
+                                        <td><input type="checkbox"/>
+                                        <td>24</td>
+                                      </tr>
+                                      <tr>
+                                        <td>COD</td>
+                                        <td><input type="checkbox"/>
+                                        <td>16</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Nitrite- Nittrogen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>9</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Total Ammonia </td>
+                                        <td><input type="checkbox"/>
+                                        <td>6</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Toxic Ammonia</td>
+                                        <td><input type="checkbox"/>
+                                        <td>46</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Hydrogen Sulphide</td>
+                                        <td><input type="checkbox"/>
+                                        <td>32</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Phosphate- Phosperoud</td>
+                                        <td><input type="checkbox"/>
+                                        <td>17</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Iron</td>
+                                        <td><input type="checkbox"/>
+                                        <td>12</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Chlorine</td>
+                                        <td><input type="checkbox"/>
+                                        <td>21</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
                               </div>
                             </div>
                             <div>
                               <span data-toggle="collapse" data-target="#demo1"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Soil Analysis</label></span>
                               <div id="demo1" class="collapse">
-                              test
+                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
+                                  <tbody>
+                                      <tr>
+                                          <th>Parameter</th>
+                                          <th>Select</th>
+                                          <th>Cost</th>
+                                      </tr>
+                                      <tr>
+                                          <td>PH</td>
+                                          <td><input type="checkbox"/>
+                                          <td>50</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Orgnic Carbon</td>
+                                        <td><input type="checkbox"/>
+                                        <td>50</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Available Nitrogen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>5</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Total Nitrogen</td>
+                                        <td><input type="checkbox"/>
+                                        <td>10</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Phophate- poserous</td>
+                                        <td><input type="checkbox"/>
+                                        <td>70</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Calcium </td>
+                                        <td><input type="checkbox"/>
+                                        <td>8</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Magnesium</td>
+                                        <td><input type="checkbox"/>
+                                        <td>18</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Zinc</td>
+                                        <td><input type="checkbox"/>
+                                        <td>3</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
                               </div>
                             </div>
                             <div>
-                              <span data-toggle="collapse" data-target="#demo2"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Simple collapsible</label></span>
+                              <span data-toggle="collapse" data-target="#demo2"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Microbiology Lab</label></span>
                               <div id="demo2" class="collapse">
                               test
                               </div>
                             </div>
                             <div>
-                              <span data-toggle="collapse" data-target="#demo3"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis</label></span>
+                              <span data-toggle="collapse" data-target="#demo3"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
                               <div id="demo3" class="collapse">
+                                <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
+                                  <tbody>
+                                      <tr>
+                                          <th>Parameter</th>
+                                          <th>Select</th>
+                                          <th>Cost</th>
+                                      </tr>
+                                      <tr>
+                                          <td>Moisture</td>
+                                          <td><input type="checkbox"/>
+                                          <td>80</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Crude Protein</td>
+                                        <td><input type="checkbox"/>
+                                        <td>80</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Fats/ Lipids</td>
+                                        <td><input type="checkbox"/>
+                                        <td>5</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Fibre</td>
+                                        <td><input type="checkbox"/>
+                                        <td>10</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Ash</td>
+                                        <td><input type="checkbox"/>
+                                        <td>70</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Nitrogen Free Extract </td>
+                                        <td><input type="checkbox"/>
+                                        <td>8</td>
+                                      </tr>
+                                      
+                                      </tbody>
+                                      </table>
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>PCR Lab</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Antibiotics Lab</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Heavy Metals</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Pesticides</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>General Disease
+                                Diagnosis</label></span>
+                              <div id="demo11" class="collapse">
                               test
                               </div>
                             </div>
@@ -765,11 +1042,14 @@ label {
                             <label class="control-label requiredField">Sample Type</label>
                             <div class="controls">
                               <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
-                                <option value="">Water Test</option>
-                                <option value="">Seed Test</option>
-                                <option value="">Fish Test</option>
-                                <option value="">Soil Test</option>
-                                <option value="">Shrimp Test</option>
+                                <option value="">Water</option>
+                                <option value="">Soil</option>
+                                <option value="">Fish</option>
+                                <option value="">Shrimp</option>
+                                <option value="">Feed</option>
+                                <option value="">Shrimp Seed/Prawn Seed</option>
+                                <option value="">Aqua Products</option>
+                                <option value="">Crab/Prawn</option>
                               </select>
                             </div>
                         <!-- </div> -->
@@ -808,14 +1088,45 @@ label {
                               </div>
                             </div>
                             <div>
-                              <span data-toggle="collapse" data-target="#demo6"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Simple collapsible</label></span>
+                              <span data-toggle="collapse" data-target="#demo6"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Microbiology Lab</label></span>
                               <div id="demo6" class="collapse">
                               test
                               </div>
                             </div>
                             <div>
-                              <span data-toggle="collapse" data-target="#demo7"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis</label></span>
+                              <span data-toggle="collapse" data-target="#demo7"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
                               <div id="demo7" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>PCR Lab</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Antibiotics Lab</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Heavy Metals</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Pesticides</label></span>
+                              <div id="demo11" class="collapse">
+                              test
+                              </div>
+                            </div>
+                            <div>
+                              <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>General Disease
+                                Diagnosis</label></span>
+                              <div id="demo11" class="collapse">
                               test
                               </div>
                             </div>
@@ -887,6 +1198,19 @@ label {
                         <div class="row">
                           
                         </div>
+                        <div class="row">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label>Pond No: &nbsp;&nbsp;2</label>
+                            </div>
+                          </div>
+                          <div class="col-md-1">
+                            <div class="form-group">
+                              <!-- <label>Actions</label> -->
+                              <div id="pond-del"> <i style="color: #39c4f0;" class="fa fa-trash-o" aria-hidden="true"></i></div>
+                            </div>
+                          </div>
+                        </div>
                                     <div class="row" style="margin-top: 2%;">
                                         <!-- <div class="col-md-4">
                                             <div class="row">
@@ -916,24 +1240,21 @@ label {
                                                 </div>
                                             </div>
                                           </div> -->
-                                          <div class="col-md-1">
-                                            <div class="form-group">
-                                              <label style="text-align: left;
-                                              white-space: nowrap;">Pond No</label>
-                                              <span>2</span>
-                                            </div>
-                                          </div>
+                                          
                                            <div class="col-md-2 form-group ">
                                       
                                             <!-- <div class="form-group required row" id="ext_farm_reg_nos">  -->
                                                 <label class="control-label requiredField">Sample Type</label>
                                                 <div class="controls">
                                                   <select class="form-control input-md" id="tst_samp_typ" style="margin-bottom:2%">
-                                                    <option value="">Water Test</option>
-                                                    <option value="">Seed Test</option>
-                                                    <option value="">Fish Test</option>
-                                                    <option value="">Soil Test</option>
-                                                    <option value="">Shrimp Test</option>
+                                                    <option value="">Water</option>
+                                                    <option value="">Soil</option>
+                                                    <option value="">Fish</option>
+                                                    <option value="">Shrimp</option>
+                                                    <option value="">Feed</option>
+                                                    <option value="">Shrimp Seed/Prawn Seed</option>
+                                                    <option value="">Aqua Products</option>
+                                                    <option value="">Crab/Prawn</option>
                                                   </select>
                                                 </div>
                                             <!-- </div> -->
@@ -972,19 +1293,56 @@ label {
                                                   </div>
                                                 </div>
                                                 <div>
-                                                  <span data-toggle="collapse" data-target="#demo10"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Simple collapsible</label></span>
+                                                  <span data-toggle="collapse" data-target="#demo10"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Microbiology Lab</label></span>
                                                   <div id="demo10" class="collapse">
                                                   test
                                                   </div>
                                                 </div>
                                                 <div>
-                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis</label></span>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Feed Analysis Lab</label></span>
+                                                  <div id="demo11" class="collapse">
+                                                  test
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>PCR Lab</label></span>
+                                                  <div id="demo11" class="collapse">
+                                                  test
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Antibiotics Lab</label></span>
+                                                  <div id="demo11" class="collapse">
+                                                  test
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Heavy Metals</label></span>
+                                                  <div id="demo11" class="collapse">
+                                                  test
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>Pesticides</label></span>
+                                                  <div id="demo11" class="collapse">
+                                                  test
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <span data-toggle="collapse" data-target="#demo11"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label>General Disease
+                                                    Diagnosis</label></span>
                                                   <div id="demo11" class="collapse">
                                                   test
                                                   </div>
                                                 </div>
                                                
                                             </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                          <div class="form-group">
+                                            <label>Actions</label>
+                                            <div> <i style="color: #39c4f0;" class="fa fa-trash-o" aria-hidden="true"></i></div>
                                           </div>
                                         </div>
                                        
@@ -1040,6 +1398,39 @@ label {
                                         </div> -->
                                         </div>
                                       </div>
+                                      <div>
+                                        <div>Summary:</div>
+                                        <div class="panel panel-info" style="padding: 2%;">
+                                          <div>
+                                            <table border="1" id="summary" style="width: 65%;border:1px solid black;background: #f0f1f2;">
+                                              <tbody>
+                                                  <!-- <tr>
+                                                      <th>Parameter</th>
+                                                      <th>Select</th>
+                                                      <th>Cost</th>
+                                                  </tr> -->
+                                                  <tr>
+                                                      <td>Number of Ponds Selected</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Number of Samples Submitted</td>
+                                                    <td>3</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Number of Tests Submitted</td>
+                                                    <td>7</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Total Cost(In Rs.)</td>
+                                                    <td>610</td>
+                                                  </tr>
+                                                  
+                                                  </tbody>
+                                                  </table>
+                                          </div>
+                                        </div>
+                                      </div>
                     </div>
               </form>
             </div>
@@ -1071,6 +1462,9 @@ label {
         })
         $("#delete_sample").click(function(){
           $("#extra-block").hide();
+        })
+        $("#pond-del").click(function(){
+          $("#extra-pond").hide();
         })
     })
   </script>
