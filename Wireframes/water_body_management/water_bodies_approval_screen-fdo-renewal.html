@@ -807,11 +807,11 @@
                         </tr>
                       </thead>
                       <tbody id="flcdata">
-                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>Santhamaguluru tank</td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>204000</td>
+                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>204000</td>
                       		<td style="white-space:nowrap;"><button class="btn btn-primary" data-toggle="modal" data-target="#Renewal-button">View Renewal Certificate</button>
 							</td>
 							</tr>
-                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td>test</td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td style="white-space:nowrap;"><button class="btn btn-primary" data-toggle="modal" data-target="#Renewal-button">View Renewal Certificate</button>
+                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td style="white-space:nowrap;"><button class="btn btn-primary" data-toggle="modal" data-target="#Renewal-button">View Renewal Certificate</button>
 							</td></tr>
                       </tbody>
                     </table>
@@ -820,14 +820,21 @@
                 <div class="row" id="">
 				
                   <div class="col-md-12" style="text-align:right"> 
-				  <button class="btn btn-primary" onclick="window.location.href='../approvals/waterbody-ad-Renewal1.html'">
-                      Submit 
-				</button>	
+				  	
 				  <button class="btn btn-primary">
                       Download 
 				</button>					  
 				</div>
                 </div>
+				<div id="" class="pull-right">
+                    <div style="text-align:right; margin-top:20px; display: inline-block;">  <button class="btn btn-primary" onclick="window.location.href='../approvals/waterbody-ad-Renewal1.html'">
+                      Submit 
+				</button>	 </div>
+                    <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="reject" data-target="#myModal5">
+                        Reject </button> </div>
+                    <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="rectification" data-target="#myModal6">
+                        Rectification </button> </div>
+                    </div>
               </div>
               <div id="by_map_shown">
                 <div id="map_canvas" style="height:380px;top:25px;"></div>
@@ -1097,15 +1104,7 @@
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd" disabled>Comments</label>
-                    <textarea rows="4" cols="75" disabled>                     Test
-                   </textarea> </div>
-                </div>
-              </div> 
-            </div>
+           
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
@@ -1567,22 +1566,34 @@ $("#ewsa").keyup(function(){
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          
         </div>
-        <div class="modal-body">
+<div class="modal-body">
         	<div class="row">
         		<div class="col-md-12" style="margin-bottom:20px;">
-        			          <label class="col-md-12">Society resolution letter:Test1.pdf</label>
+        			          <label class="">Society resolution letter:<a href="">Test1.pdf</a></label>
         			         
 
         		</div>
         	</div>
 			
 			<div class="row">
-        		<div class="col-md-12" >
-        			          <label class="col-md-12">Society audit report:Test2.pdf</label>
+        		<div class="col-md-12">
+        			          <label class="">Society audit report:<a href="">Test2.pdf</a></label>
         			         
 
         		</div>
         	</div>
+			<div class="row">
+        		<div class="col-md-12">
+        			         			<input disabled="" checked="" type="checkbox" name="vehicle1" value="Bike">  Record documents are verified.<span style="color:red;">*</span><br>
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12">
+        	<input type="checkbox" name="vehicle1" value="Bike"> Payment verification done.<span style="color:red;">*</span><br>
+        		</div>
+        	</div>
+			
+
 			
 			
         </div>
@@ -1645,5 +1656,52 @@ $("#ewsa").keyup(function(){
       
     </div>
   </div>
+  <div class="modal fade" id="myModal5" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <div>Your Request has been rejected</div>
+                </div>
+                <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+      
+                  data-dismiss="modal" id="reject-ok">Ok</button> 
+                  <!-- <button type="button" class="btn btn-default"
+      
+                    data-dismiss="modal">Close</button>  -->
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="myModal6" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div><span style="color: red">*</span>Reasons for Rectification:</div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Select</option>
+                        <option value="test">Test</option>
+                        <option value="test1">Test1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+        
+                    data-dismiss="modal" id="rectify-ok">Ok</button> 
+                    <button type="button" class="btn btn-default"
+        
+                      data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+              </div>
+            </div>
   </body>
 </html>

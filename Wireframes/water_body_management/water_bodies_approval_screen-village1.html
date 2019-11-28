@@ -194,7 +194,7 @@
             display: none;
         }
 
-       
+     
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -718,7 +718,7 @@
         <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
         <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
       <div class="header-right"> <a class="active" href="#home">My Profile</a>
-        <a href="#contact">My Services</a> <a href="#about">Society president</a>
+        <a href="#contact">My Services</a> <a href="#about">V.F.A</a>
       </div>
     </div>
     <div class="nav-side-menu">
@@ -777,15 +777,16 @@
                 <div class="col-md-12">
                   <div class="panel panel-primary" style="float: left; width: 100%;">
                     <div class="panel-heading" style="    padding: 20px 15px"> <span>
-                        Water body Lease/Renewal</span> <span style="float:right"> <button
-
-                          class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                          + Add new </button> </span> </div>
+                        Water body Lease/Renewal</span>  </div>
                   </div>
                 </div>
               </div>
               <div id="">
-
+				<div class="row">
+				<div class="col-md-12">
+				<input type="checkbox" id="checkAll">Select All
+				</div>
+				</div>	
                 <div class="row" style="margin-top:20px;">
                   <div class="col-md-12 table-responsive">
                     <table class="table table-bordered">
@@ -806,25 +807,28 @@
                         </tr>
                       </thead>
                       <tbody id="flcdata">
-                      	<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td id="amountren">204000</td>
-                      		<td><button class="btn btn-primary" onclick="window.location.href='../one_portal.html'">Payment</button></td></tr>
-                      		<tr><td>2</td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td><button class="btn btn-primary" >Payment</button></td></tr>
+                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>204000</td>
+                      		<td style="white-space:nowrap;"><button class="btn btn-primary" data-toggle="modal" data-target="#Renewal-button">View Renewal Certificate</button>
+							</td>
+							</tr>
+                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td style="white-space:nowrap;"><button class="btn btn-primary" data-toggle="modal" data-target="#Renewal-button">View Renewal Certificate</button>
+							</td></tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
-				<div class="row" id="">
+                <div class="row" id="">
 				
                   <div class="col-md-12" style="text-align:right"> 
-				  <button class="btn btn-primary" onclick="window.location.href='water_bodies_approval_screen-village1.html'">
+				  <button class="btn btn-primary" onclick="window.location.href='../approvals/waterbody-fdo-Renewal.html'"
+>
                       Submit 
 				</button>	
-				  <button class="btn btn-primary">
+				  <button class="btn btn-primary" >
                       Download 
 				</button>					  
 				</div>
                 </div>
-                
               </div>
               <div id="by_map_shown">
                 <div id="map_canvas" style="height:380px;top:25px;"></div>
@@ -844,38 +848,45 @@
           </div>
           <div class="modal-body">
             <div class="form-group"> <label for="email">Name of water body </label>
-              <input class="form-control" id="FLC" type="email"> </div>
+            <select class="form-control " id="namewaterbody">
+                    <option value="">Select </option>
+                    <option value="Santhamaguluru">Santhamaguluru tank	 </option>
+                  </select>
+			</div>
+			<div id="addwaterbody">
             <div class="form-group" style="visibility:hidden;margin-top: -70px;">
-              <label for="pwd">Latitude</label> <input class="form-control" value="0"
-
-                id="sno" type="text"> </div>
+              <label for="pwd">Latitude</label> <input class="form-control" value="0" id="sno" type="text"> </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">District</label>
-                  <select class="form-control select_dist" id="District">
-                    <option value="">Select </option>
-                    <option value="Prakasam">Prakasam </option>
+                  <select class="form-control select_dist" id="District" disabled>
+                    <option value="east_godavari">EAST GODAVARI </option>
+                    <option value="guntur">GUNTUR</option>
+                    <option value="krishana">KRISHNA</option>
                   </select>
                 </div>
               </div>
               <div class="col-md-6">
                   <div class="form-group"> <label for="sel1"> mandal</label>
-                    <select class="form-control select_mandal" id="Mandal">
+                    <select class="form-control select_mandal" id="Mandal" disabled>
+                      <option>ALLAVARAM</option>
                     </select>
                   </div>
                 </div>
             </div>
-           
-			     <div class="row">
+            
+			        <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> panchayat</label>
-                  <select class="form-control  select_panchayat" id="panchayat1">
+                  <select class="form-control  select_panchayat1" id="panchayat" disabled value="Puttavaripalem">
+                    <option>Puttavaripalem</option>
                   </select>
                 </div>
               </div>
               <div class="col-md-6">
                   <div class="form-group"> <label for="sel1"> Village</label>
-                    <select class="form-control  select_panchayat1" id="panchayat">
+                    <select class="form-control  select_panchayat" id="panchayat1" disabled>
+                      <option>VODALAREVU</option>
                     </select>
                   </div>
                 </div>
@@ -883,13 +894,13 @@
            
 			<div class="row">
 			 <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="7678686" type="text" disabled> </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="876896" type="text" disabled> </div>
               </div>
 			</div>
-       
+    
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-primary" style="float: left; width: 100%;">
@@ -901,65 +912,62 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Water body type</label>
-                  <select class="form-control" id="water-body-type">
+                  <select class="form-control" id="water-body-type" value="MI" disabled>
                     <option value="">Select </option>
-                    <option value="Major-Irrigation">Major Irrigation</option>
-					<option value="Minor-Irrigation">Minor Irrigation</option>
-                    <option value="GP">GP</option>
-                    <option value="Reservoir">Reservoir</option>
+                    <option value="MI" selected="selected">Major Irrigation	</option>
+                    <option value="">GP</option>
+                    <option value="">Reservoir</option>
                   </select>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Seasonality</label>
-                  <select class="form-control" id="Seasonality">
+                  <select class="form-control" id="Seasonality" value="Perennial " disabled>
                     <option value="">Select </option>
-                    <option value="Perennial ">Perennial </option>
-                    <option value="Long-Seasonal">Long Seasonal</option>
-                    <option value="Short-Seasonal">Short Seasonal</option>
+                    <option value="Perennial " selected="selected">Perennial </option>
+                    <option value="">Long Seasonal</option>
+                    <option value="">Short Seasonal</option>
                   </select>
                 </div>
               </div>
-			
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">TWSA(Total water
-                    spread area)</label> <input class="form-control" type="text" id="TWSA">
-                </div>
+                    spread area)</label> <input id="TWSA" class="form-control" value="350" type="text" disabled> </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">EWSA(Effective water
-                    spread area)</label> <input class="form-control" type="text" id="ewsa">
-                </div>
+                <div class="form-group"> <label for="sel1">EWSA(Estimated water
+                    spread area)</label> <input class="form-control" value="340" type="text" disabled id="ewsa"> </div>
               </div>
-			  
-			    <div class="" id="lease-amountdiv">
-				<div class="col-md-12"  style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" id="lease-amountdiv1">                  
-                  </div>
-				</div>
-			  </div>
              
             </div>
+			<div class="row">
+			<div class="col-md-12" style="margin-bottom:20px;">
+				 <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
+                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" id="" value="204000" disabled="disabled">                  
+                  </div>
+				</div>
+			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-
+           
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input type="file"> </div>
+                  <div class="form-group"> <label for="pwd">Society resolution letter:</label>
+                    <input value="flc.jpg" type="file" > </div>
                 </div>
               </div>
             </div>
+			
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
               id="flc-submit" data-toggle="modal" data-target="#myModal4">Submit</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
+		  </div>
         </div>
       </div>
     </div>
@@ -1090,15 +1098,7 @@
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd" disabled>Comments</label>
-                    <textarea rows="4" cols="75" disabled>                     Test
-                   </textarea> </div>
-                </div>
-              </div> 
-            </div>
+           
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
@@ -1149,7 +1149,7 @@
                   </div>
                 </div>
             </div>
-           
+          
 			<div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> panchayat</label>
@@ -1263,22 +1263,21 @@
         </div>
       </div>
     </div>
+	   <script>
+  $("#checkAll").click(function () {
+     $('input:checkbox').not(this).prop('checked', this.checked);
+ });
+  </script>
     <script type="text/javascript">
      $(document).ready(function () {
-       var total = localStorage.getItem("total");
-	   if(total) {
-	   $("#amountren").text('');
-	    $("#amountren").text(total);
-		localStorage.setItem("total","");
-		}
-		
+       
   $("#flc-submit").click(function(){
     
 
    
       
     $("#SI No").val(parseInt($("#SI No").val()) + 1);
-    $("#flcdata").append('<tr><td>'+ $("#SI No").val() +'</td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#FLC").val()+'</a></td><td>'+$("#water-body-type").val()+'</td><td>'+$("#Seasonality").val()+'</td><td>'+$("#TWSA").val()+'</td><td>'+$("#ewsa").val()+'</td><td>'+$("#lease-amountdiv1").val()+'</td><td><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td></tr>');
+    $("#flcdata").append('<tr><td>'+ $("#SI No").val() +'</td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td>'+$("#FLC").val()+'</td><td>'+$("#water-body-type").val()+'</td><td>'+$("#Seasonality").val()+'</td><td>'+$("#TWSA").val()+'</td><td>'+$("#ewsa").val()+'</td><td>'+$("#lease-amountdiv1").val()+'</td><td><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td></tr>');
                       
   });
     });
@@ -1443,6 +1442,26 @@
     });
     });
     </script>
+	
+	
+	
+	  <script type="text/javascript">
+    $(document).ready(function () {
+     $("#addwaterbody").hide();
+    $("#namewaterbody").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          $("#addwaterbody").show();
+        }
+		else
+		{
+		$("#addwaterbody").hide();
+		}
+    });
+    });
+    </script>
+	
+	
     <script type="text/javascript">
     $(document).ready(function() {
         $("#trraining-course-view").hide();
@@ -1539,21 +1558,92 @@ $("#ewsa").keyup(function(){
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+        	<div class="row">
+        		<div class="col-md-12" style="margin-bottom:20px;">
+        			          <label class="">Society resolution letter:<a href="">Test1.pdf</a></label>
+        			         
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12" >
+        			          <label class="">Society audit report:<a href="">Test2.pdf</a></label>
+        			         
+
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12" >
+        			         			<input disabled checked type="checkbox" name="vehicle1" value="Bike">  Record documents are verified.<span style="color:red;">*</span><br>
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12" >
+        	<input   type="checkbox" name="vehicle1" value="Bike"> Payment verification done.<span style="color:red;">*</span><br>
+        		</div>
+        	</div>
+			
+
+			
+			
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" >Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="Renewal-button1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
-        		<div class="col-md-12">
+        		<div class="col-md-12" style="margin-bottom:20px;">
         			          <label class="col-md-6">Society resolution letter:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			         
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12" style="margin-bottom:20px;">
+        			          <label class="col-md-6">Society audit report:</label>
         			          <div class="col-md-7">
         			          <input type="file" name="" class="form-control">
         			      </div>
 
         		</div>
         	</div>
+			
+			<div class="row">
+        		<div class="col-md-12" >
+        			          <label class="col-md-6">Dry Certificate:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='../approvals/waterbody-Village-assistant-lease.html'">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
