@@ -377,11 +377,9 @@ label {
 }
 th,td{
   text-align: center;
-}
-#summary th,td {
-  text-align: left !important;
   padding:5px !important;
 }
+
 	</style>
   </head>
   <body>
@@ -540,24 +538,242 @@ th,td{
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading"><div>Payment Details</div>
+      <div class="panel-heading"><div>Test Capture Screen</div>
           <!-- <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div> -->
       </div>
       <div class="panel-body">
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="panel panel-info" style="padding: 2%;">
-          <div><label>Online payment through CFMS: <input id="check" type="checkbox"/>
-          </div>
-          <div id="transaction" style="margin-top: 2%;">
-            Transaction ID: <label>383723323</label>
-            <div class="form-group">
-                <label for="">Other Options</label>
-                <input class="form-control" style="width:30%" type="text"/>
+            <div><label>Farmer Information:</label></div>
+            <div class="panel panel-info">
+              <div class="panel-body">
+                <form method="post" action=".">
+                       
+                  <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group required row"> 
+                                <label class="control-label col-md-4 requiredField" style="word-break: break-all"> Date of Submission <span class="asteriskField">*</span></label>
+                                <div class="controls col-md-8">
+                                        <input class="input-md textinput textInput form-control"
+                                        value="29-11-2019" id="tst_dt" type="text" readonly disaled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Farmer Name <span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="Test" id="tst_dt" type="text" readonly disaled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                      <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField"> Aqua Farm <span class="asteriskField">*</span></label>
+                          <div class="controls col-md-8">
+                                  <input class="input-md textinput textInput form-control"
+                                  value="AP-FSH-FRM-1" id="tst_dt" type="text" readonly disaled>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                    <div class="form-group required row"> 
+                        <label class="control-label col-md-4  requiredField"> Address <span class="asteriskField">*</span></label>
+                        <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="D.No: 27, Penamaluru, Vijayawada, Krishna Dist." id="tst_dt" type="text" readonly disaled>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-4">
+              <div class="row">
+                  <div class="form-group required row"> 
+                      <label class="control-label col-md-4  requiredField"> Aqua Farm Address <span class="asteriskField">*</span></label>
+                      <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="D.No: 2, Mandasa, Vijayawada, Krishna Dist." id="tst_dt" type="text" readonly disaled>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                 
+                  </div>
+  </div>
+  </div>
+  <div style="margin-top: 2%;"><label>Test ID:  Test-001</label></div>
+  <div style="margin-top: 2%;"><label>Water Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="date" class="form-control"/></span>
         </div>
-          
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" class="form-control"/></span>
         </div>
-        <div><button class="btn btn-primary" onClick="window.location.href='preview.html'">Back</button><button class="btn btn-primary pull-right" onClick="window.location.href='receipt.html'">Ok</button></div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span>
+                <select class="form-control">
+                    <option value="">AIF</option>
+                    <option value="">FDO</option>
+                    <option value="">AD</option>
+                    <option value="">DD</option>
+                    <option value="">DFO</option>
+                    <option value="">Aqua Lab Assistant</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                  <td>SMP-WAT-001</td>
+                  <td>Temperature</td>
+                  <td>Oc</td>
+                  <td>28-32</td>
+                  <td><input type="text" class="form-control"/></td>
+                  <td><input type="text" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>Total Dissolved Solids</td>
+                    <td>ppm</td>
+                    <td>-</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                  </tr>
+                  <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>PH</td>
+                    <td></td>
+                    <td>7.5-8.5</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>Redox Potential</td>
+                    <td>mv</td>
+                    <td>>100</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div>
+    </div>
+    
+
+  </div>
+  <div style="margin-top: 2%;"><label>Soil Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="date" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span> <select class="form-control">                     <option value="">AIF</option>                     <option value="">FDO</option>                     <option value="">AD</option>                     <option value="">DD</option>                     <option value="">DFO</option>                     <option value="">Aqua Lab Assistant</option>                 </select></span>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>SMP-SOL-001</td>
+                    <td>Orgnic Carbon</td>
+                    <td>%</td>
+                    <td>1.5-2.0</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div>
+    </div>
+
+  </div>
+  <div style="margin-top: 2%;"><label>Feed Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="date" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span> <select class="form-control">                     <option value="">AIF</option>                     <option value="">FDO</option>                     <option value="">AD</option>                     <option value="">DD</option>                     <option value="">DFO</option>                     <option value="">Aqua Lab Assistant</option>                 </select></span>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>SMP-FEED-001</td>
+                    <td>Moisture</td>
+                    <td>%</td>
+                    <td>-</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td>SMP-FEED-001</td>
+                    <td>Crude Protein</td>
+                    <td>%</td>
+                    <td>-</td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div>
+    </div>
+
+  </div>
+  <div><button class="btn btn-primary pull-right"><a href="report.html" >Generate Report</a></button></div>
         </div>
   
 </div>
@@ -565,7 +781,15 @@ th,td{
           <!-- End Farmer Registration --> 
       
   </body>
+<style>
+a {
+    color: white;text-decoration: none;
+}
+a:hover {
+    color: white;text-decoration: none;
+}
 
+</style>
   <script type="text/javaScript">
     $(document).ready(function(){
         $("#transaction").hide()

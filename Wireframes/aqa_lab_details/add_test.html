@@ -540,20 +540,21 @@ body {
                         <div class="controls col-md-8">
                                 <div class="controls col-md-3">
                                 <input type="radio" name="ext_farm" style="width: 13%;margin: 0px;height: 13px;float: left;margin-top: 3%;" 
-                                value="ext_farm" class="form-control exist_farm_cls" id="yes">Yes</div>
-                                <div class="controls col-md-3"><input type="radio" name="ext_farm"
-                                    style="width: 4%;margin: 0px;height: 13px;float: left;"
-                                    class="form-control exist_farm_cls" value="non_ext_farm" >No </div>
+                                value="ext_farm" class="form-control exist_farm_cls" id="yes"><label>Yes</label></div>
+                                <div class="controls col-md-6" style="padding-left: 13%;"><input type="radio" name="ext_farm" style="width: 8%;margin: 0px;height: 13px;float: left;/* margin-top: 3%; */" value="ext_farm" class="form-control exist_farm_cls" id="no"><label style="
+                                  margin-top: -3px;
+                              ">No</label></div>
                                 <div class="controls col-md-3">
                                     <input type="radio" name="ext_farm" style="width: 13%;margin: 0px;height: 13px;float: left;margin-top: 3%;" 
-                                    value="ext_farm" id="token_id" class="form-control exist_farm_cls">Token ID</div>
+                                    value="ext_farm" id="token_id" class="form-control exist_farm_cls">
+                                    <label>Token ID</label></div>
                         </div>
                     </div> 
                     <div class="form-group required row" id="token_show"> 
                         <label class="control-label col-md-4  requiredField"> Enter Token ID <span class="asteriskField">*</span></label>
                         <div class="controls col-md-6">
                                 <input class="input-md textinput textInput form-control"
-                                value="" id=""
+                                value="" id="token"
                                 name="aadhaar_no" type="text">
                         </div>
                         <div class="controls col-md-2">
@@ -562,7 +563,7 @@ body {
                         </div>
                     </div>   
               <div id="existing_farm">
-                    <div class="form-group required row"> 
+                    <div class="form-group required row" id="aadhar"> 
                             <label class="control-label col-md-4  requiredField"> Aadhaar Number <span class="asteriskField">*</span></label>
                             <div class="controls col-md-6">
                                     <input class="input-md textinput textInput form-control"
@@ -574,6 +575,7 @@ body {
                                     id="srch_adhr_no" type="button"> 
                             </div>
                         </div>
+                        <div id="show-details">
                         <div class="form-group required row" id="ext_farm_reg_nos"> 
                           <label class="control-label col-md-4  requiredField">Aqua Farm Reg.No</label>
                           <div class="controls col-md-8">
@@ -631,6 +633,7 @@ body {
                                 value="" id="ext_frm_eml"
                                 name="frm_name" type="text"> 
                             </div>
+                        </div>
                         </div>
 
                     
@@ -728,13 +731,15 @@ body {
     $("#aqa_frm_lst").hide();
     $("#ext_farm_reg_nos").hide();
     $("#sbt_bts").hide();
+    $("#show-details").hide();
     localStorage.clear();
     $("#add_tst_btn").click(function(){
         window.location.href = "sample_details.html"
 
     })
     $("#srch_adhr_no").click(function(){
-      $("#adhar_no").val("");
+      // $("#adhar_no").val("");
+      $("#show-details").show();
         $("#aqa_frm_lst").show();
         $("#ext_frm_nm").val("Test Aqus Farmer");
         $("#ext_frm_adrss").val("D.No: 27, Penamaluru, Vijayawada, Krishna Dist.");
@@ -752,14 +757,23 @@ body {
     })
     $("#token_show").hide();
     $("#yes").click(function(){
+      $("#adhar_no").val("")
+      $("#adhar_no").attr("readonly",false);
+      $("#show-details").hide();
       $("#srch_adhr_no").show()
       $("#token_show").hide()
+      $("#aadhar").show();
     })
     $("#token_id").click(function(){
       $("#token_show").show()
+      $("#token").val("")
+      $("#show-details").hide();
       $("#srch_adhr_no").hide();
+      $("#aadhar").hide();
     })
     $("#srch_token_id").click(function(){
+      $("#show-details").show();
+      $("#aadhar").show();
       $("#aqa_frm_lst").show();
         $("#adhar_no").val("400228152221");
         $("#adhar_no").attr("readonly",true);

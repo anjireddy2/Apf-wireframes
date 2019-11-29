@@ -377,11 +377,9 @@ label {
 }
 th,td{
   text-align: center;
-}
-#summary th,td {
-  text-align: left !important;
   padding:5px !important;
 }
+
 	</style>
   </head>
   <body>
@@ -540,32 +538,227 @@ th,td{
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading"><div>Payment Details</div>
+      <div class="panel-heading"><div>Report</div>
           <!-- <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div> -->
       </div>
       <div class="panel-body">
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="panel panel-info" style="padding: 2%;">
-          <div><label>Online payment through CFMS: <input id="check" type="checkbox"/>
-          </div>
-          <div id="transaction" style="margin-top: 2%;">
-            Transaction ID: <label>383723323</label>
-            <div class="form-group">
-                <label for="">Other Options</label>
-                <input class="form-control" style="width:30%" type="text"/>
+                <div><h3 style="
+                    text-align: center;
+                    font-weight: bolder;
+                ">AP Fisheries Department</h3></div>
+                <div><h4 style="
+                    text-align: center;font-weight: bolder;
+                ">GOVT AQUA LAB</h4></div><div><h4 style="
+                    text-align: center;font-weight: bolder;
+                ">REPORT</h4></div>
+            <div style="margin-top: 4%;"><label>LAB DETAILS :  </label>Test, D.No: 27, Penamaluru, Vijayawada, Krishna Dist, 9323421333</div>
+          <div class="panel panel-info" style="margin-top: 2%;padding: 2% ">
+            <div><label>Test ID No : TESTID-001</label></div>
+            <div><label>Name of Farmer : Test</label></div>
+            <div><label>DATE : 18-11-2019 11.10 A.M</label></div>
+            <div><label>Address of Farmer: D.No: 2, Mandasa, Vijayawada, Krishna Dist.</label></div>
+            <div><label>Contact No : 9834523453</label></div>
+            <div><label>Registration ID of Farm: ID 00021</label></div>
+            <div style="margin-top: 3%;">
+                <div><label>Result Date: 29/11/2019</label></div>
+                <div><label>Time: 10.30 A.M</label></div>
+                <div><label>Result Refernced by : Test</label></div>
+                <div><label>Designation: AIF</label></div>
             </div>
+          </div>
+  <div style="margin-top: 2%;"><label>Water Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="text" disabled value="2019/11/29" class="form-control"/></span>
         </div>
-          
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" disabled value="Sudheer" class="form-control"/></span>
         </div>
-        <div><button class="btn btn-primary" onClick="window.location.href='preview.html'">Back</button><button class="btn btn-primary pull-right" onClick="window.location.href='receipt.html'">Ok</button></div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span>
+                <select class="form-control" disabled>
+                    <option value="">AIF</option>
+                    <option value="">FDO</option>
+                    <option value="">AD</option>
+                    <option value="">DD</option>
+                    <option value="">DFO</option>
+                    <option value="">Aqua Lab Assistant</option>
+                </select>
+            </span>
         </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                  <td>SMP-WAT-001</td>
+                  <td>Temperature</td>
+                  <td>Oc</td>
+                  <td>28-32</td>
+                  <td>29</td>
+                  <td>Ok</td>
+                </tr>
+                <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>Total Dissolved Solids</td>
+                    <td>ppm</td>
+                    <td>-</td>
+                    <td>10</td>
+                    <td>Ok</td>
+                  </tr>
+                  <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>PH</td>
+                    <td></td>
+                    <td>7.5-8.5</td>
+                    <td>7.5</td>
+                    <td>Ok</td>
+                </tr>
+                <tr>
+                    <td>SMP-WAT-001</td>
+                    <td>Redox Potential</td>
+                    <td>mv</td>
+                    <td>>100</td>
+                    <td>120</td>
+                    <td>Ok</td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <!-- <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div> -->
+    </div>
+    
+
+  </div>
+  <div style="margin-top: 2%;"><label>Soil Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="text" disabled value="2019/11/27" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" value="Sagar" disabled class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span> <select class="form-control" disabled>   
+                                  <option value="">AIF</option>                    
+                                   <option value="">FDO</option>                     <option value="">AD</option>                     <option value="">DD</option>                     <option value="">DFO</option>                     <option value="">Aqua Lab Assistant</option>                 </select></span>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>SMP-SOL-001</td>
+                    <td>Orgnic Carbon</td>
+                    <td>%</td>
+                    <td>1.5-2.0</td>
+                    <td>1.7</td>
+                    <td>Ok</td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <!-- <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div> -->
+    </div>
+
+  </div>
+  <div style="margin-top: 2%;"><label>Feed Analysis</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Date of Test:&nbsp;&nbsp; </label><span><input type="text" disabled value="209/11/28" class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Test Done by:&nbsp;&nbsp; </label><span><input type="text" value="Yogesh" disabled class="form-control"/></span>
+        </div>
+        <div class="col-md-4">
+            <label>Designation:&nbsp;&nbsp; </label><span> <select class="form-control" disabled>
+                                     <option value="">AIF</option>                     <option value="">FDO</option>                     <option value="">AD</option>                     <option value="">DD</option>                     <option value="">DFO</option>                     <option value="">Aqua Lab Assistant</option>                 </select></span>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;margin-top: 2%">
+            <tbody>
+                <tr>
+                    <!-- <th>SI No</th> -->
+                    <th>Sample ID</th>
+                    <th>Parameter</th>
+                    <th>Units</th>
+                    <th>Optimum level</th>
+                    <th>Analysis result</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>SMP-FEED-001</td>
+                    <td>Moisture</td>
+                    <td>%</td>
+                    <td>-</td>
+                    <td>22</td>
+                    <td>Ok</td>
+                </tr>
+                <tr>
+                    <td>SMP-FEED-001</td>
+                    <td>Crude Protein</td>
+                    <td>%</td>
+                    <td>-</td>
+                    <td>54</td>
+                    <td>Ok</td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <!-- <div><button class="btn btn-primary pull-right" style="margin-top: 2%;">Save</button></div> -->
+    </div>
+
+  </div>
+  <div><label>Payment Details:</label></div>
+  <div class="panel panel-info" style="padding: 2%;">
+    <div><label>Total:</label><span>Rupees six hundred and ten only(in Words)</span></div>
+    <div><label>Payment Mode:</label><span>Online(CFMS)</span></div>
+    <div><label>Transation ID:</label><span>383723323</span></div>
+    <div><label>Other Details:</label><span>Test</span></div>
+    <div style="text-align: right; margin-right: 15%;"><label>Receipt Generated by:</label></div>
+    <div style="text-align: right; margin-right: 14%;"><label>Name: </label>Test</div>
+    <div style="text-align: right; margin-right: 0%;"><label>Designation: </label>Aqua Lab Assistant</div>
+    <div style="text-align: right; margin-right: 15%;"><label>Seal: </label>Test</div>
+</div>
+  
   
 </div>
          
           <!-- End Farmer Registration --> 
       
   </body>
+<style>
+a {
+    color: white;text-decoration: none;
+}
+a:hover {
+    color: white;text-decoration: none;
+}
 
+</style>
   <script type="text/javaScript">
     $(document).ready(function(){
         $("#transaction").hide()
