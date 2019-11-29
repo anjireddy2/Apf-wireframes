@@ -345,7 +345,7 @@ body {
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: dodger#428bca;
+  background-color: dodgerblue;
   color: white;
 }
 
@@ -370,17 +370,6 @@ body {
     float: right;
     margin-right: 1%;
     margin-top: 1px;
-}
-label {
-  text-align: right;
-    padding-right: 1px;
-}
-th,td{
-  text-align: center;
-}
-#summary th,td {
-  text-align: left !important;
-  padding:5px !important;
 }
 	</style>
   </head>
@@ -498,7 +487,7 @@ th,td{
               <li><a href="#">DCA</a></li>
               <li><a href="#">Water and Soil Analysis</a></li>
               <li><a href="#">Microbiology</a></li>
-              <li><a href="#">Feed Analysis Lab</a></li>
+              <li><a href="#">Feed Analysis</a></li>
               <li><a href="#">AMR</a></li>
               <li><a href="#">ELISA</a></li>
               <li><a href="#">LCMSMS</a></li>
@@ -540,222 +529,301 @@ th,td{
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading"><div>Receipt Details</div>
-          <!-- <div id="add_new_farm"> <input type="button" value="Add New Farm" style="float:right;margin-top: -2.8%;" id="add_nw_frm" class="btn btn-primary btn btn-info" /></div> -->
-      </div>
+      <div class="panel-heading">GVGS</div>
       <div class="panel-body">
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          
-          <div><label>LAB DETAILS :  </label>Test, D.No: 27, Penamaluru, Vijayawada, Krishna Dist, 9323421333<a class="btn btn-primary pull-right" href="receipt.doc">Print</a><a class="btn btn-primary pull-right" style="margin-right: 2%;" href="aqua_lab_home_page.html">Home</a></div>
-          <div class="panel panel-info" style="margin-top: 2%;padding: 2% ">
-            <div><label>Test ID No : TESTID-001</label></div>
-            <div><label>DATE : 18-11-2019 11.50 A.M</label></div>
-            <div><label>Address of Farmer: D.No: 2, Mandasa, Vijayawada, Krishna Dist.</label></div>
-            <div><label>Contact No : 9834523453</label></div>
-            <div><label>Registration ID of Farm: ID 00021</label></div>
-            <div><label>Date of Report: 30-11-2019 11.00 A.M</label></div>
-          </div>
-          <div><label>Sample Details:</label></div>
-          <div class="panel panel-info" style="padding: 2%;">
-            <div><label>Pond No: &nbsp;&nbsp;1</label></div>
-            <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
-              <tbody>
-                  <tr>
-                      <th>SI No</th>
-                      <th>Sample</th>
-                      <th>Test</th>
-                      <th>Sample ID</th>
-                      <th>Parameter</th>
-                      <th>SLA</th>
-                      <th>Cost(In Rs.)</th>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Water</td>
-                    <td>Water Analysis</td>
-                    <td>SMP-WAT-001
-                           <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                            float: right;
-                            color: #428bca;
-                        " ></i></a>
-                    </td>
-                    <td>Temperature</td>
-                    <td>1</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Water</td>
-                    <td>Water Analysis</td>
-                    <td>SMP-WAT-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>Total Dissolved Solids</td>
-                    <td>1</td>
-                    <td>120</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Water</td>
-                    <td>Water Analysis</td>
-                    <td>SMP-WAT-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>PH</td>
-                    <td>2</td>
-                    <td>80</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Water</td>
-                    <td>Water Analysis</td>
-                    <td>SMP-WAT-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>Redox Potential</td>
-                    <td>1</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Soil</td>
-                    <td>Soil Analysis</td>
-                    <td>SMP-SOL-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>Orgnic Carbon</td>
-                    <td>1</td>
-                    <td>50</td>
-                  </tr>
-              </tbody>
-          </table>
-          <div style="margin-top: 2%;"><label>Pond No: &nbsp;&nbsp;2</label></div>
-            <table border="1" style="width: 100%;border:1px solid black;background: #f0f1f2;">
-              <tbody>
-                  <tr>
-                      <th>SI No</th>
-                      <th>Sample</th>
-                      <th>Test</th>
-                      <th>Sample ID</th>
-                      <th>Parameter</th>
-                      <th>SLA</th>
-                      <th>Cost(In Rs.)</th>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Feed</td>
-                    <td>Feed Analysis Lab</td>
-                    <td>SMP-FEED-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>Moisture</td>
-                    <td>1</td>
-                    <td>80</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Feed</td>
-                    <td>Feed Analysis Lab</td>
-                    <td>SMP-FEED-001
-                            <a href="Sample.doc"> <i class="fa fa-print" aria-hidden="true" style="
-                                float: right;
-                                color: #428bca;
-                            " ></i></a>
-                    </td>
-                    <td>Crude Protein</td>
-                    <td>1</td>
-                    <td>80</td>
-                  </tr>
-                 
-              </tbody>
-          </table>
-          </div>
-          <div id="summary_sec">
-                                        <div>Summary:</div>
-                                        <div class="panel panel-info" style="padding: 2%;">
-                                          <div>
-                                            <table border="1" id="summary" style="width: 65%;border:1px solid black;background: #f0f1f2;">
-                                              <tbody>
-                                                  <!-- <tr>
-                                                      <th>Parameter</th>
-                                                      <th>Select</th>
-                                                      <th>Cost</th>
-                                                  </tr> -->
-                                                  <tr>
-                                                      <td>Number of Ponds Selected</td>
-                                                      <td>2</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Number of Samples Selected</td>
-                                                    <td>3</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Number of Tests Selected</td>
-                                                    <td>7</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Total Cost(In Rs.)</td>
-                                                    <td>610</td>
-                                                  </tr>
-                                                  
-                                                  </tbody>
-                                                  </table>
-                                          </div>
-                                        </div>
-                                      </div>
-          <div><label>Payment Details:</label></div>
-          <div class="panel panel-info" style="padding: 2%;">
-            <div><label>Total:</label><span>Rupees six hundred and ten only(in Words)</span></div>
-            <div><label>Payment Mode:</label><span>Online(CFMS)</span></div>
-            <div><label>Transation ID:</label><span>383723323</span></div>
-            <div><label>Other Details:</label><span>Test</span></div>
-            <div style="text-align: right; margin-right: 15%;"><label>Receipt Generated by:</label></div>
-            <div style="text-align: right; margin-right: 14%;"><label>Name: </label>Test</div>
-            <div style="text-align: right; margin-right: 0%;"><label>Designation: </label>Aqua Lab Assistant</div>
-            <div style="text-align: right; margin-right: 15%;"><label>Seal: </label>Test</div>
-        </div>
-          <div><button class="btn btn-primary" onClick="window.location.href='payment.html'">Back</button>
-            <!-- <button class="btn btn-primary pull-right" onClick="window.location.href='payment.html'">Next</button> -->
-        </div>
-          </div>
-          
-        </div>
-        </div>
-  
-</div>
-         
-          <!-- End Farmer Registration --> 
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <form method="post" action=".">
+                    <div class="form-group required" style="float:left;width:100%;"> 
+                        <label class="control-label col-md-4  requiredField"> Registered Farm</label>
+                        <div class="controls col-md-8">
+                                <div class="controls col-md-3">
+                                <input type="radio" name="ext_farm" style="width: 13%;margin: 0px;height: 13px;float: left;margin-top: 3%;" 
+                                value="ext_farm" class="form-control exist_farm_cls" id="yes"><label>Yes</label></div>
+                                <div class="controls col-md-6" style="padding-left: 13%;"><input type="radio" name="ext_farm" style="width: 8%;margin: 0px;height: 13px;float: left;/* margin-top: 3%; */" value="ext_farm" class="form-control exist_farm_cls" id="no"><label style="
+                                  margin-top: -3px;
+                              ">No</label></div>
+                                <!-- <div class="controls col-md-3">
+                                    <input type="radio" name="ext_farm" style="width: 13%;margin: 0px;height: 13px;float: left;margin-top: 3%;" 
+                                    value="ext_farm" id="token_id" class="form-control exist_farm_cls">
+                                    <label>Token ID</label></div> -->
+                        </div>
+                    </div> 
+                    <div class="form-group required row" id="token_show"> 
+                        <label class="control-label col-md-4  requiredField"> Enter Token ID <span class="asteriskField">*</span></label>
+                        <div class="controls col-md-6">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="token"
+                                name="aadhaar_no" type="text">
+                        </div>
+                        <div class="controls col-md-2">
+                                <input name="search" value="Search" class="btn btn-primary btn btn-info"
+                                id="srch_token_id" type="button"> 
+                        </div>
+                    </div>   
+              <div id="existing_farm">
+                    <div class="form-group required row" id="aadhar"> 
+                            <label class="control-label col-md-4  requiredField"> Aadhaar Number <span class="asteriskField">*</span></label>
+                            <div class="controls col-md-6">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="" id="adhar_no"
+                                    name="aadhaar_no" type="text">
+                            </div>
+                            <div class="controls col-md-2">
+                                    <input name="search" value="Search" class="btn btn-primary btn btn-info"
+                                    id="srch_adhr_no" type="button"> 
+                            </div>
+                        </div>
+                        <div id="show-details">
+                        <div class="form-group required row" id="ext_farm_reg_nos"> 
+                          <label class="control-label col-md-4  requiredField">Aqua Farm Reg.No</label>
+                          <div class="controls col-md-8">
+                            <select class="form-control input-md" id="list_of_farms" style="margin-bottom:2%">
+                              <option value="">AP-FSH-FRM-1</option>
+                              <option value="">AP-SHRMP-FRM-1</option>
+                              <option value="">AP-FSH-FRM-334</option>
+                            </select>
+                          </div>
+                      </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Farmer Name<span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_nm" readonly
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Address<span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_adrss" readonly
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField">Farm Address<span class="asteriskField">*</span></label>
+                          <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="" id="ext_frm_adrss1" readonly
+                              name="frm_name" type="text"> 
+                          </div>
+                      </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Mobile Number <span class="asteriskField">*</span></label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_mbl_nmbr" readonly
+                                name="frm_name" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Alternate Mobile Number</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_altr_mob_no"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField">E-Mail</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_eml"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        </div>
+
+                    
+
+              </div>
+              
+              <div id="non_existing_farm">
+                    <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Aadhaar Number</label>
+                            <div class="controls col-md-8">
+                                    <input class="input-md textinput textInput form-control"
+                                    value="" id="adhar_no"
+                                    name="aadhaar_no" type="text"> 
+                            </div>
+                            
+                        </div>
+                        <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField">Aqua Farm Reg.No</label>
+                          <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="" id="ext_frm_reg_no"
+                              name="frm_name" type="text"> 
+                          </div>
+                      </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Farmer Name</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_nm"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Address</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_adrss"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField">Farm Address</label>
+                          <div class="controls col-md-8">
+                              <input class="input-md textinput textInput form-control"
+                              value="" id="ext_frm_adrss1"
+                              name="frm_name" type="text"> 
+                          </div>
+                      </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Mobile Number</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_mbl_nmbr"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField"> Alternate Mobile Number</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_altr_mob_no"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                        <div class="form-group required row"> 
+                            <label class="control-label col-md-4  requiredField">E-Mail</label>
+                            <div class="controls col-md-8">
+                                <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_eml"
+                                name="frm_name" type="text"> 
+                            </div>
+                        </div>
+                       
+
+                </div>
+                <div class="form-group" style="float: right;" id="sbt_bts">
+                        <div class="aab controls col-md-4 "> <input name="Cancel" value="Cancel" class="btn btn-primary btn btn-info"
       
+                            onclick="window.history(-1)" type="button"></div>
+                        <div class="controls col-md-4 ">
+                          <input name="ok" value="Submit" class="btn btn-primary"
+                             type="button"  style="margin-left:45%;" data-toggle="modal" data-target="#mymodal"/></div>
+              </form>
+            </div>
+          </div>
+          <!-- End Farmer Registration --> </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mymodal" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <div>Token ID was created successfully.</div>
+                </div>
+                <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+      
+                  data-dismiss="modal" id="ok" data-dismiss="modal">Ok</button> 
+                  <!-- <button type="button" class="btn btn-default"
+      
+                    data-dismiss="modal">Close</button>  -->
+                  </div>
+              </div>
+            </div>
+          </div>
   </body>
 
   <script type="text/javaScript">
-    $(document).ready(function(){
-        console.log(localStorage.getItem("exts_farm"))
-        if(localStorage.getItem("exts_farm") == true){
-            $("#add_new_farm").hide();
-            $("#aqa_frm_lst").show();
+  $(document).ready(function(){
+    $("#non_existing_farm").hide();
+    $("#existing_farm").hide();
+    $("#aqa_frm_lst").hide();
+    $("#ext_farm_reg_nos").hide();
+    $("#sbt_bts").hide();
+    $("#show-details").hide();
+    localStorage.clear();
+    $("#add_tst_btn").click(function(){
+        window.location.href = "sample_details.html"
+
+    })
+    $("#srch_adhr_no").click(function(){
+      // $("#adhar_no").val("");
+      $("#show-details").show();
+        $("#aqa_frm_lst").show();
+        $("#ext_frm_nm").val("Test Aqus Farmer");
+        $("#ext_frm_adrss").val("D.No: 27, Penamaluru, Vijayawada, Krishna Dist.");
+        $("#ext_frm_adrss1").val("D.No: 2, Mandasa, Vijayawada, Krishna Dist.");
+        $("#ext_frm_mbl_nmbr").val("9676890687");
+        $("#ext_farm_reg_nos").show();
+        $("#ext_frm_eml").val("");
+        $("#ext_frm_altr_mob_no").val("");
+        $("#ext_frm_eml").attr("readonly",false);
+        $("#adhar_no").attr("readonly",false);
+        // $("#ext_frm_nm").attr("readonly",false);
+        $("#ext_frm_altr_mob_no").attr("readonly",false);
+        $("#list_of_farms").attr("readonly",false);
+        $("#sbt_bts").show();
+    })
+    $("#token_show").hide();
+    $("#yes").click(function(){
+      $("#adhar_no").val("")
+      $("#adhar_no").attr("readonly",false);
+      $("#show-details").hide();
+      $("#srch_adhr_no").show()
+      $("#token_show").hide()
+      $("#aadhar").show();
+    })
+    $("#token_id").click(function(){
+      $("#token_show").show()
+      $("#token").val("")
+      $("#show-details").hide();
+      $("#srch_adhr_no").hide();
+      $("#aadhar").hide();
+    })
+    $("#srch_token_id").click(function(){
+      $("#show-details").show();
+      $("#aadhar").show();
+      $("#aqa_frm_lst").show();
+        $("#adhar_no").val("400228152221");
+        $("#adhar_no").attr("readonly",true);
+        $("#ext_frm_nm").val("Test Aqus Farmer");
+        $("#ext_frm_nm").attr("readonly",true);
+        $("#list_of_farms").attr("readonly",true);
+        
+        $("#ext_frm_adrss").val("D.No: 27, Penamaluru, Vijayawada, Krishna Dist.");
+        $("#ext_frm_adrss1").val("D.No: 2, Mandasa, Vijayawada, Krishna Dist.");
+        $("#ext_frm_mbl_nmbr").val("9676890687");
+        $("#ext_frm_eml").val("test@gmail.com");
+        $("#ext_frm_eml").attr("readonly",true);
+        $("#ext_frm_altr_mob_no").val("9223232333");
+        $("#ext_frm_altr_mob_no").attr("readonly",true);
+        $("#ext_farm_reg_nos").show();
+        $("#sbt_bts").show();
+    })
+      $(".exist_farm_cls").click(function(){
+        if($("input[name='ext_farm']:checked").val() == "ext_farm" ){
+            $("#non_existing_farm").hide();
+            $("#existing_farm").show();
+            localStorage.setItem("exts_farm", true);
         }
         else{
-            $("#add_new_farm").show();
-            $("#aqa_frm_lst").hide();
+            $("#non_existing_farm").show();
+            $("#existing_farm").hide();
+            localStorage.setItem("exts_farm", false);
+            $("#sbt_bts").show();
         }
-
-        
-    })
+      })
+  })
   </script>
 </html>
