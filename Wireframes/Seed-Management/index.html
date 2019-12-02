@@ -828,7 +828,7 @@
                    <div class="form-group"> <label for="sel1">Type water body </label>
                   <select class="form-control" id="">
                     <option value="">Select </option>
-					   <option value="fcs">MI Tank </option>
+					   <option value="MI">MI Tank </option>
                     <option value="GP">GP</option>
                     <option value="Reservoir">Reservoir</option>
 
@@ -953,7 +953,7 @@
                 <div class="form-group"> <label for="sel1">Type water body </label>
                   <select class="form-control" id="water-body-type">
                     <option value="">Select </option>
-					   <option value="fcs">MI Tank </option>
+					   <option value="MI">MI Tank </option>
                     <option value="GP">GP</option>
                     <option value="Reservoir">Reservoir</option>
 
@@ -1014,7 +1014,25 @@
 			  
 			
 			  			  </div>
-						  
+						  			  
+			  <div id="lease-content">
+          <div class="col-md-6">
+            <div class="form-group"> <label for="sel1">category</label>
+               <select class="form-control" id="category1">
+                  <option value="">Select</option>
+                           <option value="backrish_water">SC</option>
+                           <option value="aqua_labs">ST</option>
+             <option value="Others">Others</option>
+
+
+       
+               </select>
+             </div>
+           </div>
+     
+     
+			  </div>
+			 
 						  <div id="numberofmembers1">
 						  <div class="">
 						    <div class="col-md-6">
@@ -1035,7 +1053,7 @@
                 <div class="form-group"> <label for="sel1">Number of Other Members </label> <input class="form-control" id="number-of-member3" value=""  type="text" > </div>
               </div>
 			    <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member4" disabled value=""  type="text" > </div>
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member10" disabled value=""  type="text" > </div>
               </div>
 						  </div>
 
@@ -1044,22 +1062,7 @@
                 <div class="form-group"> <label for="sel1">Name of GP Tank </label> <input class="form-control" value="" type="text" > </div>
               </div>
 			  </div>
-			  
-			  <div id="lease-content">
-			  	   <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Number of Sc fishermen </label> <input class="form-control" id="number-of-members5" value=""  type="text" > </div>
-              </div>
-			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Number of St fishermen </label> <input class="form-control" id="number-of-members6" value=""  type="text" > </div>
-              </div>
-			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Number of Other fishermen </label> <input class="form-control" id="number-of-member7" value=""  type="text" > </div>
-              </div>
-			    <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">number of Licenced  fishermen </label> <input class="form-control" id="number-of-member8" disabled value=""  type="text" > </div>
-              </div>
-			  </div>
-			 
+
             </div> 
 			
 			
@@ -1087,7 +1090,7 @@
                 <div class="form-group"> <label for="sel1">Seasonality</label>
                   <select class="form-control" id="Seasonality">
                     <option value="">Select </option>
-                    <option value="Perennial ">Perennial </option>
+                    <option value="Perennial">Perennial </option>
                     <option value="Long-Seasonal">Long Seasonal</option>
                     <option value="Short-Seasonal">Short Seasonal</option>
                   </select>
@@ -1125,7 +1128,7 @@
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
-              id="flc-submit" >Submit</button>
+              id="seed-submit" data-dismiss="modal">Submit</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -1194,7 +1197,7 @@
 			   <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Type water body </label>
                   <select class="form-control" disabled id="water-body-type">
-					   <option value="fcs">MI Tank </option>
+					   <option value="MI">MI Tank </option>
                     <option value="GP">GP</option>
                     <option value="Reservoir">Reservoir</option>
 
@@ -1386,7 +1389,7 @@
 			   <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Type water body </label>
                   <select class="form-control" id="water-body-type">
-					   <option value="fcs">MI Tank </option>
+					   <option value="MI">MI Tank </option>
                     <option value="GP">GP</option>
                     <option value="Reservoir">Reservoir</option>
 
@@ -2115,7 +2118,9 @@ $("#ewsa").keyup(function(){
 		else if (val == "Licence") {
 		 $("#lease-type-content").hide();
 		   $("#lease-content").show();
-
+      $("#numberofmembers").hide()
+      $("#fcs_div").hide()
+      $("#name-of-gptank").hide();
 		
 		
 		}
@@ -2142,7 +2147,28 @@ $("#ewsa").keyup(function(){
 		 $("#numberofmembers1").show();
 		}
 	  });
-	 </script>
+   </script>
+   	 <script type="text/javascript">
+      $("#numberofmembers1").hide();
+       $("#category1").change(function () {
+        var val = $(this).val();
+         if (val == "Others") 
+       {
+        $("#numberofmembers").show();
+        $("#numberofmembers1").hide();
+       }
+       else if (val == "backrish_water")
+       {
+       $("#numberofmembers").hide();
+        $("#numberofmembers1").show();
+       }
+       else if (val == "aqua_labs")
+       {
+       $("#numberofmembers").hide();
+        $("#numberofmembers1").show();
+       }
+       });
+      </script>
 		    <script type="text/javascript">
     $(document).ready(function () {
 	$("#name-of-gptank").hide();
@@ -2159,6 +2185,7 @@ $("#ewsa").keyup(function(){
 		
 		$(".name-of-gptank").show();
 		$("#fcs_div").hide();
+    $("#numberofmembers").hide()
 
 		}
     });
@@ -2172,7 +2199,7 @@ $("#ewsa").keyup(function(){
       var value2 = parseInt($("#number-of-members2").val());
 	  var value3 = parseInt($("#number-of-member3").val());
 	 var a = (value1 + value2 + value3);
-	 $("#number-of-member4").val(a);
+	 $("#number-of-member10").val(a);
 	 
 	  });
 	 
@@ -2193,17 +2220,51 @@ $("#ewsa").keyup(function(){
 	
 	
 	<script type="text/javascript">
-			 
+			$("#Seasonality").change(function(){
+        $("#TWSA").val('');
+        $("#ewsa").val('');
+      })
 	   $("#ewsa").keyup(function () {
-	   var a = $("#TWSA").val();
-	   var b =  (a/100)*75;
-	   var c = $(this).val(); 
-	   if(c >= b)
-	   {
-	   alert("Effective water spread is not more that 75% of the Total water spread area");
-	   }
-	  
+      if($("#Seasonality").val() == 'Perennial') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*75;
+        var c = $(this).val(); 
+        if(c >= b)
+        {
+        alert("Effective water spread is not more that 75% of the Total water spread area");
+        }
+      } else if($("#Seasonality").val() == 'Long-Seasonal') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*50;
+        var c = $(this).val(); 
+        if(c >= b)
+        {
+        alert("Effective water spread is not more that 50% of the Total water spread area");
+        }
+      } else if($("#Seasonality").val() == 'Short-Seasonal') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*25;
+        var c = $(this).val(); 
+        if(c >= b)
+        {
+        alert("Effective water spread is not more that 25% of the Total water spread area");
+        }
+      }
+        
 	   });
+     $("#seed-submit").click(function(){
+      if($("#water-body-type").val() == 'Reservoir') {
+        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
+          var val = $("#TWSA").val() <5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
+          localStorage.setItem("res-total", val);
+        }
+      } else if($("#water-body-type").val() == 'MI' || $("#water-body-type").val() == 'GP') {
+        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
+          var val1 = $("#ewsa").val() * 2500;
+          localStorage.setItem("mi-total", val1);
+        }
+      }
+     })
 	   </script>
   </body>
 </html>
