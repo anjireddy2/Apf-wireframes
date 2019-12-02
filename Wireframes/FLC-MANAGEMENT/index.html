@@ -815,9 +815,10 @@
                   <div class="row" style="margin-top:20px;">
                     <div class="col-md-4">
                       <div class="form-group"> <label for="sel1">
-                          district:</label>
+                          district:<span style="color:red;">*</span></label>
                         <select class="form-control" id="select_dist">
                           <option value="">Select </option>
+						    <option value="ALL">ALL </option>
                           <option value="east_godavari">EAST GODAVARI </option>
                           <option value="guntur">GUNTUR</option>
                           <option value="krishana">KRISHNA</option>
@@ -826,26 +827,26 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> mandal:</label>
-                        <select class="form-control" id="select_mandal">
+                        <select class="form-control disall" id="select_mandal">
                         </select>
                       </div>
                     </div>
                      <div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> panchayat:</label>
-                        <select class="form-control" id="select_panchayat">
+                        <select class="form-control disall" id="select_panchayat">
                         </select>
                       </div>
                     </div>
                     
                      <div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> village:</label>
-                        <select class="form-control" id="select_village">
+                        <select class="form-control disall" id="select_village">
                         </select>
                       </div>
                     </div>
 					  <div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> Areas of operation:</label>
-                        <select class="form-control" id="select_operation">
+                        <select class="form-control disall" id="select_operation">
 						<option>--select--</option>
 						<option>ALLAVARAM</option>
                         </select>
@@ -905,9 +906,10 @@
 				                  <div class="row" style="margin-top:20px;">
                     <div class="col-md-4">
                       <div class="form-group"> <label for="sel1">
-                          district:</label>
+                          district: <span style="color:red;">*</span></label>
                         <select class="form-control" id="fselect_dist">
                           <option value="">Select </option>
+						  <option value="ALL">ALL </option>
                           <option value="east_godavari">EAST GODAVARI </option>
                           <option value="guntur">GUNTUR</option>
                           <option value="krishana">KRISHNA</option>
@@ -915,16 +917,16 @@
                       </div>
                     </div>
                     <div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> mandal:</label>
-                        <select class="form-control" id="fselect_mandal">
+                      <div class="form-group"> <label for="sel1"> mandal: <span style="color:red;">*</span></label>
+                        <select class="form-control disall" id="fselect_mandal">
 						<option>Select</option>
 							<option>ALLAVARAM</option>
                         </select>
                       </div>
                     </div>
                      <div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> panchayat:</label>
-                        <select class="form-control" id="fselect_panchayat">
+                      <div class="form-group"> <label for="sel1"> panchayat: <span style="color:red;">*</span></label>
+                        <select class="form-control disall" id="fselect_panchayat">
 						<option>Select</option>
 						<option>VODALAREVU</option>
                         </select>
@@ -932,31 +934,31 @@
                     </div>
                     
                      <div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> village:</label>
-                        <select class="form-control" id="fselect_village">
+                      <div class="form-group"> <label for="sel1"> village: <span style="color:red;">*</span></label>
+                        <select class="form-control disall" id="fselect_village">
 						<option>Select</option>
 						<option>ALLAVARAM</option>
                         </select>
                       </div>
                     </div>
 					  <div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> Areas of operation:</label>
-                        <select class="form-control" id="fselect_operation">
+                      <div class="form-group"> <label for="sel1"> Areas of operation: <span style="color:red;">*</span></label>
+                        <select class="form-control disall" id="fselect_operation">
 						<option>--select--</option>
 						<option>ALLAVARAM</option>
                         </select>
                       </div>
                     </div>
 					 <div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> Name of FLC:</label>
-                        <select class="form-control" id="fselect_operation">
+                      <div class="form-group"> <label for="sel1"> Name of FLC: <span style="color:red;">*</span></label>
+                        <select class="form-control disall" id="fselect_operation">
 						<option>--select--</option>
 						<option>ALLAVARAM</option>
                         </select>
                       </div>
                     </div>
 					<div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> Fin Year	:</label>
+                      <div class="form-group"> <label for="sel1"> Fin Year: <span style="color:red;">*</span></label>
                         <select class="form-control" id="fFin-Year">
 						<option>--select--</option>
 						<option>2019-2020</option>
@@ -964,7 +966,7 @@
                       </div>
                     </div>
 					<div class="col-md-4">
-                      <div class="form-group"> <label for="sel1"> Month		:</label>
+                      <div class="form-group"> <label for="sel1"> Month: <span style="color:red;">*</span></label>
                         <select class="form-control" id="fMonth	">
 						<option>--select--</option>
 						<option>April</option>
@@ -995,9 +997,7 @@
 							  <th rowspan="2">Areas of operation</th>
                               <th colspan="2">MARINE FISH	</th>
                               <th colspan="2">MARINE SHRIMP	</th>
-                              <th colspan="2">BRACKISHWATER SHRIMP	</th>
-                              <th colspan="2">FRESH WATER PRAWN	</th>
-                              <th colspan="2">INLAND FISH	</th>
+                           
                               <th colspan="3">TOTAL</th>
                             </tr>
 							<tr Style="BACKGROUND: DODGERBLUE;
@@ -1006,12 +1006,7 @@
 							<th>Achievement</th>
 							<th>Target</th>
 							<th>Achievement</th>
-							<th>Target</th>
-							<th>Achievement</th>
-							<th>Target</th>
-							<th>Achievement</th>
-							<th>Target</th>
-							<th>Achievement</th>
+							
 							<th>Target</th>
 							<th>Achievement</th>
 							
@@ -1026,12 +1021,7 @@
 							<td>VODALAREVU</td>
 							<td>ALLAVARAM</td>
 							<td>ALLAVARAM</td>
-							<td>0.00</td>
-							<td>0.00</td>
-							<td>0.00</td>
-							<td>0.00</td>
-							<td>0.00</td>
-							<td>0.00</td>
+							
 							<td>9.00</td>
 							<td>0.00</td>
 							<td>700.00</td>
@@ -1084,24 +1074,16 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">District code</label>
-                  <input class="form-control" id="District_code" type="text"> </div>
-              </div>
-            </div>
-            <div class="row">
+           
+            
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> mandal</label>
                   <select class="form-control select_mandal" id="Mandal">
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Mandal code</label>
-                  <input class="form-control" id="Mandal_code" type="text"> </div>
-              </div>
+            
             </div>
-                        <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> panchayat</label>
                   <select class="form-control  select_panchayat" id="panchayat"
@@ -1109,13 +1091,7 @@
                     >
                   </select>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Panchayat code</label>
-                  <input class="form-control" id="Panchayat_code" value=""
-
-                     type="text"> </div>
-              </div>
+             
             </div>
              <div class="row">
               <div class="col-md-6">
@@ -1126,25 +1102,9 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Village code</label>
-                  <input class="form-control" id="village_code" value=""
-
-                     type="text"> </div>
-              </div>
+              
             </div>
-			 <div class="row">
-              <div class="col-md-12">
-                <div class="form-group"> <label for="sel1"> Village</label>
-                  <select class="form-control  select_operation" id="">
-				  <option>--select--</option>
-				  <option>ALLAVARAM</option>
-
-                  </select>
-                </div>
-              </div>
-             
-            </div>
+			
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="pwd">Latitude</label> <input
@@ -1390,13 +1350,8 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">District code</label>
-                  <input class="form-control" id="District_code" value="505" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="row">
+             
+          
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> mandal</label>
                   <select class="form-control select_mandal" id="Mandal">
@@ -1404,11 +1359,7 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Mandal code</label>
-                  <input class="form-control" id="Mandal_code" value="4940" type="text">
-                </div>
-              </div>
+             
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -1418,11 +1369,12 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Panchayat code</label>
-                  <input class="form-control" id="Panchayat_code" value="199016"
-
-                    type="text"> </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_Village" id="village">
+				   <option>VODALAREVU</option>
+                  </select>
+                </div>
               </div>
             </div>
             
@@ -1881,6 +1833,14 @@
         d.value = a;
         e.value = c;
     });
+</script>
+
+<script>
+$("#select_dist,#fselect_dist").change(function(){
+if($(this).val() == "ALL"){
+$(".disall").attr('disabled','disabled');
+}
+});
 </script>
   </body>
 </html>
