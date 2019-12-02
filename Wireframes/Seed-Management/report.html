@@ -775,14 +775,15 @@
                 <div class="col-md-12">
                   <div class="panel panel-primary" style="float: left; width: 100%;">
                     <div class="panel-heading" style="    padding: 20px 15px"> <span>
-                        Updation Seed Stocking Details</span> <span style="float:right"> <button
+                        Seed Stocking Report</span> <span style="float:right">
+                             <!-- <button
 
                           class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                          + Add new </button> </span> </div>
+                          + Add new </button> </span> </div> -->
                   </div>
                 </div>
               </div>
-              <div id="by_data_shown">
+              <div id="by_data_shown" style="padding: 10px;">
 					                <div class="row" style="margin-top:20px;">
                   <div class="col-md-4">
                     <div class="form-group"> <label for="sel1">Select district:</label>
@@ -857,36 +858,80 @@
                 </div>
 				
 				<div class="row">
-				<div class="col-md-12">
+				<!-- <div class="col-md-12">
 				<input type="checkbox" id="checkAll">Select All
+				</div> -->
 				</div>
-				</div>
-            
-                <div class="row" style="margin-top:20px;">
-                  <div class="col-md-12 table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th scope="col">#SI No</th>
-                          <th scope="col">District</th>
-                          <th scope="col">Mandal</th>
-                          <th scope="col">Grama panchayat</th>
-                          <th scope="col">Village</th>
-						 <th scope="col">Name of Water body</th>
-						 <th>Water body type</th>
-						  <th>Seasonality</th>
-						  <th>TWSA</th>
-						  <th>EWSA</th>
-						  <th>Fishing rights</th>
-						 <th scope="col">Lesse type</th>	
-						 <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody id="flcdata">
-                      </tbody>
-                    </table>
+                <div class="row" style="margin-top:20px;" id="district-level">
+                    <div class="col-md-12 table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">#SI No</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Mandal</th>
+                            <th scope="col">Grama panchayat</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Name of Water body</th>
+                            <th>Water body type</th>
+                            <th>Seasonality</th>
+                            <th>TWSA</th>
+                            <th>EWSA</th>
+                            <th>Fishing rights</th>
+                           <th scope="col">Lesse type</th>
+                           <th>FL Stocked (in lakhs)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>Reservoir</td>
+                                <td>Perennial</td>
+                                <td id="twsa"></td>
+                                <td id="ewsa"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="res-total"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>MI Tank</td>
+                                <td>Perennial</td>
+                                <td id="twsa2"></td>
+                                <td id="ewsa2"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="mi-total"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>GP</td>
+                                <td>Perennial</td>
+                                <td id="twsa3"></td>
+                                <td id="ewsa3"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="gp-total"></td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
                 <div class="row" id="">
                   <div class="col-md-12" style="text-align:right; margin-top:20px;"> <button class="btn btn-primary" data-toggle="modal" data-target="#myModal4" >
                       Submit </button> </div>
@@ -1685,7 +1730,18 @@
  </script>
     <script type="text/javascript">
     $(document).ready(function () {
-     
+        $("#twsa").text(localStorage.getItem("res-twsa"))
+        $("#ewsa").text(localStorage.getItem("res-ewsa"))
+        $("#twsa2").text(localStorage.getItem("res-twsa"))
+        $("#ewsa2").text(localStorage.getItem("res-ewsa"))
+        $("#twsa3").text(localStorage.getItem("res-twsa"))
+        $("#ewsa3").text(localStorage.getItem("res-ewsa"))
+        $("#res-total").text(localStorage.getItem("res-total"))
+        $("#mi-total").text(parseInt(localStorage.getItem("res-ewsa")) * 2500)
+        $("#gp-total").text(parseInt(localStorage.getItem("res-ewsa")) * 2500)
+        var val1 = $("#ewsa").val() * 2500;
+          localStorage.setItem("mi-total", val1);
+     $("#panchayat-level").hide();
     $(".select_panchayat").change(function () {
         var val = $(this).val();
         if (val == "Santhamaguluru") {
@@ -2090,183 +2146,7 @@ $("#ewsa").keyup(function(){
       
     </div>
   </div>
-  <script type="text/javascript">
-  $("#deactive_details").hide();
-	$("#lab_ownr_adhar_no").keyup(function(){
-	  $("#deactive_details").show();
-
-	});
-  $("#delete").click(function(){
-    $("#flcdata").empty();
-    $("#flcdata").append('<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" title="Upload Dry certificate" data-toggle="modal" data-target="#dry" style="color:#39c4f0; cursor:pointer;" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button"></i>  </span></td><tr><td>2</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>GP</td><td>Perennial </td><td>350</td><td>340</td><td>GP</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" title="edit" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" title="delete" class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" style="color:#39c4f0; cursor:pointer;" title="Upload Dry certificate" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button2"></i>  </span></td></tr><tr><td>3</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td></tr>');
-  })
-	</script>
-	
-	    <script type="text/javascript">
-    $(document).ready(function () {
-		  $("#fcs_div").hide();
-
-    $("#lease-type-content").hide();
-	  $("#lease-content").hide();
-
-    $("#fishing-rights").change(function () {
-        var val = $(this).val();
-        if (val == "Lease") {
-          $("#lease-type-content").show();
-  $("#lease-content").hide();
-        }
-		else if (val == "Licence") {
-		 $("#lease-type-content").hide();
-		   $("#lease-content").show();
-      $("#numberofmembers").hide()
-      $("#fcs_div").hide()
-      $("#name-of-gptank").hide();
-		
-		
-		}
-    });
-    });
-    </script>
-	 <script type="text/javascript">
-	 $("#numberofmembers1").hide();
-	  $("#category").change(function () {
-	   var val = $(this).val();
-	    if (val == "Others") 
-		{
-		 $("#numberofmembers").show();
-		 $("#numberofmembers1").hide();
-		}
-		else if (val == "backrish_water")
-		{
-		$("#numberofmembers").hide();
-		 $("#numberofmembers1").show();
-		}
-		else if (val == "aqua_labs")
-		{
-		$("#numberofmembers").hide();
-		 $("#numberofmembers1").show();
-		}
-	  });
-   </script>
-   	 <script type="text/javascript">
-      $("#numberofmembers1").hide();
-       $("#category1").change(function () {
-        var val = $(this).val();
-         if (val == "Others") 
-       {
-        $("#numberofmembers").show();
-        $("#numberofmembers1").hide();
-       }
-       else if (val == "backrish_water")
-       {
-       $("#numberofmembers").hide();
-        $("#numberofmembers1").show();
-       }
-       else if (val == "aqua_labs")
-       {
-       $("#numberofmembers").hide();
-        $("#numberofmembers1").show();
-       }
-       });
-      </script>
-		    <script type="text/javascript">
-    $(document).ready(function () {
-	$("#name-of-gptank").hide();
-	$("#numberofmembers").hide();
-	$(".name-of-gptank").hide();
-    $("#lease-type").change(function () {
-        var val = $(this).val();
-        if (val == "Fcs") {
-          $("#fcs_div").show();
-		  $(".name-of-gptank").hide();
-
-        }
-		else if (val == "gp") {
-		
-		$(".name-of-gptank").show();
-		$("#fcs_div").hide();
-    $("#numberofmembers").hide()
-
-		}
-    });
-    });
-    </script>
-	
-		    <script type="text/javascript">
-			 
-	   $("#number-of-member3").keyup(function () {
-     var value1 = parseInt($("#number-of-members1").val());
-      var value2 = parseInt($("#number-of-members2").val());
-	  var value3 = parseInt($("#number-of-member3").val());
-	 var a = (value1 + value2 + value3);
-	 $("#number-of-member10").val(a);
-	 
-	  });
-	 
-			</script>
-			  <script type="text/javascript">
-			 
-	   $("#number-of-member7").keyup(function () {
-     var value1 = parseInt($("#number-of-members5").val());
-      var value2 = parseInt($("#number-of-members6").val());
-	  var value3 = parseInt($("#number-of-member7").val());
-	 var a = (value1 + value2 + value3);
-	 $("#number-of-member8").val(a);
-	 
-	  });
-	 
-			</script>
-    
 	
 	
-	<script type="text/javascript">
-			$("#Seasonality").change(function(){
-        $("#TWSA").val('');
-        $("#ewsa").val('');
-      })
-	   $("#ewsa").keyup(function () {
-      if($("#Seasonality").val() == 'Perennial') {
-        var a = $("#TWSA").val();
-        var b =  (a/100)*75;
-        var c = $(this).val(); 
-        if(c >= b)
-        {
-        alert("Effective water spread is not more that 75% of the Total water spread area");
-        }
-      } else if($("#Seasonality").val() == 'Long-Seasonal') {
-        var a = $("#TWSA").val();
-        var b =  (a/100)*50;
-        var c = $(this).val(); 
-        if(c >= b)
-        {
-        alert("Effective water spread is not more that 50% of the Total water spread area");
-        }
-      } else if($("#Seasonality").val() == 'Short-Seasonal') {
-        var a = $("#TWSA").val();
-        var b =  (a/100)*25;
-        var c = $(this).val(); 
-        if(c >= b)
-        {
-        alert("Effective water spread is not more that 25% of the Total water spread area");
-        }
-      }
-        
-	   });
-     $("#seed-submit").click(function(){
-      if($("#water-body-type").val() == 'Reservoir') {
-        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
-          var val = $("#TWSA").val() <5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
-          localStorage.setItem("res-total", val);
-          localStorage.setItem("res-twsa", $("#TWSA").val());
-          localStorage.setItem("res-ewsa", $("#ewsa").val());
-        }
-      } else if($("#water-body-type").val() == 'MI' || $("#water-body-type").val() == 'GP') {
-        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
-          var val1 = $("#ewsa").val() * 2500;
-          localStorage.setItem("mi-total", val1);
-        }
-      }
-     })
-	   </script>
   </body>
 </html>
