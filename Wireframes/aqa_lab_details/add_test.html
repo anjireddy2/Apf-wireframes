@@ -774,6 +774,14 @@ body {
       $("#token_show").hide()
       $("#aadhar").show();
     })
+    $("#no").click(function(){
+      $("#srch_adhr_no").hide();
+      $("#show-details").show();
+      $("#ext_frm_nm").attr("readonly",false);
+        $("#ext_frm_adrss").attr("readonly",false);
+        $("#ext_frm_adrss1").attr("readonly",false);
+        $("#ext_frm_mbl_nmbr").attr("readonly",false);
+    })
     $("#token_id").click(function(){
       $("#token_show").show()
       $("#token").val("")
@@ -800,6 +808,9 @@ body {
         $("#ext_frm_altr_mob_no").attr("readonly",true);
         $("#ext_farm_reg_nos").show();
         $("#sbt_bts").show();
+        $("#ext_frm_adrss").attr("readonly",true);
+        $("#ext_frm_adrss1").attr("readonly",true);
+        $("#ext_frm_mbl_nmbr").attr("readonly",true);
     })
       $(".exist_farm_cls").click(function(){
         if($("input[name='ext_farm']:checked").val() == "ext_farm" ){
