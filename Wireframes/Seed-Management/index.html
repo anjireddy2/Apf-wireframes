@@ -1107,6 +1107,10 @@
                     spread area)</label> <input class="form-control" type="text" id="ewsa">
                 </div>
               </div>
+              <div class="col-md-6" id="flstock-div">
+                <div class="form-group"> <label for="sel1">FL Stock(In lakhs)</label> <input class="form-control" type="text" id="fl_stock" disabled>
+                </div>
+              </div>
 			  
 			 
              
@@ -2219,7 +2223,8 @@ $("#ewsa").keyup(function(){
     
 	
 	
-	<script type="text/javascript">
+  <script type="text/javascript">
+          $('#flstock-div').hide()
 			$("#Seasonality").change(function(){
         $("#TWSA").val('');
         $("#ewsa").val('');
@@ -2250,23 +2255,31 @@ $("#ewsa").keyup(function(){
         alert("Effective water spread is not more that 25% of the Total water spread area");
         }
       }
-        
+      calculate();
 	   });
      $("#seed-submit").click(function(){
+      calculate();
+     })
+
+     function calculate() {
       if($("#water-body-type").val() == 'Reservoir') {
         if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
           var val = $("#TWSA").val() <5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
           localStorage.setItem("res-total", val);
           localStorage.setItem("res-twsa", $("#TWSA").val());
           localStorage.setItem("res-ewsa", $("#ewsa").val());
+          $("#flstock-div").show()
+          $('#fl_stock').val(val)
         }
       } else if($("#water-body-type").val() == 'MI' || $("#water-body-type").val() == 'GP') {
         if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
           var val1 = $("#ewsa").val() * 2500;
           localStorage.setItem("mi-total", val1);
+          $('#fl_stock').val(val1)
+          $("#flstock-div").show()
         }
       }
-     })
+     }
 	   </script>
   </body>
 </html>
