@@ -589,9 +589,10 @@ body {
                           <label class="control-label col-md-4  requiredField">Aqua Farm Reg.No</label>
                           <div class="controls col-md-8">
                             <select class="form-control input-md" id="list_of_farms" style="margin-bottom:2%">
-                              <option value="">AP-FSH-FRM-1</option>
-                              <option value="">AP-SHRMP-FRM-1</option>
-                              <option value="">AP-FSH-FRM-334</option>
+                              <option value="">Select</option>
+                              <option value="AP-FSH-FRM-1">AP-FSH-FRM-1</option>
+                              <option value="AP-SHRMP-FRM-1">AP-SHRMP-FRM-1</option>
+                              <option value="AP-FSH-FRM-334">AP-FSH-FRM-334</option>
                             </select>
                           </div>
                       </div>
@@ -782,6 +783,10 @@ body {
         // $("#ext_frm_nm").attr("readonly",false);
         $("#ext_frm_altr_mob_no").attr("readonly",false);
         $("#list_of_farms").attr("readonly",false);
+        $("#ext_frm_nm").attr("readonly",true);
+        $("#ext_frm_adrss").attr("readonly",true);
+        $("#ext_frm_adrss1").attr("readonly",true);
+        $("#ext_frm_mbl_nmbr").attr("readonly",true);
         $("#sbt_bts").show();
     })
     $("#token_show").hide();
@@ -794,7 +799,7 @@ body {
       $("#aadhar").show();
     })
     $("#no").click(function(){
-      $("#srch_adhr_no").hide();
+      // $("#srch_adhr_no").hide();
       $("#show-details").show();
       $("#adhar_no").val("")
       $("#list_of_farms").val("")
