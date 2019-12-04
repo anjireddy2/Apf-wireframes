@@ -1,0 +1,1841 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../JavaScript/bootstrap.min.js"></script>
+    <script src="../JavaScript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
+    <!-- Bootstrap CSS -->
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/bootstrap-multiselect.css" type="text/css">
+    <script src="../JavaScript/bootstrap-multiselect.js"></script>
+    <script src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5.1/jquery.googlemap.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true">
+    </script>
+    <script>
+
+      
+
+
+        window.onload = function WindowLoad(event) {
+            var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+            var myOptions = {
+                zoom: 8,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        }
+
+       
+      
+    </script>
+    <title>AP Fisheries</title>
+    <style type="text/css">
+        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+        @media(min-width:768px) {
+            body {
+                margin-top: 50px;
+            }
+
+            /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+        }
+
+        #wrapper {
+            padding-left: 0;
+        }
+
+        #page-wrapper {
+            width: 100%;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        @media(min-width:768px) {
+            #wrapper {
+                padding-left: 225px;
+            }
+
+            #page-wrapper {
+                padding: 22px 10px;
+            }
+        }
+
+        /* Top Navigation */
+
+        .top-nav {
+            padding: 0 15px;
+        }
+
+        .top-nav>li {
+            display: inline-block;
+            float: left;
+        }
+
+        .top-nav>li>a {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .top-nav>li>a:hover,
+        .top-nav>li>a:focus,
+        .top-nav>.open>a,
+        .top-nav>.open>a:hover,
+        .top-nav>.open>a:focus {
+            color: #fff;
+            background-color: #1a242f;
+        }
+
+        .top-nav>.open>.dropdown-menu {
+            float: left;
+            position: absolute;
+            margin-top: 0;
+            /*border: 1px solid rgba(0,0,0,.15);*/
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: #fff;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        }
+
+        .top-nav>.open>.dropdown-menu>li>a {
+            white-space: normal;
+        }
+
+        /* Side Navigation */
+      .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td
+      {
+        font-size:14px;
+      }
+
+        @media(min-width:768px) {
+            .side-nav {
+                position: fixed;
+                top: 60px;
+                left: 225px;
+                width: 225px;
+                margin-left: -225px;
+                border: none;
+                border-radius: 0;
+                border-top: 1px rgba(0, 0, 0, .5) solid;
+                overflow-y: auto;
+                background-color: #222;
+                /*background-color: #5A6B7D;*/
+                bottom: 0;
+                overflow-x: hidden;
+                padding-bottom: 40px;
+            }
+
+            .side-nav>li>a {
+                width: 225px;
+                border-bottom: 1px rgba(0, 0, 0, .3) solid;
+            }
+
+            .side-nav li a:hover,
+            .side-nav li a:focus {
+                outline: none;
+                background-color: #1a242f !important;
+            }
+        }
+
+        .side-nav>li>ul {
+            padding: 0;
+            border-bottom: 1px rgba(0, 0, 0, .3) solid;
+        }
+
+        .side-nav>li>ul>li>a {
+            display: block;
+            padding: 10px 15px 10px 38px;
+            text-decoration: none;
+            /*color: #999;*/
+            color: #fff;
+        }
+
+        .side-nav>li>ul>li>a:hover {
+            color: #fff;
+        }
+
+        .navbar .nav>li>a>.label {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 14px;
+            right: 6px;
+            font-size: 10px;
+            font-weight: normal;
+            min-width: 15px;
+            min-height: 15px;
+            line-height: 1.0em;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .navbar .nav>li>a:hover>.label {
+            top: 10px;
+        }
+
+        .navbar-brand {
+            padding: 5px 15px;
+        }
+
+        .asteriskField {
+            color: red;
+        }
+
+        .ui-datepicker-calendar {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            localStorage.removeItem("existing_user");
+            $("#reg_no_div").hide();
+            $("#signupbox1").hide();
+            $("#dob1").hide();
+
+
+
+
+
+            $("#ext_usr_nw_srvc").click(function() {
+                if ($(this).prop("checked")) {
+                    localStorage.setItem("existing_user", "ext_usr_nw_srvc");
+
+                    $("#reg_no_div").hide();
+                    $("#signupbox1").show();
+                    $("#farm_type_div").hide();
+
+                } else {
+                    localStorage.removeItem("existing_user");
+
+                    $("#signupbox1").hide();
+                }
+            })
+
+            $("#ext_usr_no_nw_srvc").click(function() {
+                if ($(this).prop("checked")) {
+                    localStorage.setItem("existing_user", "ext_usr_no_nw_srvc");
+                    $("#reg_no_div").show();
+                    $("#signupbox1").hide();
+                    $("#farm_type_div").show();
+
+
+                } else {
+                    localStorage.removeItem("existing_user");
+                    $("#reg_no_div").hide();
+                }
+            })
+
+            $("#existing_div").hide();
+            $("#reg_in_serp").hide()
+            $("#otp_for_reg").hide()
+            $("#ls_frm_tim").hide();
+            $("#ls_to_tim").hide();
+            //$("#farm_type_div").hide()
+
+            $("#new_yes").click(function() {
+                localStorage.removeItem("existing_user");
+                $("#reg_no_div").hide();
+                $("#signupbox1").hide();
+                $("#farm_type_div").show();
+
+
+            })
+
+            $("#new_yes").click(function() {
+
+                if (($("#farm_type1").val() == "aqua_lab_owner")) {
+                    $("#farm_type_div").hide();
+                    $("#existing_div").hide();
+
+                    localStorage.removeItem("existing_user");
+                    $("#reg_no_div").hide();
+                    $("#signupbox1").hide();
+
+                } else {
+                    localStorage.removeItem("existing_user");
+                    $("#reg_no_div").hide();
+                    $("#existing_div").hide();
+                }
+
+
+
+            })
+
+
+
+            $("#new_no").click(function() {
+
+                if ($(this).prop("checked")) {
+
+                    $("#existing_div").show();
+                } else {
+                    $("#existing_div").hide();
+                }
+            })
+            $("#survey_no").change(function() {
+                $("#rvn_vllg").val("Test Village")
+                $("#mandl").val("Test Mandal")
+                $("#ttl_frm_ara").val("10 Hectars")
+                $("#wtr_sprd_area").val("8 Hectars")
+                $("#dist").val("Test District ")
+            })
+            $("#bckrish_wtr_detls").click(function() {
+                window.location.href = "backrish_boundaries.html"
+            });
+
+            $("#lease_hold").click(function() {
+                if ($(this).prop("checked")) {
+                    $("#ls_frm_tim").show();
+                    $("#ls_to_tim").show();
+                }
+
+            })
+            $("#free_hold").click(function() {
+                if ($(this).prop("checked")) {
+                    $("#ls_frm_tim").hide();
+                    $("#ls_to_tim").hide();
+                }
+
+            })
+
+            $("#add_techinican").on("click", function() {
+                var si_no = 2;
+
+                var res = '<tr>' +
+                    '<td>' + si_no + '</td>' +
+                    '<td>    <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;" name="company" />  </td>' +
+                    '<td> <input class="input-md textinput textInput form-control readonly tech_adhar_no" style="margin-bottom: 10px;width: 40%;float: left;margin-right: 6%;" name="company" /> ' +
+                    '<input class="input-md textinput textInput form-control readonly tech_name" id="" name="company" style="margin-bottom: 10px;float: left;width: 50%;" type="text"  /></td>' +
+                    '<td>  <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">' +
+                    '<option value="select">Select</option>' +
+                    '<option value="fresh_water">Masters Degree</option>' +
+                    '<option value="backrish_water">Degree</option>' +
+                    '<option value="aqua_labs">Diploma</option>' +
+                    '</select></td>' +
+                    '<td> <select class="form-control input-md" id="dist_aqua" style="margin-bottom:2%">' +
+                    '<option value="select">Select</option>' +
+                    '<option value="fresh_water">Water Analysis</option>' +
+                    '<option value="backrish_water">Micro Biology</option>' +
+                    '<option value="aqua_labs">Feed Analysis</option>' +
+                    '<option value="aqua_labs">PCR</option>' +
+                    '<option value="aqua_labs">Antibiotic Residues</option>' +
+                    '<option value="aqua_labs">Disease Diagnosis</option>' +
+                    '<option value="aqua_labs">Seed Quality</option>' +
+                    '</select> </td>' +
+                    '</tr>'
+
+                $("#tech_tabl").append(res);
+                si_no += 1;
+            })
+
+            $("#lab_ownr_adhar_no").change(function() {
+                $("#lab_ownr_name").val("Test User1").prop("readonly", true);
+                $(this).val("XXXXXXXX9898");
+                $("#lab_ownr_address").val("Dno : 31,Sai baba road,Pedakakani Village,Guntur Dist,A.P").prop("readonly", true);
+            })
+            $("#lab_inchrg_no").change(function() {
+                $("#lab_inchrg_no").val("XXXXXXXX8786");
+                $("#lab_inchrg_name").val("Test User2").prop("readonly", true);
+            })
+            $(".tech_adhar_no").change(function() {
+                $(".tech_name").val("Test User3").prop("readonly", true);
+                $(this).val("XXXXXXXX5643");
+            })
+            $(".lab_tech_type").change(function() {
+                if ($(this).val() == "lab_tech") {
+                    $(this).css("float", "left").css("width", "40%")
+                    var res = '<input class="input-md textinput textInput form-control" placeholder="Licence No" value="" id="" name="name" style="float:left;width:50%;margin-left:2%;" type="datetime" data-provide="datepicker"/>'
+                    $(this).parents("td").append(res)
+                } else {
+                    $(this).parents("td").children()[1].remove()
+                }
+            })
+
+            $("#dist_aqua").change(function() {
+                $("#lab_ownr_adhar_no").val("Test User1");
+                $("#lab_ownr_address").val("D:no 31,Sai baba road,Pedakakani Mandal,Guntur Dist,AP")
+            })
+
+            $("#aqua_pin_code").change(function() {
+                $("#aqua_dst_name").val("Guntur");
+                $("#aqua_mndl_name").val("Tadikonda");
+                $("#aqua_vlg_name").val("Pedakakani");
+            })
+
+            $("#farm_type").change(function() {
+                if ($(this).val() == "aqua_farmer") {
+                    $("#reg_in_serp").hide()
+                } else {
+                    $("#reg_in_serp").show()
+                }
+            })
+
+
+
+            $("#farm_type").change(function() {
+                if ($(this).val() == "mar_fshrmn_indv") {
+                    $("#dob1").show();
+                    $("#age1").hide();
+                } else {
+                    $("#age1").show();
+                    $("#dob1").hide();
+                }
+            })
+
+
+
+
+
+
+
+
+
+            $("#send_otp_btn").click(function() {
+                $("#otp_for_reg").show();
+            })
+
+            $("#farm_registration").click(function() {
+                if ($("#farm_type").val() == "aqua_farmer") {
+                    window.location.href = "aqua_registration_to_be.html"
+                }
+                if ($("#farm_type").val() == "marine_fshr") {
+                    window.location.href = "fresh_water_to_be_Modal_Window.html"
+                }
+                if ($("#farm_type").val() == "inland_fshr") {
+                    window.location.href = "backrish_water_to_be_Modal_Window.html"
+                }
+                if ($("#farm_type1").val() == "aqua_lab_owner") {
+                    window.location.href = "aqua_registration_to_be.html"
+                }
+                if ($("#farm_type").val() == "inlad_fshrmn_indv") {
+                    localStorage.setItem("page_to_nav", "inlad_fshrmn_indv")
+                    window.location.href = "../InLand/registration.html"
+                }
+                if ($("#farm_type").val() == "inlad_fshrwomn_indv") {
+                    localStorage.setItem("page_to_nav", "inlad_fshrwomn_indv")
+                    window.location.href = "../InLand/registration.html"
+                }
+                if ($("#farm_type").val() == "inlad_fshrmn_socty") {
+                    localStorage.setItem("page_to_nav", "inlad_fshrmn_socty")
+                    window.location.href = "../InLand/registration.html"
+                }
+                if ($("#farm_type").val() == "inlad_fshrwomn_socty") {
+                    localStorage.setItem("page_to_nav", "inlad_fshrwomn_socty")
+                    window.location.href = "../InLand/registration.html"
+                }
+                if ($("#farm_type").val() == "mar_fshrmn_indv") {
+                    localStorage.setItem("page_to_nav", "mar_fshrmn_indv")
+                    window.location.href = "../Marine/User_Registration/registration.html"
+                }
+                if ($("#farm_type").val() == "mar_fshrwomn_indv") {
+                    localStorage.setItem("page_to_nav", "mar_fshrwomn_indv")
+                    window.location.href = "../Marine/User_Registration/registration.html"
+                }
+                if ($("#farm_type").val() == "mar_fshrmn_socty") {
+                    localStorage.setItem("page_to_nav", "mar_fshrmn_socty")
+                    window.location.href = "../Marine/User_Registration/registration.html"
+                }
+                if ($("#farm_type").val() == "mar_fshrwomn_socty") {
+                    localStorage.setItem("page_to_nav", "mar_fshrwomn_socty")
+                    window.location.href = "../Marine/User_Registration/registration.html"
+                }
+                if ($("#farm_type").val() == "vsl_reg") {
+                    //localStorage.setItem("page_to_nav","mar_fshrwomn_socty")
+                    window.location.href = "../Marine/marine_registration.html"
+                }
+
+            })
+            $("#farm_type1").change(function() {
+                if (($(this).val() == "aqua_lab_owner") || ($(this).val() == "hatchery_owner") || ($(this).val() == "aqua_shp_ownr") || ($(this).val() == "feed_manf_unt") || ($(this).val() == "food_pross_unt")) {
+                    $("#farm_type_div").hide()
+                    $("#dob").hide();
+                } else if (($(this).val() == "aqua_farmer")) {
+                    $("#new_reg").hide();
+                    $("#dob").hide();
+
+
+
+
+
+                } else if (($(this).val() == "aqua_farmer")) {
+                    $("#new_reg").hide();
+                    $("#dob").hide();
+
+
+
+
+
+                } else {
+                    $("#farm_type_div").show()
+                    $("#dob").show();
+                }
+            })
+        })
+    </script>
+    <style type="text/css">
+        .nav-side-menu {
+            overflow: auto;
+            font-family: verdana;
+            font-size: 12px;
+            font-weight: 200;
+            background-color: #2e353d;
+            position: relative;
+            top: 1px;
+            width: 20%;
+            height: 100%;
+            color: #e1ffff;
+            float: left;
+        }
+
+        .nav-side-menu .brand {
+            background-color: #23282e;
+            line-height: 50px;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .nav-side-menu .toggle-btn {
+            display: none;
+        }
+
+        .nav-side-menu ul,
+        .nav-side-menu li {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            line-height: 35px;
+            cursor: pointer;
+            /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+        }
+
+        .nav-side-menu ul :not(collapsed) .arrow:before,
+        .nav-side-menu li :not(collapsed) .arrow:before {
+            font-family: FontAwesome;
+            content: "\f078";
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            float: right;
+        }
+
+        .nav-side-menu ul .active,
+        .nav-side-menu li .active {
+            border-left: 3px solid #d19b3d;
+            background-color: #4f5b69;
+        }
+
+        .nav-side-menu ul .sub-menu li.active,
+        .nav-side-menu li .sub-menu li.active {
+            color: #d19b3d;
+        }
+
+        .nav-side-menu ul .sub-menu li.active a,
+        .nav-side-menu li .sub-menu li.active a {
+            color: #d19b3d;
+        }
+
+        .nav-side-menu ul .sub-menu li,
+        .nav-side-menu li .sub-menu li {
+            background-color: #181c20;
+            border: none;
+            line-height: 28px;
+            border-bottom: 1px solid #23282e;
+            margin-left: 0px;
+        }
+
+        .nav-side-menu ul .sub-menu li:hover,
+        .nav-side-menu li .sub-menu li:hover {
+            background-color: #020203;
+        }
+
+        .nav-side-menu ul .sub-menu li:before,
+        .nav-side-menu li .sub-menu li:before {
+            font-family: FontAwesome;
+            content: "\f105";
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+
+        .nav-side-menu li {
+            padding-left: 0px;
+            border-left: 3px solid #2e353d;
+            border-bottom: 1px solid #23282e;
+        }
+
+        .nav-side-menu li a {
+            text-decoration: none;
+            color: #e1ffff;
+        }
+
+        .nav-side-menu li a i {
+            padding-left: 10px;
+            width: 20px;
+            padding-right: 20px;
+        }
+
+        .nav-side-menu li:hover {
+            border-left: 3px solid #d19b3d;
+            background-color: #4f5b69;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        @media (max-width: 767px) {
+            .nav-side-menu {
+                position: relative;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .nav-side-menu .toggle-btn {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                z-index: 10 !important;
+                padding: 3px;
+                background-color: #ffffff;
+                color: #000;
+                width: 40px;
+                text-align: center;
+            }
+
+            .brand {
+                text-align: left !important;
+                font-size: 22px;
+                padding-left: 20px;
+                line-height: 50px !important;
+            }
+        }
+
+        @media (min-width: 767px) {
+            .nav-side-menu .menu-list .menu-content {
+                display: block;
+            }
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #2e353d;
+            /*padding: 20px 10px;*/
+            height: 50px;
+        }
+
+        /* Style the header links */
+        .header a {
+            float: left;
+            color: #FFF;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /* Change the background color on mouse-over */
+        .header a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Style the active/current link*/
+        .header a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        /* Float the link section to the right */
+        .header-right {
+            float: right;
+        }
+
+        /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+
+        .panel-primary {
+            width: 78%;
+            float: right;
+            margin-right: 1%;
+            margin-top: 1px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="header"> <a href="farmer_registration.html" class="logo">
+        <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
+        <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
+      <div class="header-right"> <a class="active" href="#home">My Profile</a>
+        <a href="#contact">My Services</a> <a href="#about">F.D.O</a>
+      </div>
+    </div>
+    <div class="nav-side-menu">
+      <div class="brand"></div>
+      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse in">
+          <li class=""> <a href="Dashboard.html" style="font-size:12px;"> <i class="fa fa-chevron-left"
+
+                aria-hidden="true"></i> Dashboard </a> </li>
+          <li class=""> <a href="calender12.html" style="font-size:12px;"> <i
+
+                class="fa fa-chevron-left" aria-hidden="true"></i> My Work </a>
+          </li>
+          <li class=""> <a href="complete-course.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Completd
+              Courses </a> </li>
+          <li class="collapsed"> <a href="training.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Course
+              creation </a> </li>
+          <li class="collapsed"> <a href="calender.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Training
+              Calender </a> </li>
+          <li class="collapsed"> <a href="course_creation7.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Training
+              Initiation </a> </li>
+          <li class="collapsed"> <a href="availabletraings.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Available
+              Trainings </a> </li>
+          <li class="collapsed"> <a href="approve-training.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Approve
+              Trainings </a> </li>
+          <li class="collapsed"> <a href="nominate-trainee.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Nominate
+              Trainings </a> </li>
+          <li class="collapsed"> <a href="attendance.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Attendance </a>
+          </li>
+          <li class="collapsed"> <a href="feedback.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Feedback </a>
+          </li>
+          <li class="collapsed"> <a href="farmer_registration.html" style="font-size:12px;">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> Reports </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">ID Card Details</div>
+      <div class="panel-body">
+        <!-- Farmer Registration -->
+        <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- <div class="panel panel-primary" style="float: left; width: 100%;">
+                    <div class="panel-heading" style="    padding: 20px 15px"> <span>
+                        ID Card Details</span></div>
+                  </div> -->
+                </div>
+              </div>
+              <div id="by_data_shown">
+					                <div class="row" style="margin-top:20px;">
+                  <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Select district:</label>
+                      <select class="form-control" id="select_dist">
+                        <option value="">Select </option>
+                        <option value="Prakasam">Prakasam </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Select mandal:</label>
+                      <select class="form-control" id="select_mandal">
+                      </select>
+                    </div>
+                  </div>
+				   <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Select Grama
+                        panchayat:</label>
+                      <select class="form-control" id="select_panchayat">
+                      </select>
+                    </div>
+                  </div>
+                
+                   <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Select Village :</label>
+                      <select class="form-control" id="select_panchayat1">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" style="float:right; text-align:right;">
+                    <button class="btn btn-primary" id="flcsearch"> Search </button>
+                  </div>
+                </div>
+				
+				<div class="row">
+				<div class="col-md-12">
+				<input type="checkbox" id="checkAll">Select All
+				</div>
+				</div>
+            
+                <div class="row" style="margin-top:20px;">
+                  <div class="col-md-12 table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">#SI No</th>
+                          <th scope="col">District</th>
+                          <th scope="col">Mandal</th>
+                          <th scope="col">Grama panchayat</th>
+                          <th scope="col">Village</th>
+						  						   <th>Aadhaar Number</th>
+
+						 <th scope="col">Name </th>
+						 <th>Father Name</th>
+						  <th>Age</th>
+						   <th>Gender</th>
+						  <!-- <th>van Number</th> -->
+						   <th>Mobile Number</th>
+						  <th>Address</th>
+						  <th>FCS admission number</th>
+						 <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="flcdata">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row" id="">
+                  <div class="col-md-12" style="text-align:right; margin-top:20px;"> <button class="btn btn-primary" data-toggle="modal" onClick="window.location.href='idcard-ad.html'">
+                      Submit </button><button class="btn btn-primary" data-toggle="modal" style="margin-left: 2%;">
+                            Download </button> </div>
+                </div>
+              </div>
+              <div id="by_map_shown">
+                <div id="map_canvas" style="height:380px;top:25px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+		    <div class="form-group"> <label for="email">Aadhaar Number</label>
+              <input class="form-control" id="AadharNumber" type="text"> </div>
+          
+            <div class="form-group" style="visibility:hidden;margin-top: -70px;">
+              <label for="pwd">Latitude</label> <input class="form-control" value="0"
+
+                id="sno" type="text"> </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">District</label>
+                  <select class="form-control select_dist" id="District">
+                    <option value="">Select </option>
+                    <option value="Prakasam">Prakasam </option>
+                  </select>
+                </div>
+              </div>
+           <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> mandal</label>
+                  <select class="form-control select_mandal" id="Mandal">
+                  </select>
+                </div>
+              </div>
+            </div>
+           
+			     <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat1">
+                  </select>
+                </div>
+              </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_panchayat1" id="panchayat">
+                  </select>
+                </div>
+              </div>
+
+			  
+            </div> 
+			<div class="row">
+			 <div class="col-md-6">
+            <div class="form-group"> <label for="email">Name</label>
+              <input class="form-control" id="name" type="text"> </div>
+			  </div>
+			  <div class="col-md-6">
+			     <div class="form-group"> <label for="email">Father Name</label>
+              <input class="form-control" id="fname" type="text"> </div>
+			  </div>
+			  </div>
+			<div class="row">
+			 <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Age </label>
+				<input class="form-control" value="" type="text"  id="age"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Gender</label>
+                  <select class="form-control" id="Gender">
+                    <option >Select </option>
+                    <option >Male </option>
+					 <option >Female </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Van Number</label> 
+			<input class="form-control" value="" type="text" id="vannumber"> </div>
+              </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Mobile Number</label>
+				<input class="form-control" value="" id="mobilenumber" type="text" > </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Address</label> 
+				<input class="form-control" value="" type="text"  id="Address"> </div>
+              </div>
+			</div>
+			
+			<div class="row">
+			
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">FCS Admission number</label> 
+				<input class="form-control" value="" type="text"  id="FCSNumber"> </div>
+              </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Society details(Name and  Address)</label> 
+				<input class="form-control" value="" type="text"  id=""> </div>
+              </div>
+			</div>
+       
+           
+          
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="pwd">Upload Image</label>
+                    <input type="file"> </div>
+                </div>
+              </div>
+            </div>
+			  <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="pwd">Comments</label>
+                    <textarea rows="4" cols="75">                   </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+
+              id="flc-submit" >Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal4" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom:none;"> <button type="button"
+
+              class="close" data-dismiss="modal">×</button> </div>
+          <div class="modal-body">
+            <p style="color:green; font-weight:700;">Your Application was
+              successfully Submitted.</p>
+          </div>
+          <div class="modal-footer"> <button type="button" class="btn btn-primary"
+
+              onclick="window.location.href='../Approvals/waterbody-fdo1.html'">Ok</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+		    <div class="form-group"> <label for="email">Aadhaar Number</label>
+              <input class="form-control" id="AadharNumber" type="text" value="400228152212" disabled> </div>
+          
+            <div class="form-group" style="visibility:hidden;margin-top: -70px;">
+              <label for="pwd">Latitude</label> <input class="form-control" value="0"
+
+                id="sno" type="text"> </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">District</label>
+                  <select class="form-control select_dist" id="District" disabled>
+                    <!-- <option value="">Select </option> -->
+                    <option value="Prakasam" selected>Prakasam </option>
+                  </select>
+                </div>
+              </div>
+           <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> mandal</label>
+                  <select class="form-control select_mandal" id="Mandal" disabled>
+                      <option>Santhamaguluru</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+           
+			     <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat1" disabled>
+                      <option>Santhamaguluru</option>
+                  </select>
+                </div>
+              </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_panchayat1" id="panchayat" disabled>
+                      <option>Santhamaguluru</option>
+                  </select>
+                </div>
+              </div>
+
+			  
+            </div> 
+			<div class="row">
+			 <div class="col-md-6">
+            <div class="form-group"> <label for="email">Name</label>
+              <input class="form-control" id="name" type="text" value="test" disabled> </div>
+			  </div>
+			  <div class="col-md-6">
+			     <div class="form-group"> <label for="email">Father Name</label>
+              <input class="form-control" id="fname" type="text" value="test" disabled> </div>
+			  </div>
+			  </div>
+			<div class="row">
+			 <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Age </label>
+				<input class="form-control" type="text"  id="age" value="30" disabled> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Gender</label>
+                  <select class="form-control" id="Gender" disabled>
+                    <option >Select </option>
+                    <option selected>Male </option>
+					 <option >Female </option>
+                  </select>
+                </div>
+              </div>
+              <!-- <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Van Number</label> 
+			<input class="form-control" value="24" type="text" id="vannumber" disabled> </div>
+              </div> -->
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Mobile Number</label>
+				<input class="form-control" value="9832487345" id="mobilenumber" type="text" disabled > </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Address</label> 
+				<input class="form-control" value="D-No:7-12, Santhamaguluru, Prakasam" type="text" disabled id="address"> </div>
+              </div>
+			</div>
+			
+			<div class="row">
+			
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">FCS Admission number</label> 
+				<input class="form-control" value="123" type="text"  id="FCSNumber" disabled> </div>
+              </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Society details(Name and  Address)</label> 
+				<input class="form-control" value="test, Santhamaguluru, Prakasam" type="text" disabled> </div>
+              </div>
+			</div>
+       
+           
+          
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-7">
+                  <div class="form-group"> <label for="pwd"> Signature</label>
+                    <img src="image.jpg" style="width:50%;height: 20%;"/> </div>
+                </div>
+              </div>
+            </div>
+	
+          </div>
+          <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+
+              data-dismiss="modal">Ok</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-edit" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+          <div class="form-group"> <label for="email">Aadhaar Number</label>
+                <input class="form-control" id="AadharNumber" type="text" value="400228152212"> </div>
+            
+              <div class="form-group" style="visibility:hidden;margin-top: -70px;">
+                <label for="pwd">Latitude</label> <input class="form-control" value="0"
+  
+                  id="sno" type="text"> </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1">District</label>
+                    <select class="form-control select_dist" id="District">
+                      <!-- <option value="">Select </option> -->
+                      <option value="Prakasam" selected>Prakasam </option>
+                    </select>
+                  </div>
+                </div>
+             <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1"> mandal</label>
+                    <select class="form-control select_mandal" id="Mandal">
+                        <option>Santhamaguluru</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+             
+             <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1"> panchayat</label>
+                    <select class="form-control  select_panchayat" id="panchayat1">
+                        <option>Santhamaguluru</option>
+                    </select>
+                  </div>
+                </div>
+               <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1"> Village</label>
+                    <select class="form-control  select_panchayat1" id="panchayat">
+                        <option>Santhamaguluru</option>
+                    </select>
+                  </div>
+                </div>
+  
+          
+              </div> 
+        <div class="row">
+         <div class="col-md-6">
+              <div class="form-group"> <label for="email">Name</label>
+                <input class="form-control" id="name" type="text" value="test"> </div>
+          </div>
+          <div class="col-md-6">
+             <div class="form-group"> <label for="email">Father Name</label>
+                <input class="form-control" id="fname" type="text" value="test"> </div>
+          </div>
+          </div>
+        <div class="row">
+         <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1">Age </label>
+          <input class="form-control" type="text"  id="age" value="30"> </div>
+                </div>
+          <div class="col-md-6">
+                  <div class="form-group"> <label for="sel1">Gender</label>
+                    <select class="form-control" id="Gender">
+                      <option >Select </option>
+                      <option selected>Male </option>
+             <option >Female </option>
+                    </select>
+                  </div>
+                </div>
+                <!-- <div class="col-md-6">
+                    <div class="form-group"> <label for="sel1">Van Number</label> 
+          <input class="form-control" value="24" type="text" id="vannumber"> </div>
+                  </div> -->
+             <div class="col-md-6">
+                    <div class="form-group"> <label for="sel1">Mobile Number</label>
+            <input class="form-control" value="9832487345" id="mobilenumber" type="text" > </div>
+                  </div>
+              <div class="col-md-6">
+                    <div class="form-group"> <label for="sel1">Address</label> 
+            <input class="form-control" value="D-No:7-12, Santhamaguluru, Prakasam" type="text" id="address"> </div>
+                  </div>
+          </div>
+          
+          <div class="row">
+          
+            <div class="col-md-6">
+                    <div class="form-group"> <label for="sel1">FCS Admission number</label> 
+            <input class="form-control" value="123" type="text"  id="FCSNumber"> </div>
+                  </div>
+             <div class="col-md-6">
+                    <div class="form-group"> <label for="sel1">Society details(Name and  Address)</label> 
+            <input class="form-control" value="test, Santhamaguluru, Prakasam" type="text"> </div>
+                  </div>
+          </div>
+         
+             
+            
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-7">
+                    <div class="form-group"> <label for="pwd">Upload Signature</label>
+                      <img src="image.jpg" style="width:50%;height: 20%;"/>  <span style="color: red;">x</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <div class="form-group"> <label for="pwd">VFA Comments</label>
+                        <textarea rows="4" cols="75" disabled>         test          </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group"> <label for="pwd">FDO Comments</label>
+                          <textarea rows="4" cols="75">                   </textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+  
+                id="idcard-submit" data-dismiss="modal">Update</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="text/javascript">
+     $(document).ready(function () {
+       
+    $("#flc-submit").click(function(){
+  
+    $("#SI No").val(parseInt($("#SI No").val()) + 1);
+    $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td>'+$("#AadharNumber").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#name").val()+'</a></td><td>'+$("#fname").val()+'</td><td>'+$("#age").val()+'</td><td>'+$("#Gender").val()+'</td><td>'+$("#mobilenumber").val()+'</td><td>'+$("#Address").val()+'</td><td>'+$("#FCSNumber").val()+'</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td><tr>');
+                      
+  });
+    });
+  </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+    $("#select_dist").change(function () {
+        var val = $(this).val();
+        if (val == "Prakasam") {
+            $("#select_mandal").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "guntur") {
+            $("#select_mandal").html("<option value='test'>select</option><option value='bapatla'>BAPATLA</option>");
+        } 
+      else if (val == "krishana") {
+            $("#select_mandal").html("<option value='test'>select</option><option value='koduru'>KODURU</option><option value='kruthivenu'>KRUTHIVENNU</option>");
+        } 
+    });
+});
+ </script>
+    <script type="text/javascript">
+     $("#download").hide(); 
+  $("#flcsearch").click(function(){
+  
+     $("#download").show(); 
+    if($("#select_dist").val()== 'Prakasam' && $("#select_mandal").val()== 'Santhamaguluru' && $("#select_panchayat").val()== 'Santhamaguluru' && $("#select_panchayat1").val()== 'Puttavaripalem')
+    {
+        $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>725394396865</td><td><a href="#" data-toggle="modal" data-target="#myModal2">test1</a></td><td>Sitharamireddy</td><td>27 </td><td>Male</td><td>7659818121</td><td>xxxxxxx</td><td>xxxx</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>725394396865</td><td><a href="#" data-toggle="modal" data-target="#myModal2">test2</a></td><td>Sitharamireddy</td><td>27 </td><td>Male</td><td>7659818121</td><td>xxxxxxx</td><td>xxxx</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr>');
+    }
+   else if($("#select_dist").val()== 'guntur' && $("#select_mandal").val()== 'bapatla' && $("#select_panchayat").val()== 'ADAVI')
+    {
+        $("#flcdata").append('<tr><td>1</td><td>ADARSHANAGAR	</td><td>GUNTUR</td><td>BAPATALA</td><td><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span></td></tr>');
+
+    }
+    
+  });
+  </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+    $(".select_dist").change(function () {
+        var val = $(this).val();
+        if (val == "Prakasam") {
+          //$("#District_code").value('5555');
+          $('#District_code').val($('#District_code').val() + '517');
+            $(".select_mandal").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "guntur") {
+            $(".select_mandal").html("<option value='test'>select</option><option value='bapatla'>BAPATLA</option>");
+        } 
+      else if (val == "krishana") {
+            $(".select_mandal").html("<option value='test'>select</option><option value='koduru'>KODURU</option><option value='kruthivenu'>KRUTHIVENNU</option>");
+        } 
+    });
+});
+ </script>
+    <script type="text/javascript">
+  $(function() {
+    $("#map").googleMap({
+      zoom: 10, // Initial zoom level (optional)
+      coords: [48.895651, 2.290569], // Map center (optional)
+      type: "ROADMAP" // Map type (optional)
+    });
+  })
+</script> <script type="text/javascript">
+    $(document).ready(function () {
+      $("#by_data").prop('checked',true);
+      $("#by_map_shown").hide();
+    $("#select_mandal").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          // alert();
+            $("#select_panchayat").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "polavaram") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='test'>BHIRAVAPALEM</option>");
+        } 
+      else if (val == "bapatla") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='ADAVI'>ADAVI</option>");
+        } 
+       else if (val == "koduru") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='test'>HAMSALA DEEVI	</option>");
+        } 
+      else if (val == "kruthivenu") {
+            $("#select_panchayat").html("<option value='test'>CHINAGOLLAPALEM		</option>");
+        } 
+    });
+      
+      
+      $("#select_panchayat").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          // alert();
+            $("#select_panchayat1").html("<option value='test'>select</option><option value='Puttavaripalem'>Puttavaripalem</option><option value='Pathamaguluru'>Pathamaguluru</option>");
+        } else if (val == "polavaram") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='test'>BHIRAVAPALEM</option>");
+        } 
+      else if (val == "bapatla") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='ADAVI'>ADAVI</option>");
+        } 
+       else if (val == "koduru") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='test'>HAMSALA DEEVI	</option>");
+        } 
+      else if (val == "kruthivenu") {
+            $("#select_panchayat").html("<option value='test'>CHINAGOLLAPALEM		</option>");
+        } 
+    });
+      
+      
+      $("#by_map").click(function(){
+      		$("#by_data_shown").hide();   
+        $("#by_map_shown").show();
+
+      });
+      $("#by_data").click(function(){
+      		$("#by_map_shown").hide();   
+        	$("#by_data_shown").show();
+
+      });
+});
+ </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+     
+    $(".select_mandal").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          $('#Mandal_code').val($('#Mandal_code').val() + '5104'); 
+            $(".select_panchayat").html("<option value='test'>select</option><option value='Santhamaguluru'>Santhamaguluru</option>");
+        } else if (val == "polavaram") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='test'>BHIRAVAPALEM</option>");
+        } 
+      else if (val == "bapatla") {
+            $(".select_panchayat").html("<option value='test'>select</option><option value='ADAVI'>ADAVI</option>");
+        } 
+       else if (val == "koduru") {
+            $("#select_panchayat").html("<option value='test'>select</option><option value='test'>HAMSALA DEEVI	</option>");
+        } 
+      else if (val == "kruthivenu") {
+            $(".select_panchayat").html("<option value='test'>CHINAGOLLAPALEM		</option>");
+        } 
+    });
+      
+});
+ </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+     
+    $(".select_panchayat").change(function () {
+        var val = $(this).val();
+        if (val == "Santhamaguluru") {
+          $('#Panchayat_code').val($('#Panchayat_code').val() + '590671'); 
+          $(".select_panchayat1").html("<option value='test'>select</option><option value='Puttavaripalem'>Puttavaripalem</option><option value='Pathamaguluru'>Pathamaguluru</option>");
+        }
+    });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+     
+    $(".select_panchayat1").change(function () {
+        var val = $(this).val();
+        if (val == "Puttavaripalem") {
+          $('#Panchayat_code1').val($('#Panchayat_code1').val() + '234842'); 
+        }
+    });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#trraining-course-view").hide();
+        $("#department-selection").hide();
+        $("#add-course").click(function() {
+            $("#trraining-course-view").show();
+            var tcname = $("#t-cname").val();
+            var tusermanual = $("#t-usermanual").val();
+            var radioValue = $("input[name='active']:checked").val();
+
+            $("#trraining-course-view tbody").append('<tr id="somerow"><td align="center" id="hello1"> ' + tcname + '</td> <td class="">' + radioValue + '</td><td>' + tusermanual + '</td><td>  <i class="fa fa-trash-o" aria-hidden="true" style="cursor:pointer;"></i>  </td></tr>')
+        });
+
+        $('#department-name').on('change', function() {
+
+            if ($(this).val() == 'Fisheries') {
+                $("#department-selection").show();
+            } else {
+                $("#department-selection").hide();
+            }
+        });
+
+
+
+    });
+
+    $(document).on('click', '#training-edit', function(event) {
+        var Row = document.getElementById("somerow");
+        var Cells = Row.getElementsByTagName("td");
+        var a = Cells[0].innerText;
+        var b = Cells[1].innerText;
+        var c = Cells[2].innerText;
+        var d = document.getElementById('t-cname1');
+        var e = document.getElementById('t-usermanual1');
+        d.value = a;
+        e.value = c;
+    });
+</script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+    $("#lease-amountdiv").hide();
+		$("#Seasonality").change(function () {
+		
+        if ($("#water-body-type").val()=="GP" && ($("#Seasonality").val()=="Perennial " ||  $("#Seasonality").val()=="Long-Seasonal" || $("#Seasonality").val()=="Short-Seasonal"))
+		{
+               $("#lease-amountdiv").show();
+			      $("#lease-amountdiv1").val('');
+
+
+			   
+
+		 }
+		});
+		
+$("#ewsa").keyup(function(){
+	let ewsa = $("#ewsa").val();
+   if (($("#water-body-type").val()=="Major-Irrigation" || $("#water-body-type").val()=="Minor-Irrigation" || $("#water-body-type").val()=="Reservoir")  && ($("#Seasonality").val()=="Perennial "))
+   {
+   let total = ewsa * 600;
+   $("#lease-amountdiv").show();
+   $("#lease-amountdiv1").val(total);
+
+   } else if (($("#water-body-type").val()=="Major-Irrigation" || $("#water-body-type").val()=="Minor-Irrigation" || $("#water-body-type").val()=="Reservoir")  && ($("#Seasonality").val()=="Long-Seasonal"))
+   {
+   let total = ewsa * 400;
+   $("#lease-amountdiv").show();
+   $("#lease-amountdiv1").val(total);
+
+   } else if (($("#water-body-type").val()=="Major-Irrigation" || $("#water-body-type").val()=="Minor-Irrigation" || $("#water-body-type").val()=="Reservoir") && ($("#Seasonality").val()=="Short-Seasonal"))
+   {
+   let total = ewsa * 60;
+   $("#lease-amountdiv").show();
+   $("#lease-amountdiv1").val(total);
+
+   }
+   
+	
+  });
+		
+		
+});
+</script>
+  <script>
+  $("#checkAll").click(function () {
+     $('input:checkbox').not(this).prop('checked', this.checked);
+ });
+  </script>
+<!-- Modal -->
+  <div class="modal fade" id="Renewal-button1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        	<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Society resolution letter:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice1:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice2:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice3:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			
+	
+			<div id="deactive_details">
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Name:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control"  disabled value="Test" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Father Name:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control" disabled value="Test" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Age:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control" disabled  value="34" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			</div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='../Approvals/waterbody-fdo1.html'">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="Renewal-button" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        	<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Society resolution letter:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice1:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice2:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice3:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+		<div id="village_president">	
+			<div class="row">
+				<div class="col-md-12">
+				<h3 style="color:#39c4f0;">Village president details</h3>
+				</div>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Aadhaar Number:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control"  value="" id="lab_ownr_adhar_no" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			<div id="deactive_details">
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Name:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control"  disabled value="Test" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Age:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control" disabled value="Test" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12">
+			<div id="div_id_company" class="form-group required"> <label for="id_company" class="control-label col-md-4  requiredField"> Address:</label>
+                  <div class="controls col-md-8"> <input class="input-md textinput textInput form-control" disabled  value="34" id="" name="company" style="margin-bottom: 10px" type="text"> </div>
+                </div>
+			</div>
+			</div>
+      </div>
+      </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" >Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Renewal-button2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        	<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Society resolution letter:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice1:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice2:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+			
+			<div class="row">
+        		<div class="col-md-12">
+        			          <label class="col-md-6">Notice3:</label>
+        			          <div class="col-md-7">
+        			          <input type="file" name="" class="form-control">
+        			      </div>
+
+        		</div>
+        	</div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='../approvals/waterbody-fdo-Renewal.html'">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+   <!-- Modal -->
+  <div class="modal fade" id="dry" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p><div class="row">
+			<div class="col-md-12" style="margin-bottom:20px;">
+				 <div class="form-group"> <label for="pwd" class="">Dry certificate</label>
+                   <input type="file" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" id="" value="204000">                  
+                  </div>
+				</div>
+			</div></p>
+        </div>
+        <div class="modal-footer">
+		<button type="button" class="btn btn-primary"  >Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal-delete" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Delete</h4>
+        </div>
+        <div class="modal-body">
+          <p><div class="row">
+			<div class="col-md-12">
+			  <div>	<label for="pwd" class="">Are you sure you want to delete the water body ?</label></div>
+                   
+				</div>
+			</div></p>
+        </div>
+        <div class="modal-footer">
+		<button type="button" class="btn btn-primary" data-dismiss="modal" id="delete">Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script type="text/javascript">
+  $("#deactive_details").hide();
+	$("#lab_ownr_adhar_no").keyup(function(){
+	  $("#deactive_details").show();
+
+	});
+  // $("#delete").click(function(){
+  //   $("#flcdata").empty();
+  //   $("#flcdata").append('<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" title="Upload Dry certificate" data-toggle="modal" data-target="#dry" style="color:#39c4f0; cursor:pointer;" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button"></i>  </span></td><tr><td>2</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>GP</td><td>Perennial </td><td>350</td><td>340</td><td>GP</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" title="edit" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" title="delete" class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" style="color:#39c4f0; cursor:pointer;" title="Upload Dry certificate" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button2"></i>  </span></td></tr><tr><td>3</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td></tr>');
+  // })
+	</script>
+  </body>
+</html>
