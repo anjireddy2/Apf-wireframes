@@ -716,7 +716,7 @@
         <img src="../images/logo.png" alt="LOGO" style="float:left;padding-right:3%;">
         <img src="../images/ApFisheries.jpg" alt="LOGO" style="height: 73%;float: left;width: 24%;"></a>
       <div class="header-right"> <a class="active" href="#home">My Profile</a>
-        <a href="#contact">My Services</a> <a href="#about">V.F.A</a>
+        <a href="#contact">My Services</a> <a href="#about">Commissioner </a>
       </div>
     </div>
     <div class="nav-side-menu">
@@ -765,7 +765,7 @@
       </div>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading">Water body management</div>
+      <div class="panel-heading">Seed Stocking</div>
       <div class="panel-body">
         <!-- Farmer Registration -->
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -775,14 +775,15 @@
                 <div class="col-md-12">
                   <div class="panel panel-primary" style="float: left; width: 100%;">
                     <div class="panel-heading" style="    padding: 20px 15px"> <span>
-                        Updation water body Details</span> <span style="float:right"> <button
+                        Seed Stocking Report</span> <span style="float:right">
+                             <!-- <button
 
                           class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                          + Add new </button> </span> </div>
+                          + Add new </button> </span> </div> -->
                   </div>
                 </div>
               </div>
-              <div id="by_data_shown">
+              <div id="by_data_shown" style="padding: 10px;">
 					                <div class="row" style="margin-top:20px;">
                   <div class="col-md-4">
                     <div class="form-group"> <label for="sel1">Select district:</label>
@@ -812,6 +813,43 @@
                       </select>
                     </div>
                   </div>
+				    <div class="col-md-4">
+                    <div class="form-group"> <label for="sel1">Fishing rights :</label>
+                      <select class="form-control" id="">
+                    <option value="">Select </option>
+					   <option value="Lease">Lease </option>
+                    <option value="Licence">Licence</option>
+                  
+
+					
+                  </select>
+                    </div>
+                  </div>
+				    <div class="col-md-4">
+                   <div class="form-group"> <label for="sel1">Type water body </label>
+                  <select class="form-control" id="">
+                    <option value="">Select </option>
+					   <option value="MI">MI Tank </option>
+                    <option value="GP">GP</option>
+                    <option value="Reservoir">Reservoir</option>
+
+					
+                  </select>
+                </div>
+                  </div>
+				  <div class="col-md-4">
+                   <div class="form-group"> <label for="sel1">Social Status	 </label>
+                  <select class="form-control" id="">
+                     <option value="">Select</option>
+                              <option value="backrish_water">SC</option>
+                              <option value="aqua_labs">ST</option>
+							                                <option value="backrish_water">Others</option>
+
+
+					
+                  </select>
+                </div>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12" style="float:right; text-align:right;">
@@ -820,39 +858,84 @@
                 </div>
 				
 				<div class="row">
-				<div class="col-md-12">
+				<!-- <div class="col-md-12">
 				<input type="checkbox" id="checkAll">Select All
+				</div> -->
 				</div>
-				</div>
-            
-                <div class="row" style="margin-top:20px;">
-                  <div class="col-md-12 table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th scope="col">#SI No</th>
-                          <th scope="col">District</th>
-                          <th scope="col">Mandal</th>
-                          <th scope="col">Grama panchayat</th>
-                          <th scope="col">Village</th>
-						  						   <th>Aadhaar Number</th>
-
-						 <th scope="col">Name </th>
-						 <th>Father Name</th>
-						  <th>Age</th>
-						   <th>Gender</th>
-						  <th>van Number</th>
-						   <th>Mobile Number</th>
-						  <th>Adress</th>
-						  <th>FCS admission number</th>
-						 <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody id="flcdata">
-                      </tbody>
-                    </table>
+                <div class="row" style="margin-top:20px;" id="district-level" style="padding: 1%;">
+                    <div class="col-md-12 table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">#SI No</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Mandal</th>
+                            <th scope="col">Grama panchayat</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Name of Water body</th>
+                            <th>Water body type</th>
+                            <th>Seasonality</th>
+                            <th>Category</th>
+                            <th>TWSA</th>
+                            <th>EWSA</th>
+                            <th>Fishing rights</th>
+                           <th scope="col">Lesse type</th>
+                           <th>FL Stocked (in lakhs)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>Reservoir</td>
+                                <td>Perennial</td>
+                                <td>SC</td>
+                                <td id="twsa"></td>
+                                <td id="ewsa"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="res-total"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>MI Tank</td>
+                                <td>Perennial</td>
+                                <td>ST</td>
+                                <td id="twsa2"></td>
+                                <td id="ewsa2"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="mi-total"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Prakasam</td>
+                                <td>Santhamaguluru</td>
+                                <td>Santhamaguluru</td>
+                                <td>Puttavaripalem</td>
+                                <td>Santhamaguluru</td>
+                                <td>GP</td>
+                                <td>Perennial</td>
+                                <td>Others</td>
+                                <td id="twsa3"></td>
+                                <td id="ewsa3"></td>
+                                <td>Lease</td>
+                                <td>FCS</td>
+                                <td id="gp-total"></td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
                 <div class="row" id="">
                   <div class="col-md-12" style="text-align:right; margin-top:20px;"> <button class="btn btn-primary" data-toggle="modal" data-target="#myModal4" >
                       Submit </button> </div>
@@ -876,9 +959,7 @@
             <h4 class="modal-title">Modal Header</h4>
           </div>
           <div class="modal-body">
-		    <div class="form-group"> <label for="email">Aadhaar Number</label>
-              <input class="form-control" id="AadharNumber" type="text"> </div>
-          
+           
             <div class="form-group" style="visibility:hidden;margin-top: -70px;">
               <label for="pwd">Latitude</label> <input class="form-control" value="0"
 
@@ -913,70 +994,177 @@
                   </select>
                 </div>
               </div>
+			  <div class="col-md-6">
+			   <div class="form-group"> <label for="email">Name of water body </label>
+              <input class="form-control" id="FLC" type="email"> </div>
+			  </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Type water body </label>
+                  <select class="form-control" id="water-body-type">
+                    <option value="">Select </option>
+					   <option value="MI">MI Tank </option>
+                    <option value="GP">GP</option>
+                    <option value="Reservoir">Reservoir</option>
 
-			  
-            </div> 
-			<div class="row">
-			 <div class="col-md-6">
-            <div class="form-group"> <label for="email">Name</label>
-              <input class="form-control" id="name" type="text"> </div>
-			  </div>
-			  <div class="col-md-6">
-			     <div class="form-group"> <label for="email">Father Name</label>
-              <input class="form-control" id="fname" type="text"> </div>
-			  </div>
-			  </div>
-			<div class="row">
-			 <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Age </label>
-				<input class="form-control" value="" type="text"  id="age"> </div>
-              </div>
-			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Gender</label>
-                  <select class="form-control" id="Gender">
-                    <option >Select </option>
-                    <option >Male </option>
-					 <option >Female </option>
+					
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Van Number</label> 
-			<input class="form-control" value="" type="text" id="vannumber"> </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Fishing rights</label>
+                  <select class="form-control" id="fishing-rights">
+                    <option value="">Select </option>
+					   <option value="Lease">Lease </option>
+                    <option value="Licence">Licence</option>
+                  
+
+					
+                  </select>
+                </div>
               </div>
+			  <div id="lease-type-content">
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Lease type</label>
+                  <select class="form-control" id="lease-type">
+                    <option value="">Select </option>
+					   <option value="Fcs">FCS</option>
+                    <option value="gp">GP</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  </div>
+			   			   <div id="fcs_div">
+
 			   <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Mobile Number</label>
-				<input class="form-control" value="" id="mobilenumber" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Name of FCS </label> <input class="form-control" value="" type="text" > </div>
+              </div>
+			  
+			    <div class="col-md-6">
+               <div class="form-group"> <label for="sel1">category</label>
+                  <select class="form-control" id="category">
+                     <option value="">Select</option>
+                              <option value="backrish_water">SC</option>
+                              <option value="aqua_labs">ST</option>
+							  <option value="Others">Others</option>
+
+
+					
+                  </select>
+                </div>
+              </div>
+			  
+			  
+			  
+			 
+			 
+			  
+			
+			  			  </div>
+						  			  
+			  <div id="lease-content">
+          <div class="col-md-6">
+            <div class="form-group"> <label for="sel1">category</label>
+               <select class="form-control" id="category1">
+                  <option value="">Select</option>
+                           <option value="backrish_water">SC</option>
+                           <option value="aqua_labs">ST</option>
+             <option value="Others">Others</option>
+
+
+       
+               </select>
+             </div>
+           </div>
+     
+     
+			  </div>
+			 
+						  <div id="numberofmembers1">
+						  <div class="">
+						    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member4"  value=""  type="text" > </div>
+              </div>
+						  </div>
+						  </div>
+						  
+						  <div id="numberofmembers">
+						  
+						     <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input class="form-control" id="number-of-members1" value=""  type="text" > </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input class="form-control" id="number-of-members2" value=""  type="text" > </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input class="form-control" id="number-of-member3" value=""  type="text" > </div>
               </div>
 			    <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Adress</label> 
-				<input class="form-control" value="" type="text"  id="adress"> </div>
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member10" disabled value=""  type="text" > </div>
               </div>
-			</div>
-			
-			<div class="row">
-			
-			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">FCS Admission number</label> 
-				<input class="form-control" value="" type="text"  id="FCSNumber"> </div>
-              </div>
+						  </div>
+
+			 <div class="name-of-gptank">
 			   <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Society details(Name and  Address)</label> 
-				<input class="form-control" value="" type="text"  id=""> </div>
+                <div class="form-group"> <label for="sel1">Name of GP Tank </label> <input class="form-control" value="" type="text" > </div>
+              </div>
+			  </div>
+
+            </div> 
+			
+			
+          
+			<div class="row">
+			 <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="" type="text" > </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="" type="text" > </div>
               </div>
 			</div>
        
-           
-          
             <div class="row">
               <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input type="file"> </div>
+                <div class="panel panel-primary" style="float: left; width: 100%;">
+                  <div class="panel-heading" style=""> <span> Water body
+                      Details</span> <span style="float:right"> </span> </div>
                 </div>
               </div>
             </div>
-			  <div class="row">
+            <div class="row">
+             
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Seasonality</label>
+                  <select class="form-control" id="Seasonality">
+                    <option value="">Select </option>
+                    <option value="Perennial">Perennial </option>
+                    <option value="Long-Seasonal">Long Seasonal</option>
+                    <option value="Short-Seasonal">Short Seasonal</option>
+                  </select>
+                </div>
+              </div>
+			
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">TWSA(Total water
+                    spread area)</label> <input class="form-control" type="text" id="TWSA">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">EWSA(Effective water
+                    spread area)</label> <input class="form-control" type="text" id="ewsa">
+                </div>
+              </div>
+			  
+			 
+             
+            </div>
+            <div class="row">
+              <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
                   <div class="form-group"> <label for="pwd">Comments</label>
@@ -985,10 +1173,11 @@
                 </div>
               </div>
             </div>
+           
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
-              id="flc-submit" >Submit</button>
+              id="seed-submit" data-dismiss="modal">Submit</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -1006,7 +1195,7 @@
           </div>
           <div class="modal-footer"> <button type="button" class="btn btn-primary"
 
-              onclick="window.location.href='../Approvals/waterbody-fdo1.html'">Ok</button>
+              onclick="window.location.href='seedmanagement.html'">Ok</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -1021,55 +1210,129 @@
             <h4 class="modal-title">Modal Header</h4>
           </div>
 <div class="modal-body">
-            <div class="form-group"> <label for="email">Name of water body </label>
-              <input class="form-control" id="FLC" value="Santhamaguluru tank" type="email" disabled>
-            </div>
+           
             <div class="form-group" style="visibility:hidden;margin-top: -70px;">
               <label for="pwd">Latitude</label> <input class="form-control" value="0" id="sno" type="text"> </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">District</label>
                   <select class="form-control select_dist" id="District" disabled>
-                    <option value="east_godavari">EAST GODAVARI </option>
-                    <option value="guntur">GUNTUR</option>
-                    <option value="krishana">KRISHNA</option>
+                    <option value="Prakasam">Prakasam </option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
+           <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> mandal</label>
-                  <select class="form-control select_mandal" id="Mandal" disabled>
-                    <option>ALLAVARAM</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-			        <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1"> panchayat</label>
-                  <select class="form-control  select_panchayat1" id="panchayat" disabled value="Puttavaripalem">
-                    <option>Puttavaripalem</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1"> Village</label>
-                  <select class="form-control  select_panchayat" id="panchayat1" disabled>
-                    <option>VODALAREVU</option>
-                  </select>
+                  <select class="form-control select_mandal" id="Mandal" disabled><option value="Santhamaguluru" >Santhamaguluru</option></select>
                 </div>
               </div>
             </div>
            
+			     <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat1" disabled><option value="Santhamaguluru" >Santhamaguluru</option></select>
+                </div>
+              </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_panchayat1" id="panchayat" disabled><option value="Puttavaripalem" >Puttavaripalem</option><option value="Pathamaguluru">Pathamaguluru</option></select>
+                </div>
+              </div>
+			  <div class="col-md-6">
+			   <div class="form-group"> <label for="email">Name of water body </label>
+              <input class="form-control" id="FLC" type="email" value="test" disabled> </div>
+			  </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Type water body </label>
+                  <select class="form-control" disabled id="water-body-type">
+					   <option value="MI">MI Tank </option>
+                    <option value="GP">GP</option>
+                    <option value="Reservoir">Reservoir</option>
+
+					
+                  </select>
+                </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Fishing rights</label>
+                  <select class="form-control" disabled id="fishing-rights">
+					   <option value="Lease">Lease </option>
+                    <option value="Licence">Licence</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  <div id="lease-type-content" style="display: block;">
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Lease type</label>
+                  <select class="form-control" disabled id="lease-type">
+					   <option value="Fcs">FCS</option>
+                    <option value="gp">GP</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  </div>
+			   			   <div id="fcs_div" style="display: block;">
+
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of FCS </label> <input class="form-control" disabled value="test" type="text"> </div>
+              </div>
+			 
+			  
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input disabled class="form-control" id="number-of-members1" value="10" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input disabled class="form-control" id="number-of-members2" value="20" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input disabled class="form-control" id="number-of-member3" value="30" type="text"> </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member4" disabled="" value="60" type="text"> </div>
+              </div>
+			  			  </div>
+
+			 <div class="name-of-gptank" style="display: none;">
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of GP Tank </label> <input class="form-control" disabled value="test" type="text"> </div>
+              </div>
+			  </div>
+			  
+			  <div id="lease-content" style="display: none;">
+			  	   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input disabled class="form-control" id="number-of-members5" value="" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input disabled class="form-control" id="number-of-members6" value="" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input disabled class="form-control" id="number-of-member7" value="" type="text"> </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">number of Licenced  fisher men </label> <input disabled class="form-control" id="number-of-member8" disabled="" value="" type="text"> </div>
+              </div>
+			  </div>
+			 
+            </div> 
+			
+			
+          
 			<div class="row">
 			 <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="7678686" type="text" disabled> </div>
+                <div class="form-group"> <label for="sel1">Latitude </label> <input disabled class="form-control" value="12'21'32" type="text"> </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="876896" type="text" disabled> </div>
+                <div class="form-group"> <label for="sel1">Longitude</label> <input disabled class="form-control" value="1'21'32" type="text"> </div>
               </div>
 			</div>
-    
+       
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-primary" style="float: left; width: 100%;">
@@ -1079,57 +1342,44 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Water body type</label>
-                  <select class="form-control" id="" value="MI" disabled>
-                    <option value="">Select </option>
-                    <option value="MI" selected="selected">Major Irrigation	</option>
-                    <option value="">GP</option>
-                    <option value="">Reservoir</option>
-                  </select>
-                </div>
-              </div>
+             
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Seasonality</label>
-                  <select class="form-control" id="" value="Perennial " disabled>
-                    <option value="">Select </option>
-                    <option value="Perennial " selected="selected">Perennial </option>
-                    <option value="">Long Seasonal</option>
-                    <option value="">Short Seasonal</option>
+                  <select class="form-control" id="Seasonality" disabled>
+                    <option value="Perennial ">Perennial </option>
+                    <option value="Long-Seasonal">Long Seasonal</option>
+                    <option value="Short-Seasonal">Short Seasonal</option>
                   </select>
                 </div>
               </div>
+			
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">TWSA(Total water
-                    spread area)</label> <input class="form-control" value="350" type="text" disabled> </div>
+                    spread area)</label> <input class="form-control" value="350" disabled type="text" id="TWSA">
+                </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">EWSA(Estimated water
-                    spread area)</label> <input class="form-control" value="340" type="text" disabled> </div>
+                <div class="form-group"> <label for="sel1">EWSA(Effective water
+                    spread area)</label> <input class="form-control"value="340" type="text" disabled id="ewsa">
+                </div>
               </div>
-             
+			  
+			  
             </div>
-			<div class="row">
-			<div class="col-md-12" style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" id="" value="204000" disabled="disabled">                  
-                  </div>
-				</div>
-			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-           
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
-                  <div class=""> <span>flc.jpg</span> <span style="color:red;"><i class="fa fa-times" aria-hidden="true"></i> </span> </div>
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input value="flc.jpg" type="file" disabled> </div>
+                  <div class="form-group"> <label for="pwd">Comments</label>
+                    <textarea rows="4" cols="75" disabled>                   </textarea>
+                  </div>
                 </div>
               </div>
             </div>
+           
           </div>
           <div class="modal-footer"> <button type="button" class="btn btn-default"
 
@@ -1145,74 +1395,136 @@
           <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
             <h4 class="modal-title">Modal Header</h4>
           </div>
-          <div class="modal-body">
-            <div class="form-group"> <label for="email">Name of water body </label>
-              <input class="form-control" id="FLC" value="Santhamaguluru tank" type="email">
-            </div>
+<div class="modal-body">
+           
             <div class="form-group" style="visibility:hidden;margin-top: -70px;">
-              <label for="pwd">Latitude</label> <input class="form-control" value="0"
-
-                id="sno" type="text"> </div>
+              <label for="pwd">Latitude</label> <input class="form-control" value="0" id="sno" type="text"> </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">District</label>
                   <select class="form-control select_dist" id="District">
-                    <option value="east_godavari">Prakasam </option>
-                    <option value="guntur">GUNTUR</option>
-                    <option value="krishana">KRISHNA</option>
+                    <option value="Prakasam">Prakasam </option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
+           <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> mandal</label>
                   <select class="form-control select_mandal" id="Mandal">
-                    <option>Santhamaguluru</option>
+				  <option>Santhamaguluru</option>
                   </select>
                 </div>
               </div>
             </div>
-          
-			<div class="row">
+           
+			     <div class="row">
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> panchayat</label>
-                  <select class="form-control  select_panchayat1" id="panchayat" value="Puttavaripalem">
-                    <option>Santhamaguluru</option>
+                  <select class="form-control  select_panchayat" id="panchayat1">
+				  <option>Santhamaguluru</option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
+             <div class="col-md-6">
                 <div class="form-group"> <label for="sel1"> Village</label>
-                  <select class="form-control  select_panchayat" id="panchayat">
-                    <option>Santhamaguluru</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-						<div class="row">
-
-			<div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Area of Operation</label>
-                  <select class="form-control select_dist" id="">
-                    <option value="">FCS </option>
-					 <option value="">GP </option>
-                    <option value="">MI Tanks </option>
-                    <option value="">Auction </option>
-
+                  <select class="form-control  select_panchayat1" id="panchayat">
+				  <option>Santhamaguluru</option>
                   </select>
                 </div>
               </div>
 			  <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Latitude </label> <input
+			   <div class="form-group"> <label for="email">Name of water body </label>
+              <input class="form-control" id="FLC" type="email" value="Santhamaguluru tank"> </div>
+			  </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Type water body </label>
+                  <select class="form-control" id="water-body-type">
+					   <option value="MI">MI Tank </option>
+                    <option value="GP">GP</option>
+                    <option value="Reservoir">Reservoir</option>
 
-                    class="form-control" value="7678686" type="text"> </div>
+					
+                  </select>
+                </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Fishing rights</label>
+                  <select class="form-control" id="fishing-rights">
+					   <option value="Lease">Lease </option>
+                    <option value="Licence">Licence</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  <div id="lease-type-content" style="display: block;">
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Lease type</label>
+                  <select class="form-control" id="lease-type">
+					   <option value="Fcs">FCS</option>
+                    <option value="gp">GP</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  </div>
+			   			   <div id="fcs_div" style="display: block;">
+
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of FCS </label> <input class="form-control" value="test" type="text"> </div>
+              </div>
+			 
+			  
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input class="form-control" id="number-of-members1" value="5" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input class="form-control" id="number-of-members2" value="10" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input class="form-control" id="number-of-member3" value="20" type="text"> </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member4" disabled="" value="35" type="text"> </div>
+              </div>
+			  			  </div>
+
+			 <div class="name-of-gptank" style="display: none;">
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of GP Tank </label> <input class="form-control" value="" type="text"> </div>
+              </div>
+			  </div>
+			  
+			  <div id="lease-content" style="display: none;">
+			  	   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input class="form-control" id="number-of-members5" value="" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input class="form-control" id="number-of-members6" value="" type="text"> </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input class="form-control" id="number-of-member7" value="" type="text"> </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">number of Licenced  fisher men </label> <input class="form-control" id="number-of-member8" disabled="" value="" type="text"> </div>
+              </div>
+			  </div>
+			 
+            </div> 
+			
+			
+          
+			<div class="row">
+			 <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="12'3'4" type="text"> </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Longitude</label> <input
-
-                    class="form-control" value="876896" type="text"> </div>
+                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="3'4'5" type="text"> </div>
               </div>
 			</div>
-  
+       
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-primary" style="float: left; width: 100%;">
@@ -1222,73 +1534,45 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Water body type</label>
-                  <select class="form-control" id="" value="MI">
-                    <option value="">Select </option>
-                    <option value="MI" selected="selected">MI</option>
-                    <option value="">GP</option>
-                    <option value="">Reservoir</option>
-                  </select>
-                </div>
-              </div>
+             
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Seasonality</label>
-                  <select class="form-control" id="" value="Perennial ">
-                    <option value="">Select </option>
-                    <option value="Perennial " selected="selected">Perennial </option>
-                    <option value="">Long Seasonal</option>
-                    <option value="">Short Seasonal</option>
+                  <select class="form-control" id="Seasonality">
+                    <option value="Perennial ">Perennial </option>
+                    <option value="Long-Seasonal">Long Seasonal</option>
+                    <option value="Short-Seasonal">Short Seasonal</option>
                   </select>
                 </div>
               </div>
+			
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">TWSA(Total water
-                    spread area)</label> <input class="form-control" value="87897"
-
-                    type="text"> </div>
+                    spread area)</label> <input class="form-control" type="text" id="TWSA" value="350">
+                </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">EWSA(Estimated water
-                    spread area)</label> <input class="form-control" value="767868769"
-
-                    type="text"> </div>
+                <div class="form-group"> <label for="sel1">EWSA(Effective water
+                    spread area)</label> <input class="form-control" type="text" id="ewsa"  value="340">
+                </div>
               </div>
-            
+			  
+			  
+             
             </div>
-			<div class="row">
-			<div class="col-md-12" style="margin-bottom:20px;">
-				 <div class="form-group"> <label for="pwd" class="">Lease Amount</label>
-                   <input type="text" class="form-control col-md-8" name="leaseamount" placeholder="lease amount" id="lease-amountdiv1" value="204000">                  
-                  </div>
-				</div>
-			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                  <div class="col-md-6">
-                    <div class="form-group"> <label for="pwd">VFA Comments</label>
-                      <textarea rows="4" cols="75">         Test
-                     </textarea> </div>
-                  </div>
-                </div>
-               
-              </div>
-          
-            <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
-                  <div class=""> <span>flc.jpg</span> <span style="color:red;"><i
-
-                        class="fa fa-times" aria-hidden="true"></i> </span> </div>
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input value="flc.jpg" type="file"> </div>
+                  <div class="form-group"> <label for="pwd">Comments</label>
+                    <textarea rows="4" cols="75">                   </textarea>
+                  </div>
                 </div>
               </div>
             </div>
+          
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
@@ -1302,9 +1586,11 @@
      $(document).ready(function () {
        
     $("#flc-submit").click(function(){
-  
+    
+   
+      
     $("#SI No").val(parseInt($("#SI No").val()) + 1);
-    $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td>'+$("#AadharNumber").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#name").val()+'</a></td><td>'+$("#fname").val()+'</td><td>'+$("#age").val()+'</td><td>'+$("#Gender").val()+'</td><td>'+$("#vannumber").val()+'</td><td>'+$("#mobilenumber").val()+'</td><td>'+$("#adress").val()+'</td><td>'+$("#FCSNumber").val()+'</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td><tr>');
+    $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#FLC").val()+'</a></td><td>'+$("#water-body-type").val()+'</td><td>'+$("#Seasonality").val()+'</td><td>'+$("#TWSA").val()+'</td><td>'+$("#ewsa").val()+'</td><td>'+$("#fishing-rights").val()+'</td><td>'+$("#lease-type").val()+'</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td><tr>');
                       
   });
     });
@@ -1327,11 +1613,11 @@
     <script type="text/javascript">
      $("#download").hide(); 
   $("#flcsearch").click(function(){
-  
      $("#download").show(); 
     if($("#select_dist").val()== 'Prakasam' && $("#select_mandal").val()== 'Santhamaguluru' && $("#select_panchayat").val()== 'Santhamaguluru' && $("#select_panchayat1").val()== 'Puttavaripalem')
     {
-        $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>725394396865</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Anjireddy</a></td><td>Sitharamireddy</td><td>27 </td><td>Male</td><td>7659818121</td><td>xxxxxxx</td><td>xxxx</td><td>xxxx</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>725394396865</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Anjireddy</a></td><td>Sitharamireddy</td><td>27 </td><td>Male</td><td>7659818121</td><td>xxxxxxx</td><td>xxxx</td><td>xxxx</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr>');
+        $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>Lease </td><td>FCS</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span></td><tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>GP</td><td>Perennial </td><td>350</td><td>340</td><td>Lease</td><td>GP</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" title="edit" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" title="delete" class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr><tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>Licence</td><td>GP</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span></td></tr>');
+
     }
    else if($("#select_dist").val()== 'guntur' && $("#select_mandal").val()== 'bapatla' && $("#select_panchayat").val()== 'ADAVI')
     {
@@ -1448,7 +1734,18 @@
  </script>
     <script type="text/javascript">
     $(document).ready(function () {
-     
+        $("#twsa").text(localStorage.getItem("res-twsa"))
+        $("#ewsa").text(localStorage.getItem("res-ewsa"))
+        $("#twsa2").text(localStorage.getItem("res-twsa"))
+        $("#ewsa2").text(localStorage.getItem("res-ewsa"))
+        $("#twsa3").text(localStorage.getItem("res-twsa"))
+        $("#ewsa3").text(localStorage.getItem("res-ewsa"))
+        $("#res-total").text(localStorage.getItem("res-total"))
+        $("#mi-total").text(parseInt(localStorage.getItem("res-ewsa")) * 2500)
+        $("#gp-total").text(parseInt(localStorage.getItem("res-ewsa")) * 2500)
+        var val1 = $("#ewsa").val() * 2500;
+          localStorage.setItem("mi-total", val1);
+     $("#panchayat-level").hide();
     $(".select_panchayat").change(function () {
         var val = $(this).val();
         if (val == "Santhamaguluru") {
@@ -1853,16 +2150,7 @@ $("#ewsa").keyup(function(){
       
     </div>
   </div>
-  <script type="text/javascript">
-  $("#deactive_details").hide();
-	$("#lab_ownr_adhar_no").keyup(function(){
-	  $("#deactive_details").show();
-
-	});
-  $("#delete").click(function(){
-    $("#flcdata").empty();
-    $("#flcdata").append('<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" title="Upload Dry certificate" data-toggle="modal" data-target="#dry" style="color:#39c4f0; cursor:pointer;" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button"></i>  </span></td><tr><td>2</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>GP</td><td>Perennial </td><td>350</td><td>340</td><td>GP</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" title="edit" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" title="delete" class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" style="color:#39c4f0; cursor:pointer;" title="Upload Dry certificate" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button2"></i>  </span></td></tr><tr><td>3</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td></tr>');
-  })
-	</script>
+	
+	
   </body>
 </html>
