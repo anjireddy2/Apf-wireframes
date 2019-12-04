@@ -551,13 +551,13 @@ th,td{
           <div id="transaction" style="margin-top: 2%;">
             Transaction ID: <label>383723323</label>
             <div class="form-group">
-                <label for="">Other Options</label>
+                <label for="">Other Details</label>
                 <input class="form-control" style="width:30%" type="text"/>
             </div>
         </div>
           
         </div>
-        <div><button class="btn btn-primary" onClick="window.location.href='preview.html'">Back</button><button class="btn btn-primary pull-right" onClick="window.location.href='receipt.html'">Ok</button></div>
+        <div><button class="btn btn-primary" id="back" onClick="window.location.href='preview.html'">Back</button><button class="btn btn-primary pull-right" onClick="window.location.href='receipt.html'" id="ok">Ok</button></div>
         </div>
   
 </div>
@@ -569,6 +569,8 @@ th,td{
   <script type="text/javaScript">
     $(document).ready(function(){
         $("#transaction").hide()
+        $("#ok").hide()
+        $("#back").hide()
         console.log(localStorage.getItem("exts_farm"))
         if(localStorage.getItem("exts_farm") == true){
             $("#add_new_farm").hide();
@@ -579,8 +581,12 @@ th,td{
             $("#aqa_frm_lst").hide();
         }
         $("#check").click(function(){
+          $("#back").show()
             $("#check").attr("disabled","disabled")
+            $("#back").attr("disabled","disabled")
             $("#transaction").show()
+            $("#ok").show()
+            
 
         })
 
