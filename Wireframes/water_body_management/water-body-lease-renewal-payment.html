@@ -785,7 +785,11 @@
                 </div>
               </div>
               <div id="">
-
+                <div class="row">
+                    <div class="col-md-12">
+                    <input type="checkbox" id="checkAll">Select All
+                    </div>
+                    </div>
                 <div class="row" style="margin-top:20px;">
                   <div class="col-md-12 table-responsive">
                     <table class="table table-bordered">
@@ -806,9 +810,15 @@
                         </tr>
                       </thead>
                       <tbody id="flcdata">
-                      	<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td id="amountren">204000</td>
-                      		<td><button class="btn btn-primary" onclick="window.location.href='../one_portal.html'">Payment</button></td></tr>
-                      		<tr><td>2</td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td><button class="btn btn-primary" >Payment</button></td></tr>
+                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td id="amountren">204000</td>
+                      		<td><button class="btn btn-primary" onClick="window.open(
+                                'https://cfms.ap.gov.in/',
+                                '_blank'
+                              );">Payment</button></td></tr>
+                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td><button class="btn btn-primary" onClick="window.open(
+                                'https://cfms.ap.gov.in/',
+                                '_blank'
+                              );">Payment</button></td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -1264,6 +1274,9 @@
       </div>
     </div>
     <script type="text/javascript">
+    $("#checkAll").click(function () {
+     $('input:checkbox').not(this).prop('checked', this.checked);
+ });
      $(document).ready(function () {
        var total = localStorage.getItem("total");
 	   if(total) {
