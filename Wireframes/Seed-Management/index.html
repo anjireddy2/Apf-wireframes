@@ -193,6 +193,9 @@
         .ui-datepicker-calendar {
             display: none;
         }
+		td, th {
+    padding: 10px;
+}
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -775,7 +778,7 @@
                 <div class="col-md-12">
                   <div class="panel panel-primary" style="float: left; width: 100%;">
                     <div class="panel-heading" style="    padding: 20px 15px"> <span>
-                        Updation Seed Stocking Details</span> <span style="float:right"> <button
+                        Public Water Bodies</span> <span style="float:right"> <button
 
                           class="btn btn-default" data-toggle="modal" data-target="#myModal">
                           + Add new </button> </span> </div>
@@ -785,7 +788,7 @@
               <div id="by_data_shown">
 					                <div class="row" style="margin-top:20px;">
                   <div class="col-md-4">
-                    <div class="form-group"> <label for="sel1">Select district:</label>
+                    <div class="form-group"> <label for="sel1">Select District:</label>
                       <select class="form-control" id="select_dist">
                         <option value="">Select </option>
                         <option value="Prakasam">Prakasam </option>
@@ -793,14 +796,14 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <div class="form-group"> <label for="sel1">Select mandal:</label>
+                    <div class="form-group"> <label for="sel1">Select Mandal:</label>
                       <select class="form-control" id="select_mandal">
                       </select>
                     </div>
                   </div>
 				   <div class="col-md-4">
                     <div class="form-group"> <label for="sel1">Select Grama
-                        panchayat:</label>
+                        Panchayat:</label>
                       <select class="form-control" id="select_panchayat">
                       </select>
                     </div>
@@ -825,7 +828,7 @@
                     </div>
                   </div>
 				    <div class="col-md-4">
-                   <div class="form-group"> <label for="sel1">Type water body </label>
+                   <div class="form-group"> <label for="sel1">Type of Public water body </label>
                   <select class="form-control" id="">
                     <option value="">Select </option>
 					   <option value="MI">MI Tank </option>
@@ -925,7 +928,7 @@
                 </div>
               </div>
            <div class="col-md-6">
-                <div class="form-group"> <label for="sel1"> mandal</label>
+                <div class="form-group"> <label for="sel1"> Mandal</label>
                   <select class="form-control select_mandal" id="Mandal">
                   </select>
                 </div>
@@ -934,7 +937,7 @@
            
 			     <div class="row">
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1"> panchayat</label>
+                <div class="form-group"> <label for="sel1"> Panchayat</label>
                   <select class="form-control  select_panchayat" id="panchayat1">
                   </select>
                 </div>
@@ -946,11 +949,11 @@
                 </div>
               </div>
 			  <div class="col-md-6">
-			   <div class="form-group"> <label for="email">Name of water body </label>
+			   <div class="form-group"> <label for="email">Name of Public water body </label>
               <input class="form-control" id="FLC" type="email"> </div>
 			  </div>
 			   <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Type water body </label>
+                <div class="form-group"> <label for="sel1">Type of Public water body </label>
                   <select class="form-control" id="water-body-type">
                     <option value="">Select </option>
 					   <option value="MI">MI Tank </option>
@@ -990,11 +993,11 @@
 			   			   <div id="fcs_div">
 
 			   <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Name of FCS </label> <input class="form-control" value="" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Name of the FCS </label> <input class="form-control" value="" type="text" > </div>
               </div>
 			  
 			    <div class="col-md-6">
-               <div class="form-group"> <label for="sel1">category</label>
+               <div class="form-group"> <label for="sel1">Category</label>
                   <select class="form-control" id="category">
                      <option value="">Select</option>
                               <option value="backrish_water">SC</option>
@@ -1036,7 +1039,7 @@
 						  <div id="numberofmembers1">
 						  <div class="">
 						    <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member4"  value=""  type="text" > </div>
+                <div class="form-group"> <label for="sel1">Total number of Members </label> <input class="form-control" id="number-of-member4"  value=""  type="text" > </div>
               </div>
 						  </div>
 						  </div>
@@ -1069,17 +1072,23 @@
           
 			<div class="row">
 			 <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Latitude </label> <input class="form-control" value="" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Latitude(N) </label> <input class="form-control" value="" type="text" > </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="" type="text" > </div>
+                <div class="form-group"> <label for="sel1">Longitude (E)</label> <input class="form-control" value="" type="text" > </div>
               </div>
 			</div>
+			<div class="row">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="pwd">Upload Seed Image</label>
+                    <input type="file"> </div>
+                </div>
+              </div>
        
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-primary" style="float: left; width: 100%;">
-                  <div class="panel-heading" style=""> <span> Water body
+                  <div class="panel-heading" style=""> <span>Public  Water body
                       Details</span> <span style="float:right"> </span> </div>
                 </div>
               </div>
@@ -1098,23 +1107,33 @@
               </div>
 			
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">TWSA(Total water
-                    spread area)</label> <input class="form-control" type="text" id="TWSA">
+                <div class="form-group"> <label for="sel1">TWSA (Total Water
+                    Spread Area)</label> <input class="form-control" type="text" id="TWSA">
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">EWSA(Effective water
-                    spread area)</label> <input class="form-control" type="text" id="ewsa">
+                <div class="form-group"> <label for="sel1">EWSA (Effective Water
+                    Spread Area)</label> <input class="form-control" type="text" id="ewsa">
                 </div>
               </div>
-              <div class="col-md-6" id="flstock-div">
-                <div class="form-group"> <label for="sel1">FL Stock(In lakhs)</label> <input class="form-control" type="text" id="fl_stock" disabled>
+			  <div id="flstock-div">
+              <div class="col-md-6" >
+                <div class="form-group"> <label for="sel1">FL Requirement(in Lakhs)</label> <input class="form-control" type="text" id="fl_stock" disabled>
                 </div>
               </div>
+			    <div class="col-md-6" id="" style="">
+                <div class="form-group"> <label for="sel1">FL Stock Achievement(In lakhs)</label> <input class="form-control" type="text" value="" id="fl_stock" >
+                </div>
+              </div>
+			   <div class="col-md-6" id="" style="">
+                <div class="form-group"> <label for="sel1">FL Stock  Date</label> <input class="form-control"  type="date" value="" id="fl_stock" >
+                </div>
+            </div>
 			  
 			 
              
             </div>
+			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
@@ -1328,6 +1347,7 @@
               </div>
 			  
 			  
+			  
             </div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
@@ -1487,6 +1507,13 @@
                 <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="3'4'5" type="text"> </div>
               </div>
 			</div>
+			<div class="row">
+                <div class="col-md-6">
+                  <div class=""> <span>seed.jpg</span> <span style="color:red;"><i class="fa fa-times" aria-hidden="true"></i> </span> </div>
+                  <div class="form-group"> <label for="pwd">Upload Seed Image</label>
+                    <input value="flc.jpg" type="file"> </div>
+                </div>
+              </div>
        
             <div class="row">
               <div class="col-md-12">
@@ -1522,14 +1549,41 @@
                 <div class="form-group"> <label for="sel1">FL Stock Target(In lakhs)</label> <input class="form-control" type="text" value="3750000" id="fl_stock" disabled="">
                 </div>
               </div>
+			                </div>
+							
+						<div class="row">
+						<div class="col-md-12" style="padding-bottom:10px;">
+						<h4 style="color:#39c4f0;">Previous FL Stock Data</h4>
+						</div>
+						<div class="col-md-12" style="margin-bottom:10px;">
+						<table  border="1">
+							<tr>
+							<th>Sno</th>
+							<th>FL Stock(In lakhs)</th>
+							<th>FL Stock  Date</th>
+							</tr>
+							<tbody>
+							<tr>
+									<td>1</td>
+									<td>100000</td>
+									<td>13-02-2019</td>
+							</tr>
+							</tbody>
+						</table>
+						</div>
+						</div>
+							
+							<div class="row">
+
 			   <div class="col-md-6" id="" style="">
-                <div class="form-group"> <label for="sel1">FL Stock Achievement(In lakhs)</label> <input class="form-control" type="text" value="3750000" id="fl_stock" >
+                <div class="form-group"> <label for="sel1">FL Stock Achievement(In lakhs)</label> <input class="form-control" type="text" value="" id="fl_stock" >
                 </div>
               </div>
-			  
-			  
-             
+			   <div class="col-md-6" id="" style="">
+                <div class="form-group"> <label for="sel1">FL Stock  Date</label> <input class="form-control"  type="date" value="" id="fl_stock" >
+                </div>
             </div>
+			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
@@ -1547,7 +1601,7 @@
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
-              id="flc-submit">Update</button> <button type="button" class="btn btn-default"
+              id="seed-submit" data-dismiss="modal">Update</button> <button type="button" class="btn btn-default"
 
               data-dismiss="modal">Close</button> </div>
         </div>
@@ -1564,6 +1618,7 @@
     $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#FLC").val()+'</a></td><td>'+$("#water-body-type").val()+'</td><td>'+$("#Seasonality").val()+'</td><td>'+$("#TWSA").val()+'</td><td>'+$("#ewsa").val()+'</td><td>'+$("#fishing-rights").val()+'</td><td>'+$("#lease-type").val()+'</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td><tr>');
                       
   });
+    });
     });
   </script>
     <script type="text/javascript">
