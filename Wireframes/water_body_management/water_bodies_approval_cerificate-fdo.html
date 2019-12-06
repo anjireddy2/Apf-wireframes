@@ -194,7 +194,7 @@
             display: none;
         }
 
-        &#8203;
+       
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -840,20 +840,35 @@
 						  <th>TWSA</th>
 						  <th>EWSA</th>
 						 <th scope="col">Lease amount</th>	
-                          <th scope="col">Upload Document</th>
+                          <th scope="col">View Lease Certificate Document</th>
                         </tr>
                       </thead>
                       <tbody id="flcdata">
-                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td>Santhamaguluru tank</td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>204000</td>
-                      		<td style="display:flex;"><button class="btn btn-primary" data-toggle="modal" data-target="#Upload-Lease">View Lease Certificate</button> </td></tr>
-                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td>test</td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td style="display:flex;"><button class="btn btn-primary" data-toggle="modal" data-target="#Upload-Lease">View Lease Certificate</button></td></tr>
+                      Submit </button>  -->
+                      	<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-target="#myModal2" data-toggle="modal"> Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>204000</td>
+                      		<td style="display:flex;"><button class="btn btn-primary" onClick="window.open(
+                            'certificate.jpeg',
+                            '_blank'
+                          );">View Lease Certificate</button> </td></tr>
+                      		<tr><td><input type="checkbox" class="select-check"></td><td>Prakasam</td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Pathamaguluru</td><td><a href="#" data-target="#myModal2" data-toggle="modal">test</a></td><td>Major-Irrigation</td><td>Perennial </td><td>120</td><td>110</td><td>66000</td><td style="display:flex;"><button class="btn btn-primary" data-toggle="modal" data-target="#Upload-Lease1">View Lease Certificate</button></td></tr>
                       </tbody>
                     </table>
                   </div>
-                </div 
+                </div> 
                   <div class="col-md-12" style="text-align:right"> <button class="btn btn-primary pull-right">
-                      Download </button>  <button class="btn btn-primary pull-right" style="margin-right:2%;" onclick="window.location.href='services.html'">
-                      Submit </button> </div>
+                      Download </button> 
+                       <!-- <button class="btn btn-primary pull-right" style="margin-right:2%;" onclick="window.location.href='services.html'">
+                      Submit </button>  -->
+                    </div>
+                    <div id="" class="pull-right">
+                        <div style="text-align:right; margin-top:20px; display: inline-block;">  <button class="btn btn-primary" id="approve"  onClick="window.location.href='services.html'">
+                          Approve 
+            </button>	 </div>
+                        <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="reject" data-target="#myModal5">
+                            Reject </button> </div>
+                        <div style="text-align:right; margin-top:20px;display: inline-block;"> <button class="btn btn-primary" data-toggle="modal" id="rectification" data-target="#myModal6">
+                            Rectification </button> </div>
+                        </div>
                 </div>
               </div>
               <div id="by_map_shown">
@@ -864,6 +879,63 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="myModal5" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <div>Your Request has been rejected</div>
+            </div>
+            <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+  
+              data-dismiss="modal" id="reject-ok">Ok</button> 
+              <!-- <button type="button" class="btn btn-default"
+  
+                data-dismiss="modal">Close</button>  -->
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal6" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <div><span style="color: red">*</span>Reasons for Rectification:</div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option value="">Select</option>
+                    <option value="test">Test</option>
+                    <option value="test1">Test1</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+    
+                data-dismiss="modal" id="rectify-ok">Ok</button> 
+                <button type="button" class="btn btn-default"
+    
+                  data-dismiss="modal">Close</button> 
+                </div>
+            </div>
+          </div>
+        </div>
+        <script>
+           $("#reject").click(function(){
+        $("#reject").addClass("disabled");
+        $("#approve").addClass("disabled");
+        $("#rectification").addClass("disabled");
+       })
+       $("#rectify-ok").click(function(){
+        document.location.href = "water_bodies_approval_cerificate.html"
+       })
+        </script>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
@@ -1163,7 +1235,7 @@
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
                   <div class="form-group"> <label for="pwd" disabled>Comments</label>
@@ -1171,7 +1243,7 @@
                    </textarea> </div>
                 </div>
               </div> 
-            </div>
+            </div> -->
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-6">
@@ -1698,13 +1770,13 @@ $("#ewsa").keyup(function(){
 			
 			<div class="row">
         		<div class="col-md-12" style="margin-bottom:20px;">
-        			        <label>Lease certificate:Test1.pdf</label>
+        			        <label>Lease certificate:<a href="#">Test1.pdf</a></label>
         			      </div>
 
         		</div>
         	</div>
 			  <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary">Ok</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
         </div>
@@ -1712,6 +1784,35 @@ $("#ewsa").keyup(function(){
       </div>
       
     </div>
+    <div class="modal fade" id="Upload-Lease1" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              
+          
+          
+          <div class="row">
+                <div class="col-md-12" style="margin-bottom:20px;">
+                          <label>You are not authorized to apply the fishing permit licence</label>
+                        </div>
+    
+                </div>
+              </div>
+            <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+          
+          </div>
+          
+        </div>
   </div>
   
   </body>

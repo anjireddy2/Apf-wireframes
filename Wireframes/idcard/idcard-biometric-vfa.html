@@ -1016,6 +1016,53 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="myModal5" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <div>Your Request has been rejected</div>
+            </div>
+            <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+  
+              data-dismiss="modal" id="reject-ok">Ok</button> 
+              <!-- <button type="button" class="btn btn-default"
+  
+                data-dismiss="modal">Close</button>  -->
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal6" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <div><span style="color: red">*</span>Reasons for Rectification:</div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option value="">Select</option>
+                    <option value="test">Test</option>
+                    <option value="test1">Test1</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer"> <button type="submit" class="btn btn-primary"
+    
+                data-dismiss="modal" id="rectify-ok">Ok</button> 
+                <button type="button" class="btn btn-default"
+    
+                  data-dismiss="modal">Close</button> 
+                </div>
+            </div>
+          </div>
+        </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal2" role="dialog">
       <div class="modal-dialog">
@@ -1366,6 +1413,14 @@
   })
 </script> <script type="text/javascript">
     $(document).ready(function () {
+        $("#reject").click(function(){
+        $("#reject").addClass("disabled");
+        $("#approve").addClass("disabled");
+        $("#rectification").addClass("disabled");
+       })
+       $("#rectify-ok").click(function(){
+        document.location.href = "idcard-fdo.html"
+       })
       $("#by_data").prop('checked',true);
       $("#by_map_shown").hide();
     $("#select_mandal").change(function () {
@@ -1838,7 +1893,7 @@ $("#ewsa").keyup(function(){
         <div class="modal-body">
           <p><div class="row">
 			<div class="col-md-12">
-			  <div>	<label for="pwd" class="">Are you sure you want to delete the water body ?</label></div>
+			  <div>	<label for="pwd" class="">Are you sure you want to delete the ID Card Details?</label></div>
                    
 				</div>
 			</div></p>

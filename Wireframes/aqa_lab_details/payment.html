@@ -570,7 +570,7 @@ th,td{
     $(document).ready(function(){
         $("#transaction").hide()
         $("#ok").hide()
-        $("#back").hide()
+        // $("#back").hide()
         console.log(localStorage.getItem("exts_farm"))
         if(localStorage.getItem("exts_farm") == true){
             $("#add_new_farm").hide();
@@ -581,7 +581,7 @@ th,td{
             $("#aqa_frm_lst").hide();
         }
         $("#check").click(function(){
-          $("#back").show()
+          // $("#back").show()
             $("#check").attr("disabled","disabled")
             $("#back").attr("disabled","disabled")
             $("#transaction").show()
