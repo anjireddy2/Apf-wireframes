@@ -594,6 +594,9 @@ body {
                               <option value="AP-SHRMP-FRM-1">AP-SHRMP-FRM-1</option>
                               <option value="AP-FSH-FRM-334">AP-FSH-FRM-334</option>
                             </select>
+                            <input class="input-md textinput textInput form-control"
+                                value="" id="ext_frm_aqua_reg" readonly
+                                name="frm_name" type="text"> 
                           </div>
                       </div>
                         <div class="form-group required row"> 
@@ -644,6 +647,16 @@ body {
                                 name="frm_name" type="text"> 
                             </div>
                         </div>
+                        <div class="form-group required row"> 
+                          <label class="control-label col-md-4  requiredField">Sample to be submitted</label>
+                          <div class="controls col-md-8">
+                             <select class="form-control" id="sample_submit">
+                               <option value="Aqua Lab1">Aqua Lab1</option>
+                               <option value="Aqua Lab2">Aqua Lab2</option>
+                               <option value="Aqua Lab3">Aqua Lab3</option>
+                               </select>
+                          </div>
+                      </div>
                         </div>
 
                     
@@ -740,7 +753,7 @@ body {
                   <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                  <div>Token ID was created successfully.</div>
+                  <div>Token ID was created successfully. Please submit the samples to Aqua Lab1</div>
                 </div>
                 <div class="modal-footer"> <button type="submit" class="btn btn-primary"
       
@@ -762,6 +775,8 @@ body {
     $("#ext_farm_reg_nos").hide();
     $("#sbt_bts").hide();
     $("#show-details").hide();
+    $("#ext_frm_aqua_reg").hide()
+      $("#list_of_farms").hide();
     localStorage.clear();
     $("#add_tst_btn").click(function(){
         window.location.href = "sample_details.html"
@@ -797,11 +812,16 @@ body {
       $("#srch_adhr_no").show()
       $("#token_show").hide()
       $("#aadhar").show();
+      $("#list_of_farms").show()
+      $("#ext_frm_aqua_reg").hide()
     })
     $("#no").click(function(){
       // $("#srch_adhr_no").hide();
+      $("#ext_farm_reg_nos").show();
       $("#show-details").show();
       $("#adhar_no").val("")
+      $("#ext_frm_aqua_reg").show()
+      $("#list_of_farms").hide();
       $("#list_of_farms").val("")
       $("#ext_frm_nm").val("")
       $("#ext_frm_adrss").val("")
@@ -811,6 +831,8 @@ body {
         $("#ext_frm_adrss").attr("readonly",false);
         $("#ext_frm_adrss1").attr("readonly",false);
         $("#ext_frm_mbl_nmbr").attr("readonly",false);
+      $("#ext_frm_aqua_reg").attr("readonly",false);
+
     })
     $("#token_id").click(function(){
       $("#token_show").show()
