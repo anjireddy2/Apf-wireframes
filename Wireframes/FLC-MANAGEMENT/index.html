@@ -1117,7 +1117,7 @@
                     class="form-control" id="Longitude" type="text"> </div>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12">
                 <div class="form-group"> <label for="email">Number of
                     mechanized boats</label> <input class="form-control" id="mechanized"
@@ -1136,7 +1136,7 @@
 
                     value="" type="text"> </div>
               </div>
-            </div>
+            </div> -->
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
               </div>
@@ -1397,19 +1397,19 @@
                 <div class="form-group"> <label for="email">Number of
                     mechanized boats</label> <input class="form-control" id="Longitude"
 
-                    value="30" type="text"> </div>
+                    value="30" type="text" disabled> </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group"> <label for="email">Number of motorized
                     boats</label> <input class="form-control" id="Longitude" value="26"
 
-                    type="text"> </div>
+                    type="text" disabled> </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group"> <label for="email">Number of
                     traditional boats</label> <input class="form-control" id="Longitude"
 
-                    value="20" type="text"> </div>
+                    value="20" type="text" disabled> </div>
               </div>
             </div>
             <div class="row">
@@ -1440,6 +1440,133 @@
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
               id="flc-submit">Update</button> <button type="button" class="btn btn-default"
+
+              data-dismiss="modal">Close</button> </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="myModal-data" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group"> <label for="email">Name of marine FLC </label>
+              <input class="form-control" id="FLC" value="VODALAREVU" type="text" disabled>
+            </div>
+            <div class="form-group"> <label for="email">Name of the FDO tagged
+              </label> <input class="form-control" id="FLC" value="VODALAREVU"
+
+                type="email" disabled> </div>
+            <div class="form-group" style="visibility:hidden;margin-top: -70px;">
+              <label for="pwd">Latitude</label> <input class="form-control" value="0"
+
+                id="sno" type="text" disabled> </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">District</label>
+                  <select class="form-control select_dist" id="District" disabled>
+                    <option value="east_godavari">EAST GODAVARI </option>
+                    <option value="guntur">GUNTUR</option>
+                    <option value="krishana">KRISHNA</option>
+                  </select>
+                </div>
+              </div>
+             
+          
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> mandal</label>
+                  <select class="form-control select_mandal" id="Mandal" disabled>
+                    <option>ALLAVARAM</option>
+                  </select>
+                </div>
+              </div>
+             
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat" disabled>
+                    <option>VODALAREVU</option>
+                  </select>
+                </div>
+              </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_Village" id="village" disabled>
+				   <option>VODALAREVU</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="pwd">Latitude</label> <input
+
+                    class="form-control" id="Latitude" value="6° 42&quot; 18 N"
+
+                    type="text" disabled> </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> <label for="email">Longitude</label> <input
+
+                    class="form-control" id="Longitude" value="81° 95&quot; 80 N"
+
+                    type="text" disabled> </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group"> <label for="email">Number of
+                    mechanized boats</label> <input class="form-control" id="Longitude"
+
+                    value="30" type="text" disabled> </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group"> <label for="email">Number of motorized
+                    boats</label> <input class="form-control" id="Longitude" value="26"
+
+                    type="text" disabled> </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group"> <label for="email">Number of
+                    traditional boats</label> <input class="form-control" id="Longitude"
+
+                    value="20" type="text" disabled> </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="pwd">Facilities</label>
+                    <textarea rows="4" cols="75"  disabled>Test
+                   </textarea> </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class=""> <span>flc.jpg</span> <span style="color:red;"><i
+
+                        class="fa fa-times" aria-hidden="true"></i> </span> </div>
+                  <div class="form-group"> <label for="pwd">Upload Image</label>
+                    <input value="flc.jpg" type="file" disabled> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+             <!-- <button type="submit" class="btn btn-primary"
+
+              id="flc-submit">Update</button>  -->
+              <button type="button" class="btn btn-default"
 
               data-dismiss="modal">Close</button> </div>
         </div>
@@ -1629,7 +1756,7 @@
     
     if($("#select_dist").val()== 'east_godavari' && $("#select_mandal").val()== 'allavaram')
     {
-        $("#flcdata").append('<tr><td>1</td><td>VODALAREVU</td><td>EAST GODAVARI</td><td>ALLAVARAM</td><td>VODALAREVU</td><td>ALLAVARAM</td><td>ALLAVARAM</td><td>6° 42" 18 N</td><td>81° 95" 80 N</td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">20</a></td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">30</a></td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">25</a></td><td><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span></td></tr>');
+        $("#flcdata").append('<tr><td>1</td><td data-toggle="modal" data-target="#myModal-data"><a href="#">VODALAREVU</a></td><td>EAST GODAVARI</td><td>ALLAVARAM</td><td>VODALAREVU</td><td>ALLAVARAM</td><td>ALLAVARAM</td><td>6° 42" 18 N</td><td>81° 95" 80 N</td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">20</a></td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">30</a></td><td><a href="#" data-toggle="modal" data-target="#myModal-boat">25</a></td><td><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span></td></tr>');
 
     }
    else if($("#select_dist").val()== 'guntur' && $("#select_mandal").val()== 'bapatla' && $("#select_panchayat").val()== 'ADAVI')
