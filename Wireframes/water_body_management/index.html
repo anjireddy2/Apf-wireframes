@@ -873,8 +873,7 @@
             <h4 class="modal-title">Modal Header</h4>
           </div>
           <div class="modal-body">
-            <div class="form-group"> <label for="email">Name of water body </label>
-              <input class="form-control" id="FLC" type="email"> </div>
+          
             <div class="form-group" style="visibility:hidden;margin-top: -70px;">
               <label for="pwd">Latitude</label> <input class="form-control" value="0"
 
@@ -909,6 +908,125 @@
                   </select>
                 </div>
               </div>
+			  <div class="col-md-6">
+				  <div class="form-group"> <label for="email">Name of Public water body </label>
+              <input class="form-control" id="FLC" type="email"> </div>
+			  </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Type of Public water body </label>
+                  <select class="form-control" id="water-body-type">
+                    <option value="">Select </option>
+					   <option value="MI">MI Tank </option>
+                    <option value="GP">GP</option>
+                    <option value="Reservoir">Reservoir</option>
+
+					
+                  </select>
+                </div>
+              </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Fishing rights</label>
+                  <select class="form-control" id="fishing-rights">
+                    <option value="">Select </option>
+					   <option value="Lease">Lease </option>
+                    <option value="Licence">Licence</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			   <div id="lease-type-content">
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Lease type</label>
+                  <select class="form-control" id="lease-type">
+                    <option value="">Select </option>
+					   <option value="Fcs">FCS</option>
+                    <option value="gp">GP</option>
+                  
+
+					
+                  </select>
+                </div>
+              </div>
+			  </div>
+			   <div id="fcs_div">
+
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of the FCS </label> <input class="form-control" value="" type="text" > </div>
+              </div>
+			  
+			    <div class="col-md-6">
+               <div class="form-group"> <label for="sel1">Category</label>
+                  <select class="form-control" id="category">
+                     <option value="">Select</option>
+                              <option value="backrish_water">SC</option>
+                              <option value="aqua_labs">ST</option>
+							  <option value="Others">Others</option>
+
+
+					
+                  </select>
+                </div>
+              </div>
+			  
+			  
+			  
+			 
+			 
+			  
+			
+			  			  </div>
+						  			  			  
+			  <div id="lease-content">
+          <div class="col-md-6">
+            <div class="form-group"> <label for="sel1">category</label>
+               <select class="form-control" id="category1">
+                  <option value="">Select</option>
+                           <option value="backrish_water">SC</option>
+                           <option value="aqua_labs">ST</option>
+             <option value="Others">Others</option>
+
+
+       
+               </select>
+             </div>
+           </div>
+     
+     
+			  </div>
+			  			 
+						  <div id="numberofmembers1">
+						  <div class="">
+						    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Total number of Members </label> <input class="form-control" id="number-of-member4"  value=""  type="text" > </div>
+              </div>
+						  </div>
+						  </div>
+						  
+						  <div id="numberofmembers">
+						  
+						     <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Sc Members </label> <input class="form-control" id="number-of-members1" value=""  type="text" > </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of St Members </label> <input class="form-control" id="number-of-members2" value=""  type="text" > </div>
+              </div>
+			  <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Number of Other Members </label> <input class="form-control" id="number-of-member3" value=""  type="text" > </div>
+              </div>
+			    <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Total number of members </label> <input class="form-control" id="number-of-member10" disabled value=""  type="text" > </div>
+              </div>
+						  </div>
+
+			 <div class="name-of-gptank">
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of GP Tank </label> <input class="form-control" value="" type="text" > </div>
+              </div>
+			  </div>
+			 
+			 
 			    <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Area of Operation</label>
                   <select class="form-control" id="areaperation">
@@ -930,6 +1048,13 @@
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="" type="text" > </div>
               </div>
+			  
+                <div class="col-md-6">
+                 
+                  <div class="form-group"> <label for="pwd">Upload PWB Image</label>
+                    <input value="flc.jpg" type="file"> </div>
+                </div>
+				
 			</div>
        
             <div class="row">
@@ -941,19 +1066,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group"> <label for="sel1">Type water body </label>
-                  <select class="form-control" id="water-body-type">
-                    <option value="">Select </option>
-					   <option value="Major-Irrigation">MI Tanks </option>
-                    <option value="GP">GP</option>
-                    <option value="Reservoir">Reservoir</option>
-					<option value="">Other Department Tanks</option>
-
-					
-                  </select>
-                </div>
-              </div>
+            
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Seasonality</label>
                   <select class="form-control" id="Seasonality">
@@ -999,14 +1112,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd">Upload Image</label>
-                    <input type="file"> </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
@@ -1888,5 +1994,184 @@ $("#ewsa").keyup(function(){
     $("#flcdata").append('<tr><td>1</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" title="edit" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" title="delete" aria-hidden="true"  data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" title="Upload Dry certificate" data-toggle="modal" data-target="#dry" style="color:#39c4f0; cursor:pointer;" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button"></i>  </span></td><tr><td>2</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>GP</td><td>Perennial </td><td>350</td><td>340</td><td>GP</td><td>204000</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" title="edit" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" title="delete" class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#myModal-delete"></i>  </span><span> <i class="fa fa-upload" style="color:#39c4f0; cursor:pointer;" title="Upload Dry certificate" aria-hidden="true"></i></span><span><i class="fa fa-user" style="color:#39c4f0; cursor:pointer;"  aria-hidden="true" data-toggle="modal" data-target="#Renewal-button2"></i>  </span></td></tr><tr><td>3</td><td>Prakasam </td><td>Santhamaguluru</td><td>Santhamaguluru</td><td>Puttavaripalem</td><td><a href="#" data-toggle="modal" data-target="#myModal2">Santhamaguluru tank</a></td><td>Major Irrigation</td><td>Perennial </td><td>350</td><td>340</td><td>FCS</td><td>204000</td></tr>');
   })
 	</script>
+	
+		    <script type="text/javascript">
+    $(document).ready(function () {
+		  $("#fcs_div").hide();
+
+    $("#lease-type-content").hide();
+	  $("#lease-content").hide();
+
+    $("#fishing-rights").change(function () {
+        var val = $(this).val();
+        if (val == "Lease") {
+          $("#lease-type-content").show();
+		  $("#lease-document").show();
+  $("#lease-content").hide();
+        }
+		else if (val == "Licence") {
+		 $("#lease-type-content").hide();
+		   $("#lease-content").show();
+		   $("#lease-document").hide();
+      $("#numberofmembers").hide()
+      $("#fcs_div").hide()
+      $("#name-of-gptank").hide();
+		
+		
+		}
+    });
+    });
+    </script>
+	 <script type="text/javascript">
+	 $("#numberofmembers1").hide();
+	  $("#category").change(function () {
+	   var val = $(this).val();
+	    if (val == "Others") 
+		{
+		 $("#numberofmembers").show();
+		 $("#numberofmembers1").hide();
+		}
+		else if (val == "backrish_water")
+		{
+		$("#numberofmembers").hide();
+		 $("#numberofmembers1").show();
+		}
+		else if (val == "aqua_labs")
+		{
+		$("#numberofmembers").hide();
+		 $("#numberofmembers1").show();
+		}
+	  });
+   </script>
+   	 <script type="text/javascript">
+      $("#numberofmembers1").hide();
+       $("#category1").change(function () {
+        var val = $(this).val();
+         if (val == "Others") 
+       {
+        $("#numberofmembers").show();
+        $("#numberofmembers1").hide();
+       }
+       else if (val == "backrish_water")
+       {
+       $("#numberofmembers").hide();
+        $("#numberofmembers1").show();
+       }
+       else if (val == "aqua_labs")
+       {
+       $("#numberofmembers").hide();
+        $("#numberofmembers1").show();
+       }
+       });
+      </script>
+		    <script type="text/javascript">
+    $(document).ready(function () {
+	$("#name-of-gptank").hide();
+	$("#numberofmembers").hide();
+	$(".name-of-gptank").hide();
+    $("#lease-type").change(function () {
+        var val = $(this).val();
+        if (val == "Fcs") {
+          $("#fcs_div").show();
+		  $(".name-of-gptank").hide();
+
+        }
+		else if (val == "gp") {
+		
+		$(".name-of-gptank").show();
+		$("#fcs_div").hide();
+    $("#numberofmembers").hide()
+
+		}
+    });
+    });
+    </script>
+	
+		    <script type="text/javascript">
+			 
+	   $("#number-of-member3").keyup(function () {
+     var value1 = parseInt($("#number-of-members1").val());
+      var value2 = parseInt($("#number-of-members2").val());
+	  var value3 = parseInt($("#number-of-member3").val());
+	 var a = (value1 + value2 + value3);
+	 $("#number-of-member10").val(a);
+	 
+	  });
+	 
+			</script>
+			  <script type="text/javascript">
+			 
+	   $("#number-of-member7").keyup(function () {
+     var value1 = parseInt($("#number-of-members5").val());
+      var value2 = parseInt($("#number-of-members6").val());
+	  var value3 = parseInt($("#number-of-member7").val());
+	 var a = (value1 + value2 + value3);
+	 $("#number-of-member8").val(a);
+	 
+	  });
+	 
+			</script>
+    
+	
+	
+  <script type="text/javascript">
+          $('#flstock-div').hide()
+			$("#Seasonality").change(function(){
+        $("#TWSA").val('');
+        $("#ewsa").val('');
+      })
+	   $("#ewsa").keyup(function () {
+      if($("#Seasonality").val() == 'Perennial') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*75;
+        var c = $(this).val(); 
+        if(c >= b)
+        {
+        alert("Effective water spread is not more that 75% of the Total water spread area");
+        }
+      } else if($("#Seasonality").val() == 'Long-Seasonal') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*50;
+        var c = $(this).val(); 
+        if(c >= b)
+        {
+        alert("Effective water spread is not more that 50% of the Total water spread area");
+        }
+      } else if($("#Seasonality").val() == 'Short-Seasonal') {
+        var a = $("#TWSA").val();
+        var b =  (a/100)*25;
+        var c = $(this).val(); 
+        if(c > b)
+        {
+        alert("Effective water spread is not more that 25% of the Total water spread area");
+        }
+      }
+      calculate();
+	   });
+     $("#seed-submit").click(function(){
+      calculate();
+     })
+
+     function calculate() {
+      if($("#water-body-type").val() == 'Reservoir') {
+        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
+          var val = $("#TWSA").val() < 5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
+          localStorage.setItem("res-total", val);
+          localStorage.setItem("res-twsa", $("#TWSA").val());
+          localStorage.setItem("res-ewsa", $("#ewsa").val());
+          $("#flstock-div").show()
+          $('#fl_stock').val(val)
+        }
+      } else if($("#water-body-type").val() == 'MI' || $("#water-body-type").val() == 'GP') {
+        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '' || $("#ewsa").val() < 1000 ) {
+          var val1 = $("#ewsa").val() * 2500;
+          localStorage.setItem("mi-total", val1);
+          $('#fl_stock').val(val1)
+          $("#flstock-div").show()
+        }
+		
+      }
+     }
+	   </script>
   </body>
 </html>
