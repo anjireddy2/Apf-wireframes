@@ -881,7 +881,7 @@
 						  <th>TWSA</th>
 						  <th>EWSA</th>
 						  <th>Fishing rights</th>
-						 <th scope="col">Lesse type</th>	
+						 <th scope="col">Lessee </th>	
 						 <th>Actions</th>
                         </tr>
                       </thead>
@@ -1077,13 +1077,19 @@
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Longitude (E)</label> <input class="form-control" value="" type="text" > </div>
               </div>
-			</div>
-			<div class="row">
+			  
                 <div class="col-md-6">
-                  <div class="form-group"> <label for="pwd">Upload Seed Image</label>
-                    <input type="file"> </div>
+                 
+                  <div class="form-group"> <label for="pwd">Upload PWB Image</label>
+                    <input value="flc.jpg" type="file"> </div>
                 </div>
-              </div>
+				  <div class="col-md-6" id="lease-document" style="display:none;">
+                 
+                  <div class="form-group"> <label for="pwd">Current fasali lease order date</label>
+                    <input value="" type="date"> </div>
+                </div>
+			</div>
+			
        
             <div class="row">
               <div class="col-md-12">
@@ -1151,7 +1157,7 @@
           </div>
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
-              id="seed-submit" data-dismiss="modal">Submit</button>
+              id="flc-submit" data-dismiss="modal">Submit</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -1305,6 +1311,11 @@
               <div class="col-md-6">
                 <div class="form-group"> <label for="sel1">Longitude</label> <input disabled class="form-control" value="1'21'32" type="text"> </div>
               </div>
+			  <div class="col-md-6" id="" style="">
+                 
+                  <div class="form-group"> <label for="pwd">Current fasali lease order date</label>
+                    <input value="12-11-2019" disabled type="text"> </div>
+                </div>
 			</div>
        
             <div class="row">
@@ -1507,13 +1518,7 @@
                 <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="3'4'5" type="text"> </div>
               </div>
 			</div>
-			<div class="row">
-                <div class="col-md-6">
-                  <div class=""> <span>seed.jpg</span> <span style="color:red;"><i class="fa fa-times" aria-hidden="true"></i> </span> </div>
-                  <div class="form-group"> <label for="pwd">Upload Seed Image</label>
-                    <input value="flc.jpg" type="file"> </div>
-                </div>
-              </div>
+			
        
             <div class="row">
               <div class="col-md-12">
@@ -1583,6 +1588,34 @@
                 <div class="form-group"> <label for="sel1">FL Stock  Date</label> <input class="form-control"  type="date" value="" id="fl_stock" >
                 </div>
             </div>
+		
+                <div class="col-md-6">
+                 
+                  <div class="form-group"> <label for="pwd">Upload Seed Image</label>
+                    <input value="flc.jpg" type="file"> </div>
+                </div>
+            
+			 <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Supplier</label>
+                  <select class="form-control" id="">
+				  <option>--select--</option>
+                    <option value="Perennial ">Department </option>
+                    <option value="Long-Seasonal">Private</option>
+                   
+                  </select>
+                </div>
+              </div>
+			   <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">Name of the Supplier</label>
+                  <select class="form-control" id="">
+				   <option>--select--</option>
+                    <option value="Perennial ">xxxxx </option>
+                    <option value="Long-Seasonal">yyyyyy</option>
+					
+                  </select>
+                </div>
+              </div>
+			
 			</div>
             <div class="row">
               <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
@@ -1618,7 +1651,6 @@
     $("#flcdata").append('<tr><td><input type="checkbox" class="select-check"></td><td>'+$("#District").val()+'</td><td>'+$("#Mandal").val()+'</td><td>'+$("#panchayat1").val()+'</td><td>'+$("#panchayat").val()+'</td><td><a href="" data-toggle="modal" data-target="#myModal2">'+$("#FLC").val()+'</a></td><td>'+$("#water-body-type").val()+'</td><td>'+$("#Seasonality").val()+'</td><td>'+$("#TWSA").val()+'</td><td>'+$("#ewsa").val()+'</td><td>'+$("#fishing-rights").val()+'</td><td>'+$("#lease-type").val()+'</td><td style="display:flex;"><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="modal" data-target="#myModal-edit"></i>  </span><span><i style="color:#39c4f0; cursor:pointer;" class="fa fa-trash" aria-hidden="true"></i>  </span></td><tr>');
                       
   });
-    });
     });
   </script>
     <script type="text/javascript">
@@ -2188,11 +2220,13 @@ $("#ewsa").keyup(function(){
         var val = $(this).val();
         if (val == "Lease") {
           $("#lease-type-content").show();
+		  $("#lease-document").show();
   $("#lease-content").hide();
         }
 		else if (val == "Licence") {
 		 $("#lease-type-content").hide();
 		   $("#lease-content").show();
+		   $("#lease-document").hide();
       $("#numberofmembers").hide()
       $("#fcs_div").hide()
       $("#name-of-gptank").hide();
@@ -2321,7 +2355,7 @@ $("#ewsa").keyup(function(){
         var a = $("#TWSA").val();
         var b =  (a/100)*25;
         var c = $(this).val(); 
-        if(c >= b)
+        if(c > b)
         {
         alert("Effective water spread is not more that 25% of the Total water spread area");
         }
@@ -2335,7 +2369,7 @@ $("#ewsa").keyup(function(){
      function calculate() {
       if($("#water-body-type").val() == 'Reservoir') {
         if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
-          var val = $("#TWSA").val() <5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
+          var val = $("#TWSA").val() < 5000 ? $("#ewsa").val() * 1500 : $("#ewsa").val() * 750;
           localStorage.setItem("res-total", val);
           localStorage.setItem("res-twsa", $("#TWSA").val());
           localStorage.setItem("res-ewsa", $("#ewsa").val());
@@ -2343,12 +2377,13 @@ $("#ewsa").keyup(function(){
           $('#fl_stock').val(val)
         }
       } else if($("#water-body-type").val() == 'MI' || $("#water-body-type").val() == 'GP') {
-        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '') {
+        if($("#TWSA").val() != '' &&  $("#ewsa").val()!= '' || $("#ewsa").val() < 1000 ) {
           var val1 = $("#ewsa").val() * 2500;
           localStorage.setItem("mi-total", val1);
           $('#fl_stock').val(val1)
           $("#flstock-div").show()
         }
+		
       }
      }
 	   </script>
