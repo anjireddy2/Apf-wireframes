@@ -543,8 +543,6 @@ body {
       <div class="panel-body">
        
         <div id="signupbox" style="margin-left:0%;width:98%;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-
-
           <div class="panel panel-info">
             <div class="panel-body">
                 
@@ -559,103 +557,10 @@ body {
                   <option value="rkvy">RKVY</option>
                   <option value="nfdb">NFDB</option>
                   <option value="wrld_bnk_proj">World Bank Aided Projects</option>
-                  <option value="extr_aid_proj">Extranally Aided Projects </option> 
-                  <option value="seedplaining">xxxxx</option>
+                  <option value="extr_aid_proj">Extranally Aided Projects </option>
                 </select>
               </div>
             </div>
-            <div id="seed-content" style="display: none">
-                <div class="row">
-                <div class="col-md-12">
-                  <div class="panel panel-primary" style="float: left; width: 100%;">
-                    <div class="panel-heading" style="    padding: 20px 15px"> <span>
-                       Budget Allocation</span> </div>
-                  </div>
-                </div>
-              </div>
-        
-        <div class="">
-        <div class="col-md-4">
-                    <div class="form-group"> <label for="sel1">Select District:</label>
-                      <select class="form-control" id="select_dist">
-                        <option value="">Select </option>
-                        <option value="Prakasam">Prakasam </option>
-                      </select>
-                    </div>
-                  </div>
-          <div class="col-md-4">
-          <button class="btn btn-primary" id="" style="margin-top:25px;"> Search </button>
-          </div>
-        </div>
-
-            <div class="col-md-12" id="table-hide1" style="display: block;">
-                      <div class="table-responsive">
-                        <table class="table table-bordered">
-                         
-                            <tbody><tr style="BACKGROUND: DODGERBLUE;
-    COLOR: #FFF;">
-                              <th rowspan="3">#Sno</th>
-                              <th rowspan="3">District</th>
-                <th rowspan="3">Fish seed Price</th>
-                              <th colspan="12">Budgect Allocated </th>
-                            </tr>
-              <tr style="BACKGROUND: DODGERBLUE;COLOR: #FFF;">
-              <th colspan="1" style="text-align:center;">FDS</th>
-              <th colspan="1" style="text-align:center;">SCC</th>
-              <th colspan="1" style="text-align:center;">STC</th>
-              <th colspan="1">Total</th>
-              </tr>
-              <tr style="BACKGROUND: DODGERBLUE;COLOR: #FFF;">
-              <th>Allocation</th>
-              
-              <th>Allocation</th>
-              
-              <th>Allocation</th>
-              
-              
-              
-              
-              </tr>
-              <tr>
-              <td>1</td>
-              <td>Prakasam</td>
-              <td><input type="text" class="form-control"></td>
-              <td><input type="text" class="form-control" id="allocation1"></td>
-              
-              <td><input type="text" class="form-control" id="allocation2"></td>
-              
-              <td><input type="text" class="form-control" id="allocation3"></td>
-              
-              <td id="allocation4"></td>
-              
-              </tr>
-              <tr>
-              <td>2</td>
-              <td>Krishana</td>
-                <td><input type="text" class="form-control"></td>
-              <td><input type="text" class="form-control"></td>
-              
-              <td><input type="text" class="form-control"></td>
-              
-              <td><input type="text" class="form-control"></td>
-              
-              </tr>
-            
-              
-              
-                        
-                        </tbody></table>
-                      </div>
-                        <div class="row">
-                        <div class="=&quot;col-md-12" pull-right"="">
-                            <button class="btn btn-primary pull-right" id="" style="margin-top:25px;"> Submit </button>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-
-            <div id="Beneficary-content" style="display:none;">
-
                 
             <div class="form-group required">
                 <label for="id_password2" class="control-label col-md-4  requiredField">Scheme-HoA <span class="asteriskField">*</span></label>
@@ -901,14 +806,10 @@ body {
   
                 
                 
-</div>                
+                
                 
 </div>
 </div>
-
-
-
-
 </div>
 </div>
 
@@ -1069,17 +970,6 @@ body {
   </div>
 </div>
   </body>
-
-   <script type="text/javascript">
-     $("#allocation3").keyup(function () 
-     {
-     var tallocation1 = parseInt($("#allocation1").val());
-     var tallocation2 = parseInt($("#allocation2").val());
-     var tallocation3 = parseInt($("#allocation3").val());
-     var total = tallocation1 + tallocation2 + tallocation3 ;
-    $("#allocation4").text(total);
-     });
-     </script>
     
     <script type="text/javascript">
       //localStorage.clear();
@@ -1091,8 +981,6 @@ body {
         $("#shm_ntr").change();
         $("#shm_ntr").change(function(){
             if($(this).val() == "st_dvp"){
-               $("#seed-content").hide();
-              $("#Beneficary-content").show();
                 res = '<option value="asst_lvl_enh">Assistance for livilihood enhancement of Fishermen(HoA -2405-00-103-11-08-310-312 )</option>'+
                   '<option value="rlf_ban_prd">Relief during Ban period(HoA - 2405-00-103-11-14-310-312 )</option>'+
                   '<option value="scc_cst_comp">Scheduled Caste Component (SCC)(HoA - 2405-00-789-11-06-310-312)</option>'+
@@ -1107,12 +995,6 @@ body {
                 
                 $("#shm_hoa").html(res)
             }
-            else if($(this).val() == "seedplaining")
-            {
-              $("#seed-content").show();
-              $("#Beneficary-content").hide();
-            }
-
             else if($(this).val() == "rurl_infr"){
                 res = '<option value="1">Landing and Berthing facilities - Machineries &Equipment-Purchases 4405-00-104-07-04-520-521</option>'+
                   '<option value="2">Landing and Berthing facilities -Major works-other expenditure 4405-00-104-07-04-530-531</option>'+
