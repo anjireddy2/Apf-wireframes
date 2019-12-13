@@ -895,7 +895,7 @@
                   <div id="map_canvas" style="height:380px;top:25px;"></div>
                 </div>
               </div>
-              <div class="fish-yield"> 
+              <div class="fish_yield"> 
 				<div class="row">
                   <div class="col-md-12">
                     <div class="panel panel-primary" style="float: left; width: 100%;">
@@ -941,7 +941,60 @@
                         </select>
                       </div>
                     </div>
-					  <div class="col-md-4">
+                    <div class="col-md-4">
+                      <div class="form-group"> <label for="sel1"> Indicator</label>
+                        <select class="form-control" id="source">
+                          <option value="select">Select</option>
+                          <option value="Inland-Fish">Inland Fish</option>
+                          <option value="Fresh-Water-Prawn">Fresh Water Prawn</option>
+                          <option value="Marine-Fish">Marine Fish</option>
+                          <option value="Marine-Prawn">Marine Prawn</option>
+                          <option value="Brackish-Water-Prawn">Brackish Water Prawn</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4" id="water_body_type">
+                      <div class="form-group"> <label for="sel1"> Source</label>
+                        <select class="form-control" id="water_body">
+                          <option value="select">Select</option>
+                          <option value="River">River</option>
+                          <option value="Canal">Canal</option>
+                          <option value="Tank">Tank</option>
+                          <option value="Reservoir">Reservoir</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4" id="flc_area">
+                      <div class="form-group"> <label for="sel1"> FLC</label>
+                        <select class="form-control disall" id="fselect_operation">
+                          <option>--select--</option>
+                          <option>ALLAVARAM</option>
+                                      </select>
+                      </div>
+                    </div>
+                  
+                <!-- </div> -->
+                <!-- <div class="row"> -->
+                  <div class="col-md-4" id="flc_area1">
+                    <div class="form-group"> <label for="sel1"> Area of Operations</label>
+                      <select class="form-control disall" id="fselect_operation">
+                        <option>--select--</option>
+                        <option>ALLAVARAM</option>
+                                    </select>
+                    </div>
+                  </div>
+                  <!-- <div id="water_body_target">
+                    <div class="col-md-4">
+                      <label for="target">Target</label>
+                      <input type="text" class="form-control" id="target"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="achievement">Achievment</label>
+                        <input type="text" class="form-control" id="achievement"/>
+                      </div>
+                  </div> -->
+                <!-- </div> -->
+					  <!-- <div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> Areas of operation: <span style="color:red;">*</span></label>
                         <select class="form-control disall" id="fselect_operation">
 						<option>--select--</option>
@@ -956,7 +1009,7 @@
 						<option>ALLAVARAM</option>
                         </select>
                       </div>
-                    </div>
+                    </div> -->
 					<div class="col-md-4">
                       <div class="form-group"> <label for="sel1"> Fin Year: <span style="color:red;">*</span></label>
                         <select class="form-control" id="fFin-Year">
@@ -975,11 +1028,13 @@
                     </div>
                     
                   </div>
+                  <!-- </div> -->
 				  <div class="row">
 				  <div class="col-md-12" style="float:right; text-align:right;">
 				                    <button class="btn btn-primary" id="search_yield"> Search </button>
 				  </div>
-				  </div>
+          </div>
+          </div>
 				  
 				   <div class="row" style="margin-top:20px;">
                     <div class="col-md-12" id="table-hide1">
@@ -996,7 +1051,7 @@
                               <th rowspan="2">village</th>
 							  <th rowspan="2">Areas of operation</th>
                               <th colspan="2">MARINE FISH	</th>
-                              <th colspan="2">MARINE SHRIMP	</th>
+                              <!-- <th colspan="2">MARINE SHRIMP	</th> -->
                            
                               <th colspan="3">TOTAL</th>
                             </tr>
@@ -1006,6 +1061,64 @@
 							<th>Achievement</th>
 							<th>Target</th>
 							<th>Achievement</th>
+							
+							<!-- <th>Target</th>
+							<th>Achievement</th> -->
+							
+							<th>Percentage(%)
+</th>
+							</tr>
+							<tr>
+							<td>1</td>
+							<td>ALLAVARAM</td>
+							<td>EAST GODAVARI </td>
+							<td>ALLAVARAM</td>
+							<td>VODALAREVU</td>
+							<td>ALLAVARAM</td>
+							<td>ALLAVARAM</td>
+							
+							<!-- <td>9.00</td>
+							<td>0.00</td> -->
+							<td>320.00</td>
+							<td>315.00</td>
+							<td>320.00
+</td>
+							<td>315.00
+</td>
+							<td>64
+</td>
+
+							</tr>
+                        
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top:20px;">
+                    <div class="col-md-12" id="table-hide2">
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                         
+                            <tr Style="BACKGROUND: DODGERBLUE;
+    COLOR: #FFF;">
+                              <th rowspan="2">#Sno</th>
+                              <th rowspan="2">Name of FLC</th>
+                              <th rowspan="2">District</th>
+                              <th rowspan="2">Mandal</th>
+                             <th rowspan="2"> Panchayat</th>
+                              <th rowspan="2">village</th>
+							  <th rowspan="2">Areas of operation</th>
+                              <th colspan="2">INLAND FISH	</th>
+                              <!-- <th colspan="2">MARINE SHRIMP	</th> -->
+                           
+                              <th colspan="3">TOTAL</th>
+                            </tr>
+							<tr Style="BACKGROUND: DODGERBLUE;
+    COLOR: #FFF;">
+							<th>Target</th>
+							<th>Achievement</th>
+							<!-- <th>Target</th>
+							<th>Achievement</th> -->
 							
 							<th>Target</th>
 							<th>Achievement</th>
@@ -1022,11 +1135,11 @@
 							<td>ALLAVARAM</td>
 							<td>ALLAVARAM</td>
 							
-							<td>9.00</td>
-							<td>0.00</td>
+							<!-- <td>9.00</td>
+							<td>0.00</td> -->
 							<td>700.00</td>
 							<td>455.00</td>
-							<td>709.00
+							<td>700.00
 </td>
 							<td>455.00
 </td>
@@ -1720,12 +1833,46 @@
     });
   </script>
     <script type="text/javascript">
-      (".click_boatdetails").click(function(){
+     $(".click_boatdetails").click(function(){
       $(this).addClass('click_boatdetails1');
       })
     </script>
     <script type="text/javascript">
     $(document).ready(function () {
+      $("#water_body_type").hide();
+    $("#water_body_target").hide();
+    $("#flc_area").hide();
+    $("#flc_area1").hide();
+      $("#source").change(function(){
+        // var source = $(this).val();
+        // alert(source);
+          $("#water_body_type").hide();
+          $("#water_body_target").hide();
+          $("#achievement").val("");
+          $("#target").val("");
+          $("#flc_area1").hide();
+          $("#flc_area").hide();
+        if($('#source').val() == "Inland-Fish") {
+          $("#water_body_type").show();
+        } else if($('#source').val() == "Marine-Fish" || $('#source').val() == "Marine-Prawn") {
+          $("#flc_area1").show();
+          $("#flc_area").show();
+        }
+  });
+  $("#flc_area").change(function() {
+      $("#water_body_target").hide();
+      $("#achievement").val("");
+      $("#target").val("");
+    if($("#flc_area").val() != "Select") {
+      $("#water_body_target").show();
+    }
+  })
+  $("#water_body").change(function(){
+      if($("#water_body").val() == "River" || $("#water_body").val() == "Canal" || $("#water_body").val() == "Tank" ||
+      $("#water_body").val() == "Reservoir") {
+        $("#water_body_target").show();
+      }
+  });
     $("#select_dist").change(function () {
         var val = $(this).val();
         if (val == "east_godavari") {
@@ -1742,9 +1889,17 @@
  </script>
  <script type="text/javascript">
       $("#table-hide1").hide();
+      $("#table-hide2").hide();
 
  $("#search_yield").click(function(){
+   if($("#source").val() == 'Inland-Fish'){
+    $("#table-hide1").hide();
+    $("#table-hide2").show();
+
+   }else if($("#source").val() == 'Marine-Fish' || $("#source").val() == 'Marine-Prawn'){
      $("#table-hide1").show();
+     $("#table-hide2").hide();
+   }
 
  });
 </script>
@@ -1901,15 +2056,15 @@
 });
     </script>
     <script type="text/javascript">
-    $(".vessel_boat").hide();
-    $(".fish-yield").hide();
+    $('.vessel_boat').css('display','none');
+    $('.fish_yield').css('display','none');
       $("#vessel-boat").click(function(){
-       $(".vessel_boat").show();
-       $(".fish-yiledt").hide();
+        $('.vessel_boat').css('display','block');
+        $('.fish_yield').css('display','none');
       })
        $("#fish-yiled").click(function(){
-       $(".fish-yield").show();
-       $(".vessel_boat").hide();
+          $('.vessel_boat').css('display','none');
+          $('.fish_yield').css('display','block');
       })
     </script>
     <script type="text/javascript">
