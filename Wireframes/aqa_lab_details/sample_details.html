@@ -681,6 +681,34 @@ th,td{
             <label>Pond No: &nbsp;&nbsp;1</label>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Days of Culture (In Days)</label>
+            <input type="number" style="width:50%" class="form-control"/>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Type of Culture</label>
+            <select class="form-control">
+              <option value="">Select</option>
+              <option value="fish">Fish</option>
+              <option value="shrimp">Shrimp</option>
+              <option value="poly">Poly</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Source of Water</label>
+            <select class="form-control">
+              <option value="">Select</option>
+              <option value="canals">Canals/Creek</option>
+              <option value="sea">Sea Water</option>
+              <option value="bore">Bore Water</option>
+            </select>
+          </div>
+        </div>
         <div class="col-md-1">
           <div class="form-group">
             <!-- <label>Actions</label> -->
@@ -763,112 +791,112 @@ th,td{
                                   <tbody>
                                       <tr>
                                           <th>Parameter</th>
-                                          <th>Select</th>
+                                          <th>Select <input type="checkbox" title="Select All" id="checkwater"/></th>
                                           <th>Cost</th>
                                       </tr>
                                       <tr>
                                           <td>Temperature</td>
-                                          <td><input type="checkbox"/>
+                                          <td><input type="checkbox" id="water"/>
                                           <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Total Dissolved Solids</td>
-                                        <td><input type="checkbox"/>
-                                        <td>120</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>PH</td>
-                                        <td><input type="checkbox"/>
-                                        <td>80</td>
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td>Redox Potential</td>
-                                        <td><input type="checkbox"/>
+                                        <td><input type="checkbox" id="water"/>
                                         <td>100</td>
                                           
                                       </tr>
                                       <tr>
+                                        <td>PH</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td>Redox Potential</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>Free</td>
+                                          
+                                      </tr>
+                                      <tr>
                                         <td>Salinity</td>
-                                        <td><input type="checkbox"/>
-                                        <td>70</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>Free</td>
                                           
                                       </tr>
                                       <tr>
                                         <td>Carbon Dioxide</td>
-                                        <td><input type="checkbox"/>
-                                        <td>8</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Dissolved Oxygen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>18</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Total Alkalinity</td>
-                                        <td><input type="checkbox"/>
-                                        <td>3</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Total Hardness</td>
-                                        <td><input type="checkbox"/>
-                                        <td>38</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Calcium Hardness</td>
-                                        <td><input type="checkbox"/>
-                                        <td>66</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Magnesium Hardness</td>
-                                        <td><input type="checkbox"/>
-                                        <td>66</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>BOD</td>
-                                        <td><input type="checkbox"/>
-                                        <td>24</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>COD</td>
-                                        <td><input type="checkbox"/>
-                                        <td>16</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>100</td>
                                       </tr>
                                       <tr>
                                         <td>Nitrite- Nittrogen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>9</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>40</td>
                                       </tr>
                                       <tr>
                                         <td>Total Ammonia </td>
-                                        <td><input type="checkbox"/>
-                                        <td>6</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>80</td>
                                       </tr>
                                       <tr>
                                         <td>Toxic Ammonia</td>
-                                        <td><input type="checkbox"/>
-                                        <td>46</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>80</td>
                                       </tr>
                                       <tr>
                                         <td>Hydrogen Sulphide</td>
-                                        <td><input type="checkbox"/>
-                                        <td>32</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>60</td>
                                       </tr>
                                       <tr>
                                         <td>Phosphate- Phosperoud</td>
-                                        <td><input type="checkbox"/>
-                                        <td>17</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>40</td>
                                       </tr>
                                       <tr>
                                         <td>Iron</td>
-                                        <td><input type="checkbox"/>
-                                        <td>12</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>40</td>
                                       </tr>
                                       <tr>
                                         <td>Chlorine</td>
-                                        <td><input type="checkbox"/>
-                                        <td>21</td>
+                                        <td><input type="checkbox" id="water"/>
+                                        <td>60</td>
                                       </tr>
                                   </tbody>
                               </table>
@@ -949,39 +977,39 @@ th,td{
                                   <tbody>
                                       <tr>
                                           <th>Parameter</th>
-                                          <th>Select</th>
+                                          <th>Select<input type="checkbox" title="Select All" id="checksoil"/></th>
                                           <th>Cost</th>
                                       </tr>
                                       <tr>
                                           <td>PH</td>
-                                          <td><input type="checkbox"/>
-                                          <td>50</td>
+                                          <td><input type="checkbox" id="soil"/>
+                                          <td>Free</td>
                                       </tr>
                                       <tr>
                                         <td>Orgnic Carbon</td>
-                                        <td><input type="checkbox"/>
-                                        <td>50</td>
+                                        <td><input type="checkbox" id="soil"/>
+                                        <td>40</td>
                                           
                                       </tr>
                                       <tr>
                                         <td>Available Nitrogen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>5</td>
+                                        <td><input type="checkbox" id="soil"/>
+                                        <td>60</td>
                                           
                                       </tr>
                                       <tr>
                                         <td>Total Nitrogen</td>
-                                        <td><input type="checkbox"/>
-                                        <td>10</td>
+                                        <td><input type="checkbox" id="soil"/>
+                                        <td>60</td>
                                           
                                       </tr>
                                       <tr>
                                         <td>Phophate- poserous</td>
-                                        <td><input type="checkbox"/>
-                                        <td>70</td>
+                                        <td><input type="checkbox" id="soil"/>
+                                        <td>15</td>
                                           
                                       </tr>
-                                      <tr>
+                                      <!-- <tr>
                                         <td>Calcium </td>
                                         <td><input type="checkbox"/>
                                         <td>8</td>
@@ -995,7 +1023,7 @@ th,td{
                                         <td>Zinc</td>
                                         <td><input type="checkbox"/>
                                         <td>3</td>
-                                      </tr>
+                                      </tr> -->
                                       </tbody>
                                       </table>
                               </div>
@@ -1080,6 +1108,34 @@ th,td{
                               <label>Pond No: &nbsp;&nbsp;2</label>
                             </div>
                           </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label>Days of Culture (In Days)</label>
+                              <input type="number" style="width:50%" class="form-control"/>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label>Type of Culture</label>
+                              <select class="form-control">
+                                <option value="">Select</option>
+                                <option value="fish">Fish</option>
+                                <option value="shrimp">Shrimp</option>
+                                <option value="poly">Poly</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label>Source of Water</label>
+                              <select class="form-control">
+                                <option value="">Select</option>
+                                <option value="canals">Canals/Creek</option>
+                                <option value="sea">Sea Water</option>
+                                <option value="bore">Bore Water</option>
+                              </select>
+                            </div>
+                          </div>
                           <div class="col-md-1">
                             <div class="form-group">
                               <!-- <label>Actions</label> -->
@@ -1161,41 +1217,41 @@ th,td{
                                                       <tbody>
                                                           <tr>
                                                               <th>Parameter</th>
-                                                              <th>Select</th>
+                                                              <th>Select<input type="checkbox" id="checkfeed" title="Select All"/></th>
                                                               <th>Cost</th>
                                                           </tr>
                                                           <tr>
                                                               <td>Moisture</td>
-                                                              <td><input type="checkbox"/>
-                                                              <td>80</td>
+                                                              <td><input type="checkbox" id="feed"/>
+                                                              <td>30</td>
                                                           </tr>
                                                           <tr>
                                                             <td>Crude Protein</td>
-                                                            <td><input  id="crude" type="checkbox"/>
-                                                            <td>80</td>
+                                                            <td><input  id="crude" type="checkbox" id="feed"/>
+                                                            <td>60</td>
                                                               
                                                           </tr>
                                                           <tr>
                                                             <td>Fats/ Lipids</td>
-                                                            <td><input type="checkbox"/>
-                                                            <td>5</td>
+                                                            <td><input type="checkbox" id="feed"/>
+                                                            <td>60</td>
                                                               
                                                           </tr>
                                                           <tr>
                                                             <td>Fibre</td>
-                                                            <td><input type="checkbox"/>
-                                                            <td>10</td>
+                                                            <td><input type="checkbox" id="feed"/>
+                                                            <td>60</td>
                                                               
                                                           </tr>
                                                           <tr>
                                                             <td>Ash</td>
-                                                            <td><input type="checkbox"/>
-                                                            <td>70</td>
+                                                            <td><input type="checkbox" id="feed"/>
+                                                            <td>30</td>
                                                               
                                                           </tr>
                                                           <tr>
                                                             <td>Nitrogen Free Extract </td>
-                                                            <td><input type="checkbox"/>
+                                                            <td><input type="checkbox" id="feed"/>
                                                             <td>8</td>
                                                           </tr>
                                                           
@@ -1290,7 +1346,7 @@ th,td{
                                                   </tr>
                                                   <tr>
                                                     <td>Total Cost(In Rs.)</td>
-                                                    <td>610</td>
+                                                    <td>430</td>
                                                   </tr>
                                                   
                                                   </tbody>
@@ -1359,7 +1415,26 @@ th,td{
           $("#extra-pond").hide();
         })
         $("#crude").click(function(){
+          if($(this).prop("checked")) {
           $("#summary_sec").show()
+          } else {
+          $("#summary_sec").hide()
+          }
+        })
+        $("#checkwater").click(function(){
+          $("input[id='water']").prop("checked",$(this).prop("checked"))
+        })
+        $("#checksoil").click(function(){
+          $("input[id='soil']").prop("checked",$(this).prop("checked"))
+        })
+        $("#checkfeed").click(function(){
+          $("input[id='feed']").prop("checked",$(this).prop("checked"))
+          $("input[id='crude']").prop("checked",$(this).prop("checked"))
+          if($(this).prop("checked")) {
+          $("#summary_sec").show()
+          } else {
+          $("#summary_sec").hide()
+          }
         })
     })
   </script>
