@@ -638,7 +638,7 @@ select{ text-transform: uppercase; }
              <div class="col-md-3"  id="Furunculosis"   data-toggle="modal" data-target="#exampleModal12"   >
         
     <img src="../images/Fish_Disease/Furunculosis.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px; font-size: 10px;">Furunculosis</p> 
+       <p style="background-color: #ccc;padding: 10px; font-size: 10px; text-transform:capitalize;">Edwardsiellosis</p> 
         
         </div>
              
@@ -653,14 +653,14 @@ select{ text-transform: uppercase; }
     <div class="col-md-3"  id="General_Septicemia"   data-toggle="modal" data-target="#exampleModal12"   >
         
     <img src="../images/Fish_Disease/General%20Septicemia.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc; padding: 10px;  font-size: 10px;"  >General Septicemia</p> 
+       <p style="background-color: #ccc; padding: 10px;  font-size: 10px;"  >Haemorrhagic Septicemia</p> 
         
         </div>
         
         <div class="col-md-3"  id="Ichthyophthiriasis"   data-toggle="modal" data-target="#exampleModal12"  >
         
     <img src="../images/Fish_Disease/Ichthyophthiriasis.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px;    font-size: 10px;">Ichthyophthiriasis</p> 
+       <p style="background-color: #ccc;padding: 10px;    font-size: 10px;">Bacterial gill diseases</p> 
         
         </div>
         
@@ -668,7 +668,7 @@ select{ text-transform: uppercase; }
         <div class="col-md-3"   id="Lernaeosis"   data-toggle="modal" data-target="#exampleModal12" >
         
     <img src="../images/Fish_Disease/Lernaeosis.jpg"     width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px;    font-size: 10px;">Lernaeosis</p> 
+       <p style="background-color: #ccc;padding: 10px;    font-size: 10px;">Fin and tail rot</p> 
         
         </div>
              
@@ -689,23 +689,25 @@ select{ text-transform: uppercase; }
     <div class="col-md-3"   id="lymphocystis"   data-toggle="modal" data-target="#exampleModal12"  >
         
     <img src="../images/Fish_Disease/lymphocystis.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc; padding: 10px;   font-size: 10px;"  >lymphocystis</p> 
+       <p style="background-color: #ccc; padding: 10px;   font-size: 10px;"  >Enteric red mouth</p> 
         
         </div>
         
         <div class="col-md-3"    id="Saprolegniasis"   data-toggle="modal" data-target="#exampleModal12" >
         
     <img src="../images/Fish_Disease/Saprolegniasis.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">Saprolegniasis</p> 
+       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">Dropsy</p> 
         
         </div>
              
              
              
-             <div class="col-md-3"    id="Viral_Nervous_Necrosis"   data-toggle="modal" data-target="#exampleModal12" >
+            <div class="col-md-3"    id="Viral_Nervous_Necrosis"   data-toggle="modal" data-target="#exampleModal12" >
         
     <img src="../images/Fish_Disease/Viral%20Nervous%20Necrosis.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">Viral Nervous Necrosis</p> 
+       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">
+	   Myxosporidan infection
+	   </p> 
         
         </div>
              
@@ -714,7 +716,7 @@ select{ text-transform: uppercase; }
              <div class="col-md-3"    id="Whirling_Disease"   data-toggle="modal" data-target="#exampleModal12" >
         
     <img src="../images/Fish_Disease/Whirling%20Disease.jpg"   width="215px;"><br>
-       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">Whirling Disease</p> 
+       <p style="background-color: #ccc;padding: 10px;   font-size: 10px;">Arglosis</p> 
         
         </div>
         
@@ -3699,37 +3701,37 @@ $("#xxx").hide();
     
      $("#columnaris").click(function(){
         $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Columnaris -  Bacterial Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Flexibacter columnaris</p><label>SYMPTOMS</label><p>Anorexia, whitish plaques eroding affected area(mouth, body surface, fin, gills), orange Lesions</p><label>REMEDIAL ACTION/TREATMENT</label><p> A addition of nifurpirinol to pond</p><p>Antibiotic treatment</p><p>Vaccination</p><img src='../images/Fish_Disease/columnaris.jpg'>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Flexibacter columnaris</p><label>SYMPTOMS</label><p>Anorexia, whitish plaques eroding affected area(mouth, body surface, fin, gills), orange Lesions</p><label>REMEDIAL ACTION/TREATMENT</label><p> A addition of nifurpirinol to pond</p><p>Antibiotic treatment</p><p>Vaccination</p><img style='width:100%;' src='../images/Fish_Disease/columnaris.jpg'>");
 });
     
     
     
     
      $("#Furunculosis").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Furunculosis -  Bacterial Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Aeromonas salmonicida</p><label>SYMPTOMS</label><p>Inflammation(intestine and anus), lesions and bloody coloured fluid in muscle and skin, fin rot</p><label>REMEDIAL ACTION/TREATMENT</label><p> Antibiotic treatment</p><p>Addition of nifurpirinol to pond</p><p>Vaccination</p><img src='../images/Fish_Disease/Furunculosis.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Edwardsiellosis -  Bacterial Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Edwardsiella tarda</p><label>SYMPTOMS</label><p> Abdominal distension, gas filled lesions in muscle tissue, in severe conditions skin  becomes bright red, kidney & spleen enlarged. Pale gills, ex-opthalmic condition,enlarged abdomen.</p><label>REMEDIAL ACTION/TREATMENT</label><p>  Gram negative </p><p></p><p>motile rods</p><img style='width:100%;' src='../images/Fish_Disease/Furunculosis.jpg'>");
 });
     
     
     $("#General_Septicemia").click(function(){
         $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>General Septicemia -  Bacterial Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Aeromonas hydrophila</p><label>SYMPTOMS</label><p>Ulceration of skin, distended abdomen, and inflamed fins and fin bases</p><label>REMEDIAL ACTION/TREATMENT</label><p>  Vaccination</p><p>Antibiotic treatment</p><img src='../images/Fish_Disease/General%20Septicemia.jpg'>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Aeromonas hydrophila</p><label>SYMPTOMS</label><p>Ulceration of skin, distended abdomen, and inflamed fins and fin bases</p><label>REMEDIAL ACTION/TREATMENT</label><p>  Vaccination</p><p>Antibiotic treatment</p><img style='width:100%;' src='../images/Fish_Disease/General%20Septicemia.jpg'>");
 });
     
     
     
  
     $("#Ichthyophthiriasis").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Ichthyophthiriasis -  Parasite Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Ichthyophthirius multifiliis</p><label>SYMPTOMS</label><p>White spots on fins, body surface then gills</p><label>REMEDIAL ACTION/TREATMENT</label><p> Formaldehyde </p><img src='../images/Fish_Disease/Ichthyophthiriasis.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>BACTERIAL GILL DISEASES</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Cytophaga, Flexibacter,Flavobacterium</p><label>SYMPTOMS</label><p>Lethargic, anorexic, fish remain at the surface, inlets, flaring their opercula,increased mucous, swelling of primary lamellae.</p><img src='../images/Fish_Disease/Ichthyophthiriasis.jpg'>");
 });   
     
     
     
     
       $("#Lernaeosis").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Lernaeosis -  Viral Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Lymphocystis virus (Iridovirus)</p><label>SYMPTOMS</label><pSmall, pearl-like tumefactions on skin, fins and tail, abnormal swimming or anorexia</p><label>REMEDIAL ACTION/TREATMENT</label><p>No specific treatment</p><p>Preventive measures </p><img src='../images/Fish_Disease/Lernaeosis.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Fin and tail rot</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Pseudomonas sps.,  Aeromonassps, Unspecified bacteria sps</p><label>SYMPTOMS</label><p>Loss of natural color, fraying of  fins and tail, progressive disintegration of fins & tail, linked with pollution and nutrition.</p><img src='../images/Fish_Disease/Lernaeosis.jpg'>");
 });   
     
     
@@ -3744,25 +3746,25 @@ $("#xxx").hide();
     
      $("#lymphocystis").click(function(){
         $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Lymphocystis -  Viral Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Lymphocystis virus (Iridovirus)</p><label>SYMPTOMS</label><p>Small, pearl-like tumefactions on skin, fins and tail, abnormal swimming or anorexia</p><label>REMEDIAL ACTION/TREATMENT</label><p> No specific treatment</p><p>Preventive measures </p><img src='../images/Fish_Disease/lymphocystis.jpg'>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Yersina ruckeri Congestion of vessels of oral area,ulcers and  harhage, necrosis of abdominal organs, swelling and reddening of kidney and spleen, ophalmic lesions may result in blindness.</p><img style='width:100%;' src='../images/Fish_Disease/lymphocystis.jpg'>");
 });  
     
     
      $("#Saprolegniasis").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Saprolegniasis -   Fungal Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Saprolegnia</p><label>SYMPTOMS</label><p>Grey-white patches on fish skin which have cotton wool-like appearance under water</p><label>REMEDIAL ACTION/TREATMENT</label><p>Reduce organic load</p><p>External disinfectant treatments –Salt formalin, copper sulphate</p><img src='../images/Fish_Disease/Saprolegniasis.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>DROPSY</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Mainly  Bacterial  (Multiple ?)</p><label>SYMPTOMS</label><p>Abdominal distension due to accumulation of fluids.</p><img src='../images/Fish_Disease/Saprolegniasis.jpg'>");
 });  
      
     
       $("#Viral_Nervous_Necrosis").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Viral Nervous Necrosis -   Viral Disease</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Betanodavirus (Nodaviridae)</p><label>SYMPTOMS</label><p>Vacuolating necrosis of neural cells of the brain, retina and spinal cord (up to 100% mortality in young fish)</p><label>REMEDIAL ACTION/TREATMENT</label><p>No specific treatment</p><p>Preventive measures</p> <p>Vaccination but not yet available commercially</p><img src='../images/Fish_Disease/Viral%20Nervous%20Necrosis.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>MYXOSPORIDIAN INFECTION</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Myxobolus, Henneguya sps.,</p><label>SYMPTOMS</label><p>Whitish cysts of variable size on the skin, under the scales, muscles, viscera, gills, skeletal deformities may occur. Skin either rupture to release spores or ingested by predation. Affects respiration.</p><label>REMEDIAL ACTION/TREATMENT</label><p>No satisfactory drug.  NaCl application. Formalin 10 – 15 ppm Cu So4 -  0.25 – 0.5 ppm</p><label>DIAGNOSIS</label> <p>Microscopic examination of the cysts for typical spores.</p><img src='../images/Fish_Disease/Viral%20Nervous%20Necrosis.jpg'>");
 });  
      
     
       $("#Whirling_Disease").click(function(){
-        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>Whirling Disease -   INFECTIOUS</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>Myxosoma cerebralis</p><label>SYMPTOMS</label><p>Abnormal swimming, darkening of posterior part and skeletal deformation</p><label>REMEDIAL ACTION/TREATMENT</label><p>Good management practices – proper feeding for proper growth</p><img src='../images/Fish_Disease/Whirling%20Disease.jpg'>");
+        $("#better_mgmt_content1").html("<h5 class='modal-title' id=''>ARGULOSIS</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
+   $("#better_mgmt_content").html("<label>CAUSETIVE AGENT/FACTOR</label><p>ARGULUS (fish lice)</p><label>SYMPTOMS</label><p>Attaches to the bases of fins, abdomen. Flat, Rounded 3-8mm long.Fish lethargic, 	cease feeding, loose condition. Body rubbing. In chronic stage skin opaque,Haemarhhagic spots.</p><img style='width:100%;' src='../images/Fish_Disease/Whirling%20Disease.jpg'>");
 });  
      
     
