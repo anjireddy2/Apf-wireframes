@@ -627,12 +627,12 @@ select{ text-transform: uppercase; }
                 <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; Number of PL Stocked</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; Average Weight of the Animal</label>
                             <div class="controls col-md-3 "> 
                                  <input class="input-md textinput textInput form-control"   id="a" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
                                     
-                                    <div class="row"><label>no's</label></div>
+                                    <div class="row"><label>grams</label></div>
                                     
                                     
                         </div>
@@ -644,12 +644,12 @@ select{ text-transform: uppercase; }
                  <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Area of the Pond</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Survival Number</label>
                             <div class="controls col-md-3 "> 
                                  <input class="input-md textinput textInput form-control"   id="b" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
                                     
-                                    <div class="row"><label>sq.mt</label></div>
+                                    <div class="row"><label>no's</label></div>
                                     
                                     
                         </div>
@@ -660,33 +660,19 @@ select{ text-transform: uppercase; }
                 
                 
                 
-                 <div class="row"  style="margin-top: 20px;">
-                <div id="div_id_password2" class="form-group required" >
-								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> C:&nbsp;Area covered by the cast net</label>
-                            <div class="controls col-md-3 "> 
-                                 <input class="input-md textinput textInput form-control"  id="c" name="company" style="margin-bottom: 10px" type="text" />
-                            </div>
-                                    
-                                    <div class="row"><label>ppm</label></div>
-                                    
-                                    
-                        </div>
-					</div>
-                
-                </div>
+                 
                 
                   
                  
         <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField">No of pieces caught / netting</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField">Biomass</label>
                             <div class="controls col-md-3 "> 
                                  <input class="input-md textinput textInput form-control"  readonly id="d" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
                                     
-                                    <div class="row"><label>no's</label></div>
+                                    <div class="row"><label>Kg</label></div>
                                     
                                     
                         </div>
@@ -761,10 +747,10 @@ select{ text-transform: uppercase; }
            
           var  a1 =$("#a").val();
           var  b1 =$("#b").val();
-           var  c1 =$("#c").val();
-           var d1= (a1 * c1) / (b1 * 10)
+          //  var  c1 =$("#c").val();
+          //  var d1= (a1 * c1) / (b1 * 10)
 //           alert(d1);
-    $("#d").val(d1);
+    $("#d").val(a1 * b1 / 1000);
   });
       
     </script>

@@ -627,9 +627,9 @@ select{ text-transform: uppercase; }
                 <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; Feed remaining in the check tray</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; Feed Used</label>
                             <div class="controls col-md-3 "> 
-                                 <select class="form-control input-md" id="type_advisiory"  id="a" style="margin-bottom:2%">
+                                 <!-- <select class="form-control input-md" id="type_advisiory"  id="a" style="margin-bottom:2%">
                     <option value="marine_fshr">--Select Percentage --</option>   
                   <option value="Lab_Services">0</option>
                  <option value="Lab_Services">25</option>
@@ -640,10 +640,11 @@ select{ text-transform: uppercase; }
                   
                 
                   
-                </select>
-                            </div>
+                </select> -->
+                <input class="input-md textinput textInput form-control"   id="a" name="company" style="margin-bottom: 10px" type="text" />     
+              </div>
                                     
-                                    <div class="row"><label></label></div>
+                                    <div class="row"><label>kg</label></div>
                                     
                                     
                         </div>
@@ -655,9 +656,9 @@ select{ text-transform: uppercase; }
                  <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Check tray observation</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Shrimp Produced</label>
                             <div class="controls col-md-3 "> 
-                                 <select class="form-control input-md" id="type_advisiory"  id="b" style="margin-bottom:2%">
+                                 <!-- <select class="form-control input-md" id="type_advisiory"  id="b" style="margin-bottom:2%">
                     <option value="marine_fshr">--Select your observation --</option>   
                   <option value="Lab_Services">Many shrimps on the check tray</option>
                  <option value="Lab_Services">Many shrimps with long feaces</option>
@@ -668,10 +669,12 @@ select{ text-transform: uppercase; }
                   
                 
                   
-                </select>
+                </select> -->
+                <input class="input-md textinput textInput form-control"   id="b" name="company" style="margin-bottom: 10px" type="text" />     
+
                             </div>
                                     
-                                    <div class="row"><label></label></div>
+                                    <div class="row"><label>Kg</label></div>
                                     
                                     
                         </div>
@@ -733,7 +736,33 @@ select{ text-transform: uppercase; }
                 
                 
                 
-                
+<div class="row"  style="margin-top: 20px;">
+  <div id="div_id_password2" class="form-group required" >
+  <div id="div_id_company" class="form-group required"> 
+              <label for="id_company" class="control-label col-md-3  requiredField">Feed Conversion Ratio</label>
+              <div class="controls col-md-3 "> 
+                   <!-- <select class="form-control input-md" id="type_advisiory"  id="d" style="margin-bottom:2%">
+      <option value="marine_fshr">--Select --</option>   
+    <option value="Lab_Services">ICAR-CIBA's feed chart</option>
+    <option value="Training">Feed company chart (add feed chart)</option>
+    
+    
+  
+    
+  </select> -->
+  <input class="input-md textinput textInput form-control"  readonly id="c" name="company" style="margin-bottom: 10px" type="text" />
+              </div>
+                      
+                      <div class="row"><label></label></div>
+                      
+                      
+          </div>
+</div>
+  
+  </div>
+      
+  
+  
                 
                 
                 <div class="row">
@@ -795,10 +824,11 @@ select{ text-transform: uppercase; }
            
           var  a1 =$("#a").val();
           var  b1 =$("#b").val();
-           var  c1 =$("#c").val();
-           var d1= (a1 * c1) / (b1 * 10)
+          var c1 = a1 +": " + b1
+          //  var  c1 =$("#c").val();
+          //  var d1= (a1 * c1) / (b1 * 10)
 //           alert(d1);
-    $("#d").val(d1);
+    $("#c").val(c1);
   });
       
     </script>

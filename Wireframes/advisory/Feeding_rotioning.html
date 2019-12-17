@@ -627,7 +627,7 @@ select{ text-transform: uppercase; }
                 <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; ABW</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> A:&nbsp; Average Weight of the Animal</label>
                             <div class="controls col-md-3 "> 
                                  <input class="input-md textinput textInput form-control"   id="a" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
@@ -644,7 +644,7 @@ select{ text-transform: uppercase; }
                  <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Total biomass</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> B:&nbsp; Survival Number</label>
                             <div class="controls col-md-3 "> 
                                  <input class="input-md textinput textInput form-control"   id="b" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
@@ -663,12 +663,12 @@ select{ text-transform: uppercase; }
                  <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField"> C:&nbsp;Feeding frequency</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField"> C:&nbsp;Feed to Body Percentage</label>
                             <div class="controls col-md-3 "> 
                             <input class="input-md textinput textInput form-control"   id="c" name="company" style="margin-bottom: 10px" type="text" />     
                             </div>
                                     
-                                    <div class="row"><label></label></div>
+                                    <div class="row"><label>%</label></div>
                                     
                                     
                         </div>
@@ -681,9 +681,9 @@ select{ text-transform: uppercase; }
         <div class="row"  style="margin-top: 20px;">
                 <div id="div_id_password2" class="form-group required" >
 								<div id="div_id_company" class="form-group required"> 
-                            <label for="id_company" class="control-label col-md-3  requiredField">Feed Chart</label>
+                            <label for="id_company" class="control-label col-md-3  requiredField">Quantity of Feed Per Day</label>
                             <div class="controls col-md-3 "> 
-                                 <select class="form-control input-md" id="type_advisiory"  id="d" style="margin-bottom:2%">
+                                 <!-- <select class="form-control input-md" id="type_advisiory"  id="d" style="margin-bottom:2%">
                     <option value="marine_fshr">--Select --</option>   
                   <option value="Lab_Services">ICAR-CIBA's feed chart</option>
                   <option value="Training">Feed company chart (add feed chart)</option>
@@ -691,7 +691,8 @@ select{ text-transform: uppercase; }
                   
                 
                   
-                </select>
+                </select> -->
+                <input class="input-md textinput textInput form-control"  readonly id="d" name="company" style="margin-bottom: 10px" type="text" />
                             </div>
                                     
                                     <div class="row"><label>kg</label></div>
@@ -770,7 +771,7 @@ select{ text-transform: uppercase; }
           var  a1 =$("#a").val();
           var  b1 =$("#b").val();
            var  c1 =$("#c").val();
-           var d1= (a1 * c1) / (b1 * 10)
+           var d1= (a1 * b1 / 1000) * (c1 / 100)
 //           alert(d1);
     $("#d").val(d1);
   });
