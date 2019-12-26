@@ -1048,11 +1048,7 @@
                 <div class="form-group"> <label for="sel1">Longitude</label> <input class="form-control" value="" type="text" > </div>
               </div>
 			  
-                <div class="col-md-6">
-                 
-                  <div class="form-group"> <label for="pwd">Upload PWB Image</label>
-                    <input value="flc.jpg" type="file"> </div>
-                </div>
+             
 				
 			</div>
        
@@ -1098,9 +1094,50 @@
 			  </div>
              
             </div>
-            <div class="row">
-              <div class="col-md-12" id="map1" style="display:none;"> <img src="../images/map.jpg">
+			<div class="row">
+              <div class="col-md-12">
+                <div class="panel panel-primary" style="float: left; width: 100%;">
+                  <div class="panel-heading" style=""> <span> Society Location Details</span> <span style="float:right"> </span> </div>
+                </div>
               </div>
+            </div>
+			    <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1">District</label>
+                  <select class="form-control select_dist" id="District">
+                    <option value="">Select </option>
+                    <option value="Prakasam">Prakasam </option>
+                  </select>
+                </div>
+              </div>
+           <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> mandal</label>
+                  <select class="form-control select_mandal" id="Mandal">
+                  </select>
+                </div>
+              </div>
+            </div>
+           
+			     <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> panchayat</label>
+                  <select class="form-control  select_panchayat" id="panchayat1">
+                  </select>
+                </div>
+              </div>
+             <div class="col-md-6">
+                <div class="form-group"> <label for="sel1"> Village</label>
+                  <select class="form-control  select_panchayat1" id="panchayat">
+                  </select>
+                </div>
+              </div>
+			  </div>
+            <div class="row">
+                 <div class="col-md-6">
+                 
+                  <div class="form-group"> <label for="pwd">Upload PWB Image</label>
+                    <input value="flc.jpg" type="file"> </div>
+                </div>
             </div>
             <div class="row">
               <div class="col-md-12">
@@ -1116,6 +1153,9 @@
           <div class="modal-footer"> <button type="submit" class="btn btn-primary"
 
               id="flc-submit" >Submit</button>
+			  <button type="submit" class="btn btn-primary"
+
+              id="flc-submit" >Save</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
